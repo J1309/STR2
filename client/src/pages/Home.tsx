@@ -127,7 +127,6 @@ export default function Home() {
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </AnimatePresence>
-            <span className="hero-cover-slip">{heroSlides[heroIndex].issue}<br /><b>{heroSlides[heroIndex].location}</b></span>
             <figcaption>
               <span>{heroSlides[heroIndex].title}</span>
               <span>{String(heroIndex + 1).padStart(2, "0")} / {String(heroSlides.length).padStart(2, "0")}</span>
