@@ -5,7 +5,7 @@
 import DriftWall, { type DriftWallItem } from "@/components/DriftWall";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, ChevronRight, Instagram, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Work = {
   title: string;
@@ -14,6 +14,52 @@ type Work = {
   image: string;
   tone: "coral" | "violet" | "moss" | "sun" | "ink";
 };
+
+type HeroSlide = {
+  image: string;
+  title: string;
+  location: string;
+  issue: string;
+  alt: string;
+};
+
+const heroSlides: HeroSlide[] = [
+  {
+    image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1600&auto=format&fit=crop",
+    title: "California colour studies",
+    location: "California / 2026",
+    issue: "Issue 01",
+    alt: "Utah salt flats at golden hour"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
+    title: "Joshua Tree wildflowers",
+    location: "Joshua Tree / 2026",
+    issue: "Issue 02",
+    alt: "Wildflowers golden hour"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop",
+    title: "Santa Fe passages",
+    location: "Santa Fe / 2025",
+    issue: "Issue 03",
+    alt: "Santa Fe red door in shade"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
+    title: "Big Sur coastal road",
+    location: "Big Sur / 2025",
+    issue: "Issue 04",
+    alt: "Big Sur highway after coastal fog"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop",
+    title: "Pacifica ocean shoreline",
+    location: "Pacifica / 2024",
+    issue: "Issue 05",
+    alt: "Pacifica open water"
+  }
+];
 
 const works: Work[] = [
   { title: "Golden Hour", category: "Late sun, roadside flowers", location: "Joshua Tree, 2026", image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop", tone: "coral" },
@@ -42,6 +88,14 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selected, setSelected] = useState<Work | null>(null);
   const [activeWork, setActiveWork] = useState(0);
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -60,7 +114,26 @@ export default function Home() {
       <main id="top">
         <section className="sunlit-hero">
           <div className="hero-copy-sunlit"><p className="sunlit-kicker"><span /> Independent photography · Los Angeles</p><h1>What the light<br /><em>remembers.</em></h1><p className="hero-intro">A field journal of colour, human distance, and the places that look different once the day starts to turn.</p><button className="text-cta" onClick={() => scrollTo("work")}>Open the journal <ArrowDownRight size={18} /></button></div>
-          <motion.figure className="hero-image-sunlit" initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.05, ease: [0.23, 1, 0.32, 1] }}><img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1600&auto=format&fit=crop" alt="Woman in saffron silk standing near a cobalt pool at golden hour" /><span className="hero-cover-slip">Issue 01<br /><b>California / 2026</b></span><figcaption><span>California colour studies</span><span>01 / 05</span></figcaption><div className="hero-image-orbit" aria-hidden="true" /></motion.figure>
+          <motion.figure className="hero-image-sunlit" style={{ overflow: "hidden" }}>
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={heroSlides[heroIndex].image}
+                src={heroSlides[heroIndex].image}
+                alt={heroSlides[heroIndex].alt}
+                initial={{ opacity: 0, scale: 1.06 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.85, ease: [0.23, 1, 0.32, 1] }}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            </AnimatePresence>
+            <span className="hero-cover-slip">{heroSlides[heroIndex].issue}<br /><b>{heroSlides[heroIndex].location}</b></span>
+            <figcaption>
+              <span>{heroSlides[heroIndex].title}</span>
+              <span>{String(heroIndex + 1).padStart(2, "0")} / {String(heroSlides.length).padStart(2, "0")}</span>
+            </figcaption>
+            <div className="hero-image-orbit" aria-hidden="true" />
+          </motion.figure>
           <div className="hero-scroll-note"><span>Scroll to wander</span><i /></div>
         </section>
 
