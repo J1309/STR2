@@ -209,6 +209,7 @@ export default function Home() {
         </div>
       </section>
 
+      <main>
         <section className="introduction-sunlit" id="journal"><div className="intro-number">01</div><div><p className="sunlit-kicker">The journal</p><h2>Observations<br />from the road,<br />close to home.</h2></div><p className="intro-body">I photograph the gestures, weather, and small distances that give a place its particular memory.</p></section>
 
         <section className="drift-section" aria-label="Photographic fragments"><div className="drift-section-copy"><p className="sunlit-kicker">In passing</p><h2>Loose frames<br />from the<br />same road.</h2><p>A handful of photographs held together by the way the light changed. Hover to pause a frame, then open it to look longer.</p><span>Starline / fragments / 01—06</span></div><div className="drift-stage"><DriftWall items={driftItems} columns={4} tileWidth={184} tileHeight={236} gap={14} tilt={5} turn={-5} perspective={1350} depth={46} speed={10} variance={.2} parallax={.16} lift={24} dim={.9} overlayColor="#24211e" onSelect={(item) => { const match = works.find((work) => work.image === item.image); if (match) setSelected(match); }} /></div></section>
