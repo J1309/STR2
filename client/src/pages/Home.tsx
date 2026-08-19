@@ -97,71 +97,117 @@ export default function Home() {
 
   return (
     <div className="sunlit-site">
-      <header className="sunlit-header">
-        <button className="sunlit-brand" onClick={() => scrollTo("top")} aria-label="Starline home">
-          <span className="sunlit-mark"><i /><i /><i /></span>
-          <span>Starline</span>
-        </button>
-        <nav className="sunlit-nav" aria-label="Primary navigation">
-          {navItems.map(([label, id]) => (
-            <button key={id} onClick={() => scrollTo(id)}>{label}</button>
-          ))}
-        </nav>
-        <div className="sunlit-header-action">
-          <a href="mailto:hello@starline.studio">Start a project <ArrowUpRight size={14} /></a>
-          <button className="sunlit-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+      <section className="starline-hero-stage" id="top">
+        {/* Full-bleed background image with left vignette overlay */}
+        <div className="starline-hero-bg">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={heroSlides[heroIndex].image}
+              src={heroSlides[heroIndex].image}
+              alt={heroSlides[heroIndex].alt}
+              initial={{ opacity: 0, scale: 1.04 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+              transition={{ duration: 1.1, ease: [0.23, 1, 0.32, 1] }}
+            />
+          </AnimatePresence>
+          <div className="starline-hero-overlay" />
+        </div>
+
+        {/* Top Header */}
+        <header className="starline-hero-header">
+          <button className="starline-brand-box" onClick={() => scrollTo("top")} aria-label="Starline Photography Home">
+            <span className="starline-brand-title">S T A R L I N E</span>
+            <span className="starline-brand-sub">P H O T O G R A P H Y</span>
+            <div className="starline-brand-underline" />
+          </button>
+
+          <nav className="starline-hero-nav" aria-label="Primary navigation">
+            <button className="starline-nav-link is-active" onClick={() => scrollTo("top")}>HOME</button>
+            <button className="starline-nav-link" onClick={() => scrollTo("work")}>PORTFOLIO</button>
+            <button className="starline-nav-link" onClick={() => scrollTo("about")}>ABOUT</button>
+            <button className="starline-nav-link" onClick={() => scrollTo("journal")}>EXPERIENCE</button>
+            <button className="starline-nav-link" onClick={() => scrollTo("journal")}>JOURNAL</button>
+            <button className="starline-nav-link" onClick={() => scrollTo("about")}>CONTACT</button>
+          </nav>
+
+          <button className="starline-hero-menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+
+          <AnimatePresence>
+            {menuOpen && (
+              <motion.nav
+                className="sunlit-mobile-nav"
+                initial={{ opacity: 0, y: -9 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -9 }}
+                aria-label="Mobile navigation"
+              >
+                <button onClick={() => scrollTo("top")}>HOME</button>
+                <button onClick={() => scrollTo("work")}>PORTFOLIO</button>
+                <button onClick={() => scrollTo("about")}>ABOUT</button>
+                <button onClick={() => scrollTo("journal")}>EXPERIENCE</button>
+                <button onClick={() => scrollTo("journal")}>JOURNAL</button>
+                <button onClick={() => scrollTo("about")}>CONTACT</button>
+              </motion.nav>
+            )}
+          </AnimatePresence>
+        </header>
+
+        {/* Central Left Content */}
+        <div className="starline-hero-content">
+          <p className="starline-hero-kicker">VISUAL STORIES. TIMELESS BEAUTY.</p>
+          <h1 className="starline-hero-headline">
+            Photography<br />
+            That Speaks.
+          </h1>
+          <div className="starline-headline-rule" />
+          <p className="starline-hero-subtext">
+            We capture the raw, the real, and the remarkable in every frame.
+          </p>
+
+          <button className="starline-hero-cta" onClick={() => scrollTo("work")}>
+            <span>EXPLORE PORTFOLIO</span>
+            <ArrowRight size={15} />
           </button>
         </div>
-        <AnimatePresence>
-          {menuOpen && (
-            <motion.nav
-              className="sunlit-mobile-nav"
-              initial={{ opacity: 0, y: -9 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -9 }}
-              aria-label="Mobile navigation"
-            >
-              {navItems.map(([label, id]) => (
-                <button key={id} onClick={() => scrollTo(id)}>{label}</button>
-              ))}
-              <a href="mailto:hello@starline.studio">Start a project <ArrowUpRight size={15} /></a>
-            </motion.nav>
-          )}
-        </AnimatePresence>
-      </header>
 
-      <main id="top">
-        <section className="sunlit-hero">
-          <div className="hero-copy-sunlit">
-            <p className="sunlit-kicker"><span /> Independent photography · Los Angeles</p>
-            <h1>What the light<br /><em>remembers.</em></h1>
-            <p className="hero-intro">A field journal of colour, human distance, and the places that look different once the day starts to turn.</p>
-            <button className="text-cta" onClick={() => scrollTo("work")}>Open the journal <ArrowDownRight size={18} /></button>
+        {/* Bottom Controls (Left) */}
+        <div className="starline-hero-bottom">
+          <div className="starline-slide-pagination">
+            {heroSlides.map((_, index) => (
+              <button
+                key={index}
+                className={`starline-slide-btn ${heroIndex === index ? "is-active" : ""}`}
+                onClick={() => setHeroIndex(index)}
+              >
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {heroIndex === index && <div className="starline-slide-btn-bar" />}
+              </button>
+            ))}
           </div>
 
-          <motion.figure className="hero-image-sunlit" style={{ overflow: "hidden" }}>
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={heroSlides[heroIndex].image}
-                src={heroSlides[heroIndex].image}
-                alt={heroSlides[heroIndex].alt}
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.97 }}
-                transition={{ duration: 0.9, ease: [0.23, 1, 0.32, 1] }}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </AnimatePresence>
-            <figcaption>
-              <span>{heroSlides[heroIndex].title}</span>
-              <span>{String(heroIndex + 1).padStart(2, "0")} / {String(heroSlides.length).padStart(2, "0")}</span>
-            </figcaption>
-            <div className="hero-image-orbit" aria-hidden="true" />
-          </motion.figure>
+          <div className="starline-social-row">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">INSTAGRAM</a>
+            <span className="starline-social-pipe">|</span>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer">FACEBOOK</a>
+            <span className="starline-social-pipe">|</span>
+            <a href="https://vimeo.com" target="_blank" rel="noreferrer">VIMEO</a>
+          </div>
+        </div>
 
-          <div className="hero-scroll-note"><span>Scroll to wander</span><i /></div>
-        </section>
+        {/* Right Side Vertical Spine & Compass Icon */}
+        <div className="starline-right-spine">
+          <svg className="starline-compass-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14" />
+            <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
+          </svg>
+          <div className="starline-vertical-text">
+            CAPTURING MOMENTS THAT LAST FOREVER
+          </div>
+        </div>
+      </section>
 
         <section className="introduction-sunlit" id="journal"><div className="intro-number">01</div><div><p className="sunlit-kicker">The journal</p><h2>Observations<br />from the road,<br />close to home.</h2></div><p className="intro-body">I photograph the gestures, weather, and small distances that give a place its particular memory.</p></section>
 
