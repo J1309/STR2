@@ -249,7 +249,7 @@ export default function Home() {
 
         <section className="about-sunlit" id="about"><div className="about-image-wrap"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop" alt="Portrait with wildflowers in warm light" /><span>Portrait by Maya Rios</span></div><div className="about-copy"><p className="sunlit-kicker">Hello, I’m Lila</p><h2>I make pictures<br />for brands,<br />people, and<br />places in motion.</h2><p>Based in California and working wherever a story is unfolding. Available for editorial, travel, brand, and personal commissions.</p><a className="about-link" href="mailto:hello@starline.studio">Begin a conversation <ArrowUpRight size={16} /></a></div></section>
 
-        <section className="closing-sunlit" id="contact"><p className="sunlit-kicker">Have a story?</p><h2>Let’s give it<br />a lasting frame.</h2><a href="mailto:hello@starline.studio">hello@starline.studio <ArrowUpRight size={23} /></a><div className="closing-shapes" aria-hidden="true"><i /><i /><i /></div></section>
+        <section className="closing-sunlit" id="contact"><p className="sunlit-kicker">Have a story?</p><h2>Let’s give it<br />a lasting frame.</h2><a href="mailto:hello@starline.studio">hello@starline.studio <ArrowUpRight size={23} /></a></section>
       </main>
 
       <footer className="sunlit-footer"><span>© 2026 Starline Studio</span><span>Made slowly, with feeling.</span><a href="https://instagram.com" target="_blank" rel="noreferrer"><Instagram size={14} /> Instagram</a></footer>
