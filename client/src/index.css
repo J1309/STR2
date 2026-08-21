@@ -432,6 +432,17 @@
 }
 
 @media (max-width: 900px) {
+  .starline-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(5, 7, 12, 0.35) 0%,
+      rgba(5, 7, 12, 0.08) 35%,
+      rgba(5, 7, 12, 0.45) 100%
+    );
+  }
+  .starline-hero-bg img {
+    object-position: center center;
+  }
   .starline-hero-nav {
     display: none;
   }
@@ -440,6 +451,14 @@
   }
   .starline-hero-headline {
     font-size: clamp(2.8rem, 12vw, 4.4rem);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+  }
+  .starline-hero-kicker {
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  }
+  .starline-hero-subtext {
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
   }
   .starline-hero-content {
     padding-top: 100px;
