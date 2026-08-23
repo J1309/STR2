@@ -64,12 +64,12 @@ export default function Home() {
 
           <div className="minimal-hero-content">
             <p className="minimal-hero-kicker">
-              Acclaimed London & Destination Wedding Videographer — Photographer
+              CINEMATIC DESTINATION WEDDINGS & BESPOKE VISUAL POETRY WORLDWIDE
             </p>
 
             <h1 className="minimal-hero-title">
-              Telling Your Story Through<br />
-              Beautiful and Meaningful Imagery
+              Crafting Living Heirlooms of Love,<br />
+              Light & Untamed Elegance
             </h1>
           </div>
         </section>

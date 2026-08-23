@@ -84,36 +84,159 @@ const studioPolicies: Record<PolicyKey, PolicyContent> = {
 
 export default function Footer({ showClosingCta = false }: FooterProps) {
   const [activePolicy, setActivePolicy] = useState<PolicyKey | null>(null);
+  const [newsletterEmail, setNewsletterEmail] = useState<string>("");
+  const [newsletterSuccess, setNewsletterSuccess] = useState<boolean>(false);
+
+  const instagramImages = [
+    { src: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=600&auto=format&fit=crop", label: "Marrakech" },
+    { src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=600&auto=format&fit=crop", label: "French Riviera" },
+    { src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=600&auto=format&fit=crop", label: "High Sierra" },
+    { src: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop", label: "Amalfi Coast" },
+    { src: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600&auto=format&fit=crop", label: "Santa Fe" },
+    { src: "/bg_hero_page.png", label: "Lake Como" }
+  ];
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (newsletterEmail.trim()) {
+      setNewsletterSuccess(true);
+      setNewsletterEmail("");
+      setTimeout(() => setNewsletterSuccess(false), 6000);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <footer className="minimal-footer">
+      {/* 1. Instagram Visual Strip */}
+      <div className="footer-instagram-section">
+        <div className="footer-instagram-header">
+          <span className="minimal-overline">FOLLOW OUR VISUAL CHRONICLES</span>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noreferrer"
+            className="footer-instagram-handle"
+          >
+            @starline.cinema
+          </a>
+        </div>
+
+        <div className="footer-instagram-grid">
+          {instagramImages.map((item, idx) => (
+            <a
+              key={idx}
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className="footer-insta-item"
+              aria-label={`View ${item.label} on Instagram`}
+            >
+              <img src={item.src} alt={item.label} loading="lazy" />
+              <div className="footer-insta-overlay">
+                <Instagram size={18} />
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
       <div className="minimal-footer-inner">
+        {/* Optional Closing Commission CTA */}
         {showClosingCta && (
           <div className="minimal-footer-cta">
             <p className="minimal-overline">Available Worldwide</p>
             <h2>Let’s Give Your Story<br />A Lasting Frame</h2>
-            <p>Currently accepting commissions for the upcoming destination calendar.</p>
+            <p>Currently accepting commissions for the upcoming destination calendar across Europe, the Americas & beyond.</p>
             <Link href="/contact" className="minimal-btn-outline" style={{ color: "var(--ink-primary)", borderColor: "var(--ink-primary)", background: "transparent" }}>
-              <span>Get in Touch</span>
+              <span>Inquire with Studio</span>
             </Link>
           </div>
         )}
 
+        {/* 2. Middle Row: VIP Dispatch Subscription & Studio Concierge */}
+        <div className="footer-middle-grid">
+          <div className="footer-dispatch-box">
+            <span className="minimal-overline" style={{ color: "var(--ink-primary)" }}>PRIVATE SEASONAL DISPATCH</span>
+            <p className="footer-dispatch-desc">
+              Receive curated visual essays, seasonal availability previews, and private destination field guides.
+            </p>
+
+            {newsletterSuccess ? (
+              <p className="footer-dispatch-success">
+                ✓ Thank you. You have been added to our private seasonal dispatch list.
+              </p>
+            ) : (
+              <form onSubmit={handleSubscribe} className="footer-dispatch-form">
+                <input
+                  type="email"
+                  placeholder="ENTER YOUR EMAIL"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  required
+                  aria-label="Email address for dispatch"
+                />
+                <button type="submit">
+                  <span>JOIN</span>
+                </button>
+              </form>
+            )}
+          </div>
+
+          <div className="footer-studios-box">
+            <span className="minimal-overline" style={{ color: "var(--ink-primary)" }}>GLOBAL STUDIOS & COMMISSIONS</span>
+            <div className="footer-studios-list">
+              <div>
+                <strong>LONDON / EUROPE</strong>
+                <span>Mayfair & Côte d’Azur</span>
+              </div>
+              <div>
+                <strong>CALIFORNIA / AMERICAS</strong>
+                <span>Santa Barbara & Big Sur</span>
+              </div>
+              <div>
+                <strong>DIRECT INQUIRIES</strong>
+                <a href="mailto:concierge@starlinestudio.com">concierge@starlinestudio.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 3. Prestigious Press Ribbon */}
+        <div className="footer-press-ribbon">
+          <span>FEATURED & ACCREDITED BY</span>
+          <div className="footer-press-items">
+            <span>VOGUE WEDDINGS</span>
+            <span className="footer-press-dot">•</span>
+            <span>HARPER’S BAZAAR</span>
+            <span className="footer-press-dot">•</span>
+            <span>OVER THE MOON</span>
+            <span className="footer-press-dot">•</span>
+            <span>WEDLUXE GLOBAL</span>
+            <span className="footer-press-dot">•</span>
+            <span>JUNEBUG BEST OF THE BEST</span>
+          </div>
+        </div>
+
+        {/* 4. Navigation Links */}
         <nav className="minimal-footer-nav" aria-label="Footer navigation">
           <Link href="/">Home</Link>
           <Link href="/portfolio">Portfolio</Link>
-          <Link href="/pricing">Pricing</Link>
-          <Link href="/about">About</Link>
           <Link href="/journal">Journal</Link>
+          <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
 
+        {/* 5. Bottom Copyright & Policy Links */}
         <div className="minimal-footer-bottom">
           <div>
             <span>© {new Date().getFullYear()} Starline Studio. All rights reserved.</span>
           </div>
 
-          <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
             <button
               onClick={() => setActivePolicy("privacy")}
               style={{ background: "transparent", border: 0, padding: 0, font: "inherit", color: "inherit", cursor: "pointer" }}
@@ -124,25 +247,31 @@ export default function Footer({ showClosingCta = false }: FooterProps) {
               onClick={() => setActivePolicy("terms")}
               style={{ background: "transparent", border: 0, padding: 0, font: "inherit", color: "inherit", cursor: "pointer" }}
             >
-              Terms
+              Terms of Service
             </button>
             <button
               onClick={() => setActivePolicy("licensing")}
               style={{ background: "transparent", border: 0, padding: 0, font: "inherit", color: "inherit", cursor: "pointer" }}
             >
-              Licensing
+              Image Licensing
+            </button>
+            <button
+              onClick={() => setActivePolicy("accessibility")}
+              style={{ background: "transparent", border: 0, padding: 0, font: "inherit", color: "inherit", cursor: "pointer" }}
+            >
+              Accessibility
             </button>
           </div>
 
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noreferrer"
-            style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "inherit" }}
-          >
-            <Instagram size={13} />
-            <span>@starline.studio</span>
-          </a>
+          <div>
+            <button
+              onClick={scrollToTop}
+              className="footer-back-to-top"
+              aria-label="Back to top"
+            >
+              <span>Back to Top ↑</span>
+            </button>
+          </div>
         </div>
       </div>
 

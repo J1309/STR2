@@ -819,12 +819,88 @@ a {
   background-color: var(--bg-primary);
   color: var(--ink-primary);
   border-top: 1px solid var(--line-subtle);
-  padding: clamp(80px, 12vw, 140px) clamp(24px, 6vw, 96px) 50px;
+  padding: 0 0 50px;
+}
+
+/* 1. Footer Instagram Visual Strip */
+.footer-instagram-section {
+  border-bottom: 1px solid var(--line-subtle);
+  padding-top: clamp(60px, 8vw, 90px);
+}
+
+.footer-instagram-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.footer-instagram-handle {
+  display: block;
+  font-family: var(--font-display-condensed);
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-primary);
+  margin-top: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.footer-instagram-handle:hover {
+  opacity: 0.7;
+}
+
+.footer-instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+}
+
+.footer-insta-item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: block;
+  background: var(--bg-soft);
+}
+
+.footer-insta-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), filter 0.3s ease;
+}
+
+.footer-insta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 34, 63, 0.4);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.footer-insta-item:hover img {
+  transform: scale(1.08);
+}
+
+.footer-insta-item:hover .footer-insta-overlay {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .footer-instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .minimal-footer-inner {
   max-width: 1400px;
   margin: 0 auto;
+  padding: clamp(60px, 8vw, 100px) clamp(24px, 6vw, 96px) 0;
 }
 
 .minimal-footer-cta {
@@ -836,8 +912,9 @@ a {
 .minimal-footer-cta h2 {
   font-family: var(--font-display-condensed);
   font-size: clamp(3.2rem, 7vw, 6.4rem);
+  font-weight: 300;
   line-height: 0.95;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   margin: 0 0 20px;
 }
@@ -850,13 +927,158 @@ a {
   margin: 0 0 36px;
 }
 
+/* 2. Middle Row: Dispatch & Studios */
+.footer-middle-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(40px, 6vw, 90px);
+  padding-bottom: clamp(40px, 6vw, 70px);
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.footer-dispatch-desc {
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  margin: 8px 0 20px;
+  max-width: 480px;
+}
+
+.footer-dispatch-form {
+  display: flex;
+  max-width: 440px;
+  border-bottom: 1px solid var(--ink-primary);
+  padding-bottom: 8px;
+}
+
+.footer-dispatch-form input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  color: var(--ink-primary);
+  outline: none;
+  padding: 4px 0;
+}
+
+.footer-dispatch-form input::placeholder {
+  color: var(--ink-subtle);
+}
+
+.footer-dispatch-form button {
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--ink-primary);
+  cursor: pointer;
+  padding: 4px 0 4px 16px;
+  transition: opacity 0.2s ease;
+}
+
+.footer-dispatch-form button:hover {
+  opacity: 0.6;
+}
+
+.footer-dispatch-success {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #1e457e;
+  letter-spacing: 0.04em;
+}
+
+.footer-studios-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 14px;
+}
+
+.footer-studios-list div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-studios-list strong {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-primary);
+}
+
+.footer-studios-list span,
+.footer-studios-list a {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--ink-muted);
+  transition: color 0.2s ease;
+}
+
+.footer-studios-list a:hover {
+  color: var(--ink-primary);
+}
+
+@media (max-width: 900px) {
+  .footer-middle-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* 3. Press Accreditation Ribbon */
+.footer-press-ribbon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.footer-press-ribbon > span {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--ink-subtle);
+  text-transform: uppercase;
+}
+
+.footer-press-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-secondary);
+}
+
+.footer-press-dot {
+  color: var(--line-subtle);
+  font-size: 14px;
+}
+
+/* 4. Footer Nav */
 .minimal-footer-nav {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: clamp(20px, 4vw, 48px);
   flex-wrap: wrap;
-  padding-bottom: 50px;
+  padding: 40px 0;
   border-bottom: 1px solid var(--line-subtle);
 }
 
@@ -874,6 +1096,7 @@ a {
   color: var(--ink-primary);
 }
 
+/* 5. Footer Bottom */
 .minimal-footer-bottom {
   display: flex;
   align-items: center;
@@ -884,6 +1107,27 @@ a {
   letter-spacing: 0.06em;
   flex-wrap: wrap;
   gap: 16px;
+}
+
+.footer-back-to-top {
+  background: transparent;
+  border: 1px solid var(--line-subtle);
+  color: var(--ink-secondary);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer-back-to-top:hover {
+  background: var(--ink-primary);
+  color: #ffffff;
+  border-color: var(--ink-primary);
 }
 
 /* ==========================================================================
@@ -943,6 +1187,226 @@ a {
   background: var(--ink-primary);
   color: #ffffff;
   border-color: var(--ink-primary);
+}
+
+/* ==========================================================================
+   JOURNAL AUTOMATIC STORY SLIDER (MAGAZINE SHOWCASE)
+   ========================================================================== */
+.journal-featured-slider-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 6vw, 96px) 20px;
+}
+
+.journal-slider-container {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(36px, 5vw, 64px);
+  align-items: center;
+  background: var(--bg-soft);
+  border-radius: 4px;
+  padding: clamp(24px, 4vw, 44px);
+  border: 1px solid var(--line-subtle);
+}
+
+.journal-slider-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #000;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.journal-slider-image-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.journal-slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.journal-slider-image-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(8, 9, 12, 0.7);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.journal-slider-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+.journal-slider-progress-fill {
+  height: 100%;
+  background: #ffffff;
+}
+
+.journal-slider-story {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.journal-slider-story-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.journal-slider-read-badge {
+  font-size: 11px;
+  color: var(--ink-subtle);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.journal-slider-title {
+  font-family: var(--font-display-condensed);
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.08;
+  margin: 0 0 8px;
+  color: var(--ink-primary);
+}
+
+.journal-slider-subtitle {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--ink-secondary);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.journal-slider-excerpt {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink-muted);
+  margin: 0 0 24px;
+}
+
+.journal-slider-action-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.journal-slider-pause-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-subtle);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.journal-slider-pause-btn:hover {
+  color: var(--ink-primary);
+}
+
+.journal-slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-subtle);
+}
+
+.journal-slider-counter {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--ink-primary);
+}
+
+.journal-slider-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.journal-slider-dot {
+  width: 18px;
+  height: 3px;
+  background: var(--line-subtle);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border-radius: 2px;
+  padding: 0;
+}
+
+.journal-slider-dot.is-active {
+  width: 32px;
+  background: var(--ink-primary);
+}
+
+.journal-slider-arrows {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.journal-slider-arrows button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--line-subtle);
+  background: transparent;
+  color: var(--ink-primary);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.journal-slider-arrows button:hover {
+  background: var(--ink-primary);
+  color: #ffffff;
+  border-color: var(--ink-primary);
+}
+
+@media (max-width: 960px) {
+  .journal-slider-container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
 }
 
 .portfolio-grid-section {
