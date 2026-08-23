@@ -25,6 +25,7 @@ type DriftWallProps = {
   lift?: number;
   dim?: number;
   overlayColor?: string;
+  showCaptions?: boolean;
   onSelect?: (item: DriftWallItem) => void;
 };
 
@@ -52,6 +53,7 @@ export default function DriftWall({
   lift = 34,
   dim = 0.78,
   overlayColor = "#1d1b19",
+  showCaptions = false,
   onSelect,
 }: DriftWallProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -156,7 +158,7 @@ export default function DriftWall({
     <div className="drift-wall__plane" ref={planeRef}>{columnItems.map((column, columnIndex) => <div className="drift-wall__column" key={`column-${columnIndex}`}><div className="drift-wall__track" ref={(element) => { if (element) tracksRef.current[columnIndex] = element; }}>{Array.from({ length: columnMeta[columnIndex]?.copies ?? 2 }).flatMap((_, copyIndex) => column.map((item, itemIndex) => {
       const tileId = `${columnIndex}-${copyIndex}-${itemIndex}`;
       const active = activeTile === tileId;
-      return <button className={`drift-wall__tile${active ? " is-active" : ""}`} key={tileId} onMouseEnter={() => { hoveredColumn.current = columnIndex; setActiveTile(tileId); }} onFocus={() => { hoveredColumn.current = columnIndex; setActiveTile(tileId); }} onBlur={() => { hoveredColumn.current = -1; setActiveTile(null); }} onClick={() => onSelect?.(item)} aria-label={`View ${item.title}`}><span className="drift-wall__image"><img src={item.image} alt="" loading="lazy" /><span className="drift-wall__tint" /></span><span className="drift-wall__caption"><b>{item.title}</b><em>{item.subtitle}</em></span></button>;
+      return <button className={`drift-wall__tile${active ? " is-active" : ""}`} key={tileId} onMouseEnter={() => { hoveredColumn.current = columnIndex; setActiveTile(tileId); }} onFocus={() => { hoveredColumn.current = columnIndex; setActiveTile(tileId); }} onBlur={() => { hoveredColumn.current = -1; setActiveTile(null); }} onClick={() => onSelect?.(item)} aria-label={`View photo`}><span className="drift-wall__image"><img src={item.image} alt="" loading="lazy" /><span className="drift-wall__tint" /></span>{showCaptions && <span className="drift-wall__caption"><b>{item.title}</b><em>{item.subtitle}</em></span>}</button>;
     }))}</div></div>)}</div>
   </div>;
 }

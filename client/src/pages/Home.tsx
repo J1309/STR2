@@ -252,28 +252,44 @@ export default function Home() {
         </section>
 
         {/* ===================================================================
-            6. "IN PASSING" 3D TACTILE PHOTOGRAPHIC STREAM (DRIFTWALL)
+            6. "IN PASSING" SIDE-BY-SIDE PHOTOGRAPHIC STREAM (DRIFTWALL)
             =================================================================== */}
         <section className="minimal-drift-section">
-          <div className="minimal-drift-inner">
-            <div className="minimal-drift-header">
-              <h2>In Passing — Photographic Fragments</h2>
-              <p>A continuous, quiet stream of 35mm analog frames and natural light studies.</p>
+          <div className="minimal-drift-split-container">
+            {/* Left Side: Written Content */}
+            <div className="minimal-drift-sidebar">
+              <p className="minimal-overline">ANALOG ARCHIVES</p>
+              <h2 className="minimal-drift-title">
+                In Passing —<br />
+                Photographic Fragments
+              </h2>
+              <p className="minimal-drift-desc">
+                A continuous, quiet stream of 35mm analog frames and natural light studies.
+              </p>
+              <div style={{ marginTop: "24px" }}>
+                <Link href="/portfolio" className="minimal-text-link">
+                  <span>View Full Gallery</span>
+                </Link>
+              </div>
             </div>
 
-            <DriftWall
-              items={driftItems}
-              columns={4}
-              tileWidth={230}
-              tileHeight={290}
-              gap={20}
-              speed={11}
-              pauseOnHover={true}
-              onSelect={(item) => {
-                const found = studioStories.find((s) => s.title.toLowerCase().includes(item.title.toLowerCase().split(" ")[0]));
-                if (found) setSelectedStory(found);
-              }}
-            />
+            {/* Right Side: DriftWall Image Component without image names */}
+            <div className="minimal-drift-wall-wrap">
+              <DriftWall
+                items={driftItems}
+                columns={3}
+                tileWidth={210}
+                tileHeight={270}
+                gap={16}
+                speed={10}
+                showCaptions={false}
+                pauseOnHover={true}
+                onSelect={(item) => {
+                  const found = studioStories.find((s) => s.title.toLowerCase().includes(item.title.toLowerCase().split(" ")[0]));
+                  if (found) setSelectedStory(found);
+                }}
+              />
+            </div>
           </div>
         </section>
 
