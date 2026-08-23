@@ -337,51 +337,99 @@ export const testimonials: TestimonialItem[] = [
 
 export const journalArticles: JournalArticle[] = [
   {
-    id: "high-desert-guide",
-    slug: "high-desert-intimate-wedding-guide",
-    title: "How to Plan an Intimate Celebration in the High Desert",
-    subtitle: "Logistics, golden hour timing, and embracing the elements",
-    category: "Planning Guides",
-    date: "August 2026",
+    id: "surrey-wedding",
+    slug: "surrey-wedding-photography-videography-saskia-oliver",
+    title: "Surrey Wedding Photography & Videography // Saskia + Oliver",
+    subtitle: "An intimate English country estate celebration enveloped in afternoon golden light",
+    category: "London & UK",
+    date: "18 October 2025",
     readTime: "5 min read",
-    coverImage: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
-    excerpt: "The desert rewards the intentional. When you strip away ballroom distractions, the land, the light, and your people become the entire canvas.",
+    coverImage: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop",
+    excerpt: "Surrounded by ancient oaks and English garden botanicals, Saskia and Oliver celebrated their vows with a relaxed, heartfelt gathering filled with live acoustic music and candlelit dining.",
     content: [
-      "There is something unapologetic about desert light. It forces you to slow down, pay attention to shadows, and build your celebration around the temperature of the sun.",
-      "When planning an intimate desert celebration, we recommend timing your vow exchange 45 minutes before true sunset. This provides comfortable temperatures for your guests and allows the golden horizon to bathe your portraits in honeyed tones before transitioning into ambient candlelight.",
-      "Keep your palette grounded: terracotta, raw linen, washed ochre, and desert sage harmonize effortlessly with the surrounding topography."
+      "Surrey in late autumn offers an extraordinary palette of amber foliage, low-raking sunlight, and soft misty mornings. For Saskia and Oliver, the focus from day one was genuine intimacy without rigid formalities.",
+      "We documented the morning preparations using 35mm Kodak Portra film rolls to embrace the soft natural window light. The ceremony took place in an open-air stone terrace where natural vows were shared before seventy of their closest family and friends.",
+      "As dusk settled over the manor lawn, dinner was served beneath hanging floral installations and hundreds of tapered beeswax candles, creating a warm, painterly atmosphere that translated effortlessly to cinema film."
     ]
   },
   {
-    id: "blue-hour-magic",
-    slug: "the-color-of-twilight-blue-hour",
-    title: "The Color of Twilight: Why Blue Hour Changes Everything",
-    subtitle: "The 30 minutes after sunset that transform photography",
-    category: "Field Notes",
-    date: "July 2026",
-    readTime: "4 min read",
-    coverImage: "/bg_hero_page.png",
-    excerpt: "While everyone runs for golden hour, the most poetic, atmospheric frames happen during the quiet transition into night.",
-    content: [
-      "Golden hour gets all the glory, but blue hour is where memory lingers. In the 20 to 35 minutes after the sun dips behind the mountain ridge, direct shadows vanish and the entire atmosphere is wrapped in a cool, painterly luminescence.",
-      "Skin tones look velvety, candlelight catches the eye, and the natural landscape takes on a deep, serene gravitas.",
-      "Whenever possible, we advise couples to schedule dinner or outdoor drinks during this window to capture unguarded, atmospheric candid moments."
-    ]
-  },
-  {
-    id: "what-to-wear-natural-light",
-    slug: "wardrobe-palette-guide-for-timeless-photos",
-    title: "Textures Over Trends: What to Wear for Natural Light Photography",
-    subtitle: "Choosing materials that breathe, move, and hold light",
-    category: "Style & Wardrobe",
-    date: "June 2026",
+    id: "french-riviera-wedding",
+    slug: "french-riviera-wedding-photographer-michelle-russell",
+    title: "French Riviera Wedding Photography & Film // Michelle + Russell",
+    subtitle: "A breathtaking Mediterranean celebration overlooking Villa Ephrussi de Rothschild",
+    category: "Destination Weddings",
+    date: "24 September 2025",
     readTime: "6 min read",
-    coverImage: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1600&auto=format&fit=crop",
-    excerpt: "Natural fibers like silk, raw linen, and structured wool catch breeze and directional light with an organic grace that synthetic fabrics cannot match.",
+    coverImage: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
+    excerpt: "Perched above the French Riviera, Michelle and Russell brought together guests from across three continents for an iconic weekend of seaside cocktails, haute couture, and seaside vows.",
     content: [
-      "Clothing should never compete with your emotion or the landscape. When selecting wardrobe for portraiture or celebration days, prioritize texture over loud prints.",
-      "Heavy silk crepes, unbleached linen, matte wools, and organic cottons interact with directional natural light by creating soft micro-gradients rather than harsh plastic reflections.",
-      "Choose a palette rooted in natural pigments: cream, stone, espresso, moss, and midnight."
+      "Villa Ephrussi de Rothschild represents the pinnacle of Belle Époque elegance. The pink palace, framed by nine manicured classical gardens and the sapphire waters of the Mediterranean, was the setting for Michelle and Russell's destination wedding.",
+      "The ceremony was held in the French Garden as the musical fountains danced to classical strings. Michelle wore a custom couture silk gown that floated with the sea breeze.",
+      "Our cinematography team captured the celebration using a blend of medium-format 4K cinema cameras and vintage anamorphic lenses, giving the final film a velvety, cinematic depth reminiscent of classic European cinema."
+    ]
+  },
+  {
+    id: "marrakech-la-mamounia",
+    slug: "la-mamounia-marrakech-wedding-linda-romain",
+    title: "La Mamounia Marrakech Wedding // Linda + Romain",
+    subtitle: "Lantern-lit courtyards, zellige tile, and an enchanting Moroccan desert adventure",
+    category: "Destination Weddings",
+    date: "12 August 2025",
+    readTime: "5 min read",
+    coverImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
+    excerpt: "An unforgettable multi-day celebration starting in the historic courtyards of La Mamounia and ending under the starlit canopy of the Agafay Desert.",
+    content: [
+      "Marrakech is a sensory dream for visual artists. The contrast of terracotta plaster, fragrant orange blossom courtyards, and warm sun creates a mood unlike anywhere else in the world.",
+      "Linda and Romain welcomed guests with traditional Moroccan mint tea and live Oud musicians before transitioning into a private courtyard ceremony lit by over three hundred handcrafted brass lanterns.",
+      "The following evening, the wedding party traveled into the Agafay Desert for an open-air banquet under the Milky Way, celebrating with traditional fire dancers and world-class culinary pairings."
+    ]
+  },
+  {
+    id: "wanaka-new-zealand",
+    slug: "wanaka-new-zealand-wedding-maggie-kevin",
+    title: "Wanaka New Zealand Wedding Videographer // Maggie + Kevin",
+    subtitle: "Glacial alpine peaks, remote lakeside vows, and sweeping mountain panoramas",
+    category: "Destination Weddings",
+    date: "28 July 2025",
+    readTime: "4 min read",
+    coverImage: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1600&auto=format&fit=crop",
+    excerpt: "A helicopter ascent to the ridge of Mount Aspiring followed by an intimate vineyard reception with panoramic views over Lake Wanaka.",
+    content: [
+      "New Zealand's South Island possesses a raw, untamed majesty. Maggie and Kevin desired an elopement experience that celebrated the vast scale of nature.",
+      "After exchanging private vows on an alpine peak accessible only by helicopter, we descended into the Rippon Vineyard for sunset wine tastings with their closest circle.",
+      "Every frame was captured to emphasize the sheer environmental scale—snowcapped summits meeting the deep glacial blue of the lake."
+    ]
+  },
+  {
+    id: "alila-yangshuo",
+    slug: "alila-yangshuo-guilin-wedding-elina-aaron",
+    title: "Alila Yangshuo Wedding Film // Elina + Aaron",
+    subtitle: "Historic sugar mill architecture amidst the limestone karst mountains of China",
+    category: "Asian Weddings",
+    date: "14 June 2025",
+    readTime: "7 min read",
+    coverImage: "/bg_hero_page.png",
+    excerpt: "Modern industrial luxury meets ancient karst landscape. An extraordinary wedding celebration honoring Chinese heritage and contemporary design.",
+    content: [
+      "Alila Yangshuo is one of the most architecturally striking venues in Asia, converting a 1960s sugar mill into a contemporary sanctuary alongside the Li River.",
+      "Elina and Aaron combined a traditional Chinese tea ceremony wearing embroidered silk qipaos with a modern black-tie evening reception over the reflection pool.",
+      "The cinematic film combined slow-panning landscape vistas of misty limestone peaks with high-energy party moments on the industrial truss stage."
+    ]
+  },
+  {
+    id: "chateau-la-napoule",
+    slug: "chateau-de-la-napoule-wedding-carla-walker",
+    title: "Château de la Napoule Celebration // Carla + Walker",
+    subtitle: "Medieval seaside stone walls and modern black-tie glamour on the French coast",
+    category: "Destination Weddings",
+    date: "2 May 2025",
+    readTime: "5 min read",
+    coverImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop",
+    excerpt: "With the Mediterranean waves breaking against medieval fortress walls, Carla and Walker hosted an opulent coastal banquet filled with champagne, oysters, and midnight fireworks.",
+    content: [
+      "Located near Cannes, Château de la Napoule blends eccentric sculpture, historic stone ramparts, and uninterrupted sea views.",
+      "The bride made a dramatic entrance across the stone bridge wearing a sculptural cathedral veil. Dinner was hosted along the seaside battlements under string canopies as the sunset turned the water gold.",
+      "A standout highlight was the midnight champagne tower and fireworks display launched directly over the Bay of Cannes."
     ]
   }
 ];

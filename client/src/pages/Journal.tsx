@@ -2,15 +2,16 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { journalArticles, type JournalArticle } from "@/data/studioData";
 import { AnimatePresence, motion } from "framer-motion";
-import { X } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
 export default function Journal() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const [selectedArticle, setSelectedArticle] = useState<JournalArticle | null>(null);
 
-  const categories = ["All", "Planning Guides", "Field Notes", "Style & Wardrobe"];
+  const categories = ["All", "Destination Weddings", "London & UK", "Asian Weddings"];
 
   const filteredArticles = activeCategory === "All"
     ? journalArticles
@@ -23,13 +24,13 @@ export default function Journal() {
       <main className="starline-page-main">
         {/* Minimalist Hero */}
         <section className="portfolio-hero">
-          <p className="minimal-overline">The Journal & Field Guides</p>
+          <p className="minimal-overline">JOURNAL — BLOG — STORIES</p>
           <h1 className="portfolio-title">
-            Notes On Light,<br />
-            Place & Memory
+            Stories of Love, Adventure<br />
+            & Timeless Moments
           </h1>
           <p className="portfolio-subtitle">
-            Essays on intentional destination wedding planning, cinematography philosophies, and creative dispatches from around the world.
+            Welcome to our journal and blog where you can dig deep into our stories and learn more about our clients and their wedding journeys.
           </p>
 
           {/* Minimal Text Filters */}
@@ -38,7 +39,10 @@ export default function Journal() {
               <button
                 key={cat}
                 className={`portfolio-filter-btn ${activeCategory === cat ? "is-active" : ""}`}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => {
+                  setActiveCategory(cat);
+                  setCurrentPage(1);
+                }}
               >
                 {cat}
               </button>
@@ -46,7 +50,7 @@ export default function Journal() {
           </div>
         </section>
 
-        {/* Articles Grid */}
+        {/* Articles Grid (flo-block-listing-3 format) */}
         <section className="portfolio-grid-section">
           <div className="portfolio-grid">
             <AnimatePresence mode="popLayout">
@@ -60,7 +64,6 @@ export default function Journal() {
                   transition={{ duration: 0.35, delay: idx * 0.04 }}
                   className="gione-story-card"
                   onClick={() => setSelectedArticle(article)}
-                  style={{ cursor: "pointer" }}
                 >
                   <div className="gione-story-media" style={{ aspectRatio: "16 / 10" }}>
                     <img src={article.coverImage} alt={article.title} loading="lazy" />
@@ -68,25 +71,60 @@ export default function Journal() {
 
                   <div className="gione-story-meta">
                     <div className="gione-story-meta-row">
-                      <span>{article.category}</span>
-                      <span>{article.date} — {article.readTime}</span>
+                      <span style={{ color: "var(--navy-accent)", fontWeight: 600 }}>{article.category}</span>
+                      <span>{article.date}</span>
                     </div>
 
                     <h2 className="gione-story-title">{article.title}</h2>
                     <p className="gione-story-subtitle">{article.excerpt}</p>
 
-                    <div style={{ marginTop: "16px" }}>
-                      <span className="minimal-text-link">Read Field Guide</span>
+                    <div>
+                      <button type="button" className="flo-journal-continue-btn">
+                        CONTINUE
+                      </button>
                     </div>
                   </div>
                 </motion.article>
               ))}
             </AnimatePresence>
           </div>
+
+          {/* Clean Editorial Pagination */}
+          <div className="flo-pagination">
+            <button
+              type="button"
+              className={`flo-page-number ${currentPage === 1 ? "is-active" : ""}`}
+              onClick={() => setCurrentPage(1)}
+            >
+              1
+            </button>
+            <button
+              type="button"
+              className={`flo-page-number ${currentPage === 2 ? "is-active" : ""}`}
+              onClick={() => setCurrentPage(2)}
+            >
+              2
+            </button>
+            <button
+              type="button"
+              className={`flo-page-number ${currentPage === 3 ? "is-active" : ""}`}
+              onClick={() => setCurrentPage(3)}
+            >
+              3
+            </button>
+            <button
+              type="button"
+              className="flo-page-next"
+              onClick={() => setCurrentPage((prev) => (prev < 3 ? prev + 1 : 1))}
+            >
+              <span>Next Page</span>
+              <ArrowRight size={13} />
+            </button>
+          </div>
         </section>
       </main>
 
-      {/* Article Reader Modal */}
+      {/* Article Reader Deep-Dive Modal */}
       <AnimatePresence>
         {selectedArticle && (
           <motion.div
@@ -123,7 +161,7 @@ export default function Journal() {
                 <img
                   src={selectedArticle.coverImage}
                   alt={selectedArticle.title}
-                  style={{ width: "100%", maxHeight: "380px", objectFit: "cover" }}
+                  style={{ width: "100%", maxHeight: "420px", objectFit: "cover" }}
                 />
               </div>
 
@@ -134,10 +172,10 @@ export default function Journal() {
                   </p>
                 ))}
 
-                <div style={{ marginTop: "32px", paddingTop: "24px", borderTop: "1px solid var(--line-subtle)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
+                <div style={{ marginTop: "36px", paddingTop: "24px", borderTop: "1px solid var(--line-subtle)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
                   <div>
                     <p style={{ margin: "0 0 2px", fontSize: "13px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase" }}>Starline Studio Editorial</p>
-                    <span style={{ fontSize: "12px", color: "var(--ink-muted)" }}>Have questions about your celebration? We’d love to connect.</span>
+                    <span style={{ fontSize: "12px", color: "var(--ink-muted)" }}>Have questions about your wedding journey? We’d love to connect.</span>
                   </div>
                   <Link
                     href="/contact"
