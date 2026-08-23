@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { studioStories, type StoryItem } from "@/data/studioData";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Camera, Compass, Filter, Sparkles, X } from "lucide-react";
+import { ArrowUpRight, Check, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
@@ -11,7 +11,6 @@ type CategoryFilter = "All" | "Intimate Celebrations" | "Wild Landscapes" | "Edi
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>("All");
   const [selectedStory, setSelectedStory] = useState<StoryItem | null>(null);
-  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
   const categories: CategoryFilter[] = [
     "All",
@@ -27,42 +26,33 @@ export default function Portfolio() {
 
   return (
     <div className="starline-page-shell">
-      <Navbar variant="dark" />
+      <Navbar variant="light" />
 
       <main className="starline-page-main">
         {/* Page Header */}
         <section className="portfolio-hero">
-          <div className="portfolio-hero-inner">
-            <div className="portfolio-header-kicker">
-              <span className="dot-mark"><i /><i /><i /></span>
-              <span>The Archive / 2024—2026</span>
-            </div>
-            <h1 className="portfolio-title">
-              Stories from<br /><em>the quiet road.</em>
-            </h1>
-            <p className="portfolio-subtitle">
-              A curated body of work documenting intimate celebrations, wild landscapes, and intentional design across the American West and abroad.
-            </p>
+          <span className="gione-kicker">Portfolio Archive / 2024—2026</span>
+          <h1 className="portfolio-title">
+            Stories From<br />
+            The Quiet Road
+          </h1>
+          <p className="portfolio-subtitle">
+            A curated archive of destination wedding films, intimate celebrations, and fine art editorial monographs documented across Europe, North America, and beyond.
+          </p>
 
-            {/* Category Tabs */}
-            <div className="portfolio-filter-bar">
-              <div className="portfolio-filter-pills" role="tablist">
-                {categories.map((cat) => (
-                  <button
-                    key={cat}
-                    role="tab"
-                    aria-selected={activeCategory === cat}
-                    className={`portfolio-filter-btn ${activeCategory === cat ? "is-active" : ""}`}
-                    onClick={() => setActiveCategory(cat)}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
-              <span className="portfolio-count-tag">
-                {filteredStories.length} {filteredStories.length === 1 ? "Story" : "Stories"}
-              </span>
-            </div>
+          {/* Category Filter Pills */}
+          <div className="portfolio-filter-bar">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                role="tab"
+                aria-selected={activeCategory === cat}
+                className={`portfolio-filter-btn ${activeCategory === cat ? "is-active" : ""}`}
+                onClick={() => setActiveCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
         </section>
 
@@ -71,60 +61,57 @@ export default function Portfolio() {
           <div className="portfolio-grid">
             <AnimatePresence mode="popLayout">
               {filteredStories.map((story, index) => (
-                <motion.article
+                <motion.div
                   key={story.id}
                   layout
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.96 }}
-                  transition={{ duration: 0.45, delay: index * 0.06 }}
-                  className={`portfolio-card ${index % 3 === 0 ? "is-featured" : ""}`}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="gione-story-card"
                   onClick={() => setSelectedStory(story)}
+                  role="button"
+                  tabIndex={0}
                 >
-                  <div className="portfolio-card-media">
+                  <div className="gione-story-media">
                     <img
                       src={story.coverImage}
                       alt={story.title}
                       loading="lazy"
                     />
-                    <div className="portfolio-card-overlay">
-                      <span className="portfolio-card-view-btn">
-                        <span>Open Story</span>
-                        <ArrowUpRight size={15} />
-                      </span>
-                    </div>
+                    <span className="gione-story-media-cat">{story.category}</span>
                   </div>
 
-                  <div className="portfolio-card-content">
-                    <div className="portfolio-card-meta">
-                      <span className="portfolio-card-cat">{story.category}</span>
-                      <span className="portfolio-card-loc">{story.location}</span>
+                  <div className="gione-story-meta">
+                    <div className="gione-story-meta-row">
+                      <span>{story.location}</span>
+                      <span>{story.year}</span>
                     </div>
-                    <h2 className="portfolio-card-title">{story.title}</h2>
-                    <p className="portfolio-card-subtitle">{story.subtitle}</p>
+                    <h3 className="gione-story-title">{story.title}</h3>
+                    <p className="gione-story-subtitle">{story.subtitle}</p>
                   </div>
-                </motion.article>
+                </motion.div>
               ))}
             </AnimatePresence>
           </div>
         </section>
 
-        {/* Warm Editorial Archival Philosophy Section */}
-        <section className="portfolio-archival-strip">
-          <div className="portfolio-archival-inner">
-            <div className="archival-content">
-              <span className="sunlit-kicker">Archival Craft & Dual-Format</span>
-              <h2>Captured on 35mm film<br />& medium format digital.</h2>
+        {/* Dual-Format Archival Banner */}
+        <section className="gione-manifesto-section" style={{ backgroundColor: "var(--bg-secondary)", padding: "90px clamp(24px, 6vw, 96px)" }}>
+          <div className="gione-bespoke-strip" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+            <div className="gione-bespoke-content">
+              <span className="gione-kicker">Archival Craft & Dual-Format</span>
+              <h4>Captured on authentic 35mm film & medium format digital</h4>
               <p>
-                Every frame is processed with nuanced tonal color grading to preserve authentic skin tones and tactile analog grain for heirloom gallery printing.
+                Every celebration is color-graded with precision to protect natural skin tones and organic silver grain for gallery wall printing.
               </p>
             </div>
-            <div className="archival-actions">
-              <Link href="/pricing" className="archival-btn-primary">
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+              <Link href="/pricing" className="gione-btn-primary">
                 <span>View Pricing & Packages</span>
                 <ArrowUpRight size={14} />
               </Link>
-              <Link href="/about" className="archival-btn-secondary">
+              <Link href="/about" className="gione-btn-secondary" style={{ color: "var(--ink-primary)", borderColor: "var(--border-strong)", background: "transparent" }}>
                 <span>About The Process</span>
               </Link>
             </div>
@@ -144,15 +131,14 @@ export default function Portfolio() {
           >
             <motion.div
               className="story-modal-container"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 35 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 40 }}
-              transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+              exit={{ opacity: 0, y: 35 }}
+              transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Modal Header */}
               <div className="story-modal-header">
-                <div className="story-modal-header-left">
+                <div>
                   <span className="story-modal-cat">{selectedStory.category}</span>
                   <h2 className="story-modal-title">{selectedStory.title}</h2>
                   <p className="story-modal-loc">{selectedStory.location} — {selectedStory.year}</p>
@@ -166,97 +152,29 @@ export default function Portfolio() {
                 </button>
               </div>
 
-              {/* Modal Body */}
               <div className="story-modal-body">
-                {/* Field Notes & Specs Sidebar */}
-                <div className="story-modal-notes">
-                  <div className="story-field-notes-box">
-                    <p className="kicker">Field Notes</p>
-                    <p className="narrative">{selectedStory.fieldNotes}</p>
-                  </div>
-
-                  <div className="story-specs-box">
-                    <p className="kicker">Story Details</p>
-                    {selectedStory.details.camera && (
-                      <div className="spec-row">
-                        <span>Medium</span>
-                        <b>{selectedStory.details.camera}</b>
-                      </div>
-                    )}
-                    {selectedStory.details.light && (
-                      <div className="spec-row">
-                        <span>Atmosphere</span>
-                        <b>{selectedStory.details.light}</b>
-                      </div>
-                    )}
-                    {selectedStory.details.season && (
-                      <div className="spec-row">
-                        <span>Season</span>
-                        <b>{selectedStory.details.season}</b>
-                      </div>
-                    )}
-                    {selectedStory.details.guests && (
-                      <div className="spec-row">
-                        <span>Intimacy</span>
-                        <b>{selectedStory.details.guests}</b>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="story-cta-box">
-                    <p>Envisioning something like this?</p>
-                    <Link href="/contact" className="story-inquire-btn" onClick={() => setSelectedStory(null)}>
-                      <span>Inquire About Your Date</span>
-                      <ArrowUpRight size={15} />
-                    </Link>
-                  </div>
+                <div className="story-modal-gallery">
+                  {selectedStory.galleryImages.map((img, idx) => (
+                    <img key={idx} src={img} alt={`${selectedStory.title} ${idx + 1}`} />
+                  ))}
                 </div>
 
-                {/* Photo Stream */}
-                <div className="story-modal-stream">
-                  {selectedStory.galleryImages.map((img, idx) => (
-                    <div
-                      key={idx}
-                      className="story-gallery-frame"
-                      onClick={() => setLightboxImage(img)}
-                    >
-                      <img src={img} alt={`${selectedStory.title} photo ${idx + 1}`} loading="lazy" />
-                      <span className="story-frame-index">0{idx + 1}</span>
-                    </div>
-                  ))}
+                <div className="story-modal-notes">
+                  <p style={{ margin: 0 }}>{selectedStory.fieldNotes}</p>
+                </div>
+
+                <div style={{ marginTop: "28px", display: "flex", justifyContent: "flex-end" }}>
+                  <Link
+                    href={`/contact?story=${selectedStory.id}`}
+                    className="gione-btn-primary"
+                    onClick={() => setSelectedStory(null)}
+                  >
+                    <span>Inquire for Similar Commission</span>
+                    <ArrowUpRight size={14} />
+                  </Link>
                 </div>
               </div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Lightbox for full zoom */}
-      <AnimatePresence>
-        {lightboxImage && (
-          <motion.div
-            className="sunlit-lightbox"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setLightboxImage(null)}
-          >
-            <button
-              className="sunlit-lightbox-close"
-              onClick={() => setLightboxImage(null)}
-              aria-label="Close image"
-            >
-              <X size={22} />
-            </button>
-            <motion.img
-              src={lightboxImage}
-              alt="Zoomed photograph"
-              className="lightbox-zoom-img"
-              initial={{ scale: 0.95 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.95 }}
-              onClick={(e) => e.stopPropagation()}
-            />
           </motion.div>
         )}
       </AnimatePresence>

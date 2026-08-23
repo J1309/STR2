@@ -1,13 +1,12 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, CheckCircle2, Clock, Heart, Mail, MapPin, MessageSquare, Send, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowUpRight, CheckCircle2, Clock, Mail, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
 export default function Contact() {
-  const [celebrationType, setCelebrationType] = useState("Intimate Wedding / Elopement");
-  const [budgetRange, setBudgetRange] = useState("$5,000 – $8,000");
+  const [celebrationType, setCelebrationType] = useState("Destination Wedding Film & Photo");
   const [submitted, setSubmitted] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -21,16 +20,10 @@ export default function Contact() {
   });
 
   const celebrationTypes = [
-    "Intimate Wedding / Elopement",
-    "Full-Scale Celebration",
-    "Editorial / Brand Commission",
-    "Couples & Portrait Session"
-  ];
-
-  const budgetOptions = [
-    "$3,400 – $5,000",
-    "$5,000 – $8,000",
-    "$8,000+"
+    "Destination Wedding Film & Photo",
+    "Intimate European / Overseas Elopement",
+    "Fine Art Photography Commission",
+    "Editorial / Fashion Campaign"
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -40,23 +33,19 @@ export default function Contact() {
   };
 
   return (
-    <div className="starline-page-shell contact-page-shell">
+    <div className="starline-page-shell">
       <Navbar variant="light" />
 
       <main className="starline-page-main">
         <section className="contact-page-hero">
-          <div className="contact-page-hero-inner">
-            <div className="portfolio-header-kicker">
-              <span className="dot-mark"><i /><i /><i /></span>
-              <span>Inquiry & Reservations</span>
-            </div>
-            <h1 className="contact-title">
-              Let’s give your story<br /><em>a lasting frame.</em>
-            </h1>
-            <p className="contact-subtitle">
-              We accept a limited number of celebrations each calendar year to ensure unhurried dedication to every couple and client. Tell us about your vision below.
-            </p>
-          </div>
+          <span className="gione-kicker">Inquiries & Reservations</span>
+          <h1 className="contact-title">
+            Let’s Give Your Story<br />
+            A Lasting Frame
+          </h1>
+          <p className="contact-subtitle">
+            We accept a limited number of destination wedding and editorial commissions each season to ensure undivided focus on every nuance. Share your vision below.
+          </p>
         </section>
 
         <section className="contact-form-section">
@@ -68,7 +57,7 @@ export default function Contact() {
                 <div className="contact-info-item">
                   <Mail size={16} className="contact-icon" />
                   <div>
-                    <p className="label">Direct Email</p>
+                    <p className="label">Direct Inquiry</p>
                     <a href="mailto:hello@starline.studio">hello@starline.studio</a>
                   </div>
                 </div>
@@ -76,8 +65,8 @@ export default function Contact() {
                 <div className="contact-info-item">
                   <MapPin size={16} className="contact-icon" />
                   <div>
-                    <p className="label">Studio Location</p>
-                    <span>California, USA (Available Worldwide)</span>
+                    <p className="label">Studio Locations</p>
+                    <span>California / London (Available Worldwide)</span>
                   </div>
                 </div>
 
@@ -91,12 +80,11 @@ export default function Contact() {
               </div>
 
               <div className="contact-reassurance-card">
-                <div className="reassurance-mark"><i /><i /><i /></div>
                 <h4>What Happens Next?</h4>
                 <ol className="next-steps-list">
-                  <li><b>1. Consultation:</b> We review your date availability and set up a casual phone or video call.</li>
-                  <li><b>2. Custom Proposal:</b> We send tailored collection options and timeline advice.</li>
-                  <li><b>3. Date Secured:</b> With a signed agreement and 30% retainer, your date is locked in.</li>
+                  <li><b>1. Consultation:</b> We review calendar availability and connect for a relaxed video consultation.</li>
+                  <li><b>2. Bespoke Proposal:</b> We curate custom collection details and timeline guidance tailored to your venue.</li>
+                  <li><b>3. Reservation:</b> With a signed agreement and retainer, your date is exclusively secured.</li>
                 </ol>
               </div>
             </div>
@@ -105,31 +93,33 @@ export default function Contact() {
             <div className="contact-form-main">
               {submitted ? (
                 <motion.div
-                  className="contact-success-state"
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4 }}
+                  style={{ textAlign: "center", padding: "40px 20px" }}
                 >
-                  <div className="success-icon-wrap">
-                    <CheckCircle2 size={44} />
+                  <div style={{ color: "var(--cobalt-bright)", marginBottom: "20px", display: "flex", justifyContent: "center" }}>
+                    <CheckCircle2 size={56} />
                   </div>
-                  <h2>Thank you, {formData.names || "Friend"}.</h2>
-                  <p className="success-message">
-                    Your inquiry has been received with love. Lila will personally review your celebration details and reply to <b>{formData.email || "your email"}</b> within 24 to 48 hours.
+                  <h2 style={{ fontFamily: "var(--font-display-serif)", fontSize: "32px", marginBottom: "16px" }}>
+                    Thank you, {formData.names || "Friend"}.
+                  </h2>
+                  <p style={{ color: "var(--ink-muted)", fontSize: "15px", lineHeight: "1.8", maxWidth: "560px", margin: "0 auto 36px" }}>
+                    Your inquiry has been safely received. Our studio team will review your celebration dates and respond directly to <b>{formData.email || "your inbox"}</b> within 24 to 48 hours.
                   </p>
-                  <div className="success-actions">
-                    <Link href="/portfolio" className="success-btn">
-                      <span>Explore More Stories</span>
-                      <ArrowUpRight size={15} />
+                  <div style={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
+                    <Link href="/portfolio" className="gione-btn-primary">
+                      <span>Explore Portfolio</span>
+                      <ArrowUpRight size={14} />
                     </Link>
-                    <Link href="/" className="success-btn-secondary">
+                    <Link href="/" className="gione-btn-secondary" style={{ color: "var(--ink-primary)", borderColor: "var(--border-strong)", background: "transparent" }}>
                       <span>Return Home</span>
                     </Link>
                   </div>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="inquiry-form">
-                  {/* Celebration Type Pills */}
+                  {/* Celebration Type */}
                   <div className="form-group">
                     <label className="form-label">1. What kind of celebration or project are you planning?</label>
                     <div className="celebration-pills-grid">
@@ -175,15 +165,14 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Date & Location */}
                   <div className="form-row-2">
                     <div className="form-group">
-                      <label className="form-label" htmlFor="date">4. Event Date or Ideal Season *</label>
+                      <label className="form-label" htmlFor="date">4. Event Date / Target Season *</label>
                       <input
                         type="text"
                         id="date"
                         required
-                        placeholder="e.g. October 14, 2026 or Autumn 2026"
+                        placeholder="e.g. September 18, 2026 or Autumn 2026"
                         value={formData.date}
                         onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                         className="form-input"
@@ -191,12 +180,12 @@ export default function Contact() {
                     </div>
 
                     <div className="form-group">
-                      <label className="form-label" htmlFor="location">5. Location or Dream Venue *</label>
+                      <label className="form-label" htmlFor="location">5. Celebration Location & Venue *</label>
                       <input
                         type="text"
                         id="location"
                         required
-                        placeholder="e.g. Big Sur, Joshua Tree, Italy, etc."
+                        placeholder="e.g. Lake Como, Italy or Big Sur, CA"
                         value={formData.location}
                         onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                         className="form-input"
@@ -204,61 +193,23 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Budget Selector */}
                   <div className="form-group">
-                    <label className="form-label">6. Expected Photography Investment Range</label>
-                    <div className="celebration-pills-grid">
-                      {budgetOptions.map((b) => (
-                        <button
-                          type="button"
-                          key={b}
-                          className={`form-pill-btn ${budgetRange === b ? "is-selected" : ""}`}
-                          onClick={() => setBudgetRange(b)}
-                        >
-                          {b}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Story & Vision */}
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="story">7. Tell us about your vision & what matters most *</label>
+                    <label className="form-label" htmlFor="story">6. Tell Us About Your Vision & Atmosphere</label>
                     <textarea
                       id="story"
                       rows={5}
-                      required
-                      placeholder="Share a bit about yourselves, how you want the day to feel, guest count, or any specific moments you are excited about..."
+                      placeholder="Share details about the aesthetic, guest count, music, wardrobe, or what matters most to you..."
                       value={formData.story}
                       onChange={(e) => setFormData({ ...formData, story: e.target.value })}
                       className="form-textarea"
                     />
                   </div>
 
-                  {/* Referral Source */}
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="source">8. How did you hear about Starline?</label>
-                    <select
-                      id="source"
-                      value={formData.source}
-                      onChange={(e) => setFormData({ ...formData, source: e.target.value })}
-                      className="form-select"
-                    >
-                      <option value="Instagram">Instagram (@starline.studio)</option>
-                      <option value="Google Search">Google Search</option>
-                      <option value="Friend or Colleague">Friend / Colleague Referral</option>
-                      <option value="Publication / Anti-Bride">Publication (Vogue, Anti-Bride, Kinfolk)</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-
-                  {/* Submit Button */}
-                  <div className="form-submit-row">
+                  <div>
                     <button type="submit" className="inquiry-submit-btn">
-                      <span>Send Inquiry to Lila</span>
-                      <ArrowUpRight size={17} />
+                      <span>Submit Studio Inquiry</span>
+                      <Send size={14} />
                     </button>
-                    <span className="submit-note">No spam. Your details remain completely private.</span>
                   </div>
                 </form>
               )}
@@ -267,7 +218,7 @@ export default function Contact() {
         </section>
       </main>
 
-      <Footer showClosingCta={false} />
+      <Footer />
     </div>
   );
 }

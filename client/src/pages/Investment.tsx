@@ -8,142 +8,120 @@ import { Link } from "wouter";
 
 export default function Pricing() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [activeFilter, setActiveFilter] = useState<string>("all");
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const filteredTiers = activeFilter === "all"
-    ? investmentTiers
-    : activeFilter === "featured"
-    ? investmentTiers.filter((t) => t.featured)
-    : investmentTiers;
-
   return (
     <div className="starline-page-shell">
-      <Navbar variant="dark" />
+      <Navbar variant="light" />
 
       <main className="starline-page-main">
         {/* Spacious Editorial Hero */}
-        <section className="collections-hero">
-          <div className="collections-hero-inner">
-            <div className="portfolio-header-kicker">
-              <span className="dot-mark"><i /><i /><i /></span>
-              <span>Pricing & Packages</span>
-            </div>
-            <h1 className="collections-title">
-              Transparent pricing,<br /><em>built around presence.</em>
-            </h1>
-            <p className="collections-subtitle">
-              All-inclusive photography packages rooted in natural light, quiet intimacy, and timeless film aesthetic. Designed so you can be fully present while every subtle moment is preserved.
-            </p>
+        <section className="portfolio-hero">
+          <span className="gione-kicker">Pricing & Investment</span>
+          <h1 className="portfolio-title">
+            Transparent Pricing,<br />
+            Built Around Presence
+          </h1>
+          <p className="portfolio-subtitle">
+            All-inclusive wedding videography & photography packages rooted in natural light, cinema elegance, and authentic analog grain. Designed so you can be fully present while every subtle moment is preserved.
+          </p>
 
-            <div className="collections-quick-tags">
-              <span className="tag-pill">35mm & Medium Format</span>
-              <span className="tag-sep">•</span>
-              <span className="tag-pill">72-Hour Sneak Peeks</span>
-              <span className="tag-sep">•</span>
-              <span className="tag-pill">Personal Print Rights</span>
-              <span className="tag-sep">•</span>
-              <span className="tag-pill">Transparent Travel</span>
-            </div>
+          <div style={{ display: "flex", justifyContent: "center", gap: "10px", flexWrap: "wrap" }}>
+            <span className="gione-feature-tag">35mm & Medium Format</span>
+            <span className="gione-feature-tag">72-Hour Sneak Peeks</span>
+            <span className="gione-feature-tag">Personal Print Rights</span>
+            <span className="gione-feature-tag">Transparent Travel</span>
           </div>
         </section>
 
-        {/* Airy Philosophy Row */}
-        <section className="collections-philosophy-section">
-          <div className="collections-philosophy-inner">
-            <div className="philosophy-col">
-              <span className="philosophy-index">01 / PRESENCE</span>
+        {/* 3-Column Philosophy Strip */}
+        <section className="gione-manifesto-section" style={{ padding: "60px clamp(24px, 6vw, 96px) 90px", backgroundColor: "var(--bg-secondary)" }}>
+          <div className="gione-manifesto-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "32px" }}>
+            <div className="about-value-card">
+              <span className="value-index">01 / PRESENCE</span>
               <h3>Unrushed & Natural</h3>
-              <p>We prioritize real presence with your people over rigid shot lists, creating breathing room for authentic emotion to unfold naturally.</p>
+              <p>We prioritize authentic presence over rigid shot lists, creating space for emotion, laughter, and spontaneous moments to unfold naturally.</p>
             </div>
-            <div className="philosophy-col">
-              <span className="philosophy-index">02 / CRAFT</span>
+            <div className="about-value-card">
+              <span className="value-index">02 / CRAFT</span>
               <h3>Dual-Format Harmony</h3>
-              <p>Medium format digital delivers master dynamic range; authentic 35mm analog film brings organic grain, silver depths, and rich skin tones.</p>
+              <p>Medium format digital delivers master color range, while real 35mm analog film brings timeless silver depths, tactile grain, and rich skin tones.</p>
             </div>
-            <div className="philosophy-col">
-              <span className="philosophy-index">03 / EASE</span>
+            <div className="about-value-card">
+              <span className="value-index">03 / EASE</span>
               <h3>Transparent Travel</h3>
-              <p>No post-wedding travel invoices or confusing mileage math. Signature collections include travel logistics throughout our regular circuits.</p>
+              <p>No post-event travel surprises or hidden fees. Signature collections include travel logistics throughout our regular worldwide circuits.</p>
             </div>
           </div>
         </section>
 
-        {/* Spacious Collections Grid */}
-        <section className="collections-showcase-section" id="offerings">
-          <div className="collections-showcase-inner">
-            <div className="collections-section-header">
-              <p className="sunlit-kicker">Curated Packages</p>
+        {/* Spacious Packages Grid */}
+        <section className="gione-pricing-section" style={{ backgroundColor: "var(--bg-primary)" }}>
+          <div className="gione-pricing-inner">
+            <div className="gione-section-head" style={{ textAlign: "center", margin: "0 auto 50px" }}>
+              <span className="gione-kicker">Curated Collections</span>
               <h2>Pricing & Packages</h2>
-              <p className="collections-section-desc">
-                Every story includes full-resolution files, private cloud gallery hosting, and lifetime personal print rights.
+              <p style={{ margin: "0 auto" }}>
+                Every commission includes high-resolution print files, 4K master cinema film files, online private cloud gallery hosting, and unrestricted personal rights.
               </p>
             </div>
 
-            <div className="collections-cards-grid">
-              {filteredTiers.map((tier) => (
+            <div className="gione-pricing-grid">
+              {investmentTiers.map((tier) => (
                 <div
                   key={tier.id}
-                  className={`collection-card ${tier.featured ? "is-featured-collection" : ""}`}
+                  className={`gione-package-card ${tier.featured ? "is-featured-package" : ""}`}
                 >
                   {tier.featured && (
-                    <div className="collection-featured-ribbon">
+                    <div className="gione-package-ribbon">
                       <Sparkles size={12} />
                       <span>Signature Experience</span>
                     </div>
                   )}
 
-                  <div className="collection-card-header">
-                    <span className="collection-coverage-badge">{tier.coverage}</span>
-                    <h3 className="collection-card-title">{tier.name}</h3>
-                    <p className="collection-card-tagline">{tier.tagline}</p>
-                    
-                    <div className="collection-price-box">
-                      <span className="collection-price-number">{tier.price}</span>
-                      <span className="collection-price-sub">All-inclusive taxes & base travel</span>
+                  <div>
+                    <div className="gione-package-header">
+                      <span className="gione-package-coverage">{tier.coverage}</span>
+                      <h3 className="gione-package-title">{tier.name}</h3>
+                      <p className="gione-package-tagline">{tier.tagline}</p>
                     </div>
-                  </div>
 
-                  <div className="collection-inclusions-wrap">
-                    <span className="inclusions-label">Key Deliverables & Highlights:</span>
-                    <ul className="collection-inclusions-list">
+                    <div className="gione-package-price-box">
+                      <span className="gione-package-price">{tier.price}</span>
+                      <span className="gione-package-price-sub">All-inclusive taxes & base travel</span>
+                    </div>
+
+                    <ul className="gione-inclusions-list">
                       {tier.inclusions.map((inc, i) => (
                         <li key={i}>
-                          <Check size={14} className="collection-check" />
+                          <Check size={14} className="gione-inclusion-check" />
                           <span>{inc}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="collection-ideal-box">
-                    <span className="ideal-label">Best Suited For:</span>
-                    <p>{tier.recommendedFor}</p>
-                  </div>
-
-                  <div className="collection-action-wrap">
-                    <Link
-                      href={`/contact?package=${tier.id}`}
-                      className={`collection-inquire-btn ${tier.featured ? "btn-featured-collection" : ""}`}
-                    >
-                      <span>Inquire for {tier.name}</span>
-                      <ArrowUpRight size={15} />
-                    </Link>
-                  </div>
+                  <Link
+                    href={`/contact?package=${tier.id}`}
+                    className="gione-package-btn"
+                  >
+                    <span>Inquire for {tier.name}</span>
+                    <ArrowUpRight size={14} />
+                  </Link>
                 </div>
               ))}
             </div>
 
             {/* Custom Travel Note */}
-            <div className="collections-bespoke-banner">
-              <div className="bespoke-content">
+            <div className="gione-bespoke-strip" style={{ marginTop: "60px" }}>
+              <div className="gione-bespoke-content">
                 <h4>Planning a multi-day celebration or international voyage?</h4>
-                <p>We create bespoke multi-destination proposals for ceremonies in Europe, Asia, and remote wilderness venues.</p>
+                <p>We create bespoke multi-destination proposals for ceremonies across Europe, Africa, Asia, and remote wilderness venues.</p>
               </div>
-              <Link href="/contact" className="bespoke-cta-btn">
+              <Link href="/contact" className="gione-btn-primary">
                 <span>Request Custom Quote</span>
                 <ArrowUpRight size={14} />
               </Link>
@@ -151,46 +129,72 @@ export default function Pricing() {
           </div>
         </section>
 
-        {/* Spacious FAQs */}
-        <section className="collections-faq-section">
-          <div className="faq-spacious-inner">
-            <div className="faq-header">
-              <p className="sunlit-kicker">Common Inquiries</p>
+        {/* Spacious FAQs Accordion */}
+        <section className="gione-manifesto-section" style={{ backgroundColor: "var(--bg-secondary)", padding: "100px clamp(24px, 6vw, 96px)" }}>
+          <div style={{ maxWidth: "880px", margin: "0 auto" }}>
+            <div className="gione-section-head" style={{ textAlign: "center", margin: "0 auto 48px" }}>
+              <span className="gione-kicker">Common Questions</span>
               <h2>Frequently Asked Questions</h2>
-              <p>Everything you need to know about booking, analog film, travel, and delivery timelines.</p>
+              <p style={{ margin: "0 auto" }}>
+                Everything you need to know regarding retainers, analog film handling, destination travel, and delivery schedules.
+              </p>
             </div>
 
-            <div className="faq-accordion-container">
-              {faqItems.map((item, idx) => {
-                const isOpen = openFaq === idx;
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              {faqItems.map((faq, index) => {
+                const isOpen = openFaq === index;
                 return (
                   <div
-                    key={idx}
-                    className={`faq-spacious-item ${isOpen ? "is-active-faq" : ""}`}
+                    key={index}
+                    style={{
+                      background: "#ffffff",
+                      border: "1px solid var(--border-card)",
+                      borderRadius: "16px",
+                      overflow: "hidden",
+                      boxShadow: "var(--shadow-sm)"
+                    }}
                   >
                     <button
-                      className="faq-question-trigger"
-                      onClick={() => toggleFaq(idx)}
+                      onClick={() => toggleFaq(index)}
+                      style={{
+                        width: "100%",
+                        padding: "22px 28px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        gap: "18px",
+                        background: "transparent",
+                        border: 0,
+                        color: "var(--ink-primary)",
+                        fontFamily: "var(--font-sans)",
+                        fontSize: "15px",
+                        fontWeight: 600,
+                        textAlign: "left",
+                        cursor: "pointer"
+                      }}
                       aria-expanded={isOpen}
                     >
-                      <span>{item.question}</span>
+                      <span>{faq.question}</span>
                       <ChevronDown
                         size={18}
-                        className={`faq-chevron ${isOpen ? "is-rotated" : ""}`}
+                        style={{
+                          color: "var(--cobalt-bright)",
+                          transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                          transition: "transform 0.25s ease"
+                        }}
                       />
                     </button>
 
-                    <AnimatePresence initial={false}>
+                    <AnimatePresence>
                       {isOpen && (
                         <motion.div
-                          className="faq-answer-container"
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.25 }}
                         >
-                          <div className="faq-answer-text">
-                            <p>{item.answer}</p>
+                          <div style={{ padding: "0 28px 24px", color: "var(--ink-muted)", fontSize: "14px", lineHeight: "1.75" }}>
+                            <p style={{ margin: 0 }}>{faq.answer}</p>
                           </div>
                         </motion.div>
                       )}
@@ -207,5 +211,3 @@ export default function Pricing() {
     </div>
   );
 }
-
-
