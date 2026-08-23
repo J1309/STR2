@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { experienceSteps, faqItems, investmentTiers, testimonials } from "@/data/studioData";
+import { faqItems, investmentTiers } from "@/data/studioData";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Check, ChevronDown, Sparkles } from "lucide-react";
 import { useState } from "react";
@@ -151,53 +151,6 @@ export default function Pricing() {
           </div>
         </section>
 
-        {/* The 4-Step Client Journey */}
-        <section className="collections-journey-section">
-          <div className="journey-inner">
-            <div className="journey-header">
-              <p className="sunlit-kicker">The Experience</p>
-              <h2>How We Work Together</h2>
-              <p>A seamless, thoughtful process from your initial inquiry to holding the finished print archive.</p>
-            </div>
-
-            <div className="journey-timeline-grid">
-              {experienceSteps.map((step) => (
-                <div key={step.step} className="journey-step-item">
-                  <div className="step-num-circle">{step.step}</div>
-                  <h3 className="step-title">{step.title}</h3>
-                  <p className="step-desc">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Client Words / Testimonials */}
-        <section className="collections-reviews-section">
-          <div className="reviews-inner">
-            <div className="reviews-header">
-              <p className="sunlit-kicker">Client Stories</p>
-              <h2>Quiet Words of Gratitude</h2>
-            </div>
-
-            <div className="reviews-spacious-grid">
-              {testimonials.map((t) => (
-                <div key={t.id} className="review-quote-card">
-                  <div className="quote-mark-symbol">“</div>
-                  <p className="quote-body">{t.quote}</p>
-                  <div className="quote-author-row">
-                    <img src={t.image} alt={t.client} className="quote-avatar" />
-                    <div>
-                      <b className="quote-author-name">{t.client}</b>
-                      <span className="quote-author-meta">{t.celebration} • {t.location}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Spacious FAQs */}
         <section className="collections-faq-section">
           <div className="faq-spacious-inner">
@@ -254,4 +207,5 @@ export default function Pricing() {
     </div>
   );
 }
+
 
