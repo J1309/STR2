@@ -2300,9 +2300,238 @@
   padding-bottom: 4px;
 }
 
+/* ==========================================================================
+   MULTI-COLUMN PROFESSIONAL FOOTER & STUDIO POLICIES
+   ========================================================================== */
+.starline-footer-main-wrap {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 80px clamp(20px, 5vw, 64px) 60px;
+  background: #090b10;
+}
+
+.starline-footer-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr 0.9fr 1.1fr 1.2fr;
+  gap: clamp(28px, 4vw, 56px);
+}
+
+.starline-footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Brand Column */
+.footer-brand-title {
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+.footer-brand-title span {
+  font: 400 20px/1 "DM Serif Display", Georgia, serif;
+  letter-spacing: 0.22em;
+  color: #ffffff;
+}
+
+.footer-brand-title small {
+  font-size: 8px;
+  letter-spacing: 0.28em;
+  color: #4f7cb5;
+  margin-top: 4px;
+}
+
+.footer-brand-manifesto {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 12px;
+  line-height: 1.65;
+  margin: 0 0 20px;
+  max-width: 320px;
+}
+
+.footer-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(79, 124, 181, 0.12);
+  border: 1px solid rgba(79, 124, 181, 0.3);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  color: #d8e5ff;
+  letter-spacing: 0.06em;
+  width: fit-content;
+  margin-bottom: 28px;
+}
+
+.status-indicator-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #52c41a;
+  box-shadow: 0 0 8px #52c41a;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.footer-newsletter-wrap {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 16px 18px;
+  max-width: 320px;
+}
+
+.newsletter-title {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.newsletter-desc {
+  font-size: 11px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0 0 12px;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  align-items: center;
+  background: #0b0d12;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 3px 4px 3px 12px;
+  transition: border-color 0.2s ease;
+}
+
+.footer-newsletter-form:focus-within {
+  border-color: #4f7cb5;
+}
+
+.footer-newsletter-form input {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  color: #ffffff;
+  font-size: 11px;
+  outline: 0;
+}
+
+.footer-newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.footer-newsletter-form button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #4f7cb5;
+  border: 0;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.footer-newsletter-form button:hover {
+  background: #ffffff;
+  color: #0b0d12;
+}
+
+.newsletter-success-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #52c41a;
+  padding: 6px 0;
+}
+
+/* Nav & Resources Columns */
+.footer-col-heading {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #d8e5ff;
+  margin: 0 0 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-col-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.footer-col-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col-list li a {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+  line-height: 1.4;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-col-list li a:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+.footer-policy-link-btn {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-policy-link-btn:hover {
+  color: #d8e5ff;
+  transform: translateX(3px);
+}
+
+.footer-policy-link-btn svg {
+  color: #4f7cb5;
+  flex-shrink: 0;
+}
+
+/* Bottom Bar */
 .starline-footer-bar {
+  background: #06070a;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 24px clamp(20px, 4vw, 48px);
+  padding: 22px clamp(20px, 4vw, 48px);
 }
 
 .starline-footer-bar-inner {
@@ -2315,60 +2544,243 @@
   flex-wrap: wrap;
 }
 
-.starline-footer-brand {
+.starline-footer-brand-meta {
   display: flex;
   align-items: center;
-  gap: 14px;
-}
-
-.starline-footer-brand .brand-name {
-  font: 400 18px/1 "DM Serif Display", Georgia, serif;
-  color: #ffffff;
-}
-
-.starline-footer-brand .brand-copy {
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.45);
-  text-transform: uppercase;
-}
-
-.starline-footer-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.starline-footer-links a {
+  gap: 10px;
   font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.brand-dot-sep {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.brand-loc {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.starline-footer-policy-pills {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.starline-footer-policy-pills button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
   transition: color 0.2s ease;
 }
 
-.starline-footer-links a:hover {
+.starline-footer-policy-pills button:hover {
   color: #ffffff;
 }
 
-.starline-footer-meta {
+.pill-dot {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.starline-footer-social-row {
   display: flex;
   align-items: center;
   gap: 18px;
 }
 
-.starline-footer-insta {
+.starline-social-link {
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.starline-footer-year {
+.starline-social-link:hover {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   POLICY & LEGAL MODAL STYLES
+   ========================================================================== */
+.starline-policy-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(5, 7, 12, 0.88);
+  backdrop-filter: blur(16px);
+  padding: clamp(20px, 4vw, 60px) clamp(16px, 3vw, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.starline-policy-modal-container {
+  background: #11141d;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  width: min(860px, 100%);
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.8);
+}
+
+.policy-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 32px 32px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.policy-badge {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #4f7cb5;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.policy-title {
+  font: 400 clamp(22px, 3vw, 32px)/1.1 "DM Serif Display", Georgia, serif;
+  margin: 0 0 4px;
+  color: #ffffff;
+}
+
+.policy-date {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.policy-modal-close {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.policy-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.policy-tabs-bar {
+  display: flex;
+  gap: 8px;
+  padding: 14px 32px;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-x: auto;
+}
+
+.policy-tab-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.65);
+  padding: 6px 14px;
+  border-radius: 999px;
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.35);
   letter-spacing: 0.08em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.policy-tab-btn:hover,
+.policy-tab-btn.is-active {
+  background: #ffffff;
+  color: #0b0d12;
+  border-color: #ffffff;
+  font-weight: 600;
+}
+
+.policy-modal-body {
+  padding: 32px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.policy-section-block h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #d8e5ff;
+  margin: 0 0 8px;
+}
+
+.policy-section-block p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+.policy-support-box {
+  background: rgba(79, 124, 181, 0.1);
+  border: 1px solid rgba(79, 124, 181, 0.25);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-top: 10px;
+}
+
+.policy-support-box p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.policy-support-box a {
+  color: #d8e5ff;
+  text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+  .starline-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .footer-col-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 650px) {
+  .starline-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .starline-footer-bar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .starline-footer-policy-pills {
+    flex-wrap: wrap;
+  }
 }
 
 /* ==========================================================================
