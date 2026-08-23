@@ -15,7 +15,7 @@ import { Link } from "wouter";
 
 export default function Home() {
   const [selectedStory, setSelectedStory] = useState<StoryItem | null>(null);
-  const [activeVideoModal, setActiveVideoModal] = useState<string | null>(null);
+  const [playingVideos, setPlayingVideos] = useState<Record<string, boolean>>({});
 
   const driftItems: DriftWallItem[] = [
     { image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop", title: "Sierra Dusk", subtitle: "Glacial Basin" },
@@ -121,21 +121,33 @@ export default function Home() {
             <div className="minimal-video-row">
               <div
                 className="minimal-video-media"
-                onClick={() => setActiveVideoModal("https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-on-a-beach-at-sunset-42863-large.mp4")}
+                onClick={() => setPlayingVideos(prev => ({ ...prev, marrakech: true }))}
                 role="button"
                 tabIndex={0}
                 aria-label="Play Marrakech Film"
               >
-                <img
-                  src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop"
-                  alt="Epic Wedding in Marrakech"
-                  loading="lazy"
-                />
-                <div className="minimal-play-btn">
-                  <div className="minimal-play-icon">
-                    <Play size={22} fill="currentColor" />
-                  </div>
-                </div>
+                {playingVideos["marrakech"] ? (
+                  <video
+                    src="https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-on-a-beach-at-sunset-42863-large.mp4"
+                    autoPlay
+                    controls
+                    playsInline
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                ) : (
+                  <>
+                    <img
+                      src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop"
+                      alt="Epic Wedding in Marrakech"
+                      loading="lazy"
+                    />
+                    <div className="minimal-play-btn">
+                      <div className="minimal-play-icon">
+                        <Play size={22} fill="currentColor" />
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
 
               <div className="minimal-video-info">
@@ -154,21 +166,33 @@ export default function Home() {
             <div className="minimal-video-row is-reversed">
               <div
                 className="minimal-video-media"
-                onClick={() => setActiveVideoModal("https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-walking-in-a-forest-42861-large.mp4")}
+                onClick={() => setPlayingVideos(prev => ({ ...prev, riviera: true }))}
                 role="button"
                 tabIndex={0}
                 aria-label="Play French Riviera Film"
               >
-                <img
-                  src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop"
-                  alt="Elegant French Riviera Wedding"
-                  loading="lazy"
-                />
-                <div className="minimal-play-btn">
-                  <div className="minimal-play-icon">
-                    <Play size={22} fill="currentColor" />
-                  </div>
-                </div>
+                {playingVideos["riviera"] ? (
+                  <video
+                    src="https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-walking-in-a-forest-42861-large.mp4"
+                    autoPlay
+                    controls
+                    playsInline
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                ) : (
+                  <>
+                    <img
+                      src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop"
+                      alt="Elegant French Riviera Wedding"
+                      loading="lazy"
+                    />
+                    <div className="minimal-play-btn">
+                      <div className="minimal-play-icon">
+                        <Play size={22} fill="currentColor" />
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
 
               <div className="minimal-video-info">
@@ -273,54 +297,6 @@ export default function Home() {
       </main>
 
       <Footer />
-
-      {/* Video Modal Player */}
-      <AnimatePresence>
-        {activeVideoModal && (
-          <motion.div
-            className="story-modal-backdrop"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setActiveVideoModal(null)}
-          >
-            <div
-              className="story-modal-container"
-              style={{ maxWidth: "1000px", padding: "20px", background: "#000000" }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "12px" }}>
-                <button
-                  onClick={() => setActiveVideoModal(null)}
-                  style={{
-                    background: "rgba(255,255,255,0.2)",
-                    border: 0,
-                    color: "#ffffff",
-                    borderRadius: "50%",
-                    width: "36px",
-                    height: "36px",
-                    display: "grid",
-                    placeItems: "center",
-                    cursor: "pointer"
-                  }}
-                  aria-label="Close video"
-                >
-                  <X size={20} />
-                </button>
-              </div>
-              <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9" }}>
-                <video
-                  src={activeVideoModal}
-                  autoPlay
-                  controls
-                  playsInline
-                  style={{ width: "100%", height: "100%", borderRadius: "4px" }}
-                />
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Story Deep-Dive Modal */}
       <AnimatePresence>
