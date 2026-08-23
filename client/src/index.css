@@ -2374,6 +2374,242 @@
   text-transform: uppercase;
 }
 
+/* ==========================================================================
+   HOMEPAGE PACKAGES & INCLUSIONS PREVIEW SECTION
+   ========================================================================== */
+.home-investment-preview {
+  background: #10131d;
+  padding: 110px clamp(24px, 6vw, 84px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #f8f6f0;
+}
+
+.home-investment-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.home-investment-head {
+  margin-bottom: 52px;
+  max-width: 650px;
+}
+
+.home-investment-head .sunlit-kicker {
+  color: #79a8ff;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.home-investment-head h2 {
+  font: 400 clamp(2.6rem, 5vw, 4.4rem)/0.96 "DM Serif Display", Georgia, serif;
+  margin: 0 0 16px;
+  color: #f8f6f0;
+}
+
+.home-investment-head h2 em {
+  color: #dce7ff;
+  font-style: normal;
+}
+
+.home-investment-head p {
+  color: rgba(248, 246, 240, 0.7);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.home-investment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+.home-tier-card {
+  position: relative;
+  background: #151824;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  padding: 36px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-tier-card:hover {
+  transform: translateY(-5px);
+  background: #191e2e;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+.home-tier-card.is-featured {
+  background: #181d2e;
+  border-color: #4f7cb5;
+  box-shadow: 0 15px 40px rgba(56, 88, 162, 0.15);
+}
+
+.home-tier-badge {
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  background: #3858a2;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.home-tier-cov {
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #dce7ff;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.home-tier-card h3 {
+  font: 400 26px/1.15 "DM Serif Display", Georgia, serif;
+  margin: 0 0 14px;
+  color: #f8f6f0;
+}
+
+.home-tier-price {
+  font: 400 36px/1 "DM Serif Display", Georgia, serif;
+  color: #f8f6f0;
+  margin-bottom: 12px;
+}
+
+.home-tier-tagline {
+  font-size: 13px;
+  color: rgba(248, 246, 240, 0.65);
+  line-height: 1.6;
+  margin: 0 0 26px;
+}
+
+.home-tier-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #f8f6f0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.home-tier-btn:hover,
+.home-tier-card.is-featured .home-tier-btn {
+  background: #f8f6f0;
+  color: #0c0e15;
+  border-color: #f8f6f0;
+}
+
+.home-investment-foot {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.home-investment-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #f8f6f0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #79a8ff;
+  padding-bottom: 6px;
+  transition: gap 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+}
+
+.home-investment-all-link:hover {
+  gap: 14px;
+  color: #dce7ff;
+  border-bottom-color: #dce7ff;
+}
+
+/* Home Section Links & Action Rows */
+.intro-body-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sunlit-subpage-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #3858a2;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: gap 0.2s ease, color 0.2s ease;
+  width: fit-content;
+}
+
+.sunlit-subpage-link:hover {
+  gap: 10px;
+  color: #11141c;
+}
+
+.about-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.about-link-sub {
+  color: #5d6373;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(17, 20, 28, 0.25);
+  transition: all 0.2s ease;
+}
+
+.about-link-sub:hover {
+  color: #11141c;
+  border-bottom-color: #11141c;
+}
+
+.lightbox-inquire-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: #3858a2;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 /* Global Footer (Light Theme) */
 .starline-global-footer {
   background-color: #f7f4ee;
