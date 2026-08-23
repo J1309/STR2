@@ -1,16 +1,15 @@
 /**
- * STARLINE / LUXURY EDITORIAL CINEMATOGRAPHY & PHOTOGRAPHY
+ * STARLINE / ULTRA-MINIMALIST LUXURY EDITORIAL & CINEMATOGRAPHY
  * Inspired by Gione da Silva (gionedasilva.com)
- * Features: Pure Luxury White, Deep Black, Royal Blue, Tall Condensed Display Headlines,
- * Cinematic Video Hero, Widescreen Asymmetrical Film Showcases, "In Passing" 3D DriftWall Stream,
- * and Uncongested Editorial Whitespace.
+ * Pure White Canvas, Deep Black Typography, Minimal Lines, Large Cinematic 16:9 Visuals,
+ * Asymmetric Editorial Photography Spreads, and Zero Congestion.
  */
 import DriftWall, { type DriftWallItem } from "@/components/DriftWall";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { investmentTiers, studioStories, type StoryItem } from "@/data/studioData";
+import { studioStories, type StoryItem } from "@/data/studioData";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Check, Play, Sparkles, X } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Play, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
@@ -18,48 +17,15 @@ export default function Home() {
   const [selectedStory, setSelectedStory] = useState<StoryItem | null>(null);
   const [activeVideoModal, setActiveVideoModal] = useState<string | null>(null);
 
-  // Featured film showcases
-  const featuredShowcases = [
-    {
-      id: "marrakech-adventure",
-      kicker: "Featured Wedding Film",
-      title: "Epic Adventure in Marrakech, Morocco",
-      description: "An extraordinary multi-day destination celebration woven through the terracotta ramparts of Marrakech, lantern-lit desert courtyards at La Pause, and the legendary gardens of La Mamounia.",
-      image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop",
-      videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-on-a-beach-at-sunset-42863-large.mp4",
-      tags: ["Marrakech, Morocco", "Destination Cinema", "Dual-Format 35mm"],
-      reversed: false
-    },
-    {
-      id: "lake-como-monograph",
-      kicker: "Featured Destination Monograph",
-      title: "Villa Balbianello, Lake Como",
-      description: "Intimate vows overlooking the silent cypress shores of Lake Como. Captured on medium format digital for breathtaking tonal range and authentic 35mm analog film for tactile romance.",
-      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
-      videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-walking-in-a-forest-42861-large.mp4",
-      tags: ["Lake Como, Italy", "Fine Art Photography", "Archival Heirloom"],
-      reversed: true
-    }
-  ];
-
   const driftItems: DriftWallItem[] = [
     { image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop", title: "Sierra Dusk", subtitle: "Glacial Basin" },
     { image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=800&auto=format&fit=crop", title: "Marrakech Courtyard", subtitle: "Golden Lantern Light" },
     { image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800&auto=format&fit=crop", title: "Joshua Tree Bloom", subtitle: "Mojave Twilight" },
     { image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop", title: "Santa Fe Adobe", subtitle: "Plaster & Shade" },
-    { image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop", title: "Studio Linen", subtitle: "Object Studies" },
+    { image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop", title: "Studio Objects", subtitle: "Linen & Silver" },
     { image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=800&auto=format&fit=crop", title: "Utah Horizon", subtitle: "Salt & Dusk" },
     { image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop", title: "Amalfi Coast", subtitle: "Tyrrhenian Mist" },
     { image: "/bg_hero_page.png", title: "High Sierra", subtitle: "35mm Analog Print" }
-  ];
-
-  const pressLogos = [
-    "VOGUE WEDDINGS",
-    "HARPER'S BAZAAR",
-    "JUNEBUG WEDDINGS",
-    "RANGEFINDER",
-    "THE LANE",
-    "WEDDING SPARROW"
   ];
 
   return (
@@ -68,12 +34,12 @@ export default function Home() {
 
       <main className="starline-page-main">
         {/* ===================================================================
-            1. FULL-WIDTH CINEMATIC AMBIENT VIDEO HERO
+            1. HERO: CINEMATIC FULLSCREEN AMBIENT VIDEO LOOP
             =================================================================== */}
-        <section className="gione-hero-stage" id="top" aria-label="Hero showcase">
-          <div className="gione-hero-media-wrap">
+        <section className="minimal-hero" id="top">
+          <div className="minimal-hero-video-wrap">
             <video
-              className="gione-hero-video"
+              className="minimal-hero-video"
               autoPlay
               loop
               muted
@@ -87,105 +53,76 @@ export default function Home() {
               <img
                 src="/bg_hero_page.png"
                 alt="Cinematic Destination Wedding"
-                className="gione-hero-fallback-img"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </video>
-            <div className="gione-hero-overlay" />
+            <div className="minimal-hero-overlay" />
           </div>
 
-          <div className="gione-hero-content">
-            <motion.p
-              className="gione-hero-kicker"
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Acclaimed Destination Wedding Videographer & Photographer
-            </motion.p>
+          <div className="minimal-hero-content">
+            <p className="minimal-hero-kicker">
+              Acclaimed London & Destination Wedding Videographer — Photographer
+            </p>
 
-            <motion.h1
-              className="gione-hero-headline"
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.35 }}
-            >
+            <h1 className="minimal-hero-title">
               Telling Your Story Through<br />
-              <em>Beautiful & Meaningful</em> Imagery
-            </motion.h1>
+              Beautiful and Meaningful Imagery
+            </h1>
 
-            <motion.p
-              className="gione-hero-subtext"
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              We travel worldwide documenting live events, bespoke celebrations, and intimate editorial commissions with unmatched artistry.
-            </motion.p>
-
-            <motion.div
-              className="gione-hero-actions"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.65 }}
-            >
-              <Link href="/portfolio" className="gione-btn-primary">
-                <span>Explore Portfolio</span>
-                <ArrowUpRight size={15} />
+            <div className="minimal-hero-actions">
+              <Link href="/portfolio" className="minimal-btn-outline">
+                <span>View Portfolio</span>
               </Link>
 
               <button
-                className="gione-btn-secondary"
+                className="minimal-btn-outline"
                 onClick={() => setActiveVideoModal("https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-on-a-beach-at-sunset-42863-large.mp4")}
                 aria-label="Play Featured Showreel"
               >
-                <Play size={14} fill="currentColor" />
-                <span>Watch Showreel</span>
+                <Play size={13} fill="currentColor" />
+                <span>Watch Film</span>
               </button>
-            </motion.div>
+            </div>
           </div>
 
-          <a href="#manifesto" className="gione-hero-scroll-indicator" aria-label="Scroll to content">
+          <a href="#manifesto" className="minimal-hero-scroll" aria-label="Scroll to content">
             <span>Scroll</span>
-            <ArrowDown size={14} />
+            <ArrowDown size={13} />
           </a>
         </section>
 
         {/* ===================================================================
-            2. SPACIOUS EDITORIAL MANIFESTO (PURE LUXURY WHITE)
+            2. EDITORIAL STATEMENT / MANIFESTO (CLEAN SPLIT ON PURE WHITE)
             =================================================================== */}
-        <section className="gione-manifesto-section" id="manifesto">
-          <div className="gione-manifesto-grid">
-            <div className="gione-manifesto-left">
-              <span className="gione-kicker">Our Philosophy</span>
+        <section className="minimal-section" id="manifesto">
+          <div className="minimal-statement-grid">
+            <div className="minimal-statement-left">
               <h2>
                 London & Destination<br />
-                Wedding Filmmaker<br />
-                & Photographer
+                Wedding Videographer<br />
+                Photographer
               </h2>
-              <p>
-                Based in California & London, traveling wherever an extraordinary love story is unfolding.
-              </p>
             </div>
 
-            <div className="gione-manifesto-right">
-              <div className="manifesto-block">
+            <div className="minimal-statement-right">
+              <div className="minimal-prose-block">
                 <h3>Unparalleled Expertise for the Discerning Client</h3>
                 <p>
-                  In a world of options, we stand out as specialists, not commodities. Our expertise is honed, precise, and tailored to those who seek the extraordinary. For those who value craft over the ordinary, our commissions reflect relentless dedication, emotional intuition, and timeless aesthetic perspective.
+                  In a world of options, we stand out as specialists, not commodities. Our expertise is honed, precise, and tailored to those who seek the extraordinary. For those who value expertise over the ordinary, our commissions come with a premium, reflective of the skill, dedication, and unique perspective we bring to every project. True luxury is about exclusivity, delivering excellence with zero distraction.
                 </p>
               </div>
 
-              <div className="manifesto-block">
+              <div className="minimal-prose-block">
                 <h3>Crafting Unique Experiences for the Adventurous</h3>
                 <p>
-                  We cater to a clientele that knows what they want—visionaries who appreciate boldness, intimacy, and high-fashion nuance. Together, we craft experiences as unique as they are luxurious, setting enduring artistic standards rather than chasing temporary trends.
+                  We cater to a clientele that knows what they want—those who are not only discerning but also adventurous and fashion-forward. Our clients are visionaries who appreciate creativity and boldness. Together, we craft experiences that are as unique as they are luxurious. This is not about following trends but setting them.
                 </p>
               </div>
 
-              <div className="manifesto-block">
-                <h3>Bespoke Artistry Tailored to Your Vision</h3>
+              <div className="minimal-prose-block">
+                <h3>Bespoke Services Tailored to Your Vision</h3>
                 <p>
-                  Every celebration possesses its own rhythm, light, and geometry. We seamlessly fuse dual-format medium format digital clarity with the silver organic grain of authentic 35mm film, creating an indelible archive you will cherish for generations.
+                  What we offer is far from a standard service—it’s a bespoke experience tailored to each client’s unique vision. Every event is different, and so are the needs of each couple. That’s why our approach isn’t dictated by formulas, but by the impact and lasting emotion we create.
                 </p>
               </div>
             </div>
@@ -193,71 +130,137 @@ export default function Home() {
         </section>
 
         {/* ===================================================================
-            3. FEATURED WIDESCREEN FILM & PHOTO SHOWCASES
+            3. FEATURED VIDEO SHOWCASES (WIDESCREEN 16:9 + QUIET TEXT)
             =================================================================== */}
-        <section className="gione-showcase-section">
-          <div className="gione-showcase-inner">
-            {featuredShowcases.map((showcase) => (
+        <section className="minimal-section" style={{ paddingTop: 0 }}>
+          <div className="minimal-showcase-wrap">
+            {/* Featured Video 1: Marrakech */}
+            <div className="minimal-video-row">
               <div
-                key={showcase.id}
-                className={`gione-feature-card ${showcase.reversed ? "is-reversed" : ""}`}
+                className="minimal-video-media"
+                onClick={() => setActiveVideoModal("https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-on-a-beach-at-sunset-42863-large.mp4")}
+                role="button"
+                tabIndex={0}
+                aria-label="Play Marrakech Film"
               >
-                <div
-                  className="gione-feature-media"
-                  onClick={() => setActiveVideoModal(showcase.videoUrl)}
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`Watch ${showcase.title}`}
-                >
-                  <img src={showcase.image} alt={showcase.title} loading="lazy" />
-                  <div className="gione-feature-play-overlay">
-                    <div className="gione-play-circle">
-                      <Play size={24} fill="currentColor" />
-                    </div>
+                <img
+                  src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop"
+                  alt="Epic Wedding in Marrakech"
+                  loading="lazy"
+                />
+                <div className="minimal-play-btn">
+                  <div className="minimal-play-icon">
+                    <Play size={22} fill="currentColor" />
                   </div>
-                </div>
-
-                <div className="gione-feature-copy">
-                  <span className="gione-kicker">{showcase.kicker}</span>
-                  <h3 className="gione-feature-title">{showcase.title}</h3>
-                  <p className="gione-feature-desc">{showcase.description}</p>
-
-                  <div className="gione-feature-tags">
-                    {showcase.tags.map((tag) => (
-                      <span key={tag} className="gione-feature-tag">{tag}</span>
-                    ))}
-                  </div>
-
-                  <Link href="/portfolio" className="gione-feature-link">
-                    <span>View Complete Gallery</span>
-                    <ArrowUpRight size={14} />
-                  </Link>
                 </div>
               </div>
-            ))}
+
+              <div className="minimal-video-info">
+                <p className="minimal-overline">featured video:</p>
+                <h3 className="minimal-video-title">Epic Wedding in Marrakech, Morocco</h3>
+                <p className="minimal-video-desc">
+                  An incredible adventure wedding in the enchanting desert city of Marrakech, through lantern-lit courtyards and the gardens of La Mamounia.
+                </p>
+                <Link href="/contact" className="minimal-text-link">
+                  <span>Contact Us</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Featured Video 2: French Riviera / Lake Como */}
+            <div className="minimal-video-row is-reversed">
+              <div
+                className="minimal-video-media"
+                onClick={() => setActiveVideoModal("https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-walking-in-a-forest-42861-large.mp4")}
+                role="button"
+                tabIndex={0}
+                aria-label="Play French Riviera Film"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop"
+                  alt="Elegant French Riviera Wedding"
+                  loading="lazy"
+                />
+                <div className="minimal-play-btn">
+                  <div className="minimal-play-icon">
+                    <Play size={22} fill="currentColor" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="minimal-video-info">
+                <p className="minimal-overline">featured video:</p>
+                <h3 className="minimal-video-title">Elegant & Heartfelt French Riviera Wedding</h3>
+                <p className="minimal-video-desc">
+                  A stunningly elegant celebration overlooking the Mediterranean at the historic Villa Ephrussi de Rothschild, France.
+                </p>
+                <Link href="/portfolio" className="minimal-text-link">
+                  <span>See Full Story</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* ===================================================================
-            4. "IN PASSING" 3D TACTILE PHOTOGRAPHIC STREAM (DRIFTWALL)
+            4. CRAFT VS COMMODITY (QUIET PHILOSOPHICAL PAUSE)
             =================================================================== */}
-        <section className="gione-in-passing-section">
-          <div className="gione-in-passing-inner">
-            <div className="gione-section-head" style={{ textAlign: "center", margin: "0 auto 48px" }}>
-              <span className="gione-kicker">Photographic Fragments</span>
-              <h2>In Passing — A Drifting Archive</h2>
-              <p style={{ margin: "0 auto" }}>
-                A continuous, tactile stream of 35mm film frames, light studies, and candid moments caught between chapters.
+        <section className="minimal-quote-section">
+          <div className="minimal-quote-inner">
+            <p className="minimal-quote-title">Craft vs Commodity</p>
+            <blockquote className="minimal-quote-text">
+              “We don’t sell videos, we craft films. Amid all the beauty, the laughter, the love and tears of any wedding day, we create a celebration of you in a beautiful film crafted in our unique style. It is about transforming the events of your wedding into a living, lasting memory.”
+            </blockquote>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            5. PHOTOGRAPHY SHOWCASE (HOW GIONE DA SILVA SHOWCASES IMAGES)
+            =================================================================== */}
+        <section className="minimal-section">
+          <div className="minimal-photo-spread">
+            <div className="minimal-photo-pair">
+              <img
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000&auto=format&fit=crop"
+                alt="Editorial Wedding Still 01"
+                loading="lazy"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1000&auto=format&fit=crop"
+                alt="Editorial Wedding Still 02"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="minimal-photo-info">
+              <h2>Wedding Photography</h2>
+              <p>
+                As well as offering cinematic wedding videography for London and beyond, our wedding photography is all about real and natural moments. Our aim is to capture the essence of your day in timeless images. Our photos are a combination of everything we are inspired by: documentary photography, street photography, portrait, fashion, nature, and light.
               </p>
+              <Link href="/portfolio" className="minimal-text-link">
+                <span>Find Out More</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            6. "IN PASSING" 3D TACTILE PHOTOGRAPHIC STREAM (DRIFTWALL)
+            =================================================================== */}
+        <section className="minimal-drift-section">
+          <div className="minimal-drift-inner">
+            <div className="minimal-drift-header">
+              <h2>In Passing — Photographic Fragments</h2>
+              <p>A continuous, quiet stream of 35mm analog frames and natural light studies.</p>
             </div>
 
             <DriftWall
               items={driftItems}
               columns={4}
               tileWidth={230}
-              tileHeight={300}
+              tileHeight={290}
               gap={20}
-              speed={12}
+              speed={11}
               pauseOnHover={true}
               onSelect={(item) => {
                 const found = studioStories.find((s) => s.title.toLowerCase().includes(item.title.toLowerCase().split(" ")[0]));
@@ -268,138 +271,20 @@ export default function Home() {
         </section>
 
         {/* ===================================================================
-            5. CURATED PORTFOLIO ARCHIVE (SPACIOUS LUXURY GRID)
+            7. MINIMALIST CLOSING CTA
             =================================================================== */}
-        <section className="gione-gallery-section">
-          <div className="gione-gallery-inner">
-            <div className="gione-section-head">
-              <span className="gione-kicker">Selected Works</span>
-              <h2>Visual Stories & Commissions</h2>
-              <p>
-                A curated selection of recent celebrations, editorial portraits, and destination monographs from across Europe, North America, and beyond.
-              </p>
-            </div>
-
-            <div className="gione-gallery-grid">
-              {studioStories.slice(0, 6).map((story) => (
-                <div
-                  key={story.id}
-                  className="gione-story-card"
-                  onClick={() => setSelectedStory(story)}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div className="gione-story-media">
-                    <img src={story.coverImage} alt={story.title} loading="lazy" />
-                    <span className="gione-story-media-cat">{story.category}</span>
-                  </div>
-
-                  <div className="gione-story-meta">
-                    <div className="gione-story-meta-row">
-                      <span>{story.location}</span>
-                      <span>{story.year}</span>
-                    </div>
-                    <h3 className="gione-story-title">{story.title}</h3>
-                    <p className="gione-story-subtitle">{story.subtitle}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div style={{ textAlign: "center", marginTop: "60px" }}>
-              <Link href="/portfolio" className="gione-btn-primary">
-                <span>View All Portfolio Stories</span>
-                <ArrowUpRight size={15} />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ===================================================================
-            6. PACKAGES & INCLUSIONS (PURE LUXURY WHITE CARDS)
-            =================================================================== */}
-        <section className="gione-pricing-section">
-          <div className="gione-pricing-inner">
-            <div className="gione-section-head" style={{ textAlign: "center", margin: "0 auto 50px" }}>
-              <span className="gione-kicker">Transparent Pricing</span>
-              <h2>Collections & Inclusions</h2>
-              <p style={{ margin: "0 auto" }}>
-                Every commission includes master high-resolution deliverables, 4K cinema master files, online private cloud gallery hosting, and unrestricted lifetime print rights.
-              </p>
-            </div>
-
-            <div className="gione-pricing-grid">
-              {investmentTiers.slice(0, 3).map((tier) => (
-                <div
-                  key={tier.id}
-                  className={`gione-package-card ${tier.featured ? "is-featured-package" : ""}`}
-                >
-                  {tier.featured && (
-                    <div className="gione-package-ribbon">
-                      <Sparkles size={12} />
-                      <span>Signature Experience</span>
-                    </div>
-                  )}
-
-                  <div>
-                    <div className="gione-package-header">
-                      <span className="gione-package-coverage">{tier.coverage}</span>
-                      <h3 className="gione-package-title">{tier.name}</h3>
-                      <p className="gione-package-tagline">{tier.tagline}</p>
-                    </div>
-
-                    <div className="gione-package-price-box">
-                      <span className="gione-package-price">{tier.price}</span>
-                      <span className="gione-package-price-sub">All-inclusive taxes & base travel</span>
-                    </div>
-
-                    <ul className="gione-inclusions-list">
-                      {tier.inclusions.slice(0, 5).map((inc, i) => (
-                        <li key={i}>
-                          <Check size={14} className="gione-inclusion-check" />
-                          <span>{inc}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Link
-                    href={`/contact?package=${tier.id}`}
-                    className="gione-package-btn"
-                  >
-                    <span>Reserve Date</span>
-                    <ArrowUpRight size={14} />
-                  </Link>
-                </div>
-              ))}
-            </div>
-
-            <div className="gione-bespoke-strip">
-              <div className="gione-bespoke-content">
-                <h4>Planning a multi-day international voyage or custom celebration?</h4>
-                <p>We craft tailored multi-destination proposals for ceremonies in Europe, Asia, and remote wilderness venues.</p>
-              </div>
-              <Link href="/contact" className="gione-btn-primary">
-                <span>Request Custom Proposal</span>
-                <ArrowUpRight size={14} />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ===================================================================
-            7. PRESS & ACCOLADES RIBBON (MONOCHROME LUXURY)
-            =================================================================== */}
-        <section className="gione-press-strip">
-          <div className="gione-press-inner">
-            <p className="gione-press-kicker">Featured In Editorial Publications Worldwide</p>
-            <div className="gione-press-logos">
-              {pressLogos.map((logo) => (
-                <div key={logo} className="gione-press-item">
-                  <span>{logo}</span>
-                </div>
-              ))}
-            </div>
+        <section className="minimal-section" style={{ textAlign: "center", paddingTop: 0 }}>
+          <div style={{ maxWidth: "720px", margin: "0 auto" }}>
+            <p className="minimal-overline">Available Worldwide</p>
+            <h2 style={{ fontFamily: "var(--font-display-condensed)", fontSize: "clamp(3rem, 6vw, 5.6rem)", letterSpacing: "0.06em", textTransform: "uppercase", margin: "0 0 20px" }}>
+              Let’s Give Your Story<br />A Lasting Frame
+            </h2>
+            <p style={{ fontSize: "14.5px", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-muted)", margin: "0 auto 36px" }}>
+              Currently accepting a limited number of bespoke destination commissions for the upcoming season.
+            </p>
+            <Link href="/contact" className="minimal-btn-outline" style={{ color: "var(--ink-primary)", borderColor: "var(--ink-primary)", background: "transparent" }}>
+              <span>Get in Touch</span>
+            </Link>
           </div>
         </section>
       </main>
@@ -446,7 +331,7 @@ export default function Home() {
                   autoPlay
                   controls
                   playsInline
-                  style={{ width: "100%", height: "100%", borderRadius: "12px" }}
+                  style={{ width: "100%", height: "100%", borderRadius: "4px" }}
                 />
               </div>
             </div>
@@ -476,14 +361,14 @@ export default function Home() {
                 <div>
                   <span className="story-modal-cat">{selectedStory.category}</span>
                   <h2 className="story-modal-title">{selectedStory.title}</h2>
-                  <p className="story-modal-loc">{selectedStory.location} — {selectedStory.year}</p>
+                  <p style={{ fontSize: "12px", color: "var(--ink-subtle)", margin: "4px 0 0" }}>{selectedStory.location} — {selectedStory.year}</p>
                 </div>
                 <button
                   className="story-modal-close-btn"
                   onClick={() => setSelectedStory(null)}
                   aria-label="Close story"
                 >
-                  <X size={20} />
+                  <X size={18} />
                 </button>
               </div>
 
@@ -498,14 +383,13 @@ export default function Home() {
                   <p style={{ margin: 0 }}>{selectedStory.fieldNotes}</p>
                 </div>
 
-                <div style={{ marginTop: "28px", display: "flex", justifyContent: "flex-end" }}>
+                <div style={{ marginTop: "24px", display: "flex", justifyContent: "flex-end" }}>
                   <Link
                     href={`/contact?story=${selectedStory.id}`}
-                    className="gione-btn-primary"
+                    className="minimal-text-link"
                     onClick={() => setSelectedStory(null)}
                   >
                     <span>Inquire for Similar Commission</span>
-                    <ArrowUpRight size={14} />
                   </Link>
                 </div>
               </div>
