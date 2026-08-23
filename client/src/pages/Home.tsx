@@ -72,11 +72,6 @@ export default function Home() {
               Beautiful and Meaningful Imagery
             </h1>
           </div>
-
-          <a href="#manifesto" className="minimal-hero-scroll" aria-label="Scroll to content">
-            <span>Scroll</span>
-            <ArrowDown size={13} />
-          </a>
         </section>
 
         {/* ===================================================================

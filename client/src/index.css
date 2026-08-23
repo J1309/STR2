@@ -230,8 +230,9 @@ a {
 .minimal-hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  min-height: 100svh;
+  height: 80vh;
+  min-height: 520px;
+  max-height: 820px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -239,8 +240,16 @@ a {
   text-align: center;
   color: #ffffff;
   overflow: hidden;
-  padding: 140px 24px clamp(50px, 9vh, 90px);
+  padding: 120px 24px 44px;
   background-color: #08090d;
+}
+
+@media (max-width: 768px) {
+  .minimal-hero {
+    height: 68vh;
+    min-height: 420px;
+    padding: 100px 20px 32px;
+  }
 }
 
 .minimal-hero-video-wrap {
