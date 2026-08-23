@@ -1181,48 +1181,75 @@
   font-size: 10px;
 }
 
-/* Philosophy Row */
+/* ==========================================================================
+   PRICING PAGE: PHILOSOPHY ROW (WARM SUNLIT LINEN SECTION)
+   ========================================================================== */
 .collections-philosophy-section {
-  max-width: 1320px;
-  margin: 0 auto 100px;
-  padding: 0 clamp(24px, 6vw, 84px);
+  background: #f6f3ed;
+  color: #11141c;
+  padding: 100px clamp(20px, 6vw, 84px);
+  border-top: 1px solid rgba(17, 20, 28, 0.08);
+  border-bottom: 1px solid rgba(17, 20, 28, 0.08);
 }
 
 .collections-philosophy-inner {
+  max-width: 1320px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(32px, 4vw, 56px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 50px;
+  gap: clamp(24px, 3.5vw, 40px);
+}
+
+.philosophy-col {
+  background: #ffffff;
+  border: 1px solid rgba(17, 20, 28, 0.08);
+  border-radius: 16px;
+  padding: 36px 30px;
+  box-shadow: 0 10px 30px rgba(17, 20, 28, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.philosophy-col:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(17, 20, 28, 0.08);
 }
 
 .philosophy-col .philosophy-index {
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  color: #79a8ff;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: #3858a2;
   display: block;
   margin-bottom: 14px;
   font-weight: 600;
 }
 
 .philosophy-col h3 {
-  font: 400 22px/1.2 "DM Serif Display", Georgia, serif;
-  margin: 0 0 10px;
-  color: #f8f6f0;
+  font: 400 24px/1.2 "DM Serif Display", Georgia, serif;
+  margin: 0 0 12px;
+  color: #11141c;
 }
 
 .philosophy-col p {
-  color: rgba(248, 246, 240, 0.68);
-  font-size: 13px;
+  color: #555b68;
+  font-size: 13.5px;
   line-height: 1.75;
   margin: 0;
 }
 
-/* Collections Showcase Grid */
+/* ==========================================================================
+   PRICING PAGE: COLLECTIONS SHOWCASE GRID (DARKROOM STAGE)
+   ========================================================================== */
 .collections-showcase-section {
+  background: #0f121b;
+  color: #f8f6f0;
+  padding: 120px clamp(24px, 5vw, 64px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.collections-showcase-inner {
   max-width: 1360px;
-  margin: 0 auto 140px;
-  padding: 0 clamp(24px, 5vw, 64px);
+  margin: 0 auto;
 }
 
 .collections-section-header {
@@ -1251,7 +1278,7 @@
 
 .collection-card {
   position: relative;
-  background: #131622;
+  background: #151824;
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 18px;
   padding: clamp(32px, 3.5vw, 44px);
@@ -1263,13 +1290,13 @@
 
 .collection-card:hover {
   transform: translateY(-5px);
-  background: #171b2a;
+  background: #191e2e;
   border-color: rgba(255, 255, 255, 0.28);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
 }
 
 .collection-card.is-featured-collection {
-  background: #161b2b;
+  background: #181d2e;
   border-color: #4f7cb5;
   box-shadow: 0 20px 60px rgba(79, 124, 181, 0.16);
 }
@@ -1427,8 +1454,8 @@
 /* Bespoke Travel Banner */
 .collections-bespoke-banner {
   margin-top: 48px;
-  background: #111420;
-  border: 1px solid rgba(79, 124, 181, 0.3);
+  background: #141724;
+  border: 1px solid rgba(79, 124, 181, 0.35);
   border-radius: 16px;
   padding: clamp(24px, 3.5vw, 36px);
   display: flex;
@@ -1471,11 +1498,14 @@
   background: #dce7ff;
 }
 
-/* Spacious FAQs Accordion */
+/* ==========================================================================
+   PRICING PAGE: FAQS ACCORDION (WARM CREAM PAPER SECTION)
+   ========================================================================== */
 .collections-faq-section {
-  background: #0e111a;
-  padding: 120px clamp(24px, 6vw, 84px) 140px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: #f7f4ee;
+  color: #11141c;
+  padding: 110px clamp(20px, 6vw, 84px) 130px;
+  border-top: 1px solid rgba(17, 20, 28, 0.08);
 }
 
 .faq-spacious-inner {
@@ -1488,14 +1518,18 @@
   text-align: center;
 }
 
+.faq-spacious-inner .faq-header .sunlit-kicker {
+  color: #3858a2;
+}
+
 .faq-spacious-inner .faq-header h2 {
   font: 400 clamp(2.4rem, 4.5vw, 4.2rem)/0.96 "DM Serif Display", Georgia, serif;
   margin: 14px 0 12px;
-  color: #f8f6f0;
+  color: #11141c;
 }
 
 .faq-spacious-inner .faq-header p {
-  color: rgba(248, 246, 240, 0.65);
+  color: #555b68;
   font-size: 14px;
   margin: 0 auto;
   max-width: 520px;
@@ -1509,15 +1543,17 @@
 }
 
 .faq-spacious-item {
-  background: #131622;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid rgba(17, 20, 28, 0.09);
   border-radius: 14px;
   overflow: hidden;
-  transition: border-color 0.25s ease;
+  box-shadow: 0 4px 20px rgba(17, 20, 28, 0.03);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .faq-spacious-item.is-active-faq {
-  border-color: rgba(255, 255, 255, 0.24);
+  border-color: rgba(56, 88, 162, 0.35);
+  box-shadow: 0 10px 30px rgba(17, 20, 28, 0.07);
 }
 
 .faq-question-trigger {
@@ -1529,14 +1565,14 @@
   gap: 18px;
   background: transparent;
   border: 0;
-  color: #f8f6f0;
+  color: #11141c;
   font: 500 15px/1.3 "Space Grotesk", sans-serif;
   text-align: left;
   cursor: pointer;
 }
 
 .faq-chevron {
-  color: #79a8ff;
+  color: #3858a2;
   flex-shrink: 0;
   transition: transform 0.25s ease;
 }
@@ -1551,8 +1587,8 @@
 
 .faq-answer-text {
   padding: 0 28px 24px;
-  color: rgba(248, 246, 240, 0.72);
-  font-size: 13px;
+  color: #4b5262;
+  font-size: 13.5px;
   line-height: 1.75;
 }
 
@@ -1561,7 +1597,95 @@
 }
 
 /* ==========================================================================
-   ABOUT PAGE STYLES (WARM EDITORIAL PRINT MONOGRAPH)
+   PORTFOLIO PAGE: ARCHIVAL REASSURANCE SECTION (WARM SUNLIT STRIP)
+   ========================================================================== */
+.portfolio-archival-strip {
+  background: #f6f3ed;
+  color: #11141c;
+  padding: 90px clamp(20px, 6vw, 84px);
+  border-top: 1px solid rgba(17, 20, 28, 0.08);
+  border-bottom: 1px solid rgba(17, 20, 28, 0.08);
+}
+
+.portfolio-archival-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.archival-content .sunlit-kicker {
+  color: #3858a2;
+}
+
+.archival-content h2 {
+  font: 400 clamp(2.4rem, 4.5vw, 3.8rem)/1 "DM Serif Display", Georgia, serif;
+  color: #11141c;
+  margin: 10px 0 12px;
+}
+
+.archival-content p {
+  color: #555b68;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 580px;
+  margin: 0;
+}
+
+.archival-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.archival-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #11141c;
+  color: #ffffff;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.archival-btn-primary:hover {
+  background: #3858a2;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.archival-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(17, 20, 28, 0.14);
+  color: #11141c;
+  padding: 13px 24px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.archival-btn-secondary:hover {
+  border-color: #11141c;
+}
+
+/* ==========================================================================
+   ABOUT PAGE STYLES (WARM EDITORIAL MONOGRAPH & DARKROOM DEEP-DIVE)
    ========================================================================== */
 .about-page-hero {
   padding: 120px clamp(20px, 6vw, 84px) 90px;
@@ -1656,10 +1780,11 @@
 }
 
 .about-page-shell .about-philosophy-section {
-  background: #ede8df;
+  background: #11141d;
+  color: #f8f6f0;
   padding: 100px clamp(20px, 6vw, 84px);
-  border-top: 1px solid rgba(17, 20, 28, 0.06);
-  border-bottom: 1px solid rgba(17, 20, 28, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .about-philosophy-inner {
@@ -1667,10 +1792,14 @@
   margin: 0 auto;
 }
 
+.about-page-shell .about-philosophy-section .sunlit-kicker {
+  color: #79a8ff;
+}
+
 .about-page-shell .philosophy-header h2 {
   font: 400 clamp(2.4rem, 4.5vw, 4.2rem)/0.96 "DM Serif Display", Georgia, serif;
   margin: 14px 0 40px;
-  color: #11141c;
+  color: #f8f6f0;
 }
 
 .philosophy-columns {
@@ -1682,7 +1811,7 @@
 .about-page-shell .philosophy-text-col p {
   font-size: 14px;
   line-height: 1.85;
-  color: #3b414f;
+  color: rgba(248, 246, 240, 0.78);
   margin: 0 0 20px;
 }
 
@@ -1690,19 +1819,19 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #11141c;
+  color: #f8f6f0;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  border-bottom: 1px solid #3858a2;
+  border-bottom: 1px solid #79a8ff;
   padding-bottom: 6px;
   transition: gap 0.2s ease, color 0.2s ease;
 }
 
 .about-page-shell .about-view-work-link:hover {
   gap: 14px;
-  color: #3858a2;
+  color: #dce7ff;
 }
 
 .about-values-section {
@@ -1760,7 +1889,7 @@
 }
 
 .about-page-shell .about-press-section {
-  background: #f0ebd0;
+  background: #efeae1;
   padding: 60px clamp(20px, 6vw, 84px);
   border-top: 1px solid rgba(17, 20, 28, 0.08);
 }
@@ -1794,66 +1923,101 @@
 }
 
 /* ==========================================================================
-   JOURNAL & GUIDES PAGE STYLES (EDITORIAL FIELD NOTES)
+   JOURNAL & GUIDES PAGE STYLES (WARM SUNLIT EDITORIAL MAGAZINE)
    ========================================================================== */
-.journal-hero {
-  padding: 110px clamp(20px, 6vw, 84px) 50px;
+.journal-page-shell {
+  background: #f6f3ed;
+  color: #11141c;
+}
+
+.journal-page-shell .journal-hero {
+  padding: 120px clamp(20px, 6vw, 84px) 50px;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.journal-title {
+.journal-page-shell .portfolio-header-kicker {
+  color: #3858a2;
+}
+
+.journal-page-shell .portfolio-header-kicker .dot-mark i {
+  background: #3858a2;
+}
+
+.journal-page-shell .journal-title {
   font: 400 clamp(3.2rem, 7vw, 6.4rem)/0.94 "DM Serif Display", Georgia, serif;
   letter-spacing: -0.04em;
   margin: 0 0 20px;
-  color: #f8f6f0;
+  color: #11141c;
 }
 
-.journal-title em {
-  color: #dce7ff;
+.journal-page-shell .journal-title em {
+  color: #3858a2;
   font-style: normal;
 }
 
-.journal-subtitle {
+.journal-page-shell .journal-subtitle {
   max-width: 560px;
-  color: rgba(248, 246, 240, 0.72);
+  color: #555b68;
   font-size: 14px;
   line-height: 1.8;
   margin: 0 0 36px;
 }
 
-.journal-filter-pills {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+.journal-page-shell .journal-filter-pills .portfolio-filter-btn {
+  background: #ffffff;
+  border: 1px solid rgba(17, 20, 28, 0.12);
+  color: #555b68;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.journal-grid-section {
+.journal-page-shell .journal-filter-pills .portfolio-filter-btn:hover {
+  border-color: #11141c;
+  color: #11141c;
+}
+
+.journal-page-shell .journal-filter-pills .portfolio-filter-btn.is-active {
+  background: #3858a2;
+  color: #ffffff;
+  border-color: #3858a2;
+  box-shadow: 0 4px 14px rgba(56, 88, 162, 0.25);
+}
+
+.journal-page-shell .journal-grid-section {
+  background: #f7f4ee;
+  padding: 40px clamp(20px, 6vw, 84px) 120px;
+  border-top: 1px solid rgba(17, 20, 28, 0.06);
+}
+
+.journal-page-shell .journal-grid {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 20px clamp(20px, 6vw, 84px) 120px;
-}
-
-.journal-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 32px;
 }
 
-.journal-card {
-  background: #131622;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 14px;
+.journal-page-shell .journal-card {
+  background: #ffffff;
+  border: 1px solid rgba(17, 20, 28, 0.08);
+  border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 10px 30px rgba(17, 20, 28, 0.04);
   transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
-.journal-card:hover {
+.journal-page-shell .journal-card:hover {
   transform: translateY(-5px);
-  background: #171b2a;
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 45px rgba(17, 20, 28, 0.09);
+  border-color: rgba(56, 88, 162, 0.3);
 }
 
 .journal-card-media {
@@ -1874,59 +2038,57 @@
   transform: scale(1.05);
 }
 
-.journal-card-cat-badge,
-.journal-read-badge {
+.journal-card-cat-badge {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: rgba(12, 14, 21, 0.75);
-  backdrop-filter: blur(8px);
-  color: #f8f6f0;
+  background: #3858a2;
+  color: #ffffff;
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 9px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
-.journal-card-content {
+.journal-page-shell .journal-card-content {
   padding: 24px;
 }
 
-.journal-card-meta {
+.journal-page-shell .journal-card-meta {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 10px;
   font-size: 11px;
-  color: rgba(248, 246, 240, 0.55);
+  color: #7a8292;
 }
 
-.journal-card-meta span {
+.journal-page-shell .journal-card-meta span {
   display: inline-flex;
   align-items: center;
   gap: 4px;
 }
 
-.journal-card-title {
+.journal-page-shell .journal-card-title {
   font: 400 24px/1.2 "DM Serif Display", Georgia, serif;
   margin: 0 0 10px;
-  color: #f8f6f0;
+  color: #11141c;
 }
 
-.journal-card-excerpt {
-  color: rgba(248, 246, 240, 0.65);
+.journal-page-shell .journal-card-excerpt {
+  color: #555b68;
   font-size: 13px;
   line-height: 1.65;
   margin: 0 0 18px;
 }
 
-.journal-card-read-btn,
-.journal-card-read-more {
+.journal-page-shell .journal-card-read-btn {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  color: #79a8ff;
+  color: #3858a2;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -1934,250 +2096,209 @@
   transition: gap 0.2s ease;
 }
 
-.journal-card:hover .journal-card-read-btn,
-.journal-card:hover .journal-card-read-more {
+.journal-page-shell .journal-card:hover .journal-card-read-btn {
   gap: 8px;
-  color: #dce7ff;
+  color: #11141c;
 }
 
-/* Article Reader Modal */
-.article-modal-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 250;
-  background: rgba(8, 10, 15, 0.88);
-  backdrop-filter: blur(18px);
-  overflow-y: auto;
-  padding: clamp(20px, 4vw, 60px) clamp(16px, 3vw, 40px);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.article-modal-container {
-  background: #121520;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+/* Journal Article Reader Modal (Light Paper Experience) */
+.journal-page-shell .article-modal-container {
+  background: #fffdfa;
+  border: 1px solid rgba(17, 20, 28, 0.14);
   border-radius: 16px;
   width: min(900px, 100%);
   margin: auto 0;
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
-  color: #f8f6f0;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  color: #11141c;
 }
 
-.article-modal-hero {
-  position: relative;
-  height: 360px;
-  overflow: hidden;
-}
-
-.article-modal-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.article-modal-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, #121520 0%, rgba(18, 21, 32, 0.3) 60%, transparent 100%);
-}
-
-.article-modal-close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(8, 10, 15, 0.75);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  color: #f8f6f0;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.article-modal-close-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.article-modal-header {
+.journal-page-shell .article-modal-header {
   padding: 24px 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(17, 20, 28, 0.08);
 }
 
-.article-modal-meta-row {
+.journal-page-shell .article-modal-meta-row {
   display: flex;
   align-items: center;
   gap: 12px;
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #79a8ff;
+  color: #3858a2;
   margin-bottom: 12px;
+  font-weight: 600;
 }
 
-.article-modal-title {
+.journal-page-shell .article-modal-title {
   font: 400 clamp(2rem, 4vw, 3.2rem)/1.1 "DM Serif Display", Georgia, serif;
   margin: 0 0 16px;
-  color: #f8f6f0;
+  color: #11141c;
 }
 
-.article-modal-body {
+.journal-page-shell .article-modal-body {
   padding: 36px 40px 48px;
 }
 
-.article-modal-body p {
-  color: rgba(248, 246, 240, 0.82);
-  font-size: 14px;
+.journal-page-shell .article-modal-body p {
+  color: #2e333e;
+  font-size: 14.5px;
   line-height: 1.85;
   margin: 0 0 20px;
 }
 
-.article-author-signature {
+.journal-page-shell .article-author-signature {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(17, 20, 28, 0.08);
   margin-top: 40px;
   flex-wrap: wrap;
   gap: 16px;
 }
 
-.article-author-signature p {
+.journal-page-shell .article-author-signature p {
   margin: 0;
   font-size: 13px;
-  color: #f8f6f0;
+  color: #11141c;
 }
 
-.article-author-signature span {
+.journal-page-shell .article-author-signature span {
   font-size: 12px;
-  color: rgba(248, 246, 240, 0.6);
+  color: #7a8292;
 }
 
 /* ==========================================================================
-   CONTACT & INQUIRY PAGE STYLES (STUDIO RECEPTION)
+   CONTACT & INQUIRY PAGE STYLES (WARM SUNLIT STUDIO RECEPTION)
    ========================================================================== */
-.contact-page-hero {
-  padding: 110px clamp(20px, 6vw, 84px) 50px;
+.contact-page-shell {
+  background: #f6f3ed;
+  color: #11141c;
+}
+
+.contact-page-shell .contact-page-hero {
+  padding: 120px clamp(20px, 6vw, 84px) 50px;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.contact-title {
+.contact-page-shell .portfolio-header-kicker {
+  color: #3858a2;
+}
+
+.contact-page-shell .portfolio-header-kicker .dot-mark i {
+  background: #3858a2;
+}
+
+.contact-page-shell .contact-title {
   font: 400 clamp(3.2rem, 7vw, 6.4rem)/0.94 "DM Serif Display", Georgia, serif;
   letter-spacing: -0.04em;
   margin: 0 0 20px;
-  color: #f8f6f0;
+  color: #11141c;
 }
 
-.contact-title em {
-  color: #dce7ff;
+.contact-page-shell .contact-title em {
+  color: #3858a2;
   font-style: normal;
 }
 
-.contact-subtitle {
+.contact-page-shell .contact-subtitle {
   max-width: 600px;
-  color: rgba(248, 246, 240, 0.72);
+  color: #555b68;
   font-size: 14px;
   line-height: 1.8;
   margin: 0;
 }
 
-.contact-form-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px clamp(20px, 6vw, 84px) 120px;
+.contact-page-shell .contact-form-section {
+  background: #f7f4ee;
+  padding: 40px clamp(20px, 6vw, 84px) 120px;
+  border-top: 1px solid rgba(17, 20, 28, 0.06);
 }
 
-.contact-form-grid {
+.contact-page-shell .contact-form-grid {
+  max-width: 1400px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 340px 1fr;
   gap: clamp(32px, 5vw, 64px);
   align-items: start;
 }
 
-.contact-sidebar {
+.contact-page-shell .contact-sidebar {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.contact-info-card {
-  background: #131622;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
+.contact-page-shell .contact-info-card {
+  background: #ffffff;
+  border: 1px solid rgba(17, 20, 28, 0.08);
+  border-radius: 16px;
   padding: 28px 24px;
+  box-shadow: 0 10px 30px rgba(17, 20, 28, 0.04);
 }
 
-.contact-info-card h3 {
+.contact-page-shell .contact-info-card h3 {
   font: 400 20px/1 "DM Serif Display", Georgia, serif;
   margin: 0 0 20px;
-  color: #f8f6f0;
+  color: #11141c;
 }
 
-.contact-info-item {
+.contact-page-shell .contact-info-item {
   display: flex;
   align-items: flex-start;
   gap: 12px;
   margin-bottom: 18px;
 }
 
-.contact-info-item:last-child {
+.contact-page-shell .contact-info-item:last-child {
   margin-bottom: 0;
 }
 
-.contact-icon {
-  color: #79a8ff;
+.contact-page-shell .contact-icon {
+  color: #3858a2;
   margin-top: 2px;
   flex-shrink: 0;
 }
 
-.contact-info-item .label {
+.contact-page-shell .contact-info-item .label {
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(248, 246, 240, 0.5);
+  color: #7a8292;
   margin: 0 0 3px;
 }
 
-.contact-info-item a,
-.contact-info-item span {
+.contact-page-shell .contact-info-item a,
+.contact-page-shell .contact-info-item span {
   font-size: 13px;
-  color: #f8f6f0;
+  color: #11141c;
 }
 
-.contact-reassurance-card {
-  background: #10131d;
-  border: 1px solid rgba(79, 124, 181, 0.25);
-  border-radius: 14px;
+.contact-page-shell .contact-info-item a:hover {
+  color: #3858a2;
+}
+
+.contact-page-shell .contact-reassurance-card {
+  background: #efebe2;
+  border: 1px solid rgba(56, 88, 162, 0.2);
+  border-radius: 16px;
   padding: 24px;
 }
 
-.reassurance-mark {
-  display: flex;
-  gap: 4px;
-  margin-bottom: 12px;
+.contact-page-shell .reassurance-mark i {
+  background: #3858a2;
 }
 
-.reassurance-mark i {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #79a8ff;
-}
-
-.contact-reassurance-card h4 {
+.contact-page-shell .contact-reassurance-card h4 {
   font: 400 18px/1.2 "DM Serif Display", Georgia, serif;
   margin: 0 0 14px;
-  color: #f8f6f0;
+  color: #11141c;
 }
 
-.next-steps-list {
+.contact-page-shell .next-steps-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -2186,50 +2307,38 @@
   gap: 12px;
   font-size: 12px;
   line-height: 1.6;
-  color: rgba(248, 246, 240, 0.7);
+  color: #4b5262;
 }
 
-.next-steps-list b {
-  color: #dce7ff;
+.contact-page-shell .next-steps-list b {
+  color: #11141c;
 }
 
-.contact-form-main {
-  background: #131622;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: clamp(24px, 4vw, 44px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+.contact-page-shell .contact-form-main {
+  background: #ffffff;
+  border: 1px solid rgba(17, 20, 28, 0.09);
+  border-radius: 18px;
+  padding: clamp(28px, 4vw, 48px);
+  box-shadow: 0 15px 40px rgba(17, 20, 28, 0.05);
 }
 
-.inquiry-form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-label {
+.contact-page-shell .form-label {
   font-size: 12px;
-  font-weight: 500;
-  color: rgba(248, 246, 240, 0.9);
+  font-weight: 600;
+  color: #11141c;
   letter-spacing: 0.04em;
 }
 
-.celebration-pills-grid {
+.contact-page-shell .celebration-pills-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.form-pill-btn {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(248, 246, 240, 0.7);
+.contact-page-shell .form-pill-btn {
+  background: #f7f5f0;
+  border: 1px solid rgba(17, 20, 28, 0.12);
+  color: #555b68;
   padding: 9px 16px;
   border-radius: 8px;
   font-size: 12px;
@@ -2237,62 +2346,45 @@
   transition: all 0.2s ease;
 }
 
-.form-pill-btn:hover,
-.form-pill-btn.is-selected {
+.contact-page-shell .form-pill-btn:hover,
+.contact-page-shell .form-pill-btn.is-selected {
   background: #3858a2;
   color: #ffffff;
-  border-color: #4f7cb5;
+  border-color: #3858a2;
   font-weight: 500;
-  box-shadow: 0 4px 12px rgba(56, 88, 162, 0.3);
+  box-shadow: 0 4px 12px rgba(56, 88, 162, 0.25);
 }
 
-.form-row-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.form-input,
-.form-textarea,
-.form-select {
+.contact-page-shell .form-input,
+.contact-page-shell .form-textarea,
+.contact-page-shell .form-select {
   width: 100%;
-  background: #0a0c13;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #faf8f4;
+  border: 1px solid rgba(17, 20, 28, 0.15);
   border-radius: 8px;
   padding: 12px 14px;
-  color: #f8f6f0;
+  color: #11141c;
   font-family: inherit;
   font-size: 13px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   box-sizing: border-box;
 }
 
-.form-input:focus,
-.form-textarea:focus,
-.form-select:focus {
+.contact-page-shell .form-input:focus,
+.contact-page-shell .form-textarea:focus,
+.contact-page-shell .form-select:focus {
+  background: #ffffff;
   outline: 0;
-  border-color: #4f7cb5;
-  box-shadow: 0 0 0 1px #4f7cb5;
+  border-color: #3858a2;
+  box-shadow: 0 0 0 1px #3858a2;
 }
 
-.form-textarea {
-  resize: vertical;
-}
-
-.form-submit-row {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-}
-
-.inquiry-submit-btn {
+.contact-page-shell .inquiry-submit-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #f8f6f0;
-  color: #0c0e15;
+  background: #11141c;
+  color: #ffffff;
   border: 0;
   padding: 14px 28px;
   border-radius: 999px;
@@ -2304,55 +2396,46 @@
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.inquiry-submit-btn:hover {
-  background: #dce7ff;
+.contact-page-shell .inquiry-submit-btn:hover {
+  background: #3858a2;
   transform: translateY(-2px);
 }
 
-.submit-note {
+.contact-page-shell .submit-note {
   font-size: 11px;
-  color: rgba(248, 246, 240, 0.45);
+  color: #7a8292;
 }
 
-/* Success Confirmation State */
-.contact-success-state {
+.contact-page-shell .contact-success-state {
   text-align: center;
   padding: 48px 20px;
 }
 
-.success-icon-wrap {
-  color: #79a8ff;
+.contact-page-shell .success-icon-wrap {
+  color: #3858a2;
   margin-bottom: 20px;
 }
 
-.contact-success-state h2 {
+.contact-page-shell .contact-success-state h2 {
   font: 400 clamp(2.4rem, 4vw, 3.6rem)/1 "DM Serif Display", Georgia, serif;
   margin: 0 0 16px;
-  color: #f8f6f0;
+  color: #11141c;
 }
 
-.success-message {
+.contact-page-shell .success-message {
   max-width: 500px;
   margin: 0 auto 32px;
-  color: rgba(248, 246, 240, 0.75);
+  color: #4b5262;
   font-size: 14px;
   line-height: 1.7;
 }
 
-.success-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.success-btn {
+.contact-page-shell .success-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #f8f6f0;
-  color: #0c0e15;
+  background: #11141c;
+  color: #ffffff;
   padding: 11px 22px;
   border-radius: 999px;
   font-size: 11px;
@@ -2361,12 +2444,12 @@
   text-transform: uppercase;
 }
 
-.success-btn-secondary {
+.contact-page-shell .success-btn-secondary {
   display: inline-flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #f8f6f0;
+  background: #ffffff;
+  border: 1px solid rgba(17, 20, 28, 0.18);
+  color: #11141c;
   padding: 11px 22px;
   border-radius: 999px;
   font-size: 11px;

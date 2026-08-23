@@ -17,8 +17,8 @@ export default function Journal() {
     : journalArticles.filter((a) => a.category === activeCategory);
 
   return (
-    <div className="starline-page-shell">
-      <Navbar variant="dark" />
+    <div className="starline-page-shell journal-page-shell">
+      <Navbar variant="light" />
 
       <main className="starline-page-main">
         {/* Page Hero */}

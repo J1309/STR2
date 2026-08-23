@@ -108,6 +108,28 @@ export default function Portfolio() {
             </AnimatePresence>
           </div>
         </section>
+
+        {/* Warm Editorial Archival Philosophy Section */}
+        <section className="portfolio-archival-strip">
+          <div className="portfolio-archival-inner">
+            <div className="archival-content">
+              <span className="sunlit-kicker">Archival Craft & Dual-Format</span>
+              <h2>Captured on 35mm film<br />& medium format digital.</h2>
+              <p>
+                Every frame is processed with nuanced tonal color grading to preserve authentic skin tones and tactile analog grain for heirloom gallery printing.
+              </p>
+            </div>
+            <div className="archival-actions">
+              <Link href="/pricing" className="archival-btn-primary">
+                <span>View Pricing & Packages</span>
+                <ArrowUpRight size={14} />
+              </Link>
+              <Link href="/about" className="archival-btn-secondary">
+                <span>About The Process</span>
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Story Deep-Dive Modal */}

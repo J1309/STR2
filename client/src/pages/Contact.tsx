@@ -40,8 +40,8 @@ export default function Contact() {
   };
 
   return (
-    <div className="starline-page-shell">
-      <Navbar variant="dark" />
+    <div className="starline-page-shell contact-page-shell">
+      <Navbar variant="light" />
 
       <main className="starline-page-main">
         <section className="contact-page-hero">
