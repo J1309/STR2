@@ -6,7 +6,7 @@ import { ArrowUpRight, Check, ChevronDown, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
-export default function Collections() {
+export default function Pricing() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [activeFilter, setActiveFilter] = useState<string>("all");
 
@@ -30,13 +30,13 @@ export default function Collections() {
           <div className="collections-hero-inner">
             <div className="portfolio-header-kicker">
               <span className="dot-mark"><i /><i /><i /></span>
-              <span>The Collections & Offerings</span>
+              <span>Pricing & Packages</span>
             </div>
             <h1 className="collections-title">
-              Crafted for presence,<br /><em>never forced.</em>
+              Transparent pricing,<br /><em>built around presence.</em>
             </h1>
             <p className="collections-subtitle">
-              Transparent, all-inclusive photography collections rooted in natural light, quiet intimacy, and timeless film aesthetic. Designed so you can be fully present while every subtle moment is preserved.
+              All-inclusive photography packages rooted in natural light, quiet intimacy, and timeless film aesthetic. Designed so you can be fully present while every subtle moment is preserved.
             </p>
 
             <div className="collections-quick-tags">
@@ -77,7 +77,7 @@ export default function Collections() {
           <div className="collections-showcase-inner">
             <div className="collections-section-header">
               <p className="sunlit-kicker">Curated Packages</p>
-              <h2>The Collections</h2>
+              <h2>Pricing & Packages</h2>
               <p className="collections-section-desc">
                 Every story includes full-resolution files, private cloud gallery hosting, and lifetime personal print rights.
               </p>

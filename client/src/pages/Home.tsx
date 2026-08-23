@@ -89,7 +89,7 @@ export default function Home() {
 
   const navItems = [
     { label: "Portfolio", href: "/portfolio" },
-    { label: "Collections", href: "/collections" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Journal", href: "/journal" },
     { label: "About", href: "/about" },
     { label: "Inquire", href: "/contact" }
@@ -347,8 +347,8 @@ export default function Home() {
         <section className="home-investment-preview">
           <div className="home-investment-inner">
             <div className="home-investment-head">
-              <p className="sunlit-kicker">Curated Offerings</p>
-              <h2>The Collections,<br /><em>built around presence.</em></h2>
+              <p className="sunlit-kicker">Packages & Inclusions</p>
+              <h2>Transparent Pricing,<br /><em>zero hidden fees.</em></h2>
               <p>Every story includes high-resolution print files, private gallery delivery, and personal printing rights.</p>
             </div>
 
@@ -373,8 +373,8 @@ export default function Home() {
             </div>
 
             <div className="home-investment-foot">
-              <Link href="/collections" className="home-investment-all-link">
-                <span>View Full Collections & Offerings</span>
+              <Link href="/pricing" className="home-investment-all-link">
+                <span>View Full Pricing Guide & Inclusions</span>
                 <ArrowUpRight size={16} />
               </Link>
             </div>
