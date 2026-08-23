@@ -217,7 +217,7 @@ export default function Footer({ showClosingCta = true }: FooterProps) {
                 <Link href="/portfolio">Portfolio & Archive</Link>
               </li>
               <li>
-                <Link href="/investment">Investment & Collections</Link>
+                <Link href="/collections">Collections & Offerings</Link>
               </li>
               <li>
                 <Link href="/about">The Studio & Philosophy</Link>
@@ -248,7 +248,7 @@ export default function Footer({ showClosingCta = true }: FooterProps) {
                 <Link href="/portfolio">Portraiture & Still Life</Link>
               </li>
               <li>
-                <Link href="/investment">Custom Multi-Day Travel</Link>
+                <Link href="/collections">Custom Multi-Day Travel</Link>
               </li>
               <li>
                 <Link href="/about">Fine Art Publications</Link>
@@ -270,7 +270,7 @@ export default function Footer({ showClosingCta = true }: FooterProps) {
                 <Link href="/journal">Destination Scout Guide</Link>
               </li>
               <li>
-                <Link href="/investment">Frequently Asked Questions</Link>
+                <Link href="/collections">Frequently Asked Questions</Link>
               </li>
               <li>
                 <a href="mailto:hello@starline.studio?subject=Private%20Client%20Gallery%20Access">

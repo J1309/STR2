@@ -29,7 +29,7 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/portfolio", label: "Portfolio" },
-    { href: "/investment", label: "Investment" },
+    { href: "/collections", label: "Collections" },
     { href: "/journal", label: "Journal" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" }

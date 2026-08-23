@@ -1,160 +1,195 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { experienceSteps, faqItems, investmentTiers, testimonials, type InvestmentTier } from "@/data/studioData";
+import { experienceSteps, faqItems, investmentTiers, testimonials } from "@/data/studioData";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Check, ChevronDown, ChevronRight, Clock, Heart, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowUpRight, Check, ChevronDown, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
-export default function Investment() {
+export default function Collections() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [activeFilter, setActiveFilter] = useState<string>("all");
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
+
+  const filteredTiers = activeFilter === "all"
+    ? investmentTiers
+    : activeFilter === "featured"
+    ? investmentTiers.filter((t) => t.featured)
+    : investmentTiers;
 
   return (
     <div className="starline-page-shell">
       <Navbar variant="dark" />
 
       <main className="starline-page-main">
-        {/* Page Hero */}
-        <section className="investment-hero">
-          <div className="investment-hero-inner">
+        {/* Spacious Editorial Hero */}
+        <section className="collections-hero">
+          <div className="collections-hero-inner">
             <div className="portfolio-header-kicker">
               <span className="dot-mark"><i /><i /><i /></span>
-              <span>The Experience & Investment</span>
+              <span>The Collections & Offerings</span>
             </div>
-            <h1 className="investment-title">
-              Made slowly,<br /><em>built to outlast.</em>
+            <h1 className="collections-title">
+              Crafted for presence,<br /><em>never forced.</em>
             </h1>
-            <p className="investment-subtitle">
-              Transparent collections designed around closeness, presence, and organic film aesthetic. No hidden travel fees, no rush, and no artificial poses.
+            <p className="collections-subtitle">
+              Transparent, all-inclusive photography collections rooted in natural light, quiet intimacy, and timeless film aesthetic. Designed so you can be fully present while every subtle moment is preserved.
             </p>
-          </div>
-        </section>
 
-        {/* Value Philosophy Banner */}
-        <section className="investment-philosophy-section">
-          <div className="investment-philosophy-grid">
-            <div className="philosophy-card">
-              <span className="philosophy-num">01</span>
-              <h3>No Obligatory Posing</h3>
-              <p>We direct with an artful eye when the light calls for it, and step back when the emotion breathes on its own.</p>
-            </div>
-            <div className="philosophy-card">
-              <span className="philosophy-num">02</span>
-              <h3>Analog & Medium Format</h3>
-              <p>Analog 35mm film rolls capture real silver grain and skin tones; medium format digital delivers master dynamic range.</p>
-            </div>
-            <div className="philosophy-card">
-              <span className="philosophy-num">03</span>
-              <h3>All-Inclusive Travel</h3>
-              <p>Signature packages include all travel logistics within California, Utah, and Nevada—so you never worry about mileage or hotels.</p>
+            <div className="collections-quick-tags">
+              <span className="tag-pill">35mm & Medium Format</span>
+              <span className="tag-sep">•</span>
+              <span className="tag-pill">72-Hour Sneak Peeks</span>
+              <span className="tag-sep">•</span>
+              <span className="tag-pill">Personal Print Rights</span>
+              <span className="tag-sep">•</span>
+              <span className="tag-pill">Transparent Travel</span>
             </div>
           </div>
         </section>
 
-        {/* Collection Tiers */}
-        <section className="investment-tiers-section" id="packages">
-          <div className="investment-tiers-header">
-            <p className="sunlit-kicker">Curated Collections</p>
-            <h2>Choose the scope<br /><em>that fits your story.</em></h2>
-            <p className="tiers-intro">
-              Every package includes high-resolution print-ready files, private online gallery delivery, and personal printing rights.
-            </p>
+        {/* Airy Philosophy Row */}
+        <section className="collections-philosophy-section">
+          <div className="collections-philosophy-inner">
+            <div className="philosophy-col">
+              <span className="philosophy-index">01 / PRESENCE</span>
+              <h3>Unrushed & Natural</h3>
+              <p>We prioritize real presence with your people over rigid shot lists, creating breathing room for authentic emotion to unfold naturally.</p>
+            </div>
+            <div className="philosophy-col">
+              <span className="philosophy-index">02 / CRAFT</span>
+              <h3>Dual-Format Harmony</h3>
+              <p>Medium format digital delivers master dynamic range; authentic 35mm analog film brings organic grain, silver depths, and rich skin tones.</p>
+            </div>
+            <div className="philosophy-col">
+              <span className="philosophy-index">03 / EASE</span>
+              <h3>Transparent Travel</h3>
+              <p>No post-wedding travel invoices or confusing mileage math. Signature collections include travel logistics throughout our regular circuits.</p>
+            </div>
           </div>
+        </section>
 
-          <div className="investment-tiers-grid">
-            {investmentTiers.map((tier) => (
-              <div
-                key={tier.id}
-                className={`investment-tier-card ${tier.featured ? "is-featured" : ""}`}
-              >
-                {tier.featured && (
-                  <div className="tier-featured-badge">
-                    <Sparkles size={13} />
-                    <span>Most Popular Experience</span>
+        {/* Spacious Collections Grid */}
+        <section className="collections-showcase-section" id="offerings">
+          <div className="collections-showcase-inner">
+            <div className="collections-section-header">
+              <p className="sunlit-kicker">Curated Packages</p>
+              <h2>The Collections</h2>
+              <p className="collections-section-desc">
+                Every story includes full-resolution files, private cloud gallery hosting, and lifetime personal print rights.
+              </p>
+            </div>
+
+            <div className="collections-cards-grid">
+              {filteredTiers.map((tier) => (
+                <div
+                  key={tier.id}
+                  className={`collection-card ${tier.featured ? "is-featured-collection" : ""}`}
+                >
+                  {tier.featured && (
+                    <div className="collection-featured-ribbon">
+                      <Sparkles size={12} />
+                      <span>Signature Experience</span>
+                    </div>
+                  )}
+
+                  <div className="collection-card-header">
+                    <span className="collection-coverage-badge">{tier.coverage}</span>
+                    <h3 className="collection-card-title">{tier.name}</h3>
+                    <p className="collection-card-tagline">{tier.tagline}</p>
+                    
+                    <div className="collection-price-box">
+                      <span className="collection-price-number">{tier.price}</span>
+                      <span className="collection-price-sub">All-inclusive taxes & base travel</span>
+                    </div>
                   </div>
-                )}
 
-                <div className="tier-card-head">
-                  <span className="tier-card-coverage">{tier.coverage}</span>
-                  <h3 className="tier-card-name">{tier.name}</h3>
-                  <p className="tier-card-tagline">{tier.tagline}</p>
-                  <div className="tier-card-price">
-                    <span className="price-val">{tier.price}</span>
-                    <span className="price-note">All taxes & base travel included</span>
+                  <div className="collection-inclusions-wrap">
+                    <span className="inclusions-label">Key Deliverables & Highlights:</span>
+                    <ul className="collection-inclusions-list">
+                      {tier.inclusions.map((inc, i) => (
+                        <li key={i}>
+                          <Check size={14} className="collection-check" />
+                          <span>{inc}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
 
-                <div className="tier-card-body">
-                  <p className="inclusions-title">What is Included:</p>
-                  <ul className="tier-inclusions-list">
-                    {tier.inclusions.map((inc, i) => (
-                      <li key={i}>
-                        <Check size={15} className="check-icon" />
-                        <span>{inc}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="tier-recommended-box">
-                    <b>Ideal For:</b>
+                  <div className="collection-ideal-box">
+                    <span className="ideal-label">Best Suited For:</span>
                     <p>{tier.recommendedFor}</p>
                   </div>
-                </div>
 
-                <div className="tier-card-foot">
-                  <Link
-                    href={`/contact?package=${tier.id}`}
-                    className={`tier-select-btn ${tier.featured ? "btn-featured" : ""}`}
-                  >
-                    <span>Reserve {tier.name}</span>
-                    <ArrowUpRight size={15} />
-                  </Link>
+                  <div className="collection-action-wrap">
+                    <Link
+                      href={`/contact?package=${tier.id}`}
+                      className={`collection-inquire-btn ${tier.featured ? "btn-featured-collection" : ""}`}
+                    >
+                      <span>Inquire for {tier.name}</span>
+                      <ArrowUpRight size={15} />
+                    </Link>
+                  </div>
                 </div>
+              ))}
+            </div>
+
+            {/* Custom Travel Note */}
+            <div className="collections-bespoke-banner">
+              <div className="bespoke-content">
+                <h4>Planning a multi-day celebration or international voyage?</h4>
+                <p>We create bespoke multi-destination proposals for ceremonies in Europe, Asia, and remote wilderness venues.</p>
               </div>
-            ))}
+              <Link href="/contact" className="bespoke-cta-btn">
+                <span>Request Custom Quote</span>
+                <ArrowUpRight size={14} />
+              </Link>
+            </div>
           </div>
         </section>
 
-        {/* The 4-Step Experience Roadmap */}
-        <section className="investment-process-section">
-          <div className="process-inner">
-            <div className="process-header">
-              <p className="sunlit-kicker">The Journey</p>
-              <h2>What it feels like<br /><em>to work together.</em></h2>
+        {/* The 4-Step Client Journey */}
+        <section className="collections-journey-section">
+          <div className="journey-inner">
+            <div className="journey-header">
+              <p className="sunlit-kicker">The Experience</p>
+              <h2>How We Work Together</h2>
+              <p>A seamless, thoughtful process from your initial inquiry to holding the finished print archive.</p>
             </div>
 
-            <div className="process-timeline-grid">
+            <div className="journey-timeline-grid">
               {experienceSteps.map((step) => (
-                <div key={step.step} className="process-step-card">
-                  <span className="step-badge">{step.step}</span>
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
+                <div key={step.step} className="journey-step-item">
+                  <div className="step-num-circle">{step.step}</div>
+                  <h3 className="step-title">{step.title}</h3>
+                  <p className="step-desc">{step.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Client Reviews Section */}
-        <section className="investment-reviews-section">
+        {/* Client Words / Testimonials */}
+        <section className="collections-reviews-section">
           <div className="reviews-inner">
-            <p className="sunlit-kicker">Kind Words</p>
-            <h2>In their own<br /><em>quiet words.</em></h2>
+            <div className="reviews-header">
+              <p className="sunlit-kicker">Client Stories</p>
+              <h2>Quiet Words of Gratitude</h2>
+            </div>
 
-            <div className="reviews-grid">
+            <div className="reviews-spacious-grid">
               {testimonials.map((t) => (
-                <div key={t.id} className="review-card">
-                  <div className="review-quote-mark">“</div>
-                  <p className="review-text">{t.quote}</p>
-                  <div className="review-author">
-                    <img src={t.image} alt={t.client} className="review-author-thumb" />
+                <div key={t.id} className="review-quote-card">
+                  <div className="quote-mark-symbol">“</div>
+                  <p className="quote-body">{t.quote}</p>
+                  <div className="quote-author-row">
+                    <img src={t.image} alt={t.client} className="quote-avatar" />
                     <div>
-                      <b>{t.client}</b>
-                      <span>{t.celebration} — {t.location}</span>
+                      <b className="quote-author-name">{t.client}</b>
+                      <span className="quote-author-meta">{t.celebration} • {t.location}</span>
                     </div>
                   </div>
                 </div>
@@ -163,45 +198,45 @@ export default function Investment() {
           </div>
         </section>
 
-        {/* Interactive FAQs Accordion */}
-        <section className="investment-faq-section">
-          <div className="faq-inner">
+        {/* Spacious FAQs */}
+        <section className="collections-faq-section">
+          <div className="faq-spacious-inner">
             <div className="faq-header">
-              <p className="sunlit-kicker">Frequently Asked</p>
-              <h2>Questions &<br /><em>practical answers.</em></h2>
-              <p>Everything you need to know about reserving your date, receiving your memories, and planning with ease.</p>
+              <p className="sunlit-kicker">Common Inquiries</p>
+              <h2>Frequently Asked Questions</h2>
+              <p>Everything you need to know about booking, analog film, travel, and delivery timelines.</p>
             </div>
 
-            <div className="faq-accordion-list">
+            <div className="faq-accordion-container">
               {faqItems.map((item, idx) => {
                 const isOpen = openFaq === idx;
                 return (
                   <div
                     key={idx}
-                    className={`faq-item ${isOpen ? "is-open" : ""}`}
+                    className={`faq-spacious-item ${isOpen ? "is-active-faq" : ""}`}
                   >
                     <button
-                      className="faq-question-btn"
+                      className="faq-question-trigger"
                       onClick={() => toggleFaq(idx)}
                       aria-expanded={isOpen}
                     >
                       <span>{item.question}</span>
                       <ChevronDown
                         size={18}
-                        className={`faq-arrow ${isOpen ? "is-rotated" : ""}`}
+                        className={`faq-chevron ${isOpen ? "is-rotated" : ""}`}
                       />
                     </button>
 
                     <AnimatePresence initial={false}>
                       {isOpen && (
                         <motion.div
-                          className="faq-answer-wrap"
+                          className="faq-answer-container"
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.28, ease: [0.23, 1, 0.32, 1] }}
+                          transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
                         >
-                          <div className="faq-answer-inner">
+                          <div className="faq-answer-text">
                             <p>{item.answer}</p>
                           </div>
                         </motion.div>
@@ -219,3 +254,4 @@ export default function Investment() {
     </div>
   );
 }
+

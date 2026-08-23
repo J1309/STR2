@@ -1016,242 +1016,280 @@
 }
 
 /* ==========================================================================
-   INVESTMENT & PRICING PAGE STYLES
+   COLLECTIONS & OFFERINGS PAGE STYLES (AIRY & EXPANSIVE EDITORIAL)
    ========================================================================== */
-.investment-hero {
-  padding: 90px clamp(20px, 6vw, 84px) 60px;
-  max-width: 1400px;
+.collections-hero {
+  padding: 130px clamp(24px, 6vw, 84px) 70px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
-.investment-title {
-  font: 400 clamp(3.2rem, 7vw, 6.4rem)/0.92 "DM Serif Display", Georgia, serif;
-  letter-spacing: -0.05em;
-  margin: 0 0 20px;
+.collections-hero-inner {
+  max-width: 900px;
 }
 
-.investment-title em {
+.collections-title {
+  font: 400 clamp(3.2rem, 6.5vw, 6.2rem)/1.02 "DM Serif Display", Georgia, serif;
+  letter-spacing: -0.04em;
+  margin: 18px 0 24px;
+}
+
+.collections-title em {
   color: #d8e5ff;
   font-style: normal;
 }
 
-.investment-subtitle {
-  max-width: 600px;
+.collections-subtitle {
+  max-width: 680px;
   color: rgba(255, 255, 255, 0.72);
+  font-size: 15px;
+  line-height: 1.85;
+  margin: 0 0 36px;
+}
+
+.collections-quick-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.collections-quick-tags .tag-pill {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4f7cb5;
+}
+
+.collections-quick-tags .tag-sep {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 10px;
+}
+
+/* Philosophy Row (Airy 3-Col Grid) */
+.collections-philosophy-section {
+  max-width: 1280px;
+  margin: 0 auto 100px;
+  padding: 0 clamp(24px, 6vw, 84px);
+}
+
+.collections-philosophy-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(32px, 4vw, 56px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 50px;
+}
+
+.philosophy-col .philosophy-index {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: #4f7cb5;
+  display: block;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.philosophy-col h3 {
+  font: 400 22px/1.2 "DM Serif Display", Georgia, serif;
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+.philosophy-col p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Collections Showcase Grid */
+.collections-showcase-section {
+  max-width: 1360px;
+  margin: 0 auto 140px;
+  padding: 0 clamp(24px, 5vw, 64px);
+}
+
+.collections-section-header {
+  margin-bottom: 56px;
+  max-width: 700px;
+}
+
+.collections-section-header h2 {
+  font: 400 clamp(2.6rem, 5vw, 4.4rem)/0.96 "DM Serif Display", Georgia, serif;
+  margin: 14px 0 14px;
+}
+
+.collections-section-desc {
+  color: rgba(255, 255, 255, 0.68);
   font-size: 14px;
   line-height: 1.7;
   margin: 0;
 }
 
-.investment-philosophy-section {
-  max-width: 1400px;
-  margin: 0 auto 80px;
-  padding: 0 clamp(20px, 6vw, 84px);
-}
-
-.investment-philosophy-grid {
+.collections-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  background: #141720;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: clamp(24px, 4vw, 40px);
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: clamp(28px, 3.5vw, 44px);
 }
 
-.philosophy-card .philosophy-num {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  color: #4f7cb5;
-  display: block;
-  margin-bottom: 12px;
-}
-
-.philosophy-card h3 {
-  font: 400 20px/1.2 "DM Serif Display", Georgia, serif;
-  margin: 0 0 8px;
-  color: #ffffff;
-}
-
-.philosophy-card p {
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 13px;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* Tiers */
-.investment-tiers-section {
-  max-width: 1400px;
-  margin: 0 auto 120px;
-  padding: 0 clamp(20px, 6vw, 84px);
-}
-
-.investment-tiers-header {
-  margin-bottom: 48px;
-}
-
-.investment-tiers-header h2 {
-  font: 400 clamp(2.4rem, 4.5vw, 4.2rem)/0.95 "DM Serif Display", Georgia, serif;
-  margin: 14px 0 12px;
-}
-
-.investment-tiers-header h2 em {
-  color: #d8e5ff;
-  font-style: normal;
-}
-
-.tiers-intro {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 14px;
-  margin: 0;
-}
-
-.investment-tiers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-  gap: 28px;
-}
-
-.investment-tier-card {
+.collection-card {
   position: relative;
-  background: #13161f;
+  background: #12151e;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 32px 28px;
+  border-radius: 18px;
+  padding: clamp(32px, 3.5vw, 44px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
-.investment-tier-card:hover {
-  border-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-4px);
+.collection-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
 }
 
-.investment-tier-card.is-featured {
-  background: #171b26;
+.collection-card.is-featured-collection {
+  background: #161a25;
   border-color: #4f7cb5;
-  box-shadow: 0 20px 50px rgba(79, 124, 181, 0.15);
+  box-shadow: 0 20px 60px rgba(79, 124, 181, 0.16);
 }
 
-.tier-featured-badge {
+.collection-featured-ribbon {
   position: absolute;
-  top: -12px;
-  left: 28px;
+  top: -13px;
+  left: 32px;
   background: #4f7cb5;
   color: #ffffff;
-  padding: 4px 12px;
+  padding: 4px 14px;
   border-radius: 999px;
   font-size: 9px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
 }
 
-.tier-card-coverage {
+.collection-card-header {
+  margin-bottom: 28px;
+}
+
+.collection-coverage-badge {
   font-size: 9px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #d8e5ff;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
-.tier-card-name {
-  font: 400 26px/1.1 "DM Serif Display", Georgia, serif;
-  margin: 0 0 8px;
+.collection-card-title {
+  font: 400 28px/1.15 "DM Serif Display", Georgia, serif;
+  margin: 0 0 10px;
+  color: #ffffff;
 }
 
-.tier-card-tagline {
-  font-size: 12px;
+.collection-card-tagline {
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.65);
-  line-height: 1.5;
-  margin: 0 0 20px;
+  line-height: 1.6;
+  margin: 0 0 24px;
 }
 
-.tier-card-price {
-  padding: 16px 0;
+.collection-price-box {
+  padding: 18px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 24px;
 }
 
-.price-val {
-  font: 400 36px/1 "DM Serif Display", Georgia, serif;
+.collection-price-number {
+  font: 400 40px/1 "DM Serif Display", Georgia, serif;
   color: #ffffff;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
-.price-note {
+.collection-price-sub {
   font-size: 10px;
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.06em;
 }
 
-.inclusions-title {
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #d8e5ff;
-  margin: 0 0 12px;
-}
-
-.tier-inclusions-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.tier-inclusions-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.45;
-}
-
-.tier-inclusions-list .check-icon {
-  color: #4f7cb5;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.tier-recommended-box {
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 8px;
-  padding: 12px 14px;
-  font-size: 11px;
+.collection-inclusions-wrap {
   margin-bottom: 28px;
 }
 
-.tier-recommended-box b {
+.inclusions-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: #d8e5ff;
   display: block;
-  margin-bottom: 3px;
+  margin-bottom: 14px;
+  font-weight: 600;
 }
 
-.tier-recommended-box p {
+.collection-inclusions-list {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  color: rgba(255, 255, 255, 0.65);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.tier-select-btn {
+.collection-inclusions-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+.collection-check {
+  color: #4f7cb5;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.collection-ideal-box {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 12px;
+  margin-bottom: 32px;
+}
+
+.ideal-label {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d8e5ff;
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.collection-ideal-box p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.collection-inquire-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: 12px;
+  padding: 13px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1260,118 +1298,181 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  transition: all 0.2s ease;
+  text-decoration: none;
+  transition: all 0.25s ease;
 }
 
-.tier-select-btn:hover,
-.tier-select-btn.btn-featured {
+.collection-inquire-btn:hover,
+.collection-inquire-btn.btn-featured-collection {
   background: #ffffff;
   color: #0b0d12;
   border-color: #ffffff;
 }
 
-/* Process Timeline */
-.investment-process-section {
-  background: #10131b;
-  padding: 100px clamp(20px, 6vw, 84px);
-}
-
-.process-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.process-header {
-  margin-bottom: 48px;
-}
-
-.process-header h2 {
-  font: 400 clamp(2.4rem, 4.5vw, 4.2rem)/0.95 "DM Serif Display", Georgia, serif;
-  margin: 14px 0 0;
-}
-
-.process-timeline-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+/* Bespoke Travel Banner */
+.collections-bespoke-banner {
+  margin-top: 48px;
+  background: #0d1017;
+  border: 1px solid rgba(79, 124, 181, 0.25);
+  border-radius: 16px;
+  padding: clamp(24px, 3.5vw, 36px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 24px;
+  flex-wrap: wrap;
 }
 
-.process-step-card {
-  background: #151822;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
-  padding: 28px 24px;
-}
-
-.step-badge {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  color: #4f7cb5;
-  margin-bottom: 16px;
-}
-
-.process-step-card h3 {
+.bespoke-content h4 {
   font: 400 20px/1.2 "DM Serif Display", Georgia, serif;
-  margin: 0 0 10px;
+  margin: 0 0 6px;
   color: #ffffff;
 }
 
-.process-step-card p {
+.bespoke-content p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  margin: 0;
+}
+
+.bespoke-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.bespoke-cta-btn:hover {
+  background: #ffffff;
+  color: #0b0d12;
+}
+
+/* 4-Step Journey Roadmap */
+.collections-journey-section {
+  background: #0f121a;
+  padding: 120px clamp(24px, 6vw, 84px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.journey-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.journey-header {
+  margin-bottom: 60px;
+  max-width: 650px;
+}
+
+.journey-header h2 {
+  font: 400 clamp(2.4rem, 4.5vw, 4.2rem)/0.96 "DM Serif Display", Georgia, serif;
+  margin: 14px 0 10px;
+}
+
+.journey-header p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  margin: 0;
+}
+
+.journey-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(24px, 3vw, 36px);
+}
+
+.journey-step-item {
+  background: #141721;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 32px 28px;
+}
+
+.step-num-circle {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #4f7cb5;
+  margin-bottom: 18px;
+}
+
+.step-title {
+  font: 400 21px/1.2 "DM Serif Display", Georgia, serif;
+  margin: 0 0 12px;
+  color: #ffffff;
+}
+
+.step-desc {
   margin: 0;
   color: rgba(255, 255, 255, 0.65);
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* Reviews */
-.investment-reviews-section {
-  max-width: 1400px;
+.collections-reviews-section {
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 100px clamp(20px, 6vw, 84px);
+  padding: 120px clamp(24px, 6vw, 84px);
 }
 
-.reviews-inner h2 {
-  font: 400 clamp(2.4rem, 4.5vw, 4.2rem)/0.95 "DM Serif Display", Georgia, serif;
-  margin: 14px 0 48px;
+.reviews-header {
+  margin-bottom: 56px;
 }
 
-.reviews-grid {
+.reviews-header h2 {
+  font: 400 clamp(2.4rem, 4.5vw, 4.2rem)/0.96 "DM Serif Display", Georgia, serif;
+  margin: 14px 0 0;
+}
+
+.reviews-spacious-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
 }
 
-.review-card {
-  background: #141720;
+.review-quote-card {
+  background: #131620;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 32px 28px;
+  border-radius: 16px;
+  padding: 36px 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.review-quote-mark {
+.quote-mark-symbol {
   font: 400 48px/0.8 "DM Serif Display", Georgia, serif;
   color: #4f7cb5;
 }
 
-.review-text {
+.quote-body {
   font-size: 13px;
-  line-height: 1.7;
+  line-height: 1.8;
   color: rgba(255, 255, 255, 0.82);
-  margin: 16px 0 24px;
+  margin: 18px 0 28px;
 }
 
-.review-author {
+.quote-author-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
-.review-author-thumb {
+.quote-avatar {
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -1379,72 +1480,73 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.review-author b {
+.quote-author-name {
   display: block;
   font-size: 13px;
   color: #ffffff;
 }
 
-.review-author span {
+.quote-author-meta {
   font-size: 10px;
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-/* FAQs */
-.investment-faq-section {
+/* Spacious FAQs Accordion */
+.collections-faq-section {
   background: #0f121a;
-  padding: 100px clamp(20px, 6vw, 84px) 120px;
+  padding: 120px clamp(24px, 6vw, 84px) 140px;
 }
 
-.faq-inner {
+.faq-spacious-inner {
   max-width: 900px;
   margin: 0 auto;
 }
 
-.faq-header {
-  margin-bottom: 40px;
+.faq-spacious-inner .faq-header {
+  margin-bottom: 48px;
   text-align: center;
 }
 
-.faq-header h2 {
-  font: 400 clamp(2.4rem, 4.5vw, 4.2rem)/0.95 "DM Serif Display", Georgia, serif;
+.faq-spacious-inner .faq-header h2 {
+  font: 400 clamp(2.4rem, 4.5vw, 4.2rem)/0.96 "DM Serif Display", Georgia, serif;
   margin: 14px 0 12px;
 }
 
-.faq-header p {
+.faq-spacious-inner .faq-header p {
   color: rgba(255, 255, 255, 0.65);
-  font-size: 13px;
+  font-size: 14px;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 520px;
+  line-height: 1.6;
 }
 
-.faq-accordion-list {
+.faq-accordion-container {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
-.faq-item {
-  background: #141720;
+.faq-spacious-item {
+  background: #141721;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
   transition: border-color 0.25s ease;
 }
 
-.faq-item.is-open {
-  border-color: rgba(255, 255, 255, 0.22);
+.faq-spacious-item.is-active-faq {
+  border-color: rgba(255, 255, 255, 0.24);
 }
 
-.faq-question-btn {
+.faq-question-trigger {
   width: 100%;
-  padding: 20px 24px;
+  padding: 22px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 18px;
   background: transparent;
   border: 0;
   color: #ffffff;
@@ -1453,24 +1555,28 @@
   cursor: pointer;
 }
 
-.faq-arrow {
+.faq-chevron {
   color: #4f7cb5;
   flex-shrink: 0;
   transition: transform 0.25s ease;
 }
 
-.faq-arrow.is-rotated {
+.faq-chevron.is-rotated {
   transform: rotate(180deg);
 }
 
-.faq-answer-inner {
-  padding: 0 24px 22px;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 13px;
-  line-height: 1.7;
+.faq-answer-container {
+  overflow: hidden;
 }
 
-.faq-answer-inner p {
+.faq-answer-text {
+  padding: 0 28px 24px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.faq-answer-text p {
   margin: 0;
 }
 
