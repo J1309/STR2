@@ -1581,10 +1581,431 @@
 }
 
 /* ==========================================================================
+   GLOBAL SUBPAGE SHELL (WARM DARKROOM DEPTH & SILK IVORY THEME)
+   ========================================================================== */
+.starline-page-shell {
+  background-color: #0c0e15;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(56, 88, 162, 0.12), transparent 55%),
+    radial-gradient(circle at 15% 30%, rgba(220, 231, 255, 0.03), transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(56, 88, 162, 0.06), transparent 50%);
+  color: #f8f6f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.starline-page-main {
+  flex: 1;
+}
+
+/* ==========================================================================
+   PORTFOLIO PAGE STYLES
+   ========================================================================== */
+.portfolio-hero {
+  padding: 100px clamp(20px, 6vw, 84px) 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.portfolio-header-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #79a8ff;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.portfolio-header-kicker .dot-mark {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.portfolio-header-kicker .dot-mark i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #4f7cb5;
+}
+
+.portfolio-title {
+  font: 400 clamp(3.2rem, 7vw, 6.4rem)/0.94 "DM Serif Display", Georgia, serif;
+  letter-spacing: -0.04em;
+  margin: 0 0 20px;
+  color: #f8f6f0;
+}
+
+.portfolio-title em {
+  font-style: normal;
+  color: #dce7ff;
+}
+
+.portfolio-subtitle {
+  max-width: 580px;
+  color: rgba(248, 246, 240, 0.72);
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0 0 36px;
+}
+
+.portfolio-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+.portfolio-filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.portfolio-filter-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(248, 246, 240, 0.75);
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.portfolio-filter-btn:hover,
+.portfolio-filter-btn.is-active {
+  background: #f8f6f0;
+  color: #0c0e15;
+  border-color: #f8f6f0;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-count-tag {
+  font-size: 11px;
+  color: rgba(248, 246, 240, 0.45);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.portfolio-grid-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px clamp(20px, 6vw, 84px) 120px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 32px;
+}
+
+.portfolio-card {
+  background: #131622;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  background: #171b2a;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-card-media {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: #181b26;
+}
+
+.portfolio-card.is-featured .portfolio-card-media {
+  aspect-ratio: 16 / 12;
+}
+
+.portfolio-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), filter 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-card-media img {
+  transform: scale(1.05);
+}
+
+.portfolio-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(12, 14, 21, 0.8) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-card-overlay {
+  opacity: 1;
+}
+
+.portfolio-card-view-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8f6f0;
+  color: #0c0e15;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.portfolio-card-content {
+  padding: 22px;
+}
+
+.portfolio-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #79a8ff;
+  margin-bottom: 8px;
+}
+
+.portfolio-card-loc {
+  color: rgba(248, 246, 240, 0.5);
+}
+
+.portfolio-card-title {
+  font: 400 24px/1.15 "DM Serif Display", Georgia, serif;
+  letter-spacing: -0.03em;
+  margin: 0 0 6px;
+  color: #f8f6f0;
+}
+
+.portfolio-card-subtitle {
+  margin: 0;
+  font-size: 12.5px;
+  color: rgba(248, 246, 240, 0.65);
+  line-height: 1.55;
+}
+
+/* Story Deep Dive Modal */
+.story-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  background: rgba(8, 10, 15, 0.88);
+  backdrop-filter: blur(18px);
+  overflow-y: auto;
+  padding: clamp(20px, 4vw, 60px) clamp(16px, 3vw, 40px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.story-modal-container {
+  background: #121520;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  width: min(1200px, 100%);
+  margin: auto 0;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+  color: #f8f6f0;
+}
+
+.story-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 32px 36px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.story-modal-cat {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #79a8ff;
+  font-weight: 600;
+}
+
+.story-modal-title {
+  font: 400 clamp(2rem, 3.5vw, 3.4rem)/1 "DM Serif Display", Georgia, serif;
+  letter-spacing: -0.04em;
+  margin: 6px 0 4px;
+  color: #f8f6f0;
+}
+
+.story-modal-loc {
+  font-size: 12px;
+  color: rgba(248, 246, 240, 0.6);
+  margin: 0;
+}
+
+.story-modal-close-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: #f8f6f0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.story-modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.story-modal-body {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 36px;
+  padding: 36px;
+}
+
+.story-modal-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.story-sidebar-section h4 {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #dce7ff;
+  margin: 0 0 8px;
+}
+
+.story-sidebar-section p {
+  color: rgba(248, 246, 240, 0.72);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.story-specs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.story-specs-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(248, 246, 240, 0.8);
+}
+
+.story-specs-list svg {
+  color: #4f7cb5;
+}
+
+.story-sidebar-quote {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 2px solid #4f7cb5;
+  padding: 16px 18px;
+  border-radius: 0 8px 8px 0;
+}
+
+.story-sidebar-quote p {
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(248, 246, 240, 0.85);
+  margin: 0 0 6px;
+}
+
+.story-sidebar-quote span {
+  font-size: 10px;
+  color: rgba(248, 246, 240, 0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.story-sidebar-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #f8f6f0;
+  color: #0c0e15;
+  padding: 13px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.story-modal-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.story-gallery-frame {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0b0d14;
+  cursor: pointer;
+}
+
+.story-gallery-frame img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.story-gallery-frame:hover img {
+  transform: scale(1.02);
+}
+
+.story-frame-index {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: #ffffff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
    ABOUT PAGE STYLES
    ========================================================================== */
 .about-page-hero {
-  padding: 90px clamp(20px, 6vw, 84px) 80px;
+  padding: 100px clamp(20px, 6vw, 84px) 80px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -1600,8 +2021,8 @@
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  background: #141720;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  background: #141722;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(79, 124, 181, 0.08);
 }
 
 .about-portrait-frame img {
@@ -1623,33 +2044,34 @@
 }
 
 .about-hero-title {
-  font: 400 clamp(2.8rem, 5.5vw, 5.2rem)/0.94 "DM Serif Display", Georgia, serif;
+  font: 400 clamp(2.8rem, 5.5vw, 5.2rem)/0.96 "DM Serif Display", Georgia, serif;
   margin: 0 0 20px;
+  color: #f8f6f0;
 }
 
 .about-hero-title em {
-  color: #d8e5ff;
+  color: #dce7ff;
   font-style: normal;
 }
 
 .about-lead {
   font-size: 15px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  color: rgba(248, 246, 240, 0.88);
   margin: 0 0 16px;
 }
 
 .about-sublead {
   font-size: 13px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
+  color: rgba(248, 246, 240, 0.65);
   margin: 0 0 28px;
 }
 
 .about-quick-specs {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
 }
 
 .about-spec-item {
@@ -1657,16 +2079,18 @@
   align-items: center;
   gap: 8px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 8px 14px;
   border-radius: 999px;
   font-size: 11px;
-  color: #d8e5ff;
+  color: #dce7ff;
 }
 
 .about-philosophy-section {
-  background: #10131b;
+  background: #0f121a;
   padding: 100px clamp(20px, 6vw, 84px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .about-philosophy-inner {
@@ -1675,8 +2099,9 @@
 }
 
 .philosophy-header h2 {
-  font: 400 clamp(2.4rem, 4.5vw, 4.2rem)/0.95 "DM Serif Display", Georgia, serif;
+  font: 400 clamp(2.4rem, 4.5vw, 4.2rem)/0.96 "DM Serif Display", Georgia, serif;
   margin: 14px 0 40px;
+  color: #f8f6f0;
 }
 
 .philosophy-columns {
@@ -1687,8 +2112,8 @@
 
 .philosophy-text-col p {
   font-size: 14px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.85;
+  color: rgba(248, 246, 240, 0.75);
   margin: 0 0 20px;
 }
 
@@ -1696,7 +2121,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #ffffff;
+  color: #f8f6f0;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -1708,7 +2133,7 @@
 
 .about-view-work-link:hover {
   gap: 14px;
-  color: #d8e5ff;
+  color: #dce7ff;
 }
 
 .about-values-section {
@@ -1718,8 +2143,9 @@
 }
 
 .about-values-section h2 {
-  font: 400 clamp(2.4rem, 4.5vw, 4.2rem)/0.95 "DM Serif Display", Georgia, serif;
+  font: 400 clamp(2.4rem, 4.5vw, 4.2rem)/0.96 "DM Serif Display", Georgia, serif;
   margin: 14px 0 44px;
+  color: #f8f6f0;
 }
 
 .about-values-grid {
@@ -1729,37 +2155,44 @@
 }
 
 .about-value-card {
-  background: #141720;
+  background: #131622;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
   padding: 32px 28px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.about-value-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .value-index {
   font-size: 11px;
   letter-spacing: 0.16em;
-  color: #4f7cb5;
+  color: #79a8ff;
   display: block;
   margin-bottom: 14px;
+  font-weight: 600;
 }
 
 .about-value-card h3 {
   font: 400 22px/1.2 "DM Serif Display", Georgia, serif;
   margin: 0 0 10px;
+  color: #f8f6f0;
 }
 
 .about-value-card p {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(248, 246, 240, 0.65);
   font-size: 13px;
-  line-height: 1.65;
+  line-height: 1.7;
   margin: 0;
 }
 
 .about-press-section {
-  background: #0d1017;
+  background: #0b0d14;
   padding: 60px clamp(20px, 6vw, 84px);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .about-press-inner {
@@ -1772,7 +2205,7 @@
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(248, 246, 240, 0.45);
   margin: 0 0 24px;
 }
 
@@ -1787,546 +2220,7 @@
 .press-badge-item span {
   font: 400 16px/1 "DM Serif Display", Georgia, serif;
   letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* ==========================================================================
-   JOURNAL & GUIDES PAGE STYLES
-   ========================================================================== */
-.journal-hero {
-  padding: 90px clamp(20px, 6vw, 84px) 50px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.journal-title {
-  font: 400 clamp(3.2rem, 7vw, 6.4rem)/0.92 "DM Serif Display", Georgia, serif;
-  letter-spacing: -0.05em;
-  margin: 0 0 20px;
-}
-
-.journal-title em {
-  color: #d8e5ff;
-  font-style: normal;
-}
-
-.journal-subtitle {
-  max-width: 560px;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 14px;
-  line-height: 1.7;
-  margin: 0 0 36px;
-}
-
-.journal-filter-pills {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.journal-grid-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px clamp(20px, 6vw, 84px) 120px;
-}
-
-.journal-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 32px;
-}
-
-.journal-card {
-  background: #141720;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 14px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.journal-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-.journal-card-media {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background: #181b25;
-}
-
-.journal-card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.journal-card:hover .journal-card-media img {
-  transform: scale(1.04);
-}
-
-.journal-card-cat-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  background: rgba(11, 13, 18, 0.8);
-  backdrop-filter: blur(8px);
-  color: #ffffff;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.journal-card-content {
-  padding: 24px;
-}
-
-.journal-card-meta {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 12px;
-}
-
-.journal-card-meta span {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.journal-card-title {
-  font: 400 22px/1.2 "DM Serif Display", Georgia, serif;
-  margin: 0 0 10px;
-  color: #ffffff;
-}
-
-.journal-card-excerpt {
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 13px;
-  line-height: 1.6;
-  margin: 0 0 20px;
-}
-
-.journal-card-read-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #4f7cb5;
-}
-
-/* Article Modal */
-.article-modal-container {
-  background: #11141c;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 16px;
-  width: min(840px, 100%);
-  margin: auto 0;
-  overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
-  padding: clamp(24px, 4vw, 48px);
-}
-
-.article-modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 24px;
-}
-
-.article-modal-cat {
-  font-size: 9px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #4f7cb5;
-  margin-right: 12px;
-}
-
-.article-modal-date {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.article-modal-hero h1 {
-  font: 400 clamp(2.2rem, 4vw, 3.4rem)/1 "DM Serif Display", Georgia, serif;
-  margin: 0 0 10px;
-}
-
-.article-modal-subtitle {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-
-.article-modal-cover {
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 32px;
-}
-
-.article-modal-cover img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  display: block;
-}
-
-.article-modal-body p {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 15px;
-  line-height: 1.8;
-  margin: 0 0 20px;
-}
-
-.article-author-signature {
-  margin-top: 40px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.article-author-signature p {
-  margin: 0;
-  font-size: 13px;
-}
-
-.article-author-signature span {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.article-inquire-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #4f7cb5;
-  font-size: 12px;
-  font-weight: 600;
-  margin-top: 10px;
-}
-
-/* ==========================================================================
-   CONTACT & INQUIRY PAGE STYLES
-   ========================================================================== */
-.contact-page-hero {
-  padding: 90px clamp(20px, 6vw, 84px) 50px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.contact-title {
-  font: 400 clamp(3.2rem, 7vw, 6.4rem)/0.92 "DM Serif Display", Georgia, serif;
-  letter-spacing: -0.05em;
-  margin: 0 0 20px;
-}
-
-.contact-title em {
-  color: #d8e5ff;
-  font-style: normal;
-}
-
-.contact-subtitle {
-  max-width: 600px;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 14px;
-  line-height: 1.7;
-  margin: 0;
-}
-
-.contact-form-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px clamp(20px, 6vw, 84px) 120px;
-}
-
-.contact-form-grid {
-  display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: clamp(32px, 5vw, 64px);
-  align-items: start;
-}
-
-.contact-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.contact-info-card {
-  background: #141720;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 28px 24px;
-}
-
-.contact-info-card h3 {
-  font: 400 20px/1 "DM Serif Display", Georgia, serif;
-  margin: 0 0 20px;
-  color: #ffffff;
-}
-
-.contact-info-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 18px;
-}
-
-.contact-info-item:last-child {
-  margin-bottom: 0;
-}
-
-.contact-icon {
-  color: #4f7cb5;
-  margin-top: 2px;
-  flex-shrink: 0;
-}
-
-.contact-info-item .label {
-  font-size: 9px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-  margin: 0 0 3px;
-}
-
-.contact-info-item a,
-.contact-info-item span {
-  font-size: 13px;
-  color: #ffffff;
-}
-
-.contact-reassurance-card {
-  background: #10131b;
-  border: 1px solid rgba(79, 124, 181, 0.25);
-  border-radius: 14px;
-  padding: 24px;
-}
-
-.reassurance-mark {
-  display: flex;
-  gap: 4px;
-  margin-bottom: 12px;
-}
-
-.reassurance-mark i {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #4f7cb5;
-}
-
-.contact-reassurance-card h4 {
-  font: 400 18px/1.2 "DM Serif Display", Georgia, serif;
-  margin: 0 0 14px;
-  color: #ffffff;
-}
-
-.next-steps-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  font-size: 12px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.next-steps-list b {
-  color: #d8e5ff;
-}
-
-.contact-form-main {
-  background: #141720;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: clamp(24px, 4vw, 44px);
-}
-
-.inquiry-form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-label {
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.04em;
-}
-
-.celebration-pills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.form-pill-btn {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.7);
-  padding: 9px 16px;
-  border-radius: 8px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.form-pill-btn:hover,
-.form-pill-btn.is-selected {
-  background: #4f7cb5;
-  color: #ffffff;
-  border-color: #4f7cb5;
-  font-weight: 500;
-}
-
-.form-row-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.form-input,
-.form-textarea,
-.form-select {
-  width: 100%;
-  background: #0b0d12;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 8px;
-  padding: 12px 14px;
-  color: #ffffff;
-  font-family: inherit;
-  font-size: 13px;
-  transition: border-color 0.2s ease;
-  box-sizing: border-box;
-}
-
-.form-input:focus,
-.form-textarea:focus,
-.form-select:focus {
-  outline: 0;
-  border-color: #4f7cb5;
-  box-shadow: 0 0 0 1px #4f7cb5;
-}
-
-.form-textarea {
-  resize: vertical;
-}
-
-.form-submit-row {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-}
-
-.inquiry-submit-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #ffffff;
-  color: #0b0d12;
-  border: 0;
-  padding: 14px 28px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.inquiry-submit-btn:hover {
-  background: #d8e5ff;
-  transform: translateY(-2px);
-}
-
-.submit-note {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.45);
-}
-
-/* Success Confirmation State */
-.contact-success-state {
-  text-align: center;
-  padding: 48px 20px;
-}
-
-.success-icon-wrap {
-  color: #4f7cb5;
-  margin-bottom: 20px;
-}
-
-.contact-success-state h2 {
-  font: 400 clamp(2.4rem, 4vw, 3.6rem)/1 "DM Serif Display", Georgia, serif;
-  margin: 0 0 16px;
-}
-
-.success-message {
-  max-width: 500px;
-  margin: 0 auto 32px;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.success-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.success-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #ffffff;
-  color: #0b0d12;
-  padding: 11px 22px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.success-btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  padding: 11px 22px;
-  border-radius: 999px;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: rgba(248, 246, 240, 0.7);
 }
 
 /* Global Footer (Light Theme) */
