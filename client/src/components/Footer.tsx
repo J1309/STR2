@@ -111,10 +111,10 @@ export default function Footer({ showClosingCta = false }: FooterProps) {
 
   return (
     <footer className="minimal-footer">
-      {/* 1. Instagram Visual Strip */}
+      {/* 1. Curated Instagram Visual Reel */}
       <div className="footer-instagram-section">
         <div className="footer-instagram-header">
-          <span className="minimal-overline">FOLLOW OUR VISUAL CHRONICLES</span>
+          <span className="minimal-overline">FOLLOW OUR VISUAL JOURNAL</span>
           <a
             href="https://instagram.com"
             target="_blank"
@@ -157,20 +157,64 @@ export default function Footer({ showClosingCta = false }: FooterProps) {
           </div>
         )}
 
-        {/* 2. Middle Row: VIP Dispatch Subscription & Studio Concierge */}
-        <div className="footer-middle-grid">
-          <div className="footer-dispatch-box">
-            <span className="minimal-overline" style={{ color: "var(--ink-primary)" }}>PRIVATE SEASONAL DISPATCH</span>
-            <p className="footer-dispatch-desc">
-              Receive curated visual essays, seasonal availability previews, and private destination field guides.
+        {/* 2. Main 4-Column Architectural Grid */}
+        <div className="footer-architectural-grid">
+          {/* Col 1: The Atelier */}
+          <div className="footer-col footer-col-brand">
+            <span className="footer-brand-title">STARLINE</span>
+            <p className="footer-brand-bio">
+              Cinematic destination wedding films & photography. Crafting living heirlooms of love, light, and untamed elegance worldwide.
+            </p>
+            <div className="footer-brand-email">
+              <span className="footer-col-label">Direct Concierge</span>
+              <a href="mailto:concierge@starlinestudio.com">concierge@starlinestudio.com</a>
+            </div>
+          </div>
+
+          {/* Col 2: Studios */}
+          <div className="footer-col">
+            <span className="footer-col-label">STUDIOS</span>
+            <ul className="footer-links-list">
+              <li>
+                <strong>LONDON / EUROPE</strong>
+                <span>Mayfair & Côte d’Azur</span>
+              </li>
+              <li>
+                <strong>CALIFORNIA / AMERICAS</strong>
+                <span>Santa Barbara & Big Sur</span>
+              </li>
+              <li>
+                <strong>DESTINATION CALENDAR</strong>
+                <span>Available Worldwide</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 3: Navigation */}
+          <div className="footer-col">
+            <span className="footer-col-label">EXPLORE</span>
+            <nav className="footer-nav-column" aria-label="Footer navigation">
+              <Link href="/">Home</Link>
+              <Link href="/portfolio">Portfolio</Link>
+              <Link href="/journal">Journal</Link>
+              <Link href="/about">About</Link>
+              <Link href="/contact">Contact / Inquire</Link>
+            </nav>
+          </div>
+
+          {/* Col 4: Private VIP Dispatch */}
+          <div className="footer-col footer-col-dispatch">
+            <span className="footer-col-label">VIP DISPATCH</span>
+            <p className="footer-dispatch-note">
+              Curated visual essays, private destination field guides, and seasonal availability previews.
             </p>
 
             {newsletterSuccess ? (
-              <p className="footer-dispatch-success">
-                ✓ Thank you. You have been added to our private seasonal dispatch list.
+              <p className="footer-dispatch-success-note">
+                ✓ Thank you. You are added to our private dispatch list.
               </p>
             ) : (
-              <form onSubmit={handleSubscribe} className="footer-dispatch-form">
+              <form onSubmit={handleSubscribe} className="footer-input-group">
                 <input
                   type="email"
                   placeholder="ENTER YOUR EMAIL"
@@ -179,35 +223,17 @@ export default function Footer({ showClosingCta = false }: FooterProps) {
                   required
                   aria-label="Email address for dispatch"
                 />
-                <button type="submit">
+                <button type="submit" aria-label="Join newsletter">
                   <span>JOIN</span>
                 </button>
               </form>
             )}
           </div>
-
-          <div className="footer-studios-box">
-            <span className="minimal-overline" style={{ color: "var(--ink-primary)" }}>GLOBAL STUDIOS & COMMISSIONS</span>
-            <div className="footer-studios-list">
-              <div>
-                <strong>LONDON / EUROPE</strong>
-                <span>Mayfair & Côte d’Azur</span>
-              </div>
-              <div>
-                <strong>CALIFORNIA / AMERICAS</strong>
-                <span>Santa Barbara & Big Sur</span>
-              </div>
-              <div>
-                <strong>DIRECT INQUIRIES</strong>
-                <a href="mailto:concierge@starlinestudio.com">concierge@starlinestudio.com</a>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* 3. Prestigious Press Ribbon */}
         <div className="footer-press-ribbon">
-          <span>FEATURED & ACCREDITED BY</span>
+          <span className="footer-press-label">FEATURED & ACCREDITED BY</span>
           <div className="footer-press-items">
             <span>VOGUE WEDDINGS</span>
             <span className="footer-press-dot">•</span>
@@ -221,43 +247,34 @@ export default function Footer({ showClosingCta = false }: FooterProps) {
           </div>
         </div>
 
-        {/* 4. Navigation Links */}
-        <nav className="minimal-footer-nav" aria-label="Footer navigation">
-          <Link href="/">Home</Link>
-          <Link href="/portfolio">Portfolio</Link>
-          <Link href="/journal">Journal</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-        </nav>
-
-        {/* 5. Bottom Copyright & Policy Links */}
+        {/* 4. Bottom Utility Bar */}
         <div className="minimal-footer-bottom">
-          <div>
+          <div className="footer-copyright">
             <span>© {new Date().getFullYear()} Starline Studio. All rights reserved.</span>
           </div>
 
-          <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
+          <div className="footer-policy-links">
             <button
               onClick={() => setActivePolicy("privacy")}
-              style={{ background: "transparent", border: 0, padding: 0, font: "inherit", color: "inherit", cursor: "pointer" }}
+              className="footer-policy-btn"
             >
               Privacy Policy
             </button>
             <button
               onClick={() => setActivePolicy("terms")}
-              style={{ background: "transparent", border: 0, padding: 0, font: "inherit", color: "inherit", cursor: "pointer" }}
+              className="footer-policy-btn"
             >
               Terms of Service
             </button>
             <button
               onClick={() => setActivePolicy("licensing")}
-              style={{ background: "transparent", border: 0, padding: 0, font: "inherit", color: "inherit", cursor: "pointer" }}
+              className="footer-policy-btn"
             >
               Image Licensing
             </button>
             <button
               onClick={() => setActivePolicy("accessibility")}
-              style={{ background: "transparent", border: 0, padding: 0, font: "inherit", color: "inherit", cursor: "pointer" }}
+              className="footer-policy-btn"
             >
               Accessibility
             </button>
