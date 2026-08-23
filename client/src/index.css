@@ -355,7 +355,7 @@ a {
 }
 
 /* ==========================================================================
-   MINIMALIST EDITORIAL STATEMENT (CLEAN SPLIT ON PURE WHITE)
+   MINIMALIST EDITORIAL SECTIONS (CLEAN SPLIT ON PURE WHITE)
    ========================================================================== */
 .minimal-section {
   padding: clamp(100px, 14vw, 180px) clamp(24px, 7vw, 110px);
@@ -417,7 +417,6 @@ a {
 
 /* ==========================================================================
    MINIMALIST WIDESCREEN FEATURED VIDEO SHOWCASES
-   (EXACTLY HOW GIONE DA SILVA SHOWCASES VIDEOS)
    ========================================================================== */
 .minimal-showcase-wrap {
   display: flex;
@@ -599,7 +598,7 @@ a {
 }
 
 /* ==========================================================================
-   MINIMALIST PHOTOGRAPHY SPREAD (HOW GIONE SHOWCASES IMAGES)
+   MINIMALIST PHOTOGRAPHY SPREAD
    ========================================================================== */
 .minimal-photo-spread {
   max-width: 1400px;
@@ -1009,6 +1008,157 @@ a {
   line-height: 1.6;
   color: var(--ink-muted);
   margin: 0;
+}
+
+/* ==========================================================================
+   MINIMALIST PRICING EDITORIAL LIST (ZERO CARD BOXES)
+   ========================================================================== */
+.minimal-pricing-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.minimal-tier-row {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: baseline;
+  padding: clamp(40px, 5vw, 60px) 0;
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.minimal-tier-row:first-child {
+  border-top: 1px solid var(--line-subtle);
+}
+
+.minimal-tier-left h3 {
+  font-family: var(--font-display-condensed);
+  font-size: clamp(26px, 3.2vw, 38px);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.minimal-tier-left span {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-subtle);
+}
+
+.minimal-tier-center p {
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink-muted);
+  margin: 0 0 16px;
+}
+
+.minimal-tier-inclusions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--ink-secondary);
+}
+
+.minimal-tier-inclusions li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimal-tier-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.minimal-tier-price {
+  font-family: var(--font-display-condensed);
+  font-size: clamp(36px, 4.5vw, 52px);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--ink-primary);
+}
+
+.minimal-tier-price-sub {
+  font-size: 11px;
+  color: var(--ink-subtle);
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 860px) {
+  .minimal-tier-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .minimal-tier-right {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* ==========================================================================
+   MINIMALIST CONTACT FORM (AIRY, UNCLUTTERED INPUTS)
+   ========================================================================== */
+.minimal-contact-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: clamp(48px, 8vw, 100px);
+  align-items: start;
+}
+
+.minimal-contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.minimal-contact-item p {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-subtle);
+  margin: 0 0 6px;
+}
+
+.minimal-contact-item a,
+.minimal-contact-item span {
+  font-size: 14.5px;
+  font-weight: 300;
+  color: var(--ink-primary);
+}
+
+.minimal-input-field {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line-subtle);
+  padding: 16px 0;
+  font-family: inherit;
+  font-size: 14.5px;
+  color: var(--ink-primary);
+  transition: border-color 0.2s ease;
+}
+
+.minimal-input-field:focus {
+  outline: 0;
+  border-bottom-color: var(--ink-primary);
+}
+
+.minimal-input-field::placeholder {
+  color: var(--ink-subtle);
+  font-weight: 300;
 }
 
 /* Lightbox Modal */

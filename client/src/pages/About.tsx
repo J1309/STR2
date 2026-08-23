@@ -1,6 +1,5 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { ArrowUpRight, Award, Camera, Heart, MapPin, Sparkles, Sun } from "lucide-react";
 import { Link } from "wouter";
 
 export default function About() {
@@ -13,138 +12,135 @@ export default function About() {
     "Wedding Sparrow"
   ];
 
-  const studioValues = [
-    {
-      title: "Radical Presence",
-      desc: "We don’t treat your wedding like a production set. Our priority is keeping you immersed in your day with the people you love."
-    },
-    {
-      title: "Dual-Format Artistry",
-      desc: "Authentic 35mm analog film rolls combined with medium format digital ensure your heirloom imagery will never look dated."
-    },
-    {
-      title: "Inclusivity & Warmth",
-      desc: "Love is universal. We are fiercely affirming, culturally sensitive, and honor every love story, heritage, and tradition."
-    }
-  ];
-
   return (
     <div className="starline-page-shell">
       <Navbar variant="light" />
 
       <main className="starline-page-main">
-        {/* About Hero / Split Section */}
-        <section className="about-page-hero">
-          <div className="about-page-hero-inner">
-            <div className="about-portrait-frame">
+        {/* Minimalist Split Hero */}
+        <section className="minimal-section" style={{ paddingTop: "160px" }}>
+          <div className="minimal-statement-grid" style={{ alignItems: "center" }}>
+            <div style={{ position: "relative" }}>
               <img
                 src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop"
-                alt="Lila, Lead Artist at Starline Studio"
+                alt="Portrait of Lila / Lead Director"
+                style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", display: "block" }}
               />
-              <span className="portrait-caption">Portrait of Lila / Lead Director & Cinematographer</span>
+              <span style={{ position: "absolute", bottom: "16px", left: "16px", fontSize: "9px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#ffffff" }}>
+                Lila / Lead Cinematographer
+              </span>
             </div>
 
-            <div className="about-hero-copy">
-              <span className="gione-kicker">Behind the Lens</span>
-              <h1 className="about-hero-title">
+            <div className="minimal-statement-right">
+              <p className="minimal-overline">Behind the Studio</p>
+              <h1 style={{ fontFamily: "var(--font-display-condensed)", fontSize: "clamp(3.2rem, 5.5vw, 5.8rem)", lineHeight: 0.95, letterSpacing: "0.06em", textTransform: "uppercase", margin: "0 0 24px" }}>
                 Telling Stories That<br />
                 Outlast The Season
               </h1>
-              <p className="about-lead">
-                For over a decade, our studio has documented one thing with unwavering devotion: bespoke destination weddings, intimate celebrations, and the honest, quiet gestures that give a memory its permanent emotional gravity.
+              <p style={{ fontSize: "15px", fontWeight: 300, lineHeight: 1.85, color: "var(--ink-secondary)", margin: "0 0 16px" }}>
+                For over a decade, our studio has documented one thing with quiet devotion: bespoke destination weddings, intimate celebrations, and the small, honest gestures that give a memory its permanent emotional gravity.
               </p>
-              <p className="about-sublead">
+              <p style={{ fontSize: "14px", fontWeight: 300, lineHeight: 1.85, color: "var(--ink-muted)", margin: "0 0 32px" }}>
                 Based out of California and London, traveling wherever an extraordinary celebration unfolds—from historic stone villas in Lake Como to windswept desert horizons in Marrakech.
               </p>
 
-              <div className="about-quick-specs">
-                <div className="about-spec-item">
-                  <MapPin size={15} color="var(--cobalt-bright)" />
-                  <span>California / London / Worldwide</span>
-                </div>
-                <div className="about-spec-item">
-                  <Camera size={15} color="var(--cobalt-bright)" />
-                  <span>35mm Film + 4K Cinema</span>
-                </div>
-                <div className="about-spec-item">
-                  <Sun size={15} color="var(--cobalt-bright)" />
-                  <span>Natural & Ambient Light</span>
-                </div>
+              <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--ink-subtle)" }}>
+                <span>California / London</span>
+                <span>•</span>
+                <span>35mm Film + 4K Cinema</span>
+                <span>•</span>
+                <span>Natural Light</span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Philosophy Deep Dive */}
-        <section className="about-philosophy-section">
-          <div className="about-philosophy-inner">
-            <div className="philosophy-header">
-              <span className="gione-kicker">The Approach</span>
-              <h2>
-                Directed When Needed,<br />
-                Quiet When It Breathes
+        {/* The Philosophy */}
+        <section className="minimal-section" style={{ backgroundColor: "var(--bg-subtle)", borderTop: "1px solid var(--line-light)", borderBottom: "1px solid var(--line-light)" }}>
+          <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
+            <div style={{ marginBottom: "40px" }}>
+              <p className="minimal-overline">The Approach</p>
+              <h2 style={{ fontFamily: "var(--font-display-condensed)", fontSize: "clamp(2.8rem, 4.5vw, 4.6rem)", letterSpacing: "0.06em", textTransform: "uppercase", margin: 0 }}>
+                Directed When Needed, Quiet When It Breathes
               </h2>
             </div>
 
-            <div className="philosophy-columns">
-              <div className="philosophy-text-col">
-                <p>
-                  Most couples worry about feeling staged or artificial in front of cameras. We understand that completely. That’s why our approach is built entirely on creating an effortless, serene atmosphere rather than commanding rigid poses.
-                </p>
-                <p>
-                  When the light is magical, we guide you with subtle, intuitive prompts. When you are embracing your loved ones or laughing with your guests at dinner, we step back into the background, capturing honest cinema as it happens.
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "48px" }}>
+              <div>
+                <h3 style={{ fontSize: "13px", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", margin: "0 0 12px" }}>
+                  Effortless Atmosphere
+                </h3>
+                <p style={{ fontSize: "14.5px", fontWeight: 300, lineHeight: 1.85, color: "var(--ink-muted)", margin: 0 }}>
+                  Most couples worry about feeling staged or artificial in front of cameras. We understand that completely. That’s why our approach is built entirely on creating a calm, effortless atmosphere rather than commanding rigid poses.
                 </p>
               </div>
 
-              <div className="philosophy-text-col">
-                <p>
-                  We believe deeply in the permanence of physical heirlooms. Every commissioned celebration includes dual-format coverage, custom typography design, and master physical art pieces built to last across generations.
+              <div>
+                <h3 style={{ fontSize: "13px", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", margin: "0 0 12px" }}>
+                  Physical Permanence
+                </h3>
+                <p style={{ fontSize: "14.5px", fontWeight: 300, lineHeight: 1.85, color: "var(--ink-muted)", margin: 0 }}>
+                  We believe deeply in the permanence of tangible heirlooms. Every commissioned celebration includes dual-format coverage, resulting in master physical art pieces and cinema films built to last across generations.
                 </p>
-                <div style={{ marginTop: "24px" }}>
-                  <Link href="/portfolio" className="gione-btn-primary">
-                    <span>Explore Selected Works</span>
-                    <ArrowUpRight size={14} />
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Studio Values */}
-        <section className="about-values-section">
-          <div className="gione-section-head" style={{ marginBottom: "40px" }}>
-            <span className="gione-kicker">What We Stand For</span>
-            <h2>Core Studio Principles</h2>
-          </div>
+        {/* Studio Principles */}
+        <section className="minimal-section">
+          <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
+            <div style={{ marginBottom: "50px" }}>
+              <p className="minimal-overline">Core Principles</p>
+              <h2 style={{ fontFamily: "var(--font-display-condensed)", fontSize: "clamp(2.8rem, 4.5vw, 4.6rem)", letterSpacing: "0.06em", textTransform: "uppercase", margin: 0 }}>
+                What We Stand For
+              </h2>
+            </div>
 
-          <div className="about-values-grid">
-            {studioValues.map((v, i) => (
-              <div key={i} className="about-value-card">
-                <span className="value-index">0{i + 1}</span>
-                <h3>{v.title}</h3>
-                <p>{v.desc}</p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "40px" }}>
+              <div>
+                <span style={{ fontSize: "11px", letterSpacing: "0.2em", color: "var(--ink-subtle)", display: "block", marginBottom: "12px" }}>01 / PRESENCE</span>
+                <h3 style={{ fontSize: "15px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", margin: "0 0 8px" }}>Radical Presence</h3>
+                <p style={{ fontSize: "14px", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-muted)", margin: 0 }}>
+                  We don’t treat your wedding like a film set. Our priority is keeping you immersed in your day with the people you love.
+                </p>
               </div>
-            ))}
+
+              <div>
+                <span style={{ fontSize: "11px", letterSpacing: "0.2em", color: "var(--ink-subtle)", display: "block", marginBottom: "12px" }}>02 / CRAFT</span>
+                <h3 style={{ fontSize: "15px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", margin: "0 0 8px" }}>Dual-Format Artistry</h3>
+                <p style={{ fontSize: "14px", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-muted)", margin: 0 }}>
+                  Authentic 35mm analog film rolls combined with medium format digital ensure your heirloom imagery will never look dated.
+                </p>
+              </div>
+
+              <div>
+                <span style={{ fontSize: "11px", letterSpacing: "0.2em", color: "var(--ink-subtle)", display: "block", marginBottom: "12px" }}>03 / INCLUSIVITY</span>
+                <h3 style={{ fontSize: "15px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", margin: "0 0 8px" }}>Warmth & Inclusivity</h3>
+                <p style={{ fontSize: "14px", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-muted)", margin: 0 }}>
+                  Love is universal. We are fiercely affirming, culturally sensitive, and honor every love story, heritage, and tradition.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Features & Publications */}
-        <section className="gione-press-strip">
-          <div className="gione-press-inner">
-            <p className="gione-press-kicker">Featured & Published In</p>
-            <div className="gione-press-logos">
-              {publications.map((pub, idx) => (
-                <div key={idx} className="gione-press-item">
-                  <span>{pub}</span>
-                </div>
+        {/* Publications Strip */}
+        <section className="minimal-quote-section" style={{ padding: "50px 24px" }}>
+          <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+            <p className="minimal-overline" style={{ marginBottom: "20px" }}>Featured & Published In</p>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "clamp(24px, 5vw, 64px)", flexWrap: "wrap" }}>
+              {publications.map((pub) => (
+                <span key={pub} style={{ fontFamily: "var(--font-display-condensed)", fontSize: "18px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink-secondary)", opacity: 0.7 }}>
+                  {pub}
+                </span>
               ))}
             </div>
           </div>
         </section>
       </main>
 
-      <Footer />
+      <Footer showClosingCta={true} />
     </div>
   );
 }

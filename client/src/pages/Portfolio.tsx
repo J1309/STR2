@@ -2,11 +2,11 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { studioStories, type StoryItem } from "@/data/studioData";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Check, X } from "lucide-react";
+import { X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
-type CategoryFilter = "All" | "Intimate Celebrations" | "Wild Landscapes" | "Editorial & Brand" | "Studio & Objects";
+type CategoryFilter = "All" | "Intimate Celebrations" | "Wild Landscapes" | "Editorial & Brand";
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>("All");
@@ -16,8 +16,7 @@ export default function Portfolio() {
     "All",
     "Intimate Celebrations",
     "Wild Landscapes",
-    "Editorial & Brand",
-    "Studio & Objects"
+    "Editorial & Brand"
   ];
 
   const filteredStories = activeCategory === "All"
@@ -29,18 +28,15 @@ export default function Portfolio() {
       <Navbar variant="light" />
 
       <main className="starline-page-main">
-        {/* Page Header */}
+        {/* Minimalist Hero */}
         <section className="portfolio-hero">
-          <span className="gione-kicker">Portfolio Archive / 2024—2026</span>
-          <h1 className="portfolio-title">
-            Stories From<br />
-            The Quiet Road
-          </h1>
+          <p className="minimal-overline">The Archive / 2024—2026</p>
+          <h1 className="portfolio-title">Selected Works</h1>
           <p className="portfolio-subtitle">
-            A curated archive of destination wedding films, intimate celebrations, and fine art editorial monographs documented across Europe, North America, and beyond.
+            A curated body of wedding cinematography, fine art photography, and destination monographs documented across Europe, North America, and beyond.
           </p>
 
-          {/* Category Filter Pills */}
+          {/* Minimal Text Filter Bar */}
           <div className="portfolio-filter-bar">
             {categories.map((cat) => (
               <button
@@ -64,10 +60,10 @@ export default function Portfolio() {
                 <motion.div
                   key={story.id}
                   layout
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.96 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  transition={{ duration: 0.35, delay: index * 0.04 }}
                   className="gione-story-card"
                   onClick={() => setSelectedStory(story)}
                   role="button"
@@ -79,7 +75,6 @@ export default function Portfolio() {
                       alt={story.title}
                       loading="lazy"
                     />
-                    <span className="gione-story-media-cat">{story.category}</span>
                   </div>
 
                   <div className="gione-story-meta">
@@ -87,7 +82,7 @@ export default function Portfolio() {
                       <span>{story.location}</span>
                       <span>{story.year}</span>
                     </div>
-                    <h3 className="gione-story-title">{story.title}</h3>
+                    <h2 className="gione-story-title">{story.title}</h2>
                     <p className="gione-story-subtitle">{story.subtitle}</p>
                   </div>
                 </motion.div>
@@ -96,25 +91,13 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Dual-Format Archival Banner */}
-        <section className="gione-manifesto-section" style={{ backgroundColor: "var(--bg-secondary)", padding: "90px clamp(24px, 6vw, 96px)" }}>
-          <div className="gione-bespoke-strip" style={{ maxWidth: "1440px", margin: "0 auto" }}>
-            <div className="gione-bespoke-content">
-              <span className="gione-kicker">Archival Craft & Dual-Format</span>
-              <h4>Captured on authentic 35mm film & medium format digital</h4>
-              <p>
-                Every celebration is color-graded with precision to protect natural skin tones and organic silver grain for gallery wall printing.
-              </p>
-            </div>
-            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <Link href="/pricing" className="gione-btn-primary">
-                <span>View Pricing & Packages</span>
-                <ArrowUpRight size={14} />
-              </Link>
-              <Link href="/about" className="gione-btn-secondary" style={{ color: "var(--ink-primary)", borderColor: "var(--border-strong)", background: "transparent" }}>
-                <span>About The Process</span>
-              </Link>
-            </div>
+        {/* Archival Philosophy Pause */}
+        <section className="minimal-quote-section">
+          <div className="minimal-quote-inner">
+            <p className="minimal-quote-title">Dual-Format Archive</p>
+            <blockquote className="minimal-quote-text">
+              “Every commission is captured with a dedicated balance of medium format digital clarity and authentic 35mm analog film, creating an indelible archive that feels immediate today and timeless decades from now.”
+            </blockquote>
           </div>
         </section>
       </main>
@@ -131,9 +114,9 @@ export default function Portfolio() {
           >
             <motion.div
               className="story-modal-container"
-              initial={{ opacity: 0, y: 35 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 35 }}
+              exit={{ opacity: 0, y: 30 }}
               transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
               onClick={(e) => e.stopPropagation()}
             >
@@ -141,14 +124,16 @@ export default function Portfolio() {
                 <div>
                   <span className="story-modal-cat">{selectedStory.category}</span>
                   <h2 className="story-modal-title">{selectedStory.title}</h2>
-                  <p className="story-modal-loc">{selectedStory.location} — {selectedStory.year}</p>
+                  <p style={{ fontSize: "12px", color: "var(--ink-subtle)", margin: "4px 0 0" }}>
+                    {selectedStory.location} — {selectedStory.year}
+                  </p>
                 </div>
                 <button
                   className="story-modal-close-btn"
                   onClick={() => setSelectedStory(null)}
                   aria-label="Close story"
                 >
-                  <X size={20} />
+                  <X size={18} />
                 </button>
               </div>
 
@@ -163,14 +148,13 @@ export default function Portfolio() {
                   <p style={{ margin: 0 }}>{selectedStory.fieldNotes}</p>
                 </div>
 
-                <div style={{ marginTop: "28px", display: "flex", justifyContent: "flex-end" }}>
+                <div style={{ marginTop: "24px", display: "flex", justifyContent: "flex-end" }}>
                   <Link
                     href={`/contact?story=${selectedStory.id}`}
-                    className="gione-btn-primary"
+                    className="minimal-text-link"
                     onClick={() => setSelectedStory(null)}
                   >
                     <span>Inquire for Similar Commission</span>
-                    <ArrowUpRight size={14} />
                   </Link>
                 </div>
               </div>
@@ -179,7 +163,7 @@ export default function Portfolio() {
         )}
       </AnimatePresence>
 
-      <Footer />
+      <Footer showClosingCta={true} />
     </div>
   );
 }

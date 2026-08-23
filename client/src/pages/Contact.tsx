@@ -1,12 +1,11 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
-import { ArrowUpRight, CheckCircle2, Clock, Mail, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
 export default function Contact() {
-  const [celebrationType, setCelebrationType] = useState("Destination Wedding Film & Photo");
+  const [celebrationType, setCelebrationType] = useState("Destination Wedding Cinema & Photo");
   const [submitted, setSubmitted] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -15,13 +14,12 @@ export default function Contact() {
     phone: "",
     date: "",
     location: "",
-    source: "Instagram",
     story: ""
   });
 
   const celebrationTypes = [
-    "Destination Wedding Film & Photo",
-    "Intimate European / Overseas Elopement",
+    "Destination Wedding Cinema & Photo",
+    "European / Overseas Elopement",
     "Fine Art Photography Commission",
     "Editorial / Fashion Campaign"
   ];
@@ -37,97 +35,90 @@ export default function Contact() {
       <Navbar variant="light" />
 
       <main className="starline-page-main">
-        <section className="contact-page-hero">
-          <span className="gione-kicker">Inquiries & Reservations</span>
-          <h1 className="contact-title">
+        {/* Minimalist Hero */}
+        <section className="portfolio-hero">
+          <p className="minimal-overline">Inquiries & Reservations</p>
+          <h1 className="portfolio-title">
             Let’s Give Your Story<br />
             A Lasting Frame
           </h1>
-          <p className="contact-subtitle">
+          <p className="portfolio-subtitle">
             We accept a limited number of destination wedding and editorial commissions each season to ensure undivided focus on every nuance. Share your vision below.
           </p>
         </section>
 
-        <section className="contact-form-section">
-          <div className="contact-form-grid">
-            {/* Sidebar Details */}
-            <div className="contact-sidebar">
-              <div className="contact-info-card">
-                <h3>Studio Direct</h3>
-                <div className="contact-info-item">
-                  <Mail size={16} className="contact-icon" />
-                  <div>
-                    <p className="label">Direct Inquiry</p>
-                    <a href="mailto:hello@starline.studio">hello@starline.studio</a>
-                  </div>
-                </div>
-
-                <div className="contact-info-item">
-                  <MapPin size={16} className="contact-icon" />
-                  <div>
-                    <p className="label">Studio Locations</p>
-                    <span>California / London (Available Worldwide)</span>
-                  </div>
-                </div>
-
-                <div className="contact-info-item">
-                  <Clock size={16} className="contact-icon" />
-                  <div>
-                    <p className="label">Response Time</p>
-                    <span>Personal reply within 24–48 hours</span>
-                  </div>
-                </div>
+        {/* Minimalist Split Form Section */}
+        <section className="minimal-section" style={{ paddingTop: 0 }}>
+          <div className="minimal-contact-grid">
+            {/* Left: Studio Direct & Steps */}
+            <div className="minimal-contact-sidebar">
+              <div className="minimal-contact-item">
+                <p>Direct Inquiry</p>
+                <a href="mailto:hello@starline.studio">hello@starline.studio</a>
               </div>
 
-              <div className="contact-reassurance-card">
-                <h4>What Happens Next?</h4>
-                <ol className="next-steps-list">
-                  <li><b>1. Consultation:</b> We review calendar availability and connect for a relaxed video consultation.</li>
-                  <li><b>2. Bespoke Proposal:</b> We curate custom collection details and timeline guidance tailored to your venue.</li>
-                  <li><b>3. Reservation:</b> With a signed agreement and retainer, your date is exclusively secured.</li>
-                </ol>
+              <div className="minimal-contact-item">
+                <p>Studio Locations</p>
+                <span>California / London (Available Worldwide)</span>
+              </div>
+
+              <div className="minimal-contact-item">
+                <p>Response Timeline</p>
+                <span>Personal reply within 24–48 hours</span>
+              </div>
+
+              <div style={{ paddingTop: "20px", borderTop: "1px solid var(--line-subtle)" }}>
+                <p className="minimal-overline" style={{ marginBottom: "16px" }}>The Process</p>
+                <div style={{ display: "flex", flexDirection: "column", gap: "16px", fontSize: "13.5px", fontWeight: 300, color: "var(--ink-muted)" }}>
+                  <div>
+                    <b style={{ color: "var(--ink-primary)", fontWeight: 600, display: "block", marginBottom: "2px" }}>01. Consultation</b>
+                    We review calendar availability and connect for a relaxed video consultation.
+                  </div>
+                  <div>
+                    <b style={{ color: "var(--ink-primary)", fontWeight: 600, display: "block", marginBottom: "2px" }}>02. Custom Proposal</b>
+                    We curate custom collection details and timeline guidance tailored to your venue.
+                  </div>
+                  <div>
+                    <b style={{ color: "var(--ink-primary)", fontWeight: 600, display: "block", marginBottom: "2px" }}>03. Date Secured</b>
+                    With a signed agreement and retainer, your date is exclusively reserved.
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Main Interactive Form */}
-            <div className="contact-form-main">
+            {/* Right: Clean Studio Form */}
+            <div>
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4 }}
-                  style={{ textAlign: "center", padding: "40px 20px" }}
+                  style={{ textAlign: "left", padding: "40px 0" }}
                 >
-                  <div style={{ color: "var(--cobalt-bright)", marginBottom: "20px", display: "flex", justifyContent: "center" }}>
-                    <CheckCircle2 size={56} />
-                  </div>
-                  <h2 style={{ fontFamily: "var(--font-display-serif)", fontSize: "32px", marginBottom: "16px" }}>
+                  <p className="minimal-overline">Inquiry Received</p>
+                  <h2 style={{ fontFamily: "var(--font-display-condensed)", fontSize: "36px", letterSpacing: "0.06em", textTransform: "uppercase", margin: "0 0 16px" }}>
                     Thank you, {formData.names || "Friend"}.
                   </h2>
-                  <p style={{ color: "var(--ink-muted)", fontSize: "15px", lineHeight: "1.8", maxWidth: "560px", margin: "0 auto 36px" }}>
+                  <p style={{ color: "var(--ink-muted)", fontSize: "15px", fontWeight: 300, lineHeight: 1.85, maxWidth: "560px", margin: "0 0 32px" }}>
                     Your inquiry has been safely received. Our studio team will review your celebration dates and respond directly to <b>{formData.email || "your inbox"}</b> within 24 to 48 hours.
                   </p>
-                  <div style={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
-                    <Link href="/portfolio" className="gione-btn-primary">
-                      <span>Explore Portfolio</span>
-                      <ArrowUpRight size={14} />
-                    </Link>
-                    <Link href="/" className="gione-btn-secondary" style={{ color: "var(--ink-primary)", borderColor: "var(--border-strong)", background: "transparent" }}>
-                      <span>Return Home</span>
-                    </Link>
-                  </div>
+                  <Link href="/portfolio" className="minimal-text-link">
+                    <span>Explore Portfolio</span>
+                  </Link>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="inquiry-form">
+                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
                   {/* Celebration Type */}
-                  <div className="form-group">
-                    <label className="form-label">1. What kind of celebration or project are you planning?</label>
-                    <div className="celebration-pills-grid">
+                  <div>
+                    <label style={{ fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--ink-subtle)", display: "block", marginBottom: "12px" }}>
+                      01 / Celebration Type
+                    </label>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
                       {celebrationTypes.map((type) => (
                         <button
                           type="button"
                           key={type}
-                          className={`form-pill-btn ${celebrationType === type ? "is-selected" : ""}`}
+                          className={`portfolio-filter-btn ${celebrationType === type ? "is-active" : ""}`}
                           onClick={() => setCelebrationType(type)}
                         >
                           {type}
@@ -136,79 +127,90 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Names & Contact */}
-                  <div className="form-row-2">
-                    <div className="form-group">
-                      <label className="form-label" htmlFor="names">2. Your Full Name(s) *</label>
+                  {/* Names & Email */}
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "28px" }}>
+                    <div>
+                      <label style={{ fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--ink-subtle)", display: "block", marginBottom: "4px" }}>
+                        02 / Full Names *
+                      </label>
                       <input
                         type="text"
-                        id="names"
                         required
                         placeholder="e.g. Maya Rios & Julian Scott"
                         value={formData.names}
                         onChange={(e) => setFormData({ ...formData, names: e.target.value })}
-                        className="form-input"
+                        className="minimal-input-field"
                       />
                     </div>
 
-                    <div className="form-group">
-                      <label className="form-label" htmlFor="email">3. Email Address *</label>
+                    <div>
+                      <label style={{ fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--ink-subtle)", display: "block", marginBottom: "4px" }}>
+                        03 / Email Address *
+                      </label>
                       <input
                         type="email"
-                        id="email"
                         required
                         placeholder="e.g. maya@example.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="form-input"
+                        className="minimal-input-field"
                       />
                     </div>
                   </div>
 
-                  <div className="form-row-2">
-                    <div className="form-group">
-                      <label className="form-label" htmlFor="date">4. Event Date / Target Season *</label>
+                  {/* Date & Location */}
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "28px" }}>
+                    <div>
+                      <label style={{ fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--ink-subtle)", display: "block", marginBottom: "4px" }}>
+                        04 / Target Date or Season *
+                      </label>
                       <input
                         type="text"
-                        id="date"
                         required
-                        placeholder="e.g. September 18, 2026 or Autumn 2026"
+                        placeholder="e.g. September 2026 or Autumn 2026"
                         value={formData.date}
                         onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                        className="form-input"
+                        className="minimal-input-field"
                       />
                     </div>
 
-                    <div className="form-group">
-                      <label className="form-label" htmlFor="location">5. Celebration Location & Venue *</label>
+                    <div>
+                      <label style={{ fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--ink-subtle)", display: "block", marginBottom: "4px" }}>
+                        05 / Location & Venue *
+                      </label>
                       <input
                         type="text"
-                        id="location"
                         required
-                        placeholder="e.g. Lake Como, Italy or Big Sur, CA"
+                        placeholder="e.g. Villa Ephrussi, French Riviera"
                         value={formData.location}
                         onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                        className="form-input"
+                        className="minimal-input-field"
                       />
                     </div>
                   </div>
 
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="story">6. Tell Us About Your Vision & Atmosphere</label>
+                  {/* Story Notes */}
+                  <div>
+                    <label style={{ fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--ink-subtle)", display: "block", marginBottom: "4px" }}>
+                      06 / Tell Us About Your Vision
+                    </label>
                     <textarea
-                      id="story"
-                      rows={5}
-                      placeholder="Share details about the aesthetic, guest count, music, wardrobe, or what matters most to you..."
+                      rows={4}
+                      placeholder="Share details about the atmosphere, guest count, aesthetics, or what matters most to you..."
                       value={formData.story}
                       onChange={(e) => setFormData({ ...formData, story: e.target.value })}
-                      className="form-textarea"
+                      className="minimal-input-field"
+                      style={{ resize: "vertical" }}
                     />
                   </div>
 
-                  <div>
-                    <button type="submit" className="inquiry-submit-btn">
+                  <div style={{ marginTop: "12px" }}>
+                    <button
+                      type="submit"
+                      className="minimal-btn-outline"
+                      style={{ color: "var(--ink-primary)", borderColor: "var(--ink-primary)", background: "transparent" }}
+                    >
                       <span>Submit Studio Inquiry</span>
-                      <Send size={14} />
                     </button>
                   </div>
                 </form>
@@ -218,7 +220,7 @@ export default function Contact() {
         </section>
       </main>
 
-      <Footer />
+      <Footer showClosingCta={false} />
     </div>
   );
 }

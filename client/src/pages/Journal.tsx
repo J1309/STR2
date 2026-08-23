@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { journalArticles, type JournalArticle } from "@/data/studioData";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Calendar, Clock, X } from "lucide-react";
+import { X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
@@ -21,19 +21,19 @@ export default function Journal() {
       <Navbar variant="light" />
 
       <main className="starline-page-main">
-        {/* Page Hero */}
-        <section className="journal-hero">
-          <span className="gione-kicker">The Journal & Field Guides</span>
-          <h1 className="journal-title">
+        {/* Minimalist Hero */}
+        <section className="portfolio-hero">
+          <p className="minimal-overline">The Journal & Field Guides</p>
+          <h1 className="portfolio-title">
             Notes On Light,<br />
             Place & Memory
           </h1>
-          <p className="journal-subtitle">
+          <p className="portfolio-subtitle">
             Essays on intentional destination wedding planning, cinematography philosophies, and creative dispatches from around the world.
           </p>
 
-          {/* Category Filters */}
-          <div className="journal-filter-pills">
+          {/* Minimal Text Filters */}
+          <div className="portfolio-filter-bar">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -47,41 +47,36 @@ export default function Journal() {
         </section>
 
         {/* Articles Grid */}
-        <section className="journal-grid-section">
-          <div className="journal-grid">
+        <section className="portfolio-grid-section">
+          <div className="portfolio-grid">
             <AnimatePresence mode="popLayout">
               {filteredArticles.map((article, idx) => (
                 <motion.article
                   key={article.id}
                   layout
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4, delay: idx * 0.05 }}
-                  className="journal-card"
+                  transition={{ duration: 0.35, delay: idx * 0.04 }}
+                  className="gione-story-card"
                   onClick={() => setSelectedArticle(article)}
+                  style={{ cursor: "pointer" }}
                 >
-                  <div className="journal-card-media">
+                  <div className="gione-story-media" style={{ aspectRatio: "16 / 10" }}>
                     <img src={article.coverImage} alt={article.title} loading="lazy" />
-                    <span className="journal-card-cat-badge">{article.category}</span>
                   </div>
 
-                  <div className="journal-card-content">
-                    <div className="journal-card-meta">
-                      <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                        <Calendar size={13} color="var(--cobalt-bright)" /> {article.date}
-                      </span>
-                      <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                        <Clock size={13} color="var(--cobalt-bright)" /> {article.readTime}
-                      </span>
+                  <div className="gione-story-meta">
+                    <div className="gione-story-meta-row">
+                      <span>{article.category}</span>
+                      <span>{article.date} — {article.readTime}</span>
                     </div>
 
-                    <h2 className="journal-card-title">{article.title}</h2>
-                    <p className="journal-card-excerpt">{article.excerpt}</p>
+                    <h2 className="gione-story-title">{article.title}</h2>
+                    <p className="gione-story-subtitle">{article.excerpt}</p>
 
-                    <div className="journal-card-read-btn">
-                      <span>Read Field Guide</span>
-                      <ArrowUpRight size={14} />
+                    <div style={{ marginTop: "16px" }}>
+                      <span className="minimal-text-link">Read Field Guide</span>
                     </div>
                   </div>
                 </motion.article>
@@ -102,59 +97,54 @@ export default function Journal() {
             onClick={() => setSelectedArticle(null)}
           >
             <motion.div
-              className="article-modal-container"
-              initial={{ opacity: 0, y: 35 }}
+              className="story-modal-container"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 35 }}
+              exit={{ opacity: 0, y: 30 }}
               transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="article-modal-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+              <div className="story-modal-header">
                 <div>
-                  <div className="article-modal-meta-row">
-                    <span>{selectedArticle.category}</span>
-                    <span>•</span>
-                    <span>{selectedArticle.date}</span>
-                    <span>•</span>
-                    <span>{selectedArticle.readTime}</span>
-                  </div>
-                  <h1 className="article-modal-title">{selectedArticle.title}</h1>
-                  <p style={{ margin: 0, color: "var(--ink-muted)", fontSize: "14px" }}>{selectedArticle.subtitle}</p>
+                  <span className="story-modal-cat">{selectedArticle.category} • {selectedArticle.date}</span>
+                  <h2 className="story-modal-title">{selectedArticle.title}</h2>
+                  <p style={{ margin: "4px 0 0", color: "var(--ink-muted)", fontSize: "13.5px" }}>{selectedArticle.subtitle}</p>
                 </div>
                 <button
                   className="story-modal-close-btn"
                   onClick={() => setSelectedArticle(null)}
                   aria-label="Close article"
                 >
-                  <X size={20} />
+                  <X size={18} />
                 </button>
               </div>
 
-              <div style={{ padding: "0 40px" }}>
+              <div style={{ padding: "32px 36px 0" }}>
                 <img
                   src={selectedArticle.coverImage}
                   alt={selectedArticle.title}
-                  style={{ width: "100%", maxHeight: "380px", objectFit: "cover", borderRadius: "14px", marginTop: "24px" }}
+                  style={{ width: "100%", maxHeight: "380px", objectFit: "cover" }}
                 />
               </div>
 
-              <div className="article-modal-body">
+              <div className="story-modal-body">
                 {selectedArticle.content.map((paragraph, pIdx) => (
-                  <p key={pIdx}>{paragraph}</p>
+                  <p key={pIdx} style={{ fontSize: "14.5px", fontWeight: 300, lineHeight: 1.85, color: "var(--ink-secondary)", margin: "0 0 20px" }}>
+                    {paragraph}
+                  </p>
                 ))}
 
-                <div style={{ marginTop: "36px", paddingTop: "24px", borderTop: "1px solid var(--border-subtle)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
+                <div style={{ marginTop: "32px", paddingTop: "24px", borderTop: "1px solid var(--line-subtle)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
                   <div>
-                    <p style={{ margin: "0 0 4px", fontSize: "14px", fontWeight: 600 }}>Starline Studio Editorial</p>
-                    <span style={{ fontSize: "12px", color: "var(--ink-muted)" }}>Have questions about planning your celebration? We’d love to guide you.</span>
+                    <p style={{ margin: "0 0 2px", fontSize: "13px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase" }}>Starline Studio Editorial</p>
+                    <span style={{ fontSize: "12px", color: "var(--ink-muted)" }}>Have questions about your celebration? We’d love to connect.</span>
                   </div>
                   <Link
                     href="/contact"
-                    className="gione-btn-primary"
+                    className="minimal-text-link"
                     onClick={() => setSelectedArticle(null)}
                   >
                     <span>Inquire with Studio</span>
-                    <ArrowUpRight size={14} />
                   </Link>
                 </div>
               </div>
@@ -163,7 +153,7 @@ export default function Journal() {
         )}
       </AnimatePresence>
 
-      <Footer />
+      <Footer showClosingCta={true} />
     </div>
   );
 }
