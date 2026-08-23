@@ -72,21 +72,6 @@ export default function Home() {
               Telling Your Story Through<br />
               Beautiful and Meaningful Imagery
             </h1>
-
-            <div className="minimal-hero-actions">
-              <Link href="/portfolio" className="minimal-btn-outline">
-                <span>View Portfolio</span>
-              </Link>
-
-              <button
-                className="minimal-btn-outline"
-                onClick={() => setActiveVideoModal("/vid/hero-video.mp4")}
-                aria-label="Play Featured Showreel"
-              >
-                <Play size={13} fill="currentColor" />
-                <span>Watch Film</span>
-              </button>
-            </div>
           </div>
 
           <a href="#manifesto" className="minimal-hero-scroll" aria-label="Scroll to content">
