@@ -1190,52 +1190,88 @@ a {
 }
 
 /* ==========================================================================
-   JOURNAL AUTOMATIC STORY SLIDER (MAGAZINE SHOWCASE)
+   INTERACTIVE HOVER-SLIDING STORY CARDS
    ========================================================================== */
-.journal-featured-slider-section {
+.journal-sliding-grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 70px);
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 clamp(24px, 6vw, 96px) 20px;
 }
 
-.journal-slider-container {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: clamp(36px, 5vw, 64px);
-  align-items: center;
-  background: var(--bg-soft);
-  border-radius: 4px;
-  padding: clamp(24px, 4vw, 44px);
-  border: 1px solid var(--line-subtle);
-}
-
-.journal-slider-media {
+.hover-sliding-card {
   position: relative;
-  aspect-ratio: 16 / 10;
+  width: 100%;
+  height: clamp(420px, 50vh, 520px);
   overflow: hidden;
-  background: #000;
-  border-radius: 2px;
+  background-color: var(--bg-soft);
+  border: 1px solid var(--line-subtle);
+  border-radius: 4px;
   cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.journal-slider-image-wrap {
+.hover-sliding-card:hover {
+  border-color: var(--ink-primary);
+  box-shadow: 0 16px 40px rgba(17, 17, 19, 0.05);
+}
+
+/* The Sliding Image Layer */
+.sliding-image-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  background: #000;
+  transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.journal-slider-image {
+.sliding-cover-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1), filter 0.4s ease;
 }
 
-.journal-slider-image-badge {
+.hover-sliding-card:hover .sliding-cover-image {
+  transform: scale(1.04);
+}
+
+/* Hover Slide Transformations */
+.hover-sliding-card.slide-to-left.is-hovered .sliding-image-layer {
+  transform: translateX(-52%);
+}
+
+.hover-sliding-card.slide-to-right.is-hovered .sliding-image-layer {
+  transform: translateX(52%);
+}
+
+/* Default Overlay with Caption & Hint */
+.sliding-image-caption {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  background: rgba(8, 9, 12, 0.7);
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(20px, 3vw, 36px);
+  background: linear-gradient(180deg, rgba(8, 9, 12, 0.3) 0%, transparent 40%, rgba(8, 9, 12, 0.75) 100%);
+  color: #ffffff;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.hover-sliding-card.is-hovered .sliding-image-caption {
+  opacity: 0.2;
+}
+
+.sliding-image-badge {
+  align-self: flex-start;
+  background: rgba(8, 9, 12, 0.6);
   backdrop-filter: blur(8px);
   color: #ffffff;
   font-size: 9.5px;
@@ -1244,30 +1280,86 @@ a {
   text-transform: uppercase;
   padding: 6px 14px;
   border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.journal-slider-progress-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.2);
-  z-index: 10;
-}
-
-.journal-slider-progress-fill {
-  height: 100%;
-  background: #ffffff;
-}
-
-.journal-slider-story {
+.sliding-image-bottom-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 6px;
 }
 
-.journal-slider-story-meta {
+.sliding-image-date {
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sliding-image-title {
+  font-family: var(--font-display-condensed);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.sliding-hint-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* The Revealed Story Panel */
+.sliding-story-panel {
+  position: absolute;
+  top: 0;
+  width: 52%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding: clamp(24px, 4vw, 56px);
+  background-color: var(--bg-soft);
+}
+
+.sliding-story-panel.panel-on-right {
+  right: 0;
+}
+
+.sliding-story-panel.panel-on-left {
+  left: 0;
+}
+
+.sliding-story-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 540px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.45s ease 0.15s, transform 0.45s cubic-bezier(0.23, 1, 0.32, 1) 0.15s;
+}
+
+.hover-sliding-card.is-hovered .sliding-story-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sliding-story-meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1276,25 +1368,25 @@ a {
   gap: 8px;
 }
 
-.journal-slider-read-badge {
+.sliding-story-badge {
   font-size: 11px;
   color: var(--ink-subtle);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.journal-slider-title {
+.sliding-story-title {
   font-family: var(--font-display-condensed);
-  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-size: clamp(1.8rem, 2.6vw, 2.5rem);
   font-weight: 300;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  line-height: 1.08;
+  line-height: 1.1;
   margin: 0 0 8px;
   color: var(--ink-primary);
 }
 
-.journal-slider-subtitle {
+.sliding-story-subtitle {
   font-family: var(--font-sans);
   font-size: 13.5px;
   font-weight: 400;
@@ -1303,109 +1395,47 @@ a {
   line-height: 1.5;
 }
 
-.journal-slider-excerpt {
+.sliding-story-excerpt {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 300;
   line-height: 1.8;
   color: var(--ink-muted);
-  margin: 0 0 24px;
+  margin: 0 0 20px;
 }
 
-.journal-slider-action-row {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 28px;
-  flex-wrap: wrap;
+.sliding-story-action {
+  margin-top: 4px;
 }
 
-.journal-slider-pause-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-subtle);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 860px) {
+  .hover-sliding-card {
+    height: auto;
+    min-height: 480px;
+  }
 
-.journal-slider-pause-btn:hover {
-  color: var(--ink-primary);
-}
+  .hover-sliding-card.slide-to-left.is-hovered .sliding-image-layer,
+  .hover-sliding-card.slide-to-right.is-hovered .sliding-image-layer {
+    transform: translateY(-60%);
+  }
 
-.journal-slider-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 18px;
-  border-top: 1px solid var(--line-subtle);
-}
+  .sliding-story-panel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 30px 24px;
+  }
 
-.journal-slider-counter {
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  color: var(--ink-primary);
-}
+  .sliding-story-panel.panel-on-right,
+  .sliding-story-panel.panel-on-left {
+    right: auto;
+    left: auto;
+  }
 
-.journal-slider-dots {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.journal-slider-dot {
-  width: 18px;
-  height: 3px;
-  background: var(--line-subtle);
-  border: none;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  border-radius: 2px;
-  padding: 0;
-}
-
-.journal-slider-dot.is-active {
-  width: 32px;
-  background: var(--ink-primary);
-}
-
-.journal-slider-arrows {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.journal-slider-arrows button {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1px solid var(--line-subtle);
-  background: transparent;
-  color: var(--ink-primary);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.journal-slider-arrows button:hover {
-  background: var(--ink-primary);
-  color: #ffffff;
-  border-color: var(--ink-primary);
-}
-
-@media (max-width: 960px) {
-  .journal-slider-container {
-    grid-template-columns: 1fr;
-    gap: 28px;
+  .sliding-story-content {
+    opacity: 1;
+    transform: none;
   }
 }
 
