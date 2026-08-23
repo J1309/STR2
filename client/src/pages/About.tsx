@@ -29,8 +29,8 @@ export default function About() {
   ];
 
   return (
-    <div className="starline-page-shell">
-      <Navbar variant="dark" />
+    <div className="starline-page-shell about-page-shell">
+      <Navbar variant="light" />
 
       <main className="starline-page-main">
         {/* About Hero / Split Section */}
