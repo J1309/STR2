@@ -89,9 +89,9 @@ export default function Portfolio() {
       category: "Wild Landscapes",
       location: "High Sierra, California",
       year: "2026",
-      coverImage: "/bg_hero_page.png",
+      coverImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
       galleryImages: [
-        "/bg_hero_page.png",
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1600&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop"
       ],

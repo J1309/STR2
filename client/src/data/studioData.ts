@@ -63,12 +63,12 @@ export const studioStories: StoryItem[] = [
     category: "Wild Landscapes",
     location: "High Sierra, California",
     year: "2026",
-    coverImage: "/bg_hero_page.png",
+    coverImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
     galleryImages: [
-      "/bg_hero_page.png",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1600&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop"
     ],
     fieldNotes: "Standing at the edge of the glacial shelf as the wind died down. The blue hour in the Sierra creates a cool gradient across the water that no studio light could ever manufacture. We waited for twenty minutes in total quiet just to catch the single breath of reflection before the stars surfaced.",
     details: {
@@ -89,7 +89,7 @@ export const studioStories: StoryItem[] = [
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1600&auto=format&fit=crop",
-      "/bg_hero_page.png"
+      "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1600&auto=format&fit=crop"
     ],
     fieldNotes: "An intimate vow exchange tucked between ancient monzogranite boulders. The low desert sun carved gold edges around wild mustard blossoms. With just twelve guests, the dinner took place at a single long wooden table under open skies as lantern light took over from the sunset.",
     details: {
@@ -121,7 +121,7 @@ export const studioStories: StoryItem[] = [
   },
   {
     id: "santa-fe-adobe",
-    title: "Santa Fe Passages",
+    title: "Shadows in the Adobe Corridor",
     subtitle: "Warm terra cotta walls and sharp shade",
     category: "Editorial & Brand",
     location: "Santa Fe, New Mexico",
@@ -130,7 +130,7 @@ export const studioStories: StoryItem[] = [
     galleryImages: [
       "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1600&auto=format&fit=crop",
-      "/bg_hero_page.png"
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop"
     ],
     fieldNotes: "Editorial campaign photographed for an artisanal wool and ceramic studio. The warm earth tones of the historic adobe corridors provided the perfect grounding contrast against crisp minimalist silhouettes.",
     details: {
@@ -149,7 +149,7 @@ export const studioStories: StoryItem[] = [
     coverImage: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1600&auto=format&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1600&auto=format&fit=crop",
-      "/bg_hero_page.png",
+      "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1600&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop"
     ],
     fieldNotes: "Where the horizon dissolves completely into mirror reflections. We traveled before sunrise to capture the transition from indigo cold to shimmering desert pastel light.",
@@ -315,7 +315,7 @@ export const testimonials: TestimonialItem[] = [
     client: "Adrianne & Marcus",
     celebration: "Intimate High Sierra Vows",
     location: "Lake Tahoe, California",
-    image: "/bg_hero_page.png"
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop"
   },
   {
     id: "2",
@@ -408,7 +408,7 @@ export const journalArticles: JournalArticle[] = [
     category: "Destination Weddings",
     date: "14 June 2025",
     readTime: "7 min read",
-    coverImage: "/bg_hero_page.png",
+    coverImage: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1600&auto=format&fit=crop",
     excerpt: "An intimate multi-day gathering celebrating the soulful rhythms of Tuscany, documented with medium-format analog film and natural golden-hour illumination.",
     content: [
       "The rolling wheat fields and winding cypress driveways of Val d'Orcia represent the quintessential soul of the Italian countryside. Isabella and Julian curated an unhurried weekend focused on regional wine, seasonal cuisine, and deep connection.",

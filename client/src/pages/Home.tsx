@@ -25,7 +25,7 @@ export default function Home() {
     { image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop", title: "Studio Objects", subtitle: "Linen & Silver" },
     { image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=800&auto=format&fit=crop", title: "Utah Horizon", subtitle: "Salt & Dusk" },
     { image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop", title: "Amalfi Coast", subtitle: "Tyrrhenian Mist" },
-    { image: "/bg_hero_page.png", title: "High Sierra", subtitle: "35mm Analog Print" }
+    { image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=800&auto=format&fit=crop", title: "High Sierra", subtitle: "35mm Analog Print" }
   ];
 
   return (
@@ -44,16 +44,10 @@ export default function Home() {
               loop
               muted
               playsInline
-              poster="/bg_hero_page.png"
             >
               <source
                 src="/vid/new_section_img.mp4"
                 type="video/mp4"
-              />
-              <img
-                src="/bg_hero_page.png"
-                alt="Cinematic Destination Wedding"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </video>
           </div>

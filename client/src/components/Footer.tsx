@@ -93,7 +93,7 @@ export default function Footer({ showClosingCta = false }: FooterProps) {
     { src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=600&auto=format&fit=crop", label: "High Sierra" },
     { src: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop", label: "Amalfi Coast" },
     { src: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600&auto=format&fit=crop", label: "Santa Fe" },
-    { src: "/bg_hero_page.png", label: "Lake Como" }
+    { src: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=600&auto=format&fit=crop", label: "Lake Como" }
   ];
 
   const handleSubscribe = (e: React.FormEvent) => {
