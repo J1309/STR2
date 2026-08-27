@@ -64,61 +64,72 @@ export default function Home() {
 
           <div className="minimal-hero-content">
             <h1 className="minimal-hero-title">
-              TELLING YOUR STORY THROUGH BEAUTIFUL AND MEANINGFUL IMAGERY
+              TELLING STORIES THAT OUTLAST THE SEASON
             </h1>
             <p className="minimal-hero-kicker">
-              ACCLAIMED LONDON AND DESTINATION WEDDING VIDEOGRAPHER – PHOTOGRAPHER
+              PHILADELPHIA &amp; WORLDWIDE DESTINATIONS
             </p>
           </div>
         </section>
 
         {/* ===================================================================
-            2. EDITORIAL STATEMENT / MANIFESTO (CLEAN SPLIT ON PURE WHITE)
+            2. EDITORIAL STATEMENT / MANIFESTO (PHILADELPHIA ATELIER + BIG WD1.JPG)
             =================================================================== */}
         <section className="minimal-section" id="manifesto">
           <div className="minimal-statement-grid">
             <div className="minimal-statement-left">
+              <span className="minimal-statement-tag">ATELIER PHILADELPHIA</span>
               <h2>
-                London & Destination<br />
+                Philadelphia &amp; Destination<br />
                 Wedding Videographer<br />
                 Photographer
               </h2>
+              <p className="minimal-statement-lead">
+                Based in Philadelphia, Starline crafts living heirlooms of cinema and 35mm analog photography for couples who seek artful elegance, honest emotion, and enduring memory across the United States and abroad.
+              </p>
+              <div className="minimal-statement-meta">
+                <div className="meta-block">
+                  <span className="meta-label">PRIMARY HUBS</span>
+                  <span className="meta-val">PHILADELPHIA • NEW YORK • WORLDWIDE</span>
+                </div>
+                <div className="meta-block">
+                  <span className="meta-label">ANNUAL COMMISSIONS</span>
+                  <span className="meta-val">LIMITED TO 18 CELEBRATIONS PER YEAR</span>
+                </div>
+              </div>
             </div>
 
-            <div className="minimal-statement-right">
-              <div className="minimal-prose-block">
-                <h3>Unparalleled Expertise for the Discerning Client</h3>
-                <p>
-                  In a world of options, we stand out as specialists, not commodities. Our expertise is honed, precise, and tailored to those who seek the extraordinary. For those who value expertise over the ordinary, our commissions come with a premium, reflective of the skill, dedication, and unique perspective we bring to every project. True luxury is about exclusivity, delivering excellence with zero distraction.
-                </p>
-              </div>
-
-              <div className="minimal-prose-block">
-                <h3>Crafting Unique Experiences for the Adventurous</h3>
-                <p>
-                  We cater to a clientele that knows what they want—those who are not only discerning but also adventurous and fashion-forward. Our clients are visionaries who appreciate creativity and boldness. Together, we craft experiences that are as unique as they are luxurious. This is not about following trends but setting them.
-                </p>
-              </div>
-
-              <div className="minimal-prose-block">
-                <h3>Bespoke Services Tailored to Your Vision</h3>
-                <p>
-                  What we offer is far from a standard service—it’s a bespoke experience tailored to each client’s unique vision. Every event is different, and so are the needs of each couple. That’s why our approach isn’t dictated by formulas, but by the impact and lasting emotion we create.
-                </p>
+            <div className="minimal-statement-right-media">
+              <div className="statement-portrait-frame">
+                <img
+                  src="/wd1.jpg"
+                  alt="Philadelphia & Destination Wedding"
+                  className="statement-portrait-img"
+                  loading="lazy"
+                />
+                <div className="statement-portrait-badge">
+                  <span>PHILADELPHIA ATELIER</span>
+                  <span>35MM ARCHIVAL</span>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* ===================================================================
-            3. FEATURED VIDEO SHOWCASES (WIDESCREEN 16:9 + QUIET TEXT)
+            3. FEATURED VIDEO SHOWCASES (FRAMED MASTER BOXES + PREMIUM BLUE STORY BOX)
             =================================================================== */}
-        <section className="minimal-section" style={{ paddingTop: 0 }}>
+        <section className="minimal-section minimal-showcase-section" style={{ paddingTop: 0 }}>
+          <div className="minimal-section-header">
+            <span className="minimal-section-tag">CINEMATIC COMMISSIONS</span>
+            <h2 className="minimal-section-title">FEATURED CINEMA FILMS</h2>
+          </div>
+
           <div className="minimal-showcase-wrap">
-            {/* Featured Video 1: Marrakech */}
-            <div className="minimal-video-row">
+            {/* Featured Film 1: Marrakech */}
+            <div className="featured-video-master-card">
               <div
-                className="minimal-video-media"
+                className="featured-video-media-col"
                 onClick={() => setPlayingVideos(prev => ({ ...prev, marrakech: true }))}
                 role="button"
                 tabIndex={0}
@@ -130,40 +141,73 @@ export default function Home() {
                     autoPlay
                     controls
                     playsInline
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    className="featured-video-element"
                   />
                 ) : (
                   <>
                     <img
                       src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop"
                       alt="Epic Wedding in Marrakech"
+                      className="featured-video-poster"
                       loading="lazy"
                     />
                     <div className="minimal-play-btn">
                       <div className="minimal-play-icon">
-                        <Play size={22} fill="currentColor" />
+                        <Play size={24} fill="currentColor" />
                       </div>
+                      <span className="play-pulse-ring" />
+                    </div>
+                    <div className="featured-media-badge">
+                      <span>PLAY 4K FILM // 08:45</span>
                     </div>
                   </>
                 )}
               </div>
 
-              <div className="minimal-video-info">
-                <p className="minimal-overline">featured video:</p>
-                <h3 className="minimal-video-title">Epic Wedding in Marrakech, Morocco</h3>
-                <p className="minimal-video-desc">
-                  An incredible adventure wedding in the enchanting desert city of Marrakech, through lantern-lit courtyards and the gardens of La Mamounia.
+              <div className="featured-video-story-blue-box">
+                <div className="blue-box-header">
+                  <span className="blue-box-num">01 / DESTINATION CELEBRATION</span>
+                  <span className="blue-box-badge">MARRAKECH • MOROCCO</span>
+                </div>
+
+                <h3 className="blue-box-title">Epic Wedding in Marrakech</h3>
+                
+                <p className="blue-box-quote">
+                  “Lantern-lit riad courtyards, golden desert twilight, and an untamed romance echoing through the ancient palms.”
                 </p>
-                <Link href="/contact" className="minimal-text-link">
-                  <span>Contact Us</span>
-                </Link>
+
+                <p className="blue-box-narrative">
+                  An unforgettable multi-day celebration documented across the historic gardens of La Mamounia and the quiet dunes of Agafay. Shot entirely on bespoke anamorphic glass and natural 35mm film emulsions.
+                </p>
+
+                <div className="blue-box-telemetry">
+                  <div className="telemetry-item">
+                    <span className="tel-label">FORMAT</span>
+                    <span className="tel-val">4K CINEMA + 35MM LEICA</span>
+                  </div>
+                  <div className="telemetry-item">
+                    <span className="tel-label">SOUNDTRACK</span>
+                    <span className="tel-val">BESPOKE ACOUSTIC SCORE</span>
+                  </div>
+                  <div className="telemetry-item">
+                    <span className="tel-label">SEASONS</span>
+                    <span className="tel-val">AUTUMN SOLSTICE</span>
+                  </div>
+                </div>
+
+                <div className="blue-box-footer">
+                  <Link href="/portfolio" className="blue-box-cta">
+                    <span>Explore Full Gallery &amp; Film</span>
+                    <ArrowUpRight size={14} />
+                  </Link>
+                </div>
               </div>
             </div>
 
-            {/* Featured Video 2: French Riviera / Lake Como */}
-            <div className="minimal-video-row is-reversed">
+            {/* Featured Film 2: French Riviera */}
+            <div className="featured-video-master-card is-reversed">
               <div
-                className="minimal-video-media"
+                className="featured-video-media-col"
                 onClick={() => setPlayingVideos(prev => ({ ...prev, riviera: true }))}
                 role="button"
                 tabIndex={0}
@@ -175,33 +219,66 @@ export default function Home() {
                     autoPlay
                     controls
                     playsInline
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    className="featured-video-element"
                   />
                 ) : (
                   <>
                     <img
                       src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop"
                       alt="Elegant French Riviera Wedding"
+                      className="featured-video-poster"
                       loading="lazy"
                     />
                     <div className="minimal-play-btn">
                       <div className="minimal-play-icon">
-                        <Play size={22} fill="currentColor" />
+                        <Play size={24} fill="currentColor" />
                       </div>
+                      <span className="play-pulse-ring" />
+                    </div>
+                    <div className="featured-media-badge">
+                      <span>PLAY 4K FILM // 10:12</span>
                     </div>
                   </>
                 )}
               </div>
 
-              <div className="minimal-video-info">
-                <p className="minimal-overline">featured video:</p>
-                <h3 className="minimal-video-title">Elegant & Heartfelt French Riviera Wedding</h3>
-                <p className="minimal-video-desc">
-                  A stunningly elegant celebration overlooking the Mediterranean at the historic Villa Ephrussi de Rothschild, France.
+              <div className="featured-video-story-blue-box">
+                <div className="blue-box-header">
+                  <span className="blue-box-num">02 / MEDITERRANEAN ESTATE</span>
+                  <span className="blue-box-badge">CÔTE D'AZUR • FRANCE</span>
+                </div>
+
+                <h3 className="blue-box-title">Heartfelt Riviera Celebration</h3>
+                
+                <p className="blue-box-quote">
+                  “Azure horizons, classical stone balustrades, and quiet candlelight drifting over the Mediterranean sea.”
                 </p>
-                <Link href="/portfolio" className="minimal-text-link">
-                  <span>See Full Story</span>
-                </Link>
+
+                <p className="blue-box-narrative">
+                  Overlooking Saint-Jean-Cap-Ferrat, this intimate cliffside villa celebration was captured with a documentary sensitivity that prioritized unrehearsed laughter, heartfelt vows, and dusk champagne toasts.
+                </p>
+
+                <div className="blue-box-telemetry">
+                  <div className="telemetry-item">
+                    <span className="tel-label">FORMAT</span>
+                    <span className="tel-val">4K ULTRA HD + KODAK 500T</span>
+                  </div>
+                  <div className="telemetry-item">
+                    <span className="tel-label">SOUNDTRACK</span>
+                    <span className="tel-val">LIVE CELLO &amp; PIANO SUITE</span>
+                  </div>
+                  <div className="telemetry-item">
+                    <span className="tel-label">SEASONS</span>
+                    <span className="tel-val">MIDSUMMER TWILIGHT</span>
+                  </div>
+                </div>
+
+                <div className="blue-box-footer">
+                  <Link href="/portfolio" className="blue-box-cta">
+                    <span>Explore Full Gallery &amp; Film</span>
+                    <ArrowUpRight size={14} />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

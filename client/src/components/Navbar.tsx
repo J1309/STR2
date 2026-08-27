@@ -69,13 +69,8 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
             })}
           </nav>
 
-          {/* Action Button & Mobile Toggle */}
+          {/* Mobile Toggle */}
           <div className="starline-header-actions">
-            <Link href="/contact" className="starline-header-cta">
-              <span>Inquire</span>
-              <ArrowUpRight size={13} />
-            </Link>
-
             <button
               className="starline-mobile-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
