@@ -229,19 +229,7 @@ export default function Home() {
         </section>
 
         {/* ===================================================================
-            4. CRAFT VS COMMODITY (QUIET PHILOSOPHICAL PAUSE)
-            =================================================================== */}
-        <section className="minimal-quote-section">
-          <div className="minimal-quote-inner">
-            <p className="minimal-quote-title">Craft vs Commodity</p>
-            <blockquote className="minimal-quote-text">
-              “We don’t sell videos, we craft films. Amid all the beauty, the laughter, the love and tears of any wedding day, we create a celebration of you in a beautiful film crafted in our unique style. It is about transforming the events of your wedding into a living, lasting memory.”
-            </blockquote>
-          </div>
-        </section>
-
-        {/* ===================================================================
-            5. PHOTOGRAPHY SHOWCASE (HOW GIONE DA SILVA SHOWCASES IMAGES)
+            4. PHOTOGRAPHY SHOWCASE (HOW GIONE DA SILVA SHOWCASES IMAGES)
             =================================================================== */}
         <section className="minimal-section">
           <div className="minimal-photo-spread">
