@@ -220,7 +220,7 @@ export const investmentTiers: InvestmentTier[] = [
   {
     id: "destination",
     name: "The Destination & Multi-Day",
-    tagline: "Multi-day narrative for weekend getaways, European celebrations, and backcountry expeditions.",
+    tagline: "Multi-day narrative for weekend getaways, American coast celebrations, and backcountry expeditions.",
     price: "$7,800",
     coverage: "Two Days / Multi-Event Complete Story",
     inclusions: [
@@ -229,7 +229,7 @@ export const investmentTiers: InvestmentTier[] = [
       "1,000+ hand-crafted digital frames delivered in full resolution",
       "Custom 12x12 bespoke Italian-bound linen heirloom wedding album",
       "Full drone aerial topography & landscape environmental frames",
-      "Worldwide travel and lodging completely included",
+      "All domestic travel and lodging completely included",
       "Priority artisan delivery within 3 weeks"
     ],
     recommendedFor: "Destination celebrations where the journey and environment are as central as the vow exchange."
@@ -300,11 +300,79 @@ export const faqItems: FAQItem[] = [
     question: "How do we secure our date?",
     answer: "To ensure absolute dedication to every story, Starline only accepts a limited number of celebrations each year (maximum 20). Dates are reserved with a signed digital agreement and a 30% retainer. The remaining balance is split into flexible installments.",
     category: "Booking"
+  }
+];
+
+export const pressQuotes: PressItem[] = [
+  {
+    publication: "Vogue Weddings",
+    quote: "A master of atmospheric light. Starline captures weddings not as spectacles, but as living, breathing cinematic poetry.",
+    year: "2025"
   },
   {
-    question: "What happens if weather conditions are unpredictable?",
-    answer: "Unpredictable weather often makes for the most cinematic, memorable photographs! Wind, rolling fog, and mood light add incredible romance. We always scout backup micro-locations and carry weather protection so we can embrace the elements safely.",
-    category: "Travel & Weather"
+    publication: "Harper's Bazaar",
+    quote: "Her 35mm film frames possess an unmistakable nostalgic richness—timeless images destined to become family treasures.",
+    year: "2025"
+  },
+  {
+    publication: "Over The Moon",
+    quote: "The definitive lens for couples seeking unhurried, authentic visual artistry that defies fleeting trend cycles.",
+    year: "2024"
+  },
+  {
+    publication: "Kinfolk",
+    quote: "Quiet, intentional, and profoundly moving. Starline redefines what it means to document an intimate gathering.",
+    year: "2024"
+  }
+];
+
+export const studioProcessSteps: ProcessStep[] = [
+  {
+    number: "01",
+    phase: "The Introduction",
+    title: "Connection & Alignment",
+    description: "Every commission begins with an unhurried conversation. We listen to the rhythm of your plans, the setting, the light, and what matters most to your story."
+  },
+  {
+    number: "02",
+    phase: "The Preparation",
+    title: "Artistic Direction",
+    description: "We review lighting schedules, environmental nuances, and wardrobe tones to ensure documentary spontaneity flows naturally on the day."
+  },
+  {
+    number: "03",
+    phase: "The Gathering",
+    title: "Unhurried Presence",
+    description: "On the day, we move like observant guests. We blend gentle guidance during portraits with complete documentary invisibility during your celebration."
+  },
+  {
+    number: "04",
+    phase: "The Delivery",
+    title: "Permanent Heirlooms",
+    description: "You receive a curated 48-Hour Signature Preview Deck, followed by your full high-resolution digital master gallery, heirloom cinema film, and handcrafted linen print box."
+  }
+];
+
+export const studioFaqs: FaqItem[] = [
+  {
+    question: "How would you describe your visual approach?",
+    answer: "Our style is rooted in natural light, documentary observation, and the timeless organic texture of 35mm film. We prioritize unrehearsed emotion and quiet nuance over stiff, performative poses."
+  },
+  {
+    question: "Do you travel across the United States for weddings?",
+    answer: "Yes. The majority of our commissions take place nationwide—from Newport oceanfront estates to Napa Valley vineyards and Big Sur coastal cliffs. All travel logistics are handled seamlessly with all-inclusive transparent quotes."
+  },
+  {
+    question: "What equipment and mediums do you use?",
+    answer: "We shoot a bespoke hybrid of authentic 35mm analog film rolls (Kodak Portra 400, Tri-X) and high-resolution medium format cinema bodies paired with vintage prime lenses for low-light reception elegance."
+  },
+  {
+    question: "When will we receive our photographs and films?",
+    answer: "Within 48 hours of your wedding, you will receive a Signature Preview Deck of 30–50 hand-edited frames. Complete digital galleries and cinema films are delivered within 4 to 6 weeks."
+  },
+  {
+    question: "How do we reserve our date?",
+    answer: "We accept a strictly limited maximum of 18 celebrations per season. Following our introductory video consultation, dates are secured with a signed commission agreement and a 30% retainer."
   }
 ];
 
@@ -337,99 +405,99 @@ export const testimonials: TestimonialItem[] = [
 
 export const journalArticles: JournalArticle[] = [
   {
-    id: "lake-como-balbiano",
-    slug: "lake-como-wedding-cinema-alessandra-matteo",
-    title: "Villa Balbiano Lake Como // Alessandra + Matteo",
-    subtitle: "A lakeside Bellagio celebration enveloped in morning mist and evening candlelight along the waters of Lake Como",
-    category: "Destination Weddings",
+    id: "newport-rosecliff-estate",
+    slug: "newport-rhode-island-wedding-alessandra-matteo",
+    title: "Rosecliff Mansion Newport // Alessandra + Matteo",
+    subtitle: "A Gilded Age oceanfront celebration enveloped in Atlantic sea mist and evening candlelight along Cliff Walk",
+    category: "Coastal & Estates",
     date: "18 October 2025",
     readTime: "5 min read",
     coverImage: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop",
-    excerpt: "Across three days on the western shores of Lake Como, Alessandra and Matteo welcomed guests from Milan and New York for an unhurried celebration of wooden Riva boat arrivals, cypress gardens, and twilight dining.",
+    excerpt: "Across three days on the oceanfront bluffs of Newport, Alessandra and Matteo welcomed guests from New York and Philadelphia for an unhurried celebration of coastal breezes, grand ballrooms, and twilight dining.",
     content: [
-      "Lake Como in early autumn possesses a tranquil, poetic stillness. The surrounding Alpine peaks soften behind morning haze, and the deep blue waters reflect the ornate stone balustrades of historic waterfront villas.",
-      "We documented Alessandra and Matteo's celebration using a dual hybrid approach: 35mm Kodak Portra film rolls for the tactile morning preparations and vintage anamorphic cinema lenses to capture the evening banquet beneath towering chandeliers on the water's edge.",
-      "The ceremony took place on the lakeside lawn as wooden Riva speedboats glided in the distance, followed by an open-air banquet illuminated by hundreds of tapered beeswax candles."
+      "Newport in early autumn possesses a tranquil, poetic stillness. The Atlantic horizon softens behind morning sea haze, and the deep blue waters reflect the ornate stone balustrades of historic Cliff Walk mansions.",
+      "We documented Alessandra and Matteo's celebration using a dual hybrid approach: 35mm Kodak Portra film rolls for the tactile morning preparations and vintage anamorphic cinema lenses to capture the evening banquet beneath towering chandeliers on the oceanfront lawn.",
+      "The ceremony took place overlooking the ocean as sailboats glided in the distance, followed by an open-air banquet illuminated by hundreds of tapered beeswax candles."
     ]
   },
   {
-    id: "cap-d-antibes-riviera",
-    slug: "french-riviera-wedding-film-juliette-henri",
-    title: "Hôtel du Cap-Eden-Roc // Juliette + Henri",
-    subtitle: "Seaside stone terraces, Mediterranean sea spray, and haute couture black-tie on the French Riviera",
-    category: "Destination Weddings",
+    id: "napa-valley-meadowood",
+    slug: "napa-valley-wedding-film-juliette-henri",
+    title: "Meadowood Estate Napa Valley // Juliette + Henri",
+    subtitle: "Rolling vineyard terraces, sun-drenched olive groves, and haute couture black-tie in St. Helena",
+    category: "California & West",
     date: "24 September 2025",
     readTime: "6 min read",
     coverImage: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
-    excerpt: "Perched above the limestone cliffs of the Côte d’Azur, Juliette and Henri hosted an iconic seaside weekend capturing the golden-hour breeze on 35mm analog film and vintage anamorphic cinema lenses.",
+    excerpt: "Perched above the rolling vineyard hills of Napa Valley, Juliette and Henri hosted an iconic weekend capturing the golden-hour breeze on 35mm analog film and vintage anamorphic cinema lenses.",
     content: [
-      "The French Riviera is synonymous with timeless European elegance. The iconic pine groves and sea cliffs of Cap d'Antibes provided the dramatic backdrop for Juliette and Henri's black-tie destination celebration.",
-      "Juliette wore an architectural couture silk gown that moved effortlessly in the Mediterranean sea breeze. Our team prioritized unhurried, documentary observation—preserving authentic laughter and impromptu dances.",
-      "As twilight bathed the coastline in lavender and amber light, dinner was served on the seaside stone terrace accompanied by a live acoustic jazz quartet."
+      "Napa Valley is synonymous with timeless wine country elegance. The iconic olive groves and forested hills of St. Helena provided the dramatic backdrop for Juliette and Henri's black-tie celebration.",
+      "Juliette wore an architectural couture silk gown that moved effortlessly in the afternoon vineyard breeze. Our team prioritized unhurried, documentary observation—preserving authentic laughter and impromptu dances.",
+      "As twilight bathed the hillside in amber and lavender light, dinner was served on the stone courtyard accompanied by a live acoustic jazz quartet."
     ]
   },
   {
-    id: "marrakech-agafay",
-    slug: "marrakech-desert-riad-soraya-tarek",
-    title: "Agafay Desert & Riad Botanica // Soraya + Tarek",
-    subtitle: "Handcrafted brass lanterns, zellige courtyards, and an open-air starlit banquet under the Atlas Mountains",
+    id: "sedona-red-rocks",
+    slug: "sedona-red-rock-canyon-soraya-tarek",
+    title: "Enchantment Resort Sedona // Soraya + Tarek",
+    subtitle: "Towering red rock canyons, piñon pine courtyards, and an open-air starlit harvest banquet",
     category: "Destination Weddings",
     date: "12 August 2025",
     readTime: "5 min read",
     coverImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
-    excerpt: "Starting in the fragrant jasmine courtyards of the Medina and culminating in a starlit desert banquet illuminated by hundreds of handcrafted brass lanterns.",
+    excerpt: "Starting in the fragrant pine courtyards of Boynton Canyon and culminating in a starlit desert banquet illuminated by open fire pits and candlelight.",
     content: [
-      "Marrakech offers an extraordinary sensory canvas for cinema. Terracotta plaster walls, intricate zellige mosaics, and warm desert winds create an immersive atmosphere unlike anywhere else.",
-      "Soraya and Tarek greeted their international guests with traditional mint tea and live Oud musicians in a private courtyard before transitioning to an open-air celebration under the stars in the Agafay Desert.",
+      "Sedona offers an extraordinary sensory canvas for cinema. Towering red sandstone walls, fragrant desert breezes, and radiant sunsets create an immersive atmosphere unlike anywhere else.",
+      "Soraya and Tarek greeted their guests with refreshing prickly-pear mocktails and acoustic guitar before transitioning to an open-air celebration under the vast Arizona night sky.",
       "We utilized 35mm black-and-white film to capture the tactile textures of embroidered textiles and the warm glow of open fire installations."
     ]
   },
   {
-    id: "kyoto-arashiyama",
-    slug: "kyoto-arashiyama-wedding-hana-liam",
-    title: "Arashiyama Bamboo & River Vows // Hana + Liam",
-    subtitle: "Japanese architectural minimalism, moss gardens, and a serene twilight ceremony in the ancient capital",
-    category: "Asian Weddings",
+    id: "big-sur-post-ranch",
+    slug: "big-sur-post-ranch-inn-hana-liam",
+    title: "Post Ranch Inn Big Sur // Hana + Liam",
+    subtitle: "Ancient coastal redwoods, Pacific ocean mist, and a serene cliffside ceremony on Highway 1",
+    category: "California & West",
     date: "28 July 2025",
     readTime: "4 min read",
     coverImage: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1600&auto=format&fit=crop",
-    excerpt: "Surrounded by towering bamboo groves and cedar temples, Hana and Liam exchanged quiet personal vows followed by a traditional multi-course Kaiseki dinner alongside the Oi River.",
+    excerpt: "Surrounded by towering ancient redwoods and dramatic ocean cliffs, Hana and Liam exchanged quiet personal vows followed by a farm-to-table candlelit dinner overlooking the Pacific.",
     content: [
-      "Kyoto's Arashiyama district is defined by ancient cedar forests, mist-shrouded river valleys, and refined wooden architecture. Hana and Liam desired a celebration rooted in quiet presence and natural reverence.",
-      "The ceremony was held in a private moss garden overlooking the river at dusk, followed by an intimate candlelit reception featuring handcrafted ceramics and local floral design.",
-      "Every frame was captured to honor the subtle spatial harmony (Ma) of Japanese aesthetics and the quiet emotional connection between the couple."
+      "Big Sur's coastline is defined by ancient redwood groves, mist-shrouded ocean cliffs, and raw natural serenity. Hana and Liam desired a celebration rooted in quiet presence and natural reverence.",
+      "The ceremony was held on a private cliffside terrace overlooking the Pacific at dusk, followed by an intimate candlelit reception featuring handcrafted ceramics and local floral design.",
+      "Every frame was captured to honor the subtle spatial harmony of the California coastline and the quiet emotional connection between the couple."
     ]
   },
   {
-    id: "tuscany-val-dorcia",
-    slug: "tuscany-val-dorcia-isabella-julian",
-    title: "Val d'Orcia Olive Estate // Isabella + Julian",
-    subtitle: "Rolling golden hills, cypress avenues, and an open-air harvest table beneath the Tuscan constellations",
-    category: "Destination Weddings",
+    id: "charleston-historic-manor",
+    slug: "charleston-historic-manor-isabella-julian",
+    title: "Historic Legare Waring Manor // Isabella + Julian",
+    subtitle: "Spanish moss canopy, live oak avenues, and an open-air harvest table beneath the Carolina stars",
+    category: "Coastal & Estates",
     date: "14 June 2025",
     readTime: "7 min read",
     coverImage: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1600&auto=format&fit=crop",
-    excerpt: "An intimate multi-day gathering celebrating the soulful rhythms of Tuscany, documented with medium-format analog film and natural golden-hour illumination.",
+    excerpt: "An intimate multi-day gathering celebrating the soulful rhythms of Charleston, documented with medium-format analog film and natural golden-hour illumination.",
     content: [
-      "The rolling wheat fields and winding cypress driveways of Val d'Orcia represent the quintessential soul of the Italian countryside. Isabella and Julian curated an unhurried weekend focused on regional wine, seasonal cuisine, and deep connection.",
-      "Guests gathered at a single 80-foot rustic timber table set among ancient olive groves, illuminated by festoon lights and the warm glow of the setting sun.",
-      "Our cinematography highlighted the natural textures of linen, terracotta, and late-afternoon golden light that makes Tuscan celebrations so timeless."
+      "The live oak avenues and weeping Spanish moss of Charleston represent the quintessential soul of the Lowcountry. Isabella and Julian curated an unhurried weekend focused on regional cuisine, warm hospitality, and deep connection.",
+      "Guests gathered at a single 80-foot rustic timber table set beneath historic oak boughs, illuminated by festoon lights and the warm glow of the setting sun.",
+      "Our cinematography highlighted the natural textures of linen, wrought iron, and late-afternoon golden light that makes Southern coastal celebrations so timeless."
     ]
   },
   {
-    id: "mallorca-deia",
-    slug: "mallorca-deia-coastal-clara-soren",
-    title: "Deià Coastal Finca // Clara + Soren",
-    subtitle: "Sun-bleached sandstone walls, olive groves, and midnight ocean swimming along the Balearic coastline",
-    category: "Destination Weddings",
+    id: "santa-barbara-montecito",
+    slug: "santa-barbara-montecito-clara-soren",
+    title: "San Ysidro Ranch Montecito // Clara + Soren",
+    subtitle: "Sun-bleached sandstone walls, fragrant citrus groves, and midnight terrace toasts in Santa Barbara",
+    category: "California & West",
     date: "2 May 2025",
     readTime: "5 min read",
     coverImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop",
-    excerpt: "With the Tramuntana mountain peaks rising behind and the Mediterranean stretching to the horizon, Clara and Soren celebrated with wild floral installations and Spanish guitar.",
+    excerpt: "With the Santa Ynez mountain peaks rising behind and the Pacific stretching to the horizon, Clara and Soren celebrated with wild jasmine florals and acoustic Spanish guitar.",
     content: [
-      "Perched on the rugged northwest coast of Mallorca, the historic artists' village of Deià is an enchanting enclave of stone fincas and bougainvillea.",
-      "Clara and Soren hosted their ceremony overlooking the sea as acoustic Spanish guitar echoed off the stone terraces. The evening transitioned into a vibrant midnight party beneath citrus trees.",
-      "We preserved the vivid Mediterranean colors and ocean reflections on 35mm color film, delivering an heirloom narrative brimming with vitality."
+      "Perched in the foothills of Montecito, San Ysidro Ranch is an enchanting enclave of stone cottages, lavender paths, and historic citrus trees.",
+      "Clara and Soren hosted their ceremony overlooking the rose gardens as acoustic guitar echoed across the hillside. The evening transitioned into a vibrant midnight party beneath olive trees.",
+      "We preserved the vivid golden-hour light and coastal textures on 35mm color film, delivering an heirloom narrative brimming with vitality."
     ]
   }
 ];

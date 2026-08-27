@@ -69,7 +69,7 @@ export default function Pricing() {
           <div className="minimal-quote-inner">
             <p className="minimal-quote-title">Bespoke Voyages & Multi-Day</p>
             <blockquote className="minimal-quote-text">
-              “Planning a multi-day international voyage or custom celebration across Europe, Africa, or remote wilderness? We create tailored multi-destination proposals crafted around your itinerary.”
+              “Planning a multi-day destination voyage or custom celebration across Newport, Napa Valley, Aspen, or remote wilderness? We create tailored multi-destination proposals crafted around your itinerary.”
             </blockquote>
             <div style={{ marginTop: "32px" }}>
               <Link href="/contact" className="minimal-text-link">

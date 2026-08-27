@@ -16,11 +16,11 @@ export default function Portfolio() {
     priceTag?: string;
   })[] = [
     {
-      id: "marrakech-monograph",
-      title: "Monograph I: Marrakech",
-      subtitle: "Lantern-lit riad courtyards and golden desert twilight",
+      id: "newport-monograph",
+      title: "Monograph I: Newport",
+      subtitle: "Gilded Age oceanfront mansions and twilight Atlantic breezes",
       category: "Intimate Celebrations",
-      location: "Marrakech, Morocco",
+      location: "Newport, Rhode Island",
       year: "2026",
       coverImage: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop",
       galleryImages: [
@@ -28,10 +28,10 @@ export default function Portfolio() {
         "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1600&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop"
       ],
-      fieldNotes: "A multi-day adventure documented across the ancient gardens of La Mamounia and the quiet dunes of Agafay. Shot entirely on bespoke anamorphic glass and natural 35mm film emulsions.",
+      fieldNotes: "A multi-day coastal celebration documented across the historic grand lawns of Cliff Walk and Rosecliff. Shot entirely on bespoke anamorphic glass and natural 35mm film emulsions.",
       details: {
         camera: "Arri Alexa Mini LF & Leica M11",
-        light: "Natural Moroccan Sun & Candlelight",
+        light: "Atlantic Ocean Mist & Candlelight",
         season: "Autumn Solstice 2026",
         guests: "80 Guests"
       },
@@ -39,11 +39,11 @@ export default function Portfolio() {
       edition: "SERIES 01 // 2026"
     },
     {
-      id: "riviera-monograph",
-      title: "Monograph II: Côte d'Azur",
-      subtitle: "Azure horizons and classical stone balustrades",
+      id: "napa-monograph",
+      title: "Monograph II: Napa Valley",
+      subtitle: "Golden vineyard hills and sun-drenched stone courtyards",
       category: "Intimate Celebrations",
-      location: "Saint-Jean-Cap-Ferrat, France",
+      location: "Napa Valley, California",
       year: "2026",
       coverImage: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
       galleryImages: [
@@ -51,10 +51,10 @@ export default function Portfolio() {
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop"
       ],
-      fieldNotes: "Overlooking the Mediterranean, this cliffside villa celebration was captured with a documentary sensitivity prioritizing unrehearsed laughter and dusk champagne toasts.",
+      fieldNotes: "Overlooking rolling vineyard terraces, this private estate celebration was captured with a documentary sensitivity prioritizing unrehearsed laughter and harvest champagne toasts.",
       details: {
         camera: "RED V-Raptor & Hasselblad 500C/M",
-        light: "Mediterranean Dusk & Amber Torches",
+        light: "Golden California Dusk & Amber Torches",
         season: "Summer 2026",
         guests: "120 Guests"
       },
@@ -62,18 +62,18 @@ export default function Portfolio() {
       edition: "SERIES 02 // 2026"
     },
     {
-      id: "amalfi-cliffs",
-      title: "Monograph III: Positano",
-      subtitle: "Cliffside vows overlooking the Tyrrhenian Sea",
+      id: "big-sur-cliffs",
+      title: "Monograph III: Big Sur",
+      subtitle: "Pacific coastal cliffs and ancient redwood vows",
       category: "Intimate Celebrations",
-      location: "Amalfi Coast, Italy",
+      location: "Big Sur, California",
       year: "2025",
       coverImage: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1600&auto=format&fit=crop",
       galleryImages: [
         "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1600&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop"
       ],
-      fieldNotes: "Captured amid the historic lemon groves and pastel terraces of Ravello. The sunset painted the limestone cliffs in radiant rose gold.",
+      fieldNotes: "Captured amid towering ancient redwoods and sea-spray headlands along Highway 1. The sunset painted the Pacific in radiant rose gold.",
       details: {
         camera: "Leica SL2-S & 35mm Summilux",
         light: "Golden Sunset & Ocean Glow",
@@ -87,7 +87,7 @@ export default function Portfolio() {
       title: "Monograph IV: High Sierra",
       subtitle: "A silent twilight over glacial granite water",
       category: "Wild Landscapes",
-      location: "High Sierra, California",
+      location: "High Sierra & Lake Tahoe, California",
       year: "2026",
       coverImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
       galleryImages: [
@@ -128,7 +128,7 @@ export default function Portfolio() {
               <div className="mucha-hero-narrative-row">
                 <div className="mucha-hero-copy">
                   <p className="mucha-hero-subtitle">
-                    A curated archive of living wedding cinema and 35mm fine art photography, documenting love across Europe and worldwide.
+                    A curated archive of living wedding cinema and 35mm fine art photography, documenting love across Newport, Napa Valley, Big Sur, and iconic destinations nationwide.
                   </p>
                   
                   <a href="#exhibition" className="mucha-see-more-link">
@@ -199,10 +199,10 @@ export default function Portfolio() {
                   Starline Atelier is an independent cinematic atelier dedicated to the craft of living wedding film and authentic analog emulsion photography. Founded on the belief that true romance requires both medium format clarity and raw, unrehearsed emotion.
                 </p>
                 <p className="mucha-about-paragraph">
-                  Our commissions encompass multi-day destination celebrations across the French Riviera, Amalfi Coast, Moroccan desert riads, and North America. Every film is accompanied by dedicated archival prints and bespoke acoustic scores.
+                  Our commissions encompass multi-day celebrations across Newport oceanfront mansions, Napa Valley vineyards, Big Sur coastal cliffs, and Santa Barbara estates. Every film is accompanied by dedicated archival prints and bespoke acoustic scores.
                 </p>
                 <p className="mucha-about-hours">
-                  Philadelphia Atelier &amp; Destination Commissions worldwide.<br />
+                  Philadelphia Atelier &amp; Destination Commissions nationwide.<br />
                   Limited to 18 couples per calendar season.
                 </p>
               </div>

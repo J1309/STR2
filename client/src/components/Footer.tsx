@@ -88,12 +88,12 @@ export default function Footer({ showClosingCta = false }: FooterProps) {
   const [newsletterSuccess, setNewsletterSuccess] = useState<boolean>(false);
 
   const instagramImages = [
-    { src: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=600&auto=format&fit=crop", label: "Marrakech" },
-    { src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=600&auto=format&fit=crop", label: "French Riviera" },
+    { src: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=600&auto=format&fit=crop", label: "Newport" },
+    { src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=600&auto=format&fit=crop", label: "Napa Valley" },
     { src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=600&auto=format&fit=crop", label: "High Sierra" },
-    { src: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop", label: "Amalfi Coast" },
+    { src: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop", label: "Big Sur" },
     { src: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600&auto=format&fit=crop", label: "Santa Fe" },
-    { src: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=600&auto=format&fit=crop", label: "Lake Como" }
+    { src: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=600&auto=format&fit=crop", label: "Charleston" }
   ];
 
   const handleSubscribe = (e: React.FormEvent) => {
@@ -150,7 +150,7 @@ export default function Footer({ showClosingCta = false }: FooterProps) {
           <div className="minimal-footer-cta">
             <p className="minimal-overline">Available Worldwide</p>
             <h2>Let’s Give Your Story<br />A Lasting Frame</h2>
-            <p>Currently accepting commissions for the upcoming destination calendar across Europe, the Americas & beyond.</p>
+            <p>Currently accepting commissions for the upcoming destination calendar across Newport, Napa Valley, the Americas & beyond.</p>
             <Link href="/contact" className="minimal-btn-outline" style={{ color: "var(--ink-primary)", borderColor: "var(--ink-primary)", background: "transparent" }}>
               <span>Inquire with Studio</span>
             </Link>
@@ -179,16 +179,16 @@ export default function Footer({ showClosingCta = false }: FooterProps) {
             <span className="footer-col-label">STUDIOS</span>
             <ul className="footer-links-list">
               <li>
-                <strong>LONDON / EUROPE</strong>
-                <span>Mayfair & Côte d’Azur</span>
+                <strong>PHILADELPHIA / EAST COAST</strong>
+                <span>Center City & Newport</span>
               </li>
               <li>
-                <strong>CALIFORNIA / AMERICAS</strong>
-                <span>Santa Barbara & Big Sur</span>
+                <strong>CALIFORNIA / WEST COAST</strong>
+                <span>Napa Valley & Big Sur</span>
               </li>
               <li>
                 <strong>DESTINATION CALENDAR</strong>
-                <span>Available Worldwide</span>
+                <span>Available Nationwide</span>
               </li>
             </ul>
           </div>

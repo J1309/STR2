@@ -110,7 +110,7 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
 
               <div className="starline-mobile-footer-info">
                 <p>STARLINE ATELIER</p>
-                <p>LONDON • LAKE COMO • PARIS</p>
+                <p>PHILADELPHIA • NEWPORT • NAPA VALLEY • BIG SUR</p>
               </div>
             </div>
           </motion.div>

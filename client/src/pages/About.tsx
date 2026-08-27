@@ -41,11 +41,11 @@ export default function About() {
                 For over a decade, our studio has documented one thing with quiet devotion: bespoke destination weddings, intimate celebrations, and the small, honest gestures that give a memory its permanent emotional gravity.
               </p>
               <p style={{ fontSize: "14px", fontWeight: 300, lineHeight: 1.85, color: "var(--ink-muted)", margin: "0 0 32px" }}>
-                Based out of California and London, traveling wherever an extraordinary celebration unfolds—from historic stone villas in Lake Como to windswept desert horizons in Marrakech.
+                Based out of Philadelphia and California, traveling wherever an extraordinary celebration unfolds—from historic Gilded Age estates in Newport to sun-drenched vineyards in Napa Valley and coastal cliffs in Big Sur.
               </p>
 
               <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--ink-subtle)" }}>
-                <span>California / London</span>
+                <span>Philadelphia / California</span>
                 <span>•</span>
                 <span>35mm Film + 4K Cinema</span>
                 <span>•</span>

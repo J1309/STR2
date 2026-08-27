@@ -14,7 +14,7 @@ export default function Journal() {
   const [activeSpotlightIndex, setActiveSpotlightIndex] = useState<number>(0);
   const [isSpotlightHovered, setIsSpotlightHovered] = useState<boolean>(false);
 
-  const categories = ["All", "Destination Weddings", "London & UK", "Asian Weddings"];
+  const categories = ["All", "Destination Weddings", "Coastal & Estates", "California & West"];
 
   const filteredArticles = activeCategory === "All"
     ? journalArticles

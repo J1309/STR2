@@ -19,12 +19,12 @@ export default function Home() {
 
   const driftItems: DriftWallItem[] = [
     { image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop", title: "Sierra Dusk", subtitle: "Glacial Basin" },
-    { image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=800&auto=format&fit=crop", title: "Marrakech Courtyard", subtitle: "Golden Lantern Light" },
+    { image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=800&auto=format&fit=crop", title: "Napa Valley Courtyard", subtitle: "Golden Vineyard Light" },
     { image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800&auto=format&fit=crop", title: "Joshua Tree Bloom", subtitle: "Mojave Twilight" },
     { image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop", title: "Santa Fe Adobe", subtitle: "Plaster & Shade" },
     { image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop", title: "Studio Objects", subtitle: "Linen & Silver" },
     { image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=800&auto=format&fit=crop", title: "Utah Horizon", subtitle: "Salt & Dusk" },
-    { image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop", title: "Amalfi Coast", subtitle: "Tyrrhenian Mist" },
+    { image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop", title: "Big Sur Coast", subtitle: "Pacific Horizon Mist" },
     { image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=800&auto=format&fit=crop", title: "High Sierra", subtitle: "35mm Analog Print" }
   ];
 
@@ -63,69 +63,39 @@ export default function Home() {
         </section>
 
         {/* ===================================================================
-            2. EDITORIAL STATEMENT / MANIFESTO (PHILADELPHIA ATELIER + BIG WD1.JPG)
+            2. PHILOSOPHY / REFINED EDITORIAL STATEMENT
             =================================================================== */}
-        <section className="minimal-section" id="manifesto">
-          <div className="minimal-statement-grid">
-            <div className="minimal-statement-left">
-              <span className="minimal-statement-tag">ATELIER PHILADELPHIA</span>
-              <h2>
-                Philadelphia &amp; Destination<br />
-                Wedding Videographer<br />
-                Photographer
-              </h2>
-              <p className="minimal-statement-lead">
-                Based in Philadelphia, Starline crafts living heirlooms of cinema and 35mm analog photography for couples who seek artful elegance, honest emotion, and enduring memory across the United States and abroad.
-              </p>
-              <div className="minimal-statement-meta">
-                <div className="meta-block">
-                  <span className="meta-label">PRIMARY HUBS</span>
-                  <span className="meta-val">PHILADELPHIA • NEW YORK • WORLDWIDE</span>
-                </div>
-                <div className="meta-block">
-                  <span className="meta-label">ANNUAL COMMISSIONS</span>
-                  <span className="meta-val">LIMITED TO 18 CELEBRATIONS PER YEAR</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="minimal-statement-right-media">
-              <div className="statement-portrait-frame">
-                <img
-                  src="/wd1.jpg"
-                  alt="Philadelphia & Destination Wedding"
-                  className="statement-portrait-img"
-                  loading="lazy"
-                />
-                <div className="statement-portrait-badge">
-                  <span>PHILADELPHIA ATELIER</span>
-                  <span>35MM ARCHIVAL</span>
-                </div>
-              </div>
-            </div>
+        <section className="minimal-section">
+          <div className="minimal-statement">
+            <h2 className="minimal-statement-heading">
+              Living wedding cinema &amp; fine-art 35mm photography
+            </h2>
+            <p className="minimal-statement-body">
+              We approach each celebration with an unhurried perspective. No intrusive setups, no artificial theatrics—just honest human connection, natural light, and the quiet beauty of authentic moments captured with timeless grace.
+            </p>
           </div>
         </section>
 
         {/* ===================================================================
-            3. FEATURED VIDEO SHOWCASES (EXACT GIONE DA SILVA EDITORIAL DUO)
+            3. FEATURED CINEMA COMMISSIONS (GIONE DA SILVA 2-COLUMN DUO)
             =================================================================== */}
-        <section className="minimal-section minimal-showcase-section" style={{ paddingTop: 0 }}>
-          <div className="minimal-section-header">
-            <span className="minimal-section-tag">CINEMATIC COMMISSIONS</span>
+        <section className="gione-featured-section">
+          <div className="gione-featured-header">
+            <span className="minimal-overline">CINEMATIC COMMISSIONS</span>
             <h2 className="minimal-section-title">FEATURED CINEMA FILMS</h2>
           </div>
 
           <div className="gione-showcase-wrap">
-            {/* Featured Film 1: Marrakech */}
+            {/* Featured Film 1: Newport */}
             <div className="gione-featured-duo">
               <div
                 className="gione-video-col"
-                onClick={() => setPlayingVideos(prev => ({ ...prev, marrakech: true }))}
+                onClick={() => setPlayingVideos(prev => ({ ...prev, newport: true }))}
                 role="button"
                 tabIndex={0}
-                aria-label="Play Marrakech Film"
+                aria-label="Play Newport Film"
               >
-                {playingVideos["marrakech"] ? (
+                {playingVideos["newport"] ? (
                   <video
                     src="https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-on-a-beach-at-sunset-42863-large.mp4"
                     autoPlay
@@ -137,7 +107,7 @@ export default function Home() {
                   <>
                     <img
                       src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop"
-                      alt="Epic Wedding in Marrakech, Morocco"
+                      alt="Historic Oceanfront Wedding in Newport, Rhode Island"
                       className="gione-video-img"
                       loading="lazy"
                     />
@@ -154,12 +124,12 @@ export default function Home() {
                 <div className="gione-story-inner">
                   <p className="gione-story-overline">FEATURED VIDEO:</p>
                   <h3 className="gione-story-heading">
-                    EPIC WEDDING IN<br />
-                    MARRAKECH,<br />
-                    MOROCCO
+                    OCEANFRONT ESTATE<br />
+                    NEWPORT,<br />
+                    RHODE ISLAND
                   </h3>
                   <p className="gione-story-desc">
-                    An incredible adventure wedding, in the enchanting city of Marrakech
+                    An iconic coastal celebration across historic oceanfront mansions and twilight Atlantic ocean breezes
                   </p>
                   <Link href="/contact" className="gione-story-btn">
                     <span>CONTACT US</span>
@@ -168,16 +138,16 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Featured Film 2: French Riviera (Reversed: Story on Left, Video on Right) */}
+            {/* Featured Film 2: Napa Valley (Reversed: Story on Left, Video on Right) */}
             <div className="gione-featured-duo is-reversed">
               <div
                 className="gione-video-col"
-                onClick={() => setPlayingVideos(prev => ({ ...prev, riviera: true }))}
+                onClick={() => setPlayingVideos(prev => ({ ...prev, napa: true }))}
                 role="button"
                 tabIndex={0}
-                aria-label="Play French Riviera Film"
+                aria-label="Play Napa Valley Film"
               >
-                {playingVideos["riviera"] ? (
+                {playingVideos["napa"] ? (
                   <video
                     src="https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-walking-in-a-forest-42861-large.mp4"
                     autoPlay
@@ -189,7 +159,7 @@ export default function Home() {
                   <>
                     <img
                       src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop"
-                      alt="Elegant & Heartfelt French Riviera Wedding"
+                      alt="Elegant & Heartfelt Napa Valley Vineyard Wedding"
                       className="gione-video-img"
                       loading="lazy"
                     />
@@ -207,11 +177,11 @@ export default function Home() {
                   <p className="gione-story-overline">FEATURED VIDEO:</p>
                   <h3 className="gione-story-heading">
                     ELEGANT &amp; HEARTFELT<br />
-                    FRENCH RIVIERA<br />
-                    WEDDING
+                    NAPA VALLEY<br />
+                    CALIFORNIA
                   </h3>
                   <p className="gione-story-desc">
-                    A stunningly elegant celebration overlooking the Mediterranean at the historic Villa Ephrussi de Rothschild, France
+                    A stunning harvest celebration overlooking rolling vineyard hills and private stone courtyards in Napa Valley
                   </p>
                   <Link href="/contact" className="gione-story-btn">
                     <span>CONTACT US</span>
@@ -243,7 +213,7 @@ export default function Home() {
             <div className="minimal-photo-info">
               <h2>Wedding Photography</h2>
               <p>
-                As well as offering cinematic wedding videography for London and beyond, our wedding photography is all about real and natural moments. Our aim is to capture the essence of your day in timeless images. Our photos are a combination of everything we are inspired by: documentary photography, street photography, portrait, fashion, nature, and light.
+                As well as offering cinematic wedding videography across the United States and worldwide, our wedding photography is all about real and natural moments. Our aim is to capture the essence of your day in timeless images. Our photos are a combination of everything we are inspired by: documentary photography, street photography, portrait, fashion, nature, and light.
               </p>
               <Link href="/portfolio" className="minimal-text-link">
                 <span>Find Out More</span>
