@@ -50,7 +50,7 @@ export default function Contact() {
           {/* Left Side: Editorial Mood Image */}
           <div className="gione-contact-full-image-col">
             <img
-              src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop"
+              src="/contact_editorial.png"
               alt="Destination Wedding Editorial — Starline Studio"
               className="gione-contact-full-image"
             />
