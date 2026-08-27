@@ -596,6 +596,18 @@ a {
   align-items: stretch;
 }
 
+.gione-featured-duo.is-reversed {
+  grid-template-columns: 1fr 1.85fr;
+}
+
+.gione-featured-duo.is-reversed .gione-video-col {
+  order: 2;
+}
+
+.gione-featured-duo.is-reversed .gione-story-col {
+  order: 1;
+}
+
 /* Left Video Column */
 .gione-video-col {
   position: relative;
@@ -733,9 +745,16 @@ a {
 }
 
 @media (max-width: 900px) {
-  .gione-featured-duo {
+  .gione-featured-duo,
+  .gione-featured-duo.is-reversed {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+  .gione-featured-duo.is-reversed .gione-video-col {
+    order: 1;
+  }
+  .gione-featured-duo.is-reversed .gione-story-col {
+    order: 2;
   }
   .gione-story-col {
     padding: 36px 24px;

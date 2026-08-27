@@ -174,8 +174,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Featured Film 2: French Riviera */}
-            <div className="gione-featured-duo">
+            {/* Featured Film 2: French Riviera (Reversed: Story on Left, Video on Right) */}
+            <div className="gione-featured-duo is-reversed">
               <div
                 className="gione-video-col"
                 onClick={() => setPlayingVideos(prev => ({ ...prev, riviera: true }))}
