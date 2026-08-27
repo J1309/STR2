@@ -3,11 +3,10 @@ import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Calendar,
   CheckCircle2,
+  ChevronDown,
   Mail,
   MapPin,
-  MessageSquare,
   Phone,
   Sparkles
 } from "lucide-react";
@@ -15,7 +14,6 @@ import React, { useState } from "react";
 import { Link } from "wouter";
 
 export default function Contact() {
-  // Main Essential Form State
   const [formData, setFormData] = useState({
     names: "",
     email: "",
@@ -23,35 +21,13 @@ export default function Contact() {
     eventDate: "",
     location: "",
     service: "Dual Atelier (Cinema + 35mm Photo)",
-    budgetRange: "$10k – $18k",
+    budgetRange: "$12,000 – $18,000",
     eventDetails: "",
     referralSource: "Instagram"
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-
-  // Main Essential Options
-  const serviceOptions = [
-    "Dual Atelier (Cinema + 35mm Photo)",
-    "Living Wedding Cinema (4K)",
-    "Fine-Art Photography (35mm)"
-  ];
-
-  const budgetOptions = [
-    "$8,000 – $12,000",
-    "$12,000 – $18,000",
-    "$18,000 – $25,000",
-    "$25,000+"
-  ];
-
-  const referralOptions = [
-    "Instagram",
-    "Planner / Designer",
-    "Personal Recommendation",
-    "Editorial / Vogue",
-    "Search / Google"
-  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,7 +60,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right Side: Clean, Structured Inquiries Form */}
+          {/* Right Side: Minimalist Underline Inquiries Form */}
           <div className="gione-contact-form-area">
             <div className="gione-contact-header-block">
               <span className="gione-contact-overline">LET&apos;S CONNECT</span>
@@ -93,7 +69,7 @@ export default function Contact() {
               </h1>
 
               <p className="gione-info-subtitle">
-                We accept a strictly limited number of commissions each season to ensure uncompromising artistry. Fill in the essentials below and let&apos;s begin talking about your plans.
+                We accept a strictly limited number of commissions each season to ensure uncompromising artistry. Share the details of your celebration below.
               </p>
 
               {/* Direct Quick Contact Row */}
@@ -132,16 +108,16 @@ export default function Contact() {
                 </h2>
 
                 <p className="gione-success-desc">
-                  Thank you for sharing your vision with us. We have received your details for <b>{formData.location || "your destination"}</b> and will respond to <b>{formData.email}</b> within 24–48 hours with availability and our full commission guide.
+                  Thank you for reaching out. We have received your details for <b>{formData.location || "your destination"}</b> and will respond to <b>{formData.email}</b> within 24–48 hours with availability and our full commission guide.
                 </p>
 
                 <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", marginTop: "24px" }}>
-                  <Link href="/portfolio" className="gione-pill-btn is-active">
+                  <Link href="/portfolio" className="minimal-underline-btn is-active">
                     <span>Explore Portfolio →</span>
                   </Link>
                   <button
                     type="button"
-                    className="gione-pill-btn"
+                    className="minimal-underline-btn"
                     onClick={() => setSubmitted(false)}
                   >
                     <span>Send Another Note</span>
@@ -149,185 +125,173 @@ export default function Contact() {
                 </div>
               </motion.div>
             ) : (
-              /* The Clean Main Inquiries Form */
-              <form onSubmit={handleSubmit} className="gione-form">
-                {/* Section 1: Couple & Contact Coordinates */}
-                <div className="gione-form-section">
-                  <div className="gione-form-section-header">
-                    <span className="gione-section-step">01</span>
-                    <h3 className="gione-section-title">THE COUPLE &amp; CONTACT</h3>
-                  </div>
-
-                  <div className="gione-form-grid-2">
-                    <div className="gione-form-group">
-                      <label className="gione-form-label">
-                        YOUR NAMES <span className="req-star">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="e.g. Maya Rios & Julian Scott"
-                        value={formData.names}
-                        onChange={(e) => setFormData({ ...formData, names: e.target.value })}
-                        className="gione-form-input"
-                      />
-                    </div>
-
-                    <div className="gione-form-group">
-                      <label className="gione-form-label">
-                        EMAIL ADDRESS <span className="req-star">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        placeholder="e.g. maya@example.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="gione-form-input"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="gione-form-grid-2">
-                    <div className="gione-form-group">
-                      <label className="gione-form-label">
-                        PHONE / WHATSAPP <span className="req-star">*</span>
-                      </label>
-                      <input
-                        type="tel"
-                        required
-                        placeholder="+1 (555) 000-0000 / +44..."
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="gione-form-input"
-                      />
-                    </div>
-
-                    <div className="gione-form-group">
-                      <label className="gione-form-label">
-                        CELEBRATION DATE OR TIMEFRAME <span className="req-star">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="e.g. 18 September 2026 / Autumn 2026"
-                        value={formData.eventDate}
-                        onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
-                        className="gione-form-input"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Section 2: Destination & Commission Details */}
-                <div className="gione-form-section">
-                  <div className="gione-form-section-header">
-                    <span className="gione-section-step">02</span>
-                    <h3 className="gione-section-title">DESTINATION &amp; SERVICES</h3>
-                  </div>
-
-                  <div className="gione-form-group">
-                    <label className="gione-form-label">
-                      LOCATION, CITY OR VENUE <span className="req-star">*</span>
+              /* Minimalist Underline Form */
+              <form onSubmit={handleSubmit} className="minimal-line-form">
+                {/* Row 1: Names & Email */}
+                <div className="minimal-form-grid-2">
+                  <div className="minimal-line-group">
+                    <label className="minimal-line-label">
+                      YOUR NAMES <span className="req-star">*</span>
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Villa Balbiano, Lake Como / Provence / Philadelphia"
-                      value={formData.location}
-                      onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      className="gione-form-input"
+                      placeholder="e.g. Maya Rios & Julian Scott"
+                      value={formData.names}
+                      onChange={(e) => setFormData({ ...formData, names: e.target.value })}
+                      className="minimal-line-input"
                     />
                   </div>
 
-                  <div className="gione-form-group">
-                    <label className="gione-form-label">
-                      SERVICES REQUESTED <span className="req-star">*</span>
+                  <div className="minimal-line-group">
+                    <label className="minimal-line-label">
+                      EMAIL ADDRESS <span className="req-star">*</span>
                     </label>
-                    <div className="gione-pills-row">
-                      {serviceOptions.map((opt) => (
-                        <button
-                          type="button"
-                          key={opt}
-                          className={`gione-pill-btn ${formData.service === opt ? "is-active" : ""}`}
-                          onClick={() => setFormData({ ...formData, service: opt })}
-                        >
-                          {opt}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="gione-form-group">
-                    <label className="gione-form-label">
-                      ESTIMATED PHOTO / VIDEO BUDGET
-                    </label>
-                    <div className="gione-pills-row">
-                      {budgetOptions.map((opt) => (
-                        <button
-                          type="button"
-                          key={opt}
-                          className={`gione-pill-btn ${formData.budgetRange === opt ? "is-active" : ""}`}
-                          onClick={() => setFormData({ ...formData, budgetRange: opt })}
-                        >
-                          {opt}
-                        </button>
-                      ))}
-                    </div>
+                    <input
+                      type="email"
+                      required
+                      placeholder="e.g. maya@example.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="minimal-line-input"
+                    />
                   </div>
                 </div>
 
-                {/* Section 3: Vision & Discovery */}
-                <div className="gione-form-section">
-                  <div className="gione-form-section-header">
-                    <span className="gione-section-step">03</span>
-                    <h3 className="gione-section-title">THE CELEBRATION</h3>
-                  </div>
-
-                  <div className="gione-form-group">
-                    <label className="gione-form-label">
-                      TELL US ABOUT YOUR PLANS &amp; WHAT MATTERS MOST <span className="req-star">*</span>
+                {/* Row 2: Phone & Celebration Date */}
+                <div className="minimal-form-grid-2">
+                  <div className="minimal-line-group">
+                    <label className="minimal-line-label">
+                      PHONE / WHATSAPP <span className="req-star">*</span>
                     </label>
-                    <textarea
-                      rows={4}
+                    <input
+                      type="tel"
                       required
-                      placeholder="Share a few words about your celebration, the vibe, venue plans, or what drew you to our work..."
-                      value={formData.eventDetails}
-                      onChange={(e) => setFormData({ ...formData, eventDetails: e.target.value })}
-                      className="gione-form-textarea"
+                      placeholder="+1 (555) 000-0000 / +44..."
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="minimal-line-input"
                     />
                   </div>
 
-                  <div className="gione-form-group">
-                    <label className="gione-form-label">
-                      HOW DID YOU DISCOVER US?
+                  <div className="minimal-line-group">
+                    <label className="minimal-line-label">
+                      CELEBRATION DATE OR SEASON <span className="req-star">*</span>
                     </label>
-                    <div className="gione-pills-row">
-                      {referralOptions.map((opt) => (
-                        <button
-                          type="button"
-                          key={opt}
-                          className={`gione-pill-btn ${formData.referralSource === opt ? "is-active" : ""}`}
-                          onClick={() => setFormData({ ...formData, referralSource: opt })}
-                        >
-                          {opt}
-                        </button>
-                      ))}
-                    </div>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g. 18 September 2026 / Autumn 2026"
+                      value={formData.eventDate}
+                      onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
+                      className="minimal-line-input"
+                    />
                   </div>
+                </div>
+
+                {/* Row 3: Destination Location */}
+                <div className="minimal-line-group">
+                  <label className="minimal-line-label">
+                    DESTINATION, CITY OR VENUE <span className="req-star">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. Villa Balbiano, Lake Como / Provence / Philadelphia"
+                    value={formData.location}
+                    onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                    className="minimal-line-input"
+                  />
+                </div>
+
+                {/* Row 4: Dropdowns for Service Requested & Budget Range */}
+                <div className="minimal-form-grid-2">
+                  <div className="minimal-line-group select-wrapper">
+                    <label className="minimal-line-label">
+                      SERVICE REQUESTED <span className="req-star">*</span>
+                    </label>
+                    <select
+                      value={formData.service}
+                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                      className="minimal-line-select"
+                      required
+                    >
+                      <option value="Dual Atelier (Cinema + 35mm Photo)">
+                        Dual Atelier (Cinema + 35mm Photo)
+                      </option>
+                      <option value="Living Wedding Cinema (4K)">
+                        Living Wedding Cinema (4K)
+                      </option>
+                      <option value="Fine-Art Photography (35mm)">
+                        Fine-Art Photography (35mm)
+                      </option>
+                    </select>
+                    <ChevronDown size={15} className="minimal-select-chevron" />
+                  </div>
+
+                  <div className="minimal-line-group select-wrapper">
+                    <label className="minimal-line-label">
+                      ESTIMATED BUDGET RANGE
+                    </label>
+                    <select
+                      value={formData.budgetRange}
+                      onChange={(e) => setFormData({ ...formData, budgetRange: e.target.value })}
+                      className="minimal-line-select"
+                    >
+                      <option value="$8,000 – $12,000">$8,000 – $12,000</option>
+                      <option value="$12,000 – $18,000">$12,000 – $18,000</option>
+                      <option value="$18,000 – $25,000">$18,000 – $25,000</option>
+                      <option value="$25,000+">$25,000+</option>
+                    </select>
+                    <ChevronDown size={15} className="minimal-select-chevron" />
+                  </div>
+                </div>
+
+                {/* Row 5: Celebration Vision (Textarea) */}
+                <div className="minimal-line-group">
+                  <label className="minimal-line-label">
+                    TELL US ABOUT YOUR PLANS &amp; VISION <span className="req-star">*</span>
+                  </label>
+                  <textarea
+                    rows={3}
+                    required
+                    placeholder="Share a few words about your celebration, aesthetic vibe, or what matters most to you..."
+                    value={formData.eventDetails}
+                    onChange={(e) => setFormData({ ...formData, eventDetails: e.target.value })}
+                    className="minimal-line-textarea"
+                  />
+                </div>
+
+                {/* Row 6: Dropdown for Referral Source */}
+                <div className="minimal-line-group select-wrapper">
+                  <label className="minimal-line-label">
+                    HOW DID YOU HEAR ABOUT US?
+                  </label>
+                  <select
+                    value={formData.referralSource}
+                    onChange={(e) => setFormData({ ...formData, referralSource: e.target.value })}
+                    className="minimal-line-select"
+                  >
+                    <option value="Instagram">Instagram</option>
+                    <option value="Planner / Designer">Planner / Designer</option>
+                    <option value="Personal Recommendation">Personal Recommendation</option>
+                    <option value="Editorial / Vogue">Editorial / Vogue</option>
+                    <option value="Search / Google">Search / Google</option>
+                  </select>
+                  <ChevronDown size={15} className="minimal-select-chevron" />
                 </div>
 
                 {/* Submit Action */}
-                <div className="gione-form-submit-row">
+                <div className="minimal-form-submit-row">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="gione-submit-button"
+                    className="minimal-line-submit-button"
                   >
                     <span>{isSubmitting ? "TRANSMITTING..." : "SEND INQUIRY"}</span>
                     <ArrowRight size={15} />
                   </button>
-                  <span className="gione-submit-note">
+                  <span className="minimal-submit-note">
                     Strictly confidential. We reply within 24–48 hours.
                   </span>
                 </div>

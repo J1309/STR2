@@ -3335,146 +3335,116 @@ a {
   font-size: 11px;
 }
 
-/* Structured Form Sections */
-.gione-form {
+/* Minimalist Underline Form Styles */
+.minimal-line-form {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 32px;
 }
 
-.gione-form-section {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.gione-form-section-header {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 4px;
-}
-
-.gione-section-step {
-  font-family: var(--font-display-condensed);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--cobalt-accent);
-}
-
-.gione-section-title {
-  font-family: var(--font-sans);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #1a1a1c;
-  margin: 0;
-}
-
-.gione-form-grid-2 {
+.minimal-form-grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: clamp(20px, 3vw, 36px);
 }
 
-.gione-form-group {
+.minimal-line-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  position: relative;
 }
 
-.gione-form-label {
+.minimal-line-label {
   font-family: var(--font-sans);
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #333338;
+  color: #4a4a52;
 }
 
 .req-star {
   color: #d84b3e;
+  font-weight: 700;
 }
 
-.gione-form-input,
-.gione-form-textarea {
+.minimal-line-input,
+.minimal-line-select,
+.minimal-line-textarea {
   width: 100%;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.14);
-  border-radius: 4px;
-  padding: 13px 16px;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid #1a1a1c !important;
+  border-radius: 0 !important;
+  padding: 10px 0 !important;
   font-family: var(--font-sans);
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 400;
   color: #1a1a1c;
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none !important;
+  transition: border-bottom-color 0.25s ease, color 0.25s ease;
+  box-shadow: none !important;
 }
 
-.gione-form-input:focus,
-.gione-form-textarea:focus {
-  border-color: #1a1a1c;
-  box-shadow: 0 0 0 1px #1a1a1c;
+.minimal-line-input:focus,
+.minimal-line-select:focus,
+.minimal-line-textarea:focus {
+  border-bottom-color: var(--cobalt-accent) !important;
 }
 
-.gione-form-input::placeholder,
-.gione-form-textarea::placeholder {
-  color: #9999a2;
+.minimal-line-input::placeholder,
+.minimal-line-textarea::placeholder {
+  color: #9c9ca6;
   font-weight: 300;
-  font-size: 13px;
+  font-size: 13.5px;
 }
 
-.gione-form-textarea {
+.minimal-line-textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 80px;
   line-height: 1.6;
 }
 
-/* Filter / Option Pills */
-.gione-pills-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+/* Custom Dropdown Select */
+.select-wrapper {
+  position: relative;
 }
 
-.gione-pill-btn {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.14);
-  border-radius: 999px;
-  padding: 8px 18px;
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: #4a4a52;
+.minimal-line-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  padding-right: 28px !important;
+  background-color: transparent;
 }
 
-.gione-pill-btn:hover {
-  border-color: #1a1a1c;
+.minimal-line-select option {
+  background-color: #ffffff;
   color: #1a1a1c;
+  padding: 10px;
 }
 
-.gione-pill-btn.is-active {
-  background: #1a1a1c;
-  color: #ffffff;
-  border-color: #1a1a1c;
+.minimal-select-chevron {
+  position: absolute;
+  right: 4px;
+  bottom: 12px;
+  pointer-events: none;
+  color: #1a1a1c;
+  transition: transform 0.2s ease;
 }
 
 /* Submit Action Row */
-.gione-form-submit-row {
+.minimal-form-submit-row {
   display: flex;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
-  padding-top: 8px;
+  padding-top: 12px;
 }
 
-.gione-submit-button {
+.minimal-line-submit-button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -3492,17 +3462,39 @@ a {
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.gione-submit-button:hover {
+.minimal-line-submit-button:hover {
   background: #2a2a30;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.gione-submit-note {
+.minimal-submit-note {
   font-family: var(--font-sans);
   font-size: 11px;
   color: #777782;
   font-style: italic;
+}
+
+.minimal-underline-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #1a1a1c;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.minimal-underline-btn:hover {
+  background: #33333b;
 }
 
 /* Success State */
@@ -3545,7 +3537,7 @@ a {
     min-height: 380px;
     height: 380px;
   }
-  .gione-form-grid-2 {
+  .minimal-form-grid-2 {
     grid-template-columns: 1fr;
   }
 }
