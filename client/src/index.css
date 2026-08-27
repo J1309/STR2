@@ -2488,374 +2488,726 @@ a {
 }
 
 /* ==========================================================================
-   CREATIVE PORTFOLIO REDESIGN & HOVER REVEAL STYLES
+   MUCHA MUSEUM EDITORIAL PORTFOLIO STYLES
    ========================================================================== */
-.portfolio-hero-refined {
-  padding: clamp(120px, 14vw, 170px) 24px clamp(40px, 6vw, 60px);
-  background: var(--bg-surface);
-  text-align: center;
-  border-bottom: 1px solid var(--border-line);
+.mucha-page-bg {
+  background-color: #f7f4ed !important;
+  color: #1a1a1c;
 }
 
-.portfolio-hero-inner {
-  max-width: 980px;
+/* 1. MUCHA HERO SECTION */
+.mucha-hero-section {
+  position: relative;
+  padding: clamp(100px, 12vw, 150px) 0 0 0;
+  overflow: hidden;
+  background: #f7f4ed;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.mucha-drafting-lines {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+.mucha-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: stretch;
+  max-width: 1440px;
   margin: 0 auto;
+  padding-left: clamp(24px, 4.5vw, 64px);
+}
+
+.mucha-hero-left {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.portfolio-hero-badge-wrap {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
   justify-content: center;
+  padding: clamp(32px, 4vw, 60px) clamp(24px, 3vw, 48px) clamp(48px, 6vw, 80px) 0;
+  z-index: 2;
 }
 
-.portfolio-hero-badge {
-  font-family: var(--font-sans);
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.26em;
-  color: var(--cobalt-accent);
-  text-transform: uppercase;
-  background: rgba(74, 127, 194, 0.08);
-  border: 1px solid rgba(74, 127, 194, 0.2);
-  padding: 5px 14px;
-  border-radius: 999px;
-}
-
-.portfolio-hero-count {
-  font-family: var(--font-sans);
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  color: var(--ink-subtle);
-  text-transform: uppercase;
-}
-
-.portfolio-main-title {
+.mucha-hero-display-title {
   font-family: var(--font-display-condensed);
-  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+  font-size: clamp(3.2rem, 6.2vw, 6.8rem);
   font-weight: 300;
-  letter-spacing: 0.12em;
-  line-height: 1.05;
+  letter-spacing: 0.08em;
+  line-height: 0.92;
   text-transform: uppercase;
-  color: var(--ink-primary);
-  margin: 0 0 18px;
+  color: #1a1a1c;
+  margin: 0 0 clamp(32px, 4vw, 54px);
 }
 
-.portfolio-main-subtitle {
+.mucha-hero-narrative-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(24px, 3vw, 40px);
+  align-items: flex-end;
+}
+
+.mucha-hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.mucha-hero-subtitle {
   font-family: var(--font-sans);
-  font-size: clamp(13.5px, 1.4vw, 15.5px);
+  font-size: clamp(13px, 1.25vw, 15px);
   font-weight: 300;
   line-height: 1.8;
-  color: var(--ink-muted);
-  max-width: 680px;
-  margin: 0 0 40px;
+  color: #4a4a4f;
+  margin: 0;
+  max-width: 340px;
 }
 
-/* Creative Filter Pills */
-.portfolio-creative-filters {
-  display: flex;
+.mucha-see-more-link {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  background: #f4f4f5;
-  padding: 6px;
-  border-radius: 999px;
-  border: 1px solid var(--border-line);
-}
-
-.portfolio-pill-btn {
-  position: relative;
-  background: transparent;
-  border: none;
+  gap: 12px;
   font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-muted);
-  padding: 9px 20px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: color 0.25s ease;
-  z-index: 1;
+  color: #1a1a1c;
+  text-decoration: none;
+  width: fit-content;
+  transition: gap 0.25s ease;
 }
 
-.portfolio-pill-btn:hover {
-  color: var(--ink-primary);
+.mucha-see-more-link:hover {
+  gap: 18px;
 }
 
-.portfolio-pill-btn.is-active {
+.mucha-circle-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #1a1a1c;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+.mucha-see-more-link:hover .mucha-circle-arrow {
+  background: #1a1a1c;
   color: #ffffff;
 }
 
-.portfolio-pill-glow {
-  position: absolute;
-  inset: 0;
-  background: #111113;
-  border-radius: 999px;
-  z-index: -1;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Gallery Section & Creative Grid */
-.portfolio-gallery-section {
-  padding: clamp(48px, 6vw, 84px) 24px clamp(80px, 9vw, 120px);
-  max-width: 1480px;
-  margin: 0 auto;
-}
-
-.portfolio-creative-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: clamp(24px, 3.5vw, 44px);
-}
-
-/* Card Column Spans for Dynamic Rhythm */
-.portfolio-creative-card {
-  grid-column: span 6;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.portfolio-creative-card.aspect-wide {
-  grid-column: span 7;
-}
-
-.portfolio-creative-card.aspect-tall {
-  grid-column: span 5;
-}
-
-.portfolio-creative-card.aspect-standard {
-  grid-column: span 6;
-}
-
-/* Media Box */
-.portfolio-card-media {
+/* Arch-Framed Portrait */
+.mucha-arch-portrait {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: 6px;
+  max-width: 155px;
+  aspect-ratio: 2 / 3;
+  border-radius: 999px 999px 0 0;
   overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background: #0d121c;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-  border: 1px solid var(--border-line);
 }
 
-.portfolio-creative-card.aspect-tall .portfolio-card-media {
-  aspect-ratio: 4 / 5;
-}
-
-.portfolio-creative-card.aspect-wide .portfolio-card-media {
-  aspect-ratio: 16 / 9;
-}
-
-.portfolio-card-img {
+.mucha-arch-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1), filter 0.6s ease;
 }
 
-.portfolio-creative-card:hover .portfolio-card-img {
-  transform: scale(1.05);
-  filter: brightness(0.7);
-}
-
-/* Smooth Hover Name & Details Reveal Overlay */
-.portfolio-hover-reveal-overlay {
+.mucha-arch-badge {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(8, 15, 26, 0.2) 0%, rgba(6, 12, 22, 0.88) 100%);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  padding: clamp(24px, 3.5vw, 36px);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1), transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  pointer-events: none;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(8, 15, 26, 0.85);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 3px 8px;
+  border-radius: 999px;
 }
 
-.portfolio-creative-card:hover .portfolio-hover-reveal-overlay {
-  opacity: 1;
-  transform: translateY(0);
+/* Right Grand Perspective Frame */
+.mucha-hero-right {
+  position: relative;
+  height: 100%;
+  min-height: 480px;
 }
 
-.portfolio-hover-content {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.mucha-gallery-perspective-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.portfolio-hover-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+.mucha-perspective-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.portfolio-hover-tag {
+.mucha-perspective-overlay {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.mucha-perspective-tag {
   font-family: var(--font-sans);
   font-size: 8.5px;
   font-weight: 700;
   letter-spacing: 0.22em;
-  color: var(--cobalt-accent);
+  color: #1a1a1c;
   text-transform: uppercase;
 }
 
-.portfolio-hover-year {
+/* 2. MUCHA ABOUT SECTION (ROSE MARBLE PLINTH + OVERLAPPING FRAME) */
+.mucha-about-section {
+  position: relative;
+  padding: clamp(60px, 8vw, 110px) 24px;
+  background: #faece5;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.mucha-about-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(40px, 6vw, 84px);
+  align-items: center;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.mucha-about-left {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: clamp(20px, 3vw, 40px);
+}
+
+.mucha-marble-pillar {
+  position: absolute;
+  left: 0;
+  top: -40px;
+  bottom: -40px;
+  width: 38%;
+  background: linear-gradient(145deg, #d8b8b0 0%, #ecd0c9 50%, #cba49b 100%);
+  opacity: 0.85;
+  border-radius: 2px;
+}
+
+.mucha-overlapping-frame {
+  position: relative;
+  width: 90%;
+  aspect-ratio: 16 / 11;
+  background: #ffffff;
+  padding: 12px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+.mucha-overlapping-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mucha-red-seal {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #d84b3e;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
   font-family: var(--font-sans);
   font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  color: #a1a1aa;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 18px rgba(216, 75, 62, 0.35);
+  border: 2px solid #faece5;
 }
 
-.portfolio-hover-title {
+.mucha-about-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.mucha-about-display-title {
   font-family: var(--font-display-condensed);
-  font-size: clamp(1.7rem, 2.3vw, 2.4rem);
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  line-height: 1.08;
+  font-size: clamp(3rem, 5.5vw, 5.4rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  line-height: 0.95;
   text-transform: uppercase;
-  color: #ffffff;
-  margin: 0;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  color: #1a1a1c;
+  margin: 0 0 28px;
 }
 
-.portfolio-hover-location {
+.mucha-about-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mucha-about-paragraph {
   font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  color: #93c5fd;
-  text-transform: uppercase;
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #4a4a4f;
   margin: 0;
 }
 
-.portfolio-hover-subtitle {
+.mucha-about-hours {
   font-family: var(--font-sans);
   font-size: 12px;
-  font-weight: 300;
-  line-height: 1.5;
-  color: #e4e4e7;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.8;
+  color: #1a1a1c;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 18px;
+  margin-top: 10px;
+}
+
+/* 3. MUCHA EXHIBITION SERIES (4 ARCHIVAL CARDS + ROTATING SEAL) */
+.mucha-exhibition-section {
+  position: relative;
+  padding: clamp(70px, 9vw, 120px) 24px clamp(90px, 11vw, 140px);
+  background: #f7f4ed;
   overflow: hidden;
 }
 
-.portfolio-hover-footer {
+.mucha-exhibition-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-top: 6px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  max-width: 1400px;
+  margin: 0 auto clamp(40px, 5vw, 64px);
 }
 
-.portfolio-format-pill {
+.mucha-exhibition-title {
+  font-family: var(--font-display-condensed);
+  font-size: clamp(2.8rem, 4.8vw, 4.8rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #1a1a1c;
+  margin: 0;
+}
+
+/* Rotating Circular Stamp */
+.mucha-stamp-badge-wrap {
+  position: relative;
+}
+
+.mucha-circular-stamp {
+  position: relative;
+  width: 86px;
+  height: 86px;
+}
+
+.mucha-stamp-svg {
+  width: 100%;
+  height: 100%;
+  animation: rotateStamp 25s linear infinite;
+}
+
+@keyframes rotateStamp {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.mucha-stamp-text {
+  font-family: var(--font-sans);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  fill: #d84b3e;
+  text-transform: uppercase;
+}
+
+.mucha-stamp-center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #d84b3e;
+  text-transform: uppercase;
+}
+
+/* 4 Museum Archival Cards */
+.mucha-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2.5vw, 32px);
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.mucha-art-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  padding: 14px 14px 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+}
+
+.mucha-art-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.1);
+}
+
+.mucha-card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mucha-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #0b111a;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.mucha-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mucha-art-card:hover .mucha-card-img {
+  transform: scale(1.05);
+}
+
+/* Smooth Hover Name & Details Reveal Overlay */
+.mucha-card-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 18, 28, 0.3) 0%, rgba(8, 14, 24, 0.9) 100%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1), transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mucha-art-card:hover .mucha-card-hover-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mucha-card-hover-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mucha-hover-badge {
   font-family: var(--font-sans);
   font-size: 8px;
   font-weight: 700;
   letter-spacing: 0.18em;
-  color: #ffffff;
-  background: rgba(74, 127, 194, 0.25);
-  border: 1px solid rgba(74, 127, 194, 0.4);
-  padding: 3px 9px;
-  border-radius: 999px;
+  color: #7ba6dc;
   text-transform: uppercase;
 }
 
-.portfolio-hover-cta {
+.mucha-hover-title {
+  font-family: var(--font-display-condensed);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+}
+
+.mucha-hover-loc {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: #e2e8f0;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+
+.mucha-hover-cta {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   font-family: var(--font-sans);
-  font-size: 9.5px;
+  font-size: 8.5px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 6px;
 }
 
-/* Static Caption Below Card */
-.portfolio-card-caption {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.portfolio-caption-left {
+/* Card Static Info */
+.mucha-card-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 6px;
 }
 
-.portfolio-caption-title {
+.mucha-card-series {
+  font-family: var(--font-sans);
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #888890;
+  text-transform: uppercase;
+}
+
+.mucha-card-title {
   font-family: var(--font-display-condensed);
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.05em;
+  line-height: 1.1;
   text-transform: uppercase;
-  color: var(--ink-primary);
+  color: #1a1a1c;
   margin: 0;
-  transition: color 0.25s ease;
 }
 
-.portfolio-creative-card:hover .portfolio-caption-title {
-  color: var(--cobalt-accent);
-}
-
-.portfolio-caption-loc {
+.mucha-card-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #1a1a1c;
+  margin-top: 4px;
+}
+
+.mucha-card-arrow {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.mucha-art-card:hover .mucha-card-arrow {
+  transform: translateX(4px);
+}
+
+/* Marble Baseline Runner */
+.mucha-marble-baseline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: linear-gradient(135deg, #d8b8b0 0%, #ecd0c9 50%, #cba49b 100%);
+  opacity: 0.7;
+}
+
+/* 4. MUCHA LOCATION & ATELIER SECTION */
+.mucha-location-section {
+  padding: clamp(60px, 8vw, 100px) 24px;
+  background: #1e2024;
+  color: #ffffff;
+}
+
+.mucha-location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.mucha-location-left {
+  background: #f7f4ed;
+  color: #1a1a1c;
+  padding: clamp(36px, 5vw, 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mucha-sparkle-icon {
+  color: #d84b3e;
+  margin-bottom: 20px;
+}
+
+.mucha-location-heading {
+  font-family: var(--font-display-condensed);
+  font-size: clamp(2rem, 3.2vw, 3rem);
   font-weight: 400;
-  letter-spacing: 0.12em;
-  color: var(--ink-subtle);
+  letter-spacing: 0.06em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: #d84b3e;
+  margin: 0 0 24px;
+}
+
+.mucha-location-address {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  color: #4a4a4f;
+  margin-bottom: 36px;
+}
+
+.mucha-location-hours {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1a1a1c;
+  text-transform: uppercase;
+  margin-top: 14px;
+}
+
+.mucha-location-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1a1a1c;
+  text-decoration: none;
+  width: fit-content;
+  border-bottom: 1px solid #1a1a1c;
+  padding-bottom: 4px;
+  transition: gap 0.25s ease;
+}
+
+.mucha-location-btn:hover {
+  gap: 16px;
+  color: #d84b3e;
+  border-color: #d84b3e;
+}
+
+.mucha-location-right {
+  position: relative;
+  background: #111215;
+  min-height: 380px;
+}
+
+.mucha-map-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mucha-map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75;
+  display: block;
+}
+
+.mucha-map-pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(8, 15, 26, 0.9);
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mucha-pin-icon {
+  color: #d84b3e;
+}
+
+.mucha-pin-label {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
-.portfolio-caption-year {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  color: var(--ink-subtle);
+/* RESPONSIVE STYLES */
+@media (max-width: 1080px) {
+  .mucha-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mucha-hero-grid {
+    grid-template-columns: 1fr;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .mucha-hero-right {
+    min-height: 360px;
+  }
+  .mucha-about-grid {
+    grid-template-columns: 1fr;
+  }
+  .mucha-location-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 900px) {
-  .portfolio-creative-grid {
+@media (max-width: 640px) {
+  .mucha-cards-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
   }
-  .portfolio-creative-card,
-  .portfolio-creative-card.aspect-wide,
-  .portfolio-creative-card.aspect-tall,
-  .portfolio-creative-card.aspect-standard {
-    grid-column: span 1;
+  .mucha-hero-narrative-row {
+    grid-template-columns: 1fr;
   }
-  .portfolio-card-media {
-    aspect-ratio: 16 / 11 !important;
-  }
-  .portfolio-hover-reveal-overlay {
-    opacity: 1;
-    transform: translateY(0);
-    background: linear-gradient(180deg, transparent 40%, rgba(6, 12, 22, 0.9) 100%);
+  .mucha-arch-portrait {
+    max-width: 120px;
   }
 }

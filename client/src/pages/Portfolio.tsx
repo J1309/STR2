@@ -2,31 +2,24 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { studioStories, type StoryItem } from "@/data/studioData";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Camera, Film, Sparkles, X } from "lucide-react";
+import { ArrowUpRight, Camera, Film, MapPin, Sparkles, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
-type CategoryFilter = "All" | "Cinema Films" | "Intimate Celebrations" | "Wild Landscapes" | "Editorial & Brand";
-
 export default function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState<CategoryFilter>("All");
   const [selectedStory, setSelectedStory] = useState<StoryItem | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>("All");
 
-  const categories: CategoryFilter[] = [
-    "All",
-    "Cinema Films",
-    "Intimate Celebrations",
-    "Wild Landscapes",
-    "Editorial & Brand"
-  ];
-
-  // Enhanced stories with rich wedding & destination cinema titles
-  const allPortfolioItems: (StoryItem & { aspect?: string; formatTag?: string })[] = [
+  const exhibitionWorks: (StoryItem & {
+    formatTag: string;
+    edition: string;
+    priceTag?: string;
+  })[] = [
     {
       id: "marrakech-monograph",
-      title: "Epic Wedding in Marrakech",
+      title: "Monograph I: Marrakech",
       subtitle: "Lantern-lit riad courtyards and golden desert twilight",
-      category: "Cinema Films" as any,
+      category: "Intimate Celebrations",
       location: "Marrakech, Morocco",
       year: "2026",
       coverImage: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop",
@@ -42,14 +35,14 @@ export default function Portfolio() {
         season: "Autumn Solstice 2026",
         guests: "80 Guests"
       },
-      aspect: "wide",
-      formatTag: "4K CINEMA + 35MM"
+      formatTag: "35MM + 4K CINEMA",
+      edition: "SERIES 01 // 2026"
     },
     {
       id: "riviera-monograph",
-      title: "French Riviera Estate",
+      title: "Monograph II: Côte d'Azur",
       subtitle: "Azure horizons and classical stone balustrades",
-      category: "Cinema Films" as any,
+      category: "Intimate Celebrations",
       location: "Saint-Jean-Cap-Ferrat, France",
       year: "2026",
       coverImage: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
@@ -65,13 +58,34 @@ export default function Portfolio() {
         season: "Summer 2026",
         guests: "120 Guests"
       },
-      aspect: "tall",
-      formatTag: "4K ULTRA HD + KODAK 500T"
+      formatTag: "KODAK 500T EMULSION",
+      edition: "SERIES 02 // 2026"
+    },
+    {
+      id: "amalfi-cliffs",
+      title: "Monograph III: Positano",
+      subtitle: "Cliffside vows overlooking the Tyrrhenian Sea",
+      category: "Intimate Celebrations",
+      location: "Amalfi Coast, Italy",
+      year: "2025",
+      coverImage: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1600&auto=format&fit=crop",
+      galleryImages: [
+        "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1600&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop"
+      ],
+      fieldNotes: "Captured amid the historic lemon groves and pastel terraces of Ravello. The sunset painted the limestone cliffs in radiant rose gold.",
+      details: {
+        camera: "Leica SL2-S & 35mm Summilux",
+        light: "Golden Sunset & Ocean Glow",
+        season: "Late Spring 2025"
+      },
+      formatTag: "35MM LEICA STILLS",
+      edition: "SERIES 03 // 2025"
     },
     {
       id: "high-sierra",
-      title: "High Sierra Dusk",
-      subtitle: "A silent twilight over granite water",
+      title: "Monograph IV: High Sierra",
+      subtitle: "A silent twilight over glacial granite water",
       category: "Wild Landscapes",
       location: "High Sierra, California",
       year: "2026",
@@ -87,234 +101,249 @@ export default function Portfolio() {
         light: "Natural Twilight / Blue Hour",
         season: "Late Autumn 2026"
       },
-      aspect: "wide",
-      formatTag: "ANALOG 35MM LEICA"
-    },
-    {
-      id: "joshua-bloom",
-      title: "Mojave Desert Wildflower",
-      subtitle: "Golden hour textures across the Mojave",
-      category: "Intimate Celebrations",
-      location: "Joshua Tree, California",
-      year: "2026",
-      coverImage: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
-      galleryImages: [
-        "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop"
-      ],
-      fieldNotes: "An intimate vow exchange tucked between ancient monzogranite boulders. The low desert sun carved gold edges around wild mustard blossoms.",
-      details: {
-        camera: "Contax G2 & Leica M11",
-        light: "Golden Backlight & Candlelight",
-        season: "Spring 2026",
-        guests: "12 Close Friends & Family"
-      },
-      aspect: "standard",
-      formatTag: "35MM PORTRA 400"
-    },
-    {
-      id: "sunday-objects",
-      title: "Sunday Objects & Linen",
-      subtitle: "Still life studies of slow afternoon light",
-      category: "Editorial & Brand",
-      location: "Philadelphia Atelier",
-      year: "2026",
-      coverImage: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1600&auto=format&fit=crop",
-      galleryImages: [
-        "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1600&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop"
-      ],
-      fieldNotes: "Explorations of form, texture, and organic vessels. We let raw afternoon sunlight rake across stone plinths and unbleached Belgian linen.",
-      details: {
-        camera: "Hasselblad 500C/M",
-        light: "Window Natural Directional Light",
-        season: "Summer 2026"
-      },
-      aspect: "tall",
-      formatTag: "MEDIUM FORMAT 120"
-    },
-    {
-      id: "amalfi-cliffs",
-      title: "Amalfi Coast Romance",
-      subtitle: "Cliffside vows overlooking the Tyrrhenian Sea",
-      category: "Intimate Celebrations",
-      location: "Positano, Italy",
-      year: "2025",
-      coverImage: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1600&auto=format&fit=crop",
-      galleryImages: [
-        "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1600&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop"
-      ],
-      fieldNotes: "Captured amid the historic lemon groves and pastel terraces of Ravello. The sunset painted the limestone cliffs in radiant rose gold.",
-      details: {
-        camera: "Leica SL2-S & 35mm Summilux",
-        light: "Golden Sunset & Ocean Glow",
-        season: "Late Spring 2025"
-      },
-      aspect: "wide",
-      formatTag: "4K CINEMA + LEICA STILLS"
+      formatTag: "MEDIUM FORMAT 120",
+      edition: "SERIES 04 // 2026"
     }
   ];
 
-  const filteredStories = activeCategory === "All"
-    ? allPortfolioItems
-    : allPortfolioItems.filter((s) => s.category === activeCategory);
-
   return (
-    <div className="starline-page-shell">
+    <div className="starline-page-shell mucha-page-bg">
       <Navbar variant="light" />
 
       <main className="starline-page-main">
-        {/* Creative Editorial Hero */}
-        <section className="portfolio-hero-refined">
-          <div className="portfolio-hero-inner">
-            <div className="portfolio-hero-badge-wrap">
-              <span className="portfolio-hero-badge">
-                <Sparkles size={11} className="mr-1.5 inline" />
-                THE ARCHIVE // 2024—2026
-              </span>
-              <span className="portfolio-hero-count">
-                {filteredStories.length} COMMISSIONS INDEXED
-              </span>
+        {/* ===================================================================
+            SECTION 1: MUCHA MUSEUM HERO (ARCHITECTURAL GRID + ARCH FRAME + GRAND PERSPECTIVE)
+            =================================================================== */}
+        <section className="mucha-hero-section">
+          {/* Subtle drafting guideline background overlay */}
+          <div className="mucha-drafting-lines" />
+
+          <div className="mucha-hero-grid">
+            {/* Left Content Column */}
+            <div className="mucha-hero-left">
+              <h1 className="mucha-hero-display-title">
+                STARLINE ARCHIVE
+              </h1>
+
+              <div className="mucha-hero-narrative-row">
+                <div className="mucha-hero-copy">
+                  <p className="mucha-hero-subtitle">
+                    A curated archive of living wedding cinema and 35mm fine art photography, documenting love across Europe and worldwide.
+                  </p>
+                  
+                  <a href="#exhibition" className="mucha-see-more-link">
+                    <span>Explore Archive</span>
+                    <div className="mucha-circle-arrow">⟶</div>
+                  </a>
+                </div>
+
+                {/* Arch-Framed Portrait */}
+                <div className="mucha-arch-portrait">
+                  <img
+                    src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=800&auto=format&fit=crop"
+                    alt="Archival Portrait"
+                    className="mucha-arch-img"
+                  />
+                  <div className="mucha-arch-badge">35MM</div>
+                </div>
+              </div>
             </div>
 
-            <h1 className="portfolio-main-title">
-              SELECTED WORKS &amp; MONOGRAPHS
-            </h1>
-
-            <p className="portfolio-main-subtitle">
-              An archival collection of wedding cinema, fine art photography, and destination celebrations documented across North America, Europe, and worldwide.
-            </p>
-
-            {/* Interactive Filter Pills */}
-            <div className="portfolio-creative-filters">
-              {categories.map((cat) => {
-                const isActive = activeCategory === cat;
-                return (
-                  <button
-                    key={cat}
-                    role="tab"
-                    aria-selected={isActive}
-                    className={`portfolio-pill-btn ${isActive ? "is-active" : ""}`}
-                    onClick={() => setActiveCategory(cat)}
-                  >
-                    <span>{cat}</span>
-                    {isActive && (
-                      <motion.span
-                        layoutId="activePillIndicator"
-                        className="portfolio-pill-glow"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                      />
-                    )}
-                  </button>
-                );
-              })}
+            {/* Right Perspective Gallery Image Column */}
+            <div className="mucha-hero-right">
+              <div className="mucha-gallery-perspective-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop"
+                  alt="Starline Museum Gallery Exhibition Hall"
+                  className="mucha-perspective-img"
+                />
+                <div className="mucha-perspective-overlay">
+                  <span className="mucha-perspective-tag">THE PERMANENT COLLECTION // ATELIER</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Creative Gallery Grid with Smooth Hover Reveal */}
-        <section className="portfolio-gallery-section">
-          <div className="portfolio-creative-grid">
-            <AnimatePresence mode="popLayout">
-              {filteredStories.map((story, index) => (
-                <motion.div
-                  key={story.id}
-                  layout
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.45, delay: index * 0.05, ease: [0.23, 1, 0.32, 1] }}
-                  className={`portfolio-creative-card ${story.aspect ? `aspect-${story.aspect}` : ""}`}
-                  onClick={() => setSelectedStory(story)}
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`View ${story.title}`}
-                >
-                  <div className="portfolio-card-media">
+        {/* ===================================================================
+            SECTION 2: ABOUT THE WORKS (ROSE MARBLE PLINTH + OVERLAPPING FRAME + RED SEAL)
+            =================================================================== */}
+        <section className="mucha-about-section">
+          <div className="mucha-about-grid">
+            {/* Left Marble Plinth & Overlapping Framed View */}
+            <div className="mucha-about-left">
+              <div className="mucha-marble-pillar" />
+              
+              <div className="mucha-overlapping-frame">
+                <img
+                  src="/wd1.jpg"
+                  alt="Starline Atelier Gallery Exhibition"
+                  className="mucha-overlapping-img"
+                />
+                
+                {/* Floating Red Circular Seal Stamp */}
+                <div className="mucha-red-seal">
+                  <span>MORE</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Narrative Copy Block */}
+            <div className="mucha-about-right">
+              <h2 className="mucha-about-display-title">
+                ABOUT
+              </h2>
+
+              <div className="mucha-about-text-wrap">
+                <p className="mucha-about-paragraph">
+                  Starline Atelier is an independent cinematic atelier dedicated to the craft of living wedding film and authentic analog emulsion photography. Founded on the belief that true romance requires both medium format clarity and raw, unrehearsed emotion.
+                </p>
+                <p className="mucha-about-paragraph">
+                  Our commissions encompass multi-day destination celebrations across the French Riviera, Amalfi Coast, Moroccan desert riads, and North America. Every film is accompanied by dedicated archival prints and bespoke acoustic scores.
+                </p>
+                <p className="mucha-about-hours">
+                  Philadelphia Atelier &amp; Destination Commissions worldwide.<br />
+                  Limited to 18 couples per calendar season.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 3: EXHIBITION SERIES (4 ARCHIVAL CARDS + MARBLE BASELINE + ROTATING SEAL)
+            =================================================================== */}
+        <section className="mucha-exhibition-section" id="exhibition">
+          <div className="mucha-exhibition-header">
+            <h2 className="mucha-exhibition-title">
+              STARLINE GALLERY
+            </h2>
+
+            {/* Rotating Circular Stamp Badge */}
+            <div className="mucha-stamp-badge-wrap">
+              <div className="mucha-circular-stamp">
+                <svg viewBox="0 0 100 100" className="mucha-stamp-svg">
+                  <path
+                    id="stampCirclePath"
+                    d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                    fill="none"
+                  />
+                  <text className="mucha-stamp-text">
+                    <textPath href="#stampCirclePath" startOffset="0%">
+                      • STARLINE ATELIER • THE ARCHIVE COLLECTION
+                    </textPath>
+                  </text>
+                </svg>
+                <div className="mucha-stamp-center">
+                  <span>SEE ALL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* The 4 Museum Archival Cards */}
+          <div className="mucha-cards-grid">
+            {exhibitionWorks.map((work, idx) => (
+              <div
+                key={work.id}
+                className="mucha-art-card"
+                onClick={() => setSelectedStory(work)}
+                role="button"
+                tabIndex={0}
+                aria-label={`View ${work.title}`}
+              >
+                <div className="mucha-card-inner">
+                  {/* Artwork Image Container with Smooth Hover Reveal */}
+                  <div className="mucha-card-img-wrap">
                     <img
-                      src={story.coverImage}
-                      alt={story.title}
-                      className="portfolio-card-img"
+                      src={work.coverImage}
+                      alt={work.title}
+                      className="mucha-card-img"
                       loading="lazy"
                     />
 
-                    {/* Smooth Hover Name & Details Reveal Overlay */}
-                    <div className="portfolio-hover-reveal-overlay">
-                      <div className="portfolio-hover-content">
-                        <div className="portfolio-hover-header">
-                          <span className="portfolio-hover-tag">
-                            {story.category === "Cinema Films" ? (
-                              <>
-                                <Film size={12} className="inline mr-1" /> CINEMA FILM
-                              </>
-                            ) : (
-                              <>
-                                <Camera size={12} className="inline mr-1" /> {story.category}
-                              </>
-                            )}
-                          </span>
-                          <span className="portfolio-hover-year">{story.year}</span>
-                        </div>
-
-                        <h2 className="portfolio-hover-title">{story.title}</h2>
-                        
-                        <p className="portfolio-hover-location">
-                          {story.location}
-                        </p>
-
-                        <p className="portfolio-hover-subtitle">
-                          {story.subtitle}
-                        </p>
-
-                        <div className="portfolio-hover-footer">
-                          {story.formatTag && (
-                            <span className="portfolio-format-pill">{story.formatTag}</span>
-                          )}
-                          <div className="portfolio-hover-cta">
-                            <span>EXPLORE STORY</span>
-                            <ArrowUpRight size={13} />
-                          </div>
+                    {/* Smooth Hover Overlay Revealing Name & Details */}
+                    <div className="mucha-card-hover-overlay">
+                      <div className="mucha-card-hover-inner">
+                        <span className="mucha-hover-badge">{work.formatTag}</span>
+                        <h4 className="mucha-hover-title">{work.title}</h4>
+                        <p className="mucha-hover-loc">{work.location}</p>
+                        <div className="mucha-hover-cta">
+                          <span>VIEW ARCHIVE</span>
+                          <ArrowUpRight size={12} />
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Clean Static Bottom Caption (Always Readable) */}
-                  <div className="portfolio-card-caption">
-                    <div className="portfolio-caption-left">
-                      <h3 className="portfolio-caption-title">{story.title}</h3>
-                      <span className="portfolio-caption-loc">{story.location}</span>
+                  {/* Clean Museum Metadata Footer */}
+                  <div className="mucha-card-info">
+                    <span className="mucha-card-series">{work.edition}</span>
+                    <h3 className="mucha-card-title">{work.title}</h3>
+                    <div className="mucha-card-action">
+                      <span>INQUIRE</span>
+                      <span className="mucha-card-arrow">⟶</span>
                     </div>
-                    <span className="portfolio-caption-year">{story.year}</span>
                   </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+                </div>
+              </div>
+            ))}
           </div>
+
+          {/* Horizontal Marble Baseline Plinth */}
+          <div className="mucha-marble-baseline" />
         </section>
 
-        {/* Archival Note */}
-        <section className="minimal-section" style={{ borderTop: "1px solid var(--border-line)", padding: "70px 24px" }}>
-          <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
-            <span style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.26em", color: "var(--cobalt-accent)", textTransform: "uppercase", display: "block", marginBottom: "12px" }}>
-              COMMISSION INQUIRIES
-            </span>
-            <h2 style={{ fontFamily: "var(--font-display-condensed)", fontSize: "clamp(2rem, 3.2vw, 2.8rem)", fontWeight: 300, letterSpacing: "0.1em", textTransform: "uppercase", margin: "0 0 16px" }}>
-              Have an Intimate Celebration in Mind?
-            </h2>
-            <p style={{ fontFamily: "var(--font-sans)", fontSize: "14px", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-muted)", margin: "0 0 32px" }}>
-              We accept a limited number of 18 bespoke wedding cinematography and photography commissions each calendar year to ensure uncompromised devotion to each couple’s story.
-            </p>
-            <Link href="/contact" className="story-card-cta" style={{ margin: "0 auto", display: "inline-flex" }}>
-              <span>Check Availability For Your Date</span>
-              <ArrowUpRight size={14} />
-            </Link>
+        {/* ===================================================================
+            SECTION 4: ATELIER & LOCATION MAP (SPLIT IVORY & CHARCOAL ARCHITECTURE)
+            =================================================================== */}
+        <section className="mucha-location-section">
+          <div className="mucha-location-grid">
+            {/* Left Cream Card */}
+            <div className="mucha-location-left">
+              <div className="mucha-sparkle-icon">
+                <Sparkles size={16} />
+              </div>
+
+              <h2 className="mucha-location-heading">
+                STARLINE ATELIER<br />
+                PHILADELPHIA:
+              </h2>
+
+              <div className="mucha-location-address">
+                <p>LOCUST STREET ATELIER</p>
+                <p>PHILADELPHIA, PA 19103</p>
+                <p className="mucha-location-hours">
+                  COMMISSIONS BY PRIVATE APPOINTMENT<br />
+                  WORLDWIDE TRAVEL &amp; ROUTING
+                </p>
+              </div>
+
+              <Link href="/contact" className="mucha-location-btn">
+                <span>INQUIRE FOR DATES</span>
+                <span className="mucha-btn-arrow">⟶</span>
+              </Link>
+            </div>
+
+            {/* Right Map & Architecture Still */}
+            <div className="mucha-location-right">
+              <div className="mucha-map-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1200&auto=format&fit=crop"
+                  alt="Worldwide Destination Route Map"
+                  className="mucha-map-img"
+                />
+                <div className="mucha-map-pin">
+                  <MapPin size={22} className="mucha-pin-icon" />
+                  <span className="mucha-pin-label">PHILADELPHIA / GLOBAL</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
 
-      {/* Story Deep-Dive Modal */}
+      {/* Story Deep-Dive Lightbox Modal */}
       <AnimatePresence>
         {selectedStory && (
           <motion.div
