@@ -18,7 +18,7 @@ export default function Contact() {
     email: "",
     phone: "",
     eventDate: "",
-    service: "Photography + Cinematography",
+    service: "Signature Dual Atelier (Cinema + Film)",
     location: "",
     guestCount: "50 – 120",
     eventDetails: "",
@@ -33,25 +33,25 @@ export default function Contact() {
 
   // Option Pills
   const serviceOptions = [
-    "Photography",
-    "Cinematography",
-    "Photography + Cinematography"
+    "35mm Fine-Art Photography",
+    "Cinematic 4K Storytelling",
+    "Signature Dual Atelier (Cinema + Film)"
   ];
 
   const guestCountOptions = [
-    "Intimate (< 50)",
-    "50 – 120",
-    "120 – 250",
-    "250+ Grand"
+    "Intimate Gathering (< 50)",
+    "50 – 120 Guests",
+    "120 – 250 Guests",
+    "250+ Grand Celebration"
   ];
 
   const referralOptions = [
     "Vogue Weddings",
     "Instagram",
-    "Referral / Friend",
-    "Wedding Planner",
-    "Editorial Press",
-    "Google / Search"
+    "Personal Referral",
+    "Wedding Designer / Planner",
+    "Editorial Publication",
+    "Search / Direct"
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -69,11 +69,11 @@ export default function Contact() {
   const destinationFaqs = [
     {
       q: "Do you travel worldwide for destination weddings?",
-      a: "Yes. Over 70% of our commissions take place internationally. Travel, accommodations, and flight logistics across Europe, North America, and Asia are coordinated seamlessly by our atelier with clear, transparent quotes."
+      a: "Yes. Over 70% of our commissions take place internationally. Travel, accommodations, and flight logistics across Europe, North America, and Asia are coordinated seamlessly by our atelier with clear, all-inclusive transparent quotes."
     },
     {
       q: "What is your hybrid 35mm film & 4K cinema approach?",
-      a: "We blend genuine 35mm analog film rolls (Kodak Portra, Ilford HP5) for timeless grain, organic skin tones, and nostalgic warmth with high-resolution digital cinema for pristine low-light dinner and party coverage."
+      a: "We blend authentic 35mm analog film rolls (Kodak Portra, Ilford HP5) for organic grain, true-to-life skin tones, and nostalgic warmth with high-resolution digital cinema for pristine low-light dinner and party coverage."
     },
     {
       q: "How far in advance should we reserve our date?",
@@ -98,7 +98,7 @@ export default function Contact() {
       <Navbar variant="light" />
 
       <main className="starline-page-main" style={{ padding: 0 }}>
-        {/* Full-Size Split Section (Pure Gione da Silva Architecture) */}
+        {/* Full-Size Split Section */}
         <section className="gione-contact-full-wrapper">
           {/* Left Side: Full-Size Vertical Editorial Image */}
           <div className="gione-contact-full-image-col">
@@ -112,30 +112,30 @@ export default function Contact() {
           {/* Right Side: Spacious, Uncongested Inquiries Form Area */}
           <div className="gione-contact-form-area">
             <h1 className="gione-info-title">
-              GET IN TOUCH!
+              INQUIRE & COMMISSIONS
             </h1>
 
             <p className="gione-info-subtitle">
-              As you've probably gathered by now, we are all about connections and life experiences.
-              We do get a buzz with the possibility of meeting new people and documenting their adventures.
-              Tell us about your plans!
+              Every heirloom film and photograph begins with an unhurried conversation.
+              We accept a strictly limited number of international commissions each season to ensure uncompromising dedication to each celebration.
+              Tell us the story of your gathering.
             </p>
 
             {/* Quick Direct Row */}
             <div className="gione-direct-row">
               <a href="tel:+447809295403" className="gione-direct-link">
                 <Phone size={14} />
-                <span>T: +44 7809 295 403</span>
+                <span>TEL: +44 7809 295 403</span>
               </a>
               <span style={{ color: "var(--line-subtle)" }}>|</span>
               <a href="mailto:hello@starline.studio" className="gione-direct-link">
                 <Mail size={14} />
-                <span>E: HELLO@STARLINE.STUDIO</span>
+                <span>DIRECT: HELLO@STARLINE.STUDIO</span>
               </a>
               <span style={{ color: "var(--line-subtle)" }}>|</span>
               <a href="https://instagram.com" target="_blank" rel="noreferrer" className="gione-direct-link">
                 <MessageSquare size={14} />
-                <span>IG: @STARLINE.STUDIO</span>
+                <span>JOURNAL: @STARLINE.STUDIO</span>
               </a>
             </div>
 
@@ -153,11 +153,11 @@ export default function Contact() {
                 </span>
 
                 <h2 className="gione-success-title">
-                  Thank You, {formData.name || "Friend"}.
+                  Inquiry Received, {formData.name || "Friend"}.
                 </h2>
 
                 <p className="gione-success-desc">
-                  Your celebration details have been received by our lead artists. We review calendar availability for <b>{formData.location || "your destination"}</b> and will send a personal response to <b>{formData.email}</b> within 24 hours.
+                  Thank you for inviting us into your celebration. We review calendar availability for <b>{formData.location || "your destination"}</b> and will be in touch at <b>{formData.email}</b> within 24 hours to schedule an introductory video consultation.
                 </p>
 
                 <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
@@ -181,7 +181,7 @@ export default function Contact() {
                 <div className="gione-form-grid-2">
                   <div className="gione-form-group">
                     <label className="gione-form-label">
-                      <span>NAME *</span>
+                      <span>01. YOUR NAMES *</span>
                     </label>
                     <input
                       type="text"
@@ -195,7 +195,7 @@ export default function Contact() {
 
                   <div className="gione-form-group">
                     <label className="gione-form-label">
-                      <span>EMAIL ADDRESS *</span>
+                      <span>02. PRIMARY EMAIL ADDRESS *</span>
                     </label>
                     <input
                       type="email"
@@ -212,7 +212,7 @@ export default function Contact() {
                 <div className="gione-form-grid-2">
                   <div className="gione-form-group">
                     <label className="gione-form-label">
-                      <span>CONTACT NUMBER *</span>
+                      <span>03. DIRECT TELEPHONE & WHATSAPP *</span>
                       <span className="gione-form-hint">Country Code + Number</span>
                     </label>
                     <input
@@ -227,7 +227,7 @@ export default function Contact() {
 
                   <div className="gione-form-group">
                     <label className="gione-form-label">
-                      <span>EVENT DATE *</span>
+                      <span>04. CELEBRATION DATE OR SEASON *</span>
                       <span className="gione-form-hint">Date or Season</span>
                     </label>
                     <input
@@ -244,7 +244,7 @@ export default function Contact() {
                 {/* Field 3: Service Interested In (Pills) */}
                 <div className="gione-form-group">
                   <label className="gione-form-label">
-                    <span>SERVICE YOU ARE INTERESTED IN *</span>
+                    <span>05. SERVICES REQUESTED *</span>
                   </label>
                   <div className="gione-pills-row">
                     {serviceOptions.map((opt) => (
@@ -264,12 +264,12 @@ export default function Contact() {
                 <div className="gione-form-grid-2">
                   <div className="gione-form-group">
                     <label className="gione-form-label">
-                      <span>EVENT LOCATION & VENUE *</span>
+                      <span>06. DESTINATION, CITY & VENUE *</span>
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Villa Balbiano, Lake Como / Provence"
+                      placeholder="e.g. Villa Balbiano, Lake Como / Provence Estate / London"
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                       className="gione-form-input"
@@ -278,7 +278,7 @@ export default function Contact() {
 
                   <div className="gione-form-group">
                     <label className="gione-form-label">
-                      <span>ESTIMATED GUEST COUNT</span>
+                      <span>07. ESTIMATED GUEST SCALE</span>
                     </label>
                     <div className="gione-pills-row">
                       {guestCountOptions.map((opt) => (
@@ -298,13 +298,13 @@ export default function Contact() {
                 {/* Field 5: Details / Story (Textarea) */}
                 <div className="gione-form-group">
                   <label className="gione-form-label">
-                    <span>PLEASE TELL US A LITTLE ABOUT YOUR EVENT *</span>
-                    <span className="gione-form-hint">(Location, style, vibe or anything important to you)</span>
+                    <span>08. YOUR CELEBRATION VISION & ATMOSPHERE *</span>
+                    <span className="gione-form-hint">(Atmosphere, light, priorities, or what matters most)</span>
                   </label>
                   <textarea
                     rows={5}
                     required
-                    placeholder="Share your vision, the atmosphere, aesthetic priorities, or specific traditions..."
+                    placeholder="Share the story of your day, the aesthetic mood, musical ambiance, or meaningful traditions..."
                     value={formData.eventDetails}
                     onChange={(e) => setFormData({ ...formData, eventDetails: e.target.value })}
                     className="gione-form-textarea"
@@ -315,11 +315,11 @@ export default function Contact() {
                 <div className="gione-form-grid-2">
                   <div className="gione-form-group">
                     <label className="gione-form-label">
-                      <span>WHO IS YOUR WEDDING PLANNER?</span>
+                      <span>09. WEDDING PLANNER OR EVENT DESIGNER</span>
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. Lake Como Weddings / Self-Planned"
+                      placeholder="e.g. Lake Como Weddings / Self-Curated"
                       value={formData.weddingPlanner}
                       onChange={(e) => setFormData({ ...formData, weddingPlanner: e.target.value })}
                       className="gione-form-input"
@@ -328,11 +328,11 @@ export default function Contact() {
 
                   <div className="gione-form-group">
                     <label className="gione-form-label">
-                      <span>WHAT DO YOU LIKE ABOUT OUR STYLE?</span>
+                      <span>10. WHAT RESONATES WITH YOU ABOUT STARLINE?</span>
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. The 35mm analog grain & unhurried documentary emotion"
+                      placeholder="e.g. The unhurried 35mm grain, natural light, and quiet emotional intimacy"
                       value={formData.styleAppreciation}
                       onChange={(e) => setFormData({ ...formData, styleAppreciation: e.target.value })}
                       className="gione-form-input"
@@ -344,7 +344,7 @@ export default function Contact() {
                 <div className="gione-form-grid-2">
                   <div className="gione-form-group">
                     <label className="gione-form-label">
-                      <span>INSTAGRAM HANDLES</span>
+                      <span>11. INSTAGRAM / SOCIAL HANDLES</span>
                     </label>
                     <input
                       type="text"
@@ -357,7 +357,7 @@ export default function Contact() {
 
                   <div className="gione-form-group">
                     <label className="gione-form-label">
-                      <span>WHERE DID YOU HEAR ABOUT US?</span>
+                      <span>12. HOW DID YOU DISCOVER OUR WORK?</span>
                     </label>
                     <div className="gione-pills-row">
                       {referralOptions.map((opt) => (
@@ -385,13 +385,13 @@ export default function Contact() {
                       <span>TRANSMITTING INQUIRY...</span>
                     ) : (
                       <>
-                        <span>SEND INQUIRY</span>
+                        <span>TRANSMIT INQUIRY</span>
                         <ArrowRight size={16} />
                       </>
                     )}
                   </button>
                   <p style={{ textAlign: "center", fontSize: "11px", color: "var(--ink-subtle)", marginTop: "14px", letterSpacing: "0.04em" }}>
-                    Strict confidentiality assured. We never share your contact details.
+                    Strict discretion assured. Your contact details remain confidential to our lead artists.
                   </p>
                 </div>
               </form>

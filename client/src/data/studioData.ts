@@ -337,99 +337,99 @@ export const testimonials: TestimonialItem[] = [
 
 export const journalArticles: JournalArticle[] = [
   {
-    id: "surrey-wedding",
-    slug: "surrey-wedding-photography-videography-saskia-oliver",
-    title: "Surrey Wedding Photography & Videography // Saskia + Oliver",
-    subtitle: "An intimate English country estate celebration enveloped in afternoon golden light",
-    category: "London & UK",
+    id: "lake-como-balbiano",
+    slug: "lake-como-wedding-cinema-alessandra-matteo",
+    title: "Villa Balbiano Lake Como // Alessandra + Matteo",
+    subtitle: "A lakeside Bellagio celebration enveloped in morning mist and evening candlelight along the waters of Lake Como",
+    category: "Destination Weddings",
     date: "18 October 2025",
     readTime: "5 min read",
     coverImage: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop",
-    excerpt: "Surrounded by ancient oaks and English garden botanicals, Saskia and Oliver celebrated their vows with a relaxed, heartfelt gathering filled with live acoustic music and candlelit dining.",
+    excerpt: "Across three days on the western shores of Lake Como, Alessandra and Matteo welcomed guests from Milan and New York for an unhurried celebration of wooden Riva boat arrivals, cypress gardens, and twilight dining.",
     content: [
-      "Surrey in late autumn offers an extraordinary palette of amber foliage, low-raking sunlight, and soft misty mornings. For Saskia and Oliver, the focus from day one was genuine intimacy without rigid formalities.",
-      "We documented the morning preparations using 35mm Kodak Portra film rolls to embrace the soft natural window light. The ceremony took place in an open-air stone terrace where natural vows were shared before seventy of their closest family and friends.",
-      "As dusk settled over the manor lawn, dinner was served beneath hanging floral installations and hundreds of tapered beeswax candles, creating a warm, painterly atmosphere that translated effortlessly to cinema film."
+      "Lake Como in early autumn possesses a tranquil, poetic stillness. The surrounding Alpine peaks soften behind morning haze, and the deep blue waters reflect the ornate stone balustrades of historic waterfront villas.",
+      "We documented Alessandra and Matteo's celebration using a dual hybrid approach: 35mm Kodak Portra film rolls for the tactile morning preparations and vintage anamorphic cinema lenses to capture the evening banquet beneath towering chandeliers on the water's edge.",
+      "The ceremony took place on the lakeside lawn as wooden Riva speedboats glided in the distance, followed by an open-air banquet illuminated by hundreds of tapered beeswax candles."
     ]
   },
   {
-    id: "french-riviera-wedding",
-    slug: "french-riviera-wedding-photographer-michelle-russell",
-    title: "French Riviera Wedding Photography & Film // Michelle + Russell",
-    subtitle: "A breathtaking Mediterranean celebration overlooking Villa Ephrussi de Rothschild",
+    id: "cap-d-antibes-riviera",
+    slug: "french-riviera-wedding-film-juliette-henri",
+    title: "Hôtel du Cap-Eden-Roc // Juliette + Henri",
+    subtitle: "Seaside stone terraces, Mediterranean sea spray, and haute couture black-tie on the French Riviera",
     category: "Destination Weddings",
     date: "24 September 2025",
     readTime: "6 min read",
     coverImage: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
-    excerpt: "Perched above the French Riviera, Michelle and Russell brought together guests from across three continents for an iconic weekend of seaside cocktails, haute couture, and seaside vows.",
+    excerpt: "Perched above the limestone cliffs of the Côte d’Azur, Juliette and Henri hosted an iconic seaside weekend capturing the golden-hour breeze on 35mm analog film and vintage anamorphic cinema lenses.",
     content: [
-      "Villa Ephrussi de Rothschild represents the pinnacle of Belle Époque elegance. The pink palace, framed by nine manicured classical gardens and the sapphire waters of the Mediterranean, was the setting for Michelle and Russell's destination wedding.",
-      "The ceremony was held in the French Garden as the musical fountains danced to classical strings. Michelle wore a custom couture silk gown that floated with the sea breeze.",
-      "Our cinematography team captured the celebration using a blend of medium-format 4K cinema cameras and vintage anamorphic lenses, giving the final film a velvety, cinematic depth reminiscent of classic European cinema."
+      "The French Riviera is synonymous with timeless European elegance. The iconic pine groves and sea cliffs of Cap d'Antibes provided the dramatic backdrop for Juliette and Henri's black-tie destination celebration.",
+      "Juliette wore an architectural couture silk gown that moved effortlessly in the Mediterranean sea breeze. Our team prioritized unhurried, documentary observation—preserving authentic laughter and impromptu dances.",
+      "As twilight bathed the coastline in lavender and amber light, dinner was served on the seaside stone terrace accompanied by a live acoustic jazz quartet."
     ]
   },
   {
-    id: "marrakech-la-mamounia",
-    slug: "la-mamounia-marrakech-wedding-linda-romain",
-    title: "La Mamounia Marrakech Wedding // Linda + Romain",
-    subtitle: "Lantern-lit courtyards, zellige tile, and an enchanting Moroccan desert adventure",
+    id: "marrakech-agafay",
+    slug: "marrakech-desert-riad-soraya-tarek",
+    title: "Agafay Desert & Riad Botanica // Soraya + Tarek",
+    subtitle: "Handcrafted brass lanterns, zellige courtyards, and an open-air starlit banquet under the Atlas Mountains",
     category: "Destination Weddings",
     date: "12 August 2025",
     readTime: "5 min read",
     coverImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
-    excerpt: "An unforgettable multi-day celebration starting in the historic courtyards of La Mamounia and ending under the starlit canopy of the Agafay Desert.",
+    excerpt: "Starting in the fragrant jasmine courtyards of the Medina and culminating in a starlit desert banquet illuminated by hundreds of handcrafted brass lanterns.",
     content: [
-      "Marrakech is a sensory dream for visual artists. The contrast of terracotta plaster, fragrant orange blossom courtyards, and warm sun creates a mood unlike anywhere else in the world.",
-      "Linda and Romain welcomed guests with traditional Moroccan mint tea and live Oud musicians before transitioning into a private courtyard ceremony lit by over three hundred handcrafted brass lanterns.",
-      "The following evening, the wedding party traveled into the Agafay Desert for an open-air banquet under the Milky Way, celebrating with traditional fire dancers and world-class culinary pairings."
+      "Marrakech offers an extraordinary sensory canvas for cinema. Terracotta plaster walls, intricate zellige mosaics, and warm desert winds create an immersive atmosphere unlike anywhere else.",
+      "Soraya and Tarek greeted their international guests with traditional mint tea and live Oud musicians in a private courtyard before transitioning to an open-air celebration under the stars in the Agafay Desert.",
+      "We utilized 35mm black-and-white film to capture the tactile textures of embroidered textiles and the warm glow of open fire installations."
     ]
   },
   {
-    id: "wanaka-new-zealand",
-    slug: "wanaka-new-zealand-wedding-maggie-kevin",
-    title: "Wanaka New Zealand Wedding Videographer // Maggie + Kevin",
-    subtitle: "Glacial alpine peaks, remote lakeside vows, and sweeping mountain panoramas",
-    category: "Destination Weddings",
+    id: "kyoto-arashiyama",
+    slug: "kyoto-arashiyama-wedding-hana-liam",
+    title: "Arashiyama Bamboo & River Vows // Hana + Liam",
+    subtitle: "Japanese architectural minimalism, moss gardens, and a serene twilight ceremony in the ancient capital",
+    category: "Asian Weddings",
     date: "28 July 2025",
     readTime: "4 min read",
     coverImage: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1600&auto=format&fit=crop",
-    excerpt: "A helicopter ascent to the ridge of Mount Aspiring followed by an intimate vineyard reception with panoramic views over Lake Wanaka.",
+    excerpt: "Surrounded by towering bamboo groves and cedar temples, Hana and Liam exchanged quiet personal vows followed by a traditional multi-course Kaiseki dinner alongside the Oi River.",
     content: [
-      "New Zealand's South Island possesses a raw, untamed majesty. Maggie and Kevin desired an elopement experience that celebrated the vast scale of nature.",
-      "After exchanging private vows on an alpine peak accessible only by helicopter, we descended into the Rippon Vineyard for sunset wine tastings with their closest circle.",
-      "Every frame was captured to emphasize the sheer environmental scale—snowcapped summits meeting the deep glacial blue of the lake."
+      "Kyoto's Arashiyama district is defined by ancient cedar forests, mist-shrouded river valleys, and refined wooden architecture. Hana and Liam desired a celebration rooted in quiet presence and natural reverence.",
+      "The ceremony was held in a private moss garden overlooking the river at dusk, followed by an intimate candlelit reception featuring handcrafted ceramics and local floral design.",
+      "Every frame was captured to honor the subtle spatial harmony (Ma) of Japanese aesthetics and the quiet emotional connection between the couple."
     ]
   },
   {
-    id: "alila-yangshuo",
-    slug: "alila-yangshuo-guilin-wedding-elina-aaron",
-    title: "Alila Yangshuo Wedding Film // Elina + Aaron",
-    subtitle: "Historic sugar mill architecture amidst the limestone karst mountains of China",
-    category: "Asian Weddings",
+    id: "tuscany-val-dorcia",
+    slug: "tuscany-val-dorcia-isabella-julian",
+    title: "Val d'Orcia Olive Estate // Isabella + Julian",
+    subtitle: "Rolling golden hills, cypress avenues, and an open-air harvest table beneath the Tuscan constellations",
+    category: "Destination Weddings",
     date: "14 June 2025",
     readTime: "7 min read",
     coverImage: "/bg_hero_page.png",
-    excerpt: "Modern industrial luxury meets ancient karst landscape. An extraordinary wedding celebration honoring Chinese heritage and contemporary design.",
+    excerpt: "An intimate multi-day gathering celebrating the soulful rhythms of Tuscany, documented with medium-format analog film and natural golden-hour illumination.",
     content: [
-      "Alila Yangshuo is one of the most architecturally striking venues in Asia, converting a 1960s sugar mill into a contemporary sanctuary alongside the Li River.",
-      "Elina and Aaron combined a traditional Chinese tea ceremony wearing embroidered silk qipaos with a modern black-tie evening reception over the reflection pool.",
-      "The cinematic film combined slow-panning landscape vistas of misty limestone peaks with high-energy party moments on the industrial truss stage."
+      "The rolling wheat fields and winding cypress driveways of Val d'Orcia represent the quintessential soul of the Italian countryside. Isabella and Julian curated an unhurried weekend focused on regional wine, seasonal cuisine, and deep connection.",
+      "Guests gathered at a single 80-foot rustic timber table set among ancient olive groves, illuminated by festoon lights and the warm glow of the setting sun.",
+      "Our cinematography highlighted the natural textures of linen, terracotta, and late-afternoon golden light that makes Tuscan celebrations so timeless."
     ]
   },
   {
-    id: "chateau-la-napoule",
-    slug: "chateau-de-la-napoule-wedding-carla-walker",
-    title: "Château de la Napoule Celebration // Carla + Walker",
-    subtitle: "Medieval seaside stone walls and modern black-tie glamour on the French coast",
+    id: "mallorca-deia",
+    slug: "mallorca-deia-coastal-clara-soren",
+    title: "Deià Coastal Finca // Clara + Soren",
+    subtitle: "Sun-bleached sandstone walls, olive groves, and midnight ocean swimming along the Balearic coastline",
     category: "Destination Weddings",
     date: "2 May 2025",
     readTime: "5 min read",
     coverImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop",
-    excerpt: "With the Mediterranean waves breaking against medieval fortress walls, Carla and Walker hosted an opulent coastal banquet filled with champagne, oysters, and midnight fireworks.",
+    excerpt: "With the Tramuntana mountain peaks rising behind and the Mediterranean stretching to the horizon, Clara and Soren celebrated with wild floral installations and Spanish guitar.",
     content: [
-      "Located near Cannes, Château de la Napoule blends eccentric sculpture, historic stone ramparts, and uninterrupted sea views.",
-      "The bride made a dramatic entrance across the stone bridge wearing a sculptural cathedral veil. Dinner was hosted along the seaside battlements under string canopies as the sunset turned the water gold.",
-      "A standout highlight was the midnight champagne tower and fireworks display launched directly over the Bay of Cannes."
+      "Perched on the rugged northwest coast of Mallorca, the historic artists' village of Deià is an enchanting enclave of stone fincas and bougainvillea.",
+      "Clara and Soren hosted their ceremony overlooking the sea as acoustic Spanish guitar echoed off the stone terraces. The evening transitioned into a vibrant midnight party beneath citrus trees.",
+      "We preserved the vivid Mediterranean colors and ocean reflections on 35mm color film, delivering an heirloom narrative brimming with vitality."
     ]
   }
 ];
