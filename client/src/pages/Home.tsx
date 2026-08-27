@@ -63,14 +63,12 @@ export default function Home() {
           </div>
 
           <div className="minimal-hero-content">
-            <p className="minimal-hero-kicker">
-              CINEMATIC DESTINATION WEDDINGS & BESPOKE VISUAL POETRY WORLDWIDE
-            </p>
-
             <h1 className="minimal-hero-title">
-              Crafting Living Heirlooms of Love,<br />
-              Light & Untamed Elegance
+              TELLING YOUR STORY THROUGH BEAUTIFUL AND MEANINGFUL IMAGERY
             </h1>
+            <p className="minimal-hero-kicker">
+              ACCLAIMED LONDON AND DESTINATION WEDDING VIDEOGRAPHER – PHOTOGRAPHER
+            </p>
           </div>
         </section>
 

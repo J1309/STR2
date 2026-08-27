@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Instagram, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 
@@ -8,7 +8,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({ variant = "dark" }: NavbarProps) {
-  const [location, setLocation] = useLocation();
+  const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -27,10 +27,11 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
   }, [location]);
 
   const navLinks = [
-    { href: "/", label: "Home" },
+    { href: "/portfolio", label: "Videography" },
+    { href: "/portfolio", label: "Photography" },
+    { href: "/about", label: "About" },
     { href: "/portfolio", label: "Portfolio" },
     { href: "/journal", label: "Journal" },
-    { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" }
   ];
 
@@ -41,20 +42,24 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
       >
         <div className="starline-header-inner">
           <Link href="/" className="starline-brand-box">
-            <img src="/Str_logo.png" alt="Starline Studio Logo" className="starline-brand-logo-img" />
+            <img
+              src="/Str_logo.png"
+              alt="Starline Studio Logo"
+              className="starline-brand-logo-img"
+            />
             <div className="starline-brand-text">
-              <span className="starline-brand-title">Starline</span>
-              <span className="starline-brand-sub">Studio / Atelier</span>
+              <span className="starline-brand-title">STARLINE</span>
+              <span className="starline-brand-sub">STUDIO // ATELIER</span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="starline-desktop-nav" aria-label="Main Navigation">
-            {navLinks.map((link) => {
+            {navLinks.map((link, idx) => {
               const isActive = location === link.href;
               return (
                 <Link
-                  key={link.href}
+                  key={`${link.href}-${idx}`}
                   href={link.href}
                   className={`starline-nav-link ${isActive ? "is-active" : ""}`}
                 >
@@ -68,7 +73,7 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
           <div className="starline-header-actions">
             <Link href="/contact" className="starline-header-cta">
               <span>Inquire</span>
-              <ArrowUpRight size={14} />
+              <ArrowUpRight size={13} />
             </Link>
 
             <button
@@ -76,7 +81,7 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -98,32 +103,20 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
                   const isActive = location === link.href;
                   return (
                     <Link
-                      key={link.href}
+                      key={`${link.href}-mob-${idx}`}
                       href={link.href}
                       className={`starline-mobile-nav-item ${isActive ? "is-active" : ""}`}
                     >
-                      <span>0{idx + 1}</span>
-                      <b>{link.label}</b>
-                      <ArrowUpRight size={16} />
+                      <span>{link.label}</span>
+                      <ArrowUpRight size={15} />
                     </Link>
                   );
                 })}
               </nav>
 
-              <div className="starline-mobile-drawer-footer">
-                <div className="starline-mobile-contact-note">
-                  <p className="kicker">Available Worldwide</p>
-                  <a href="mailto:hello@starline.studio">hello@starline.studio</a>
-                </div>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="starline-mobile-instagram"
-                >
-                  <Instagram size={15} />
-                  <span>@starline.studio</span>
-                </a>
+              <div className="starline-mobile-footer-info">
+                <p>STARLINE ATELIER</p>
+                <p>LONDON • LAKE COMO • PARIS</p>
               </div>
             </div>
           </motion.div>
