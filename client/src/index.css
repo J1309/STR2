@@ -3211,3 +3211,341 @@ a {
     max-width: 120px;
   }
 }
+
+/* ==========================================================================
+   GIONE DA SILVA LUXURY CONTACT FORM STYLES
+   ========================================================================== */
+.gione-contact-full-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  min-height: 100vh;
+  background: #faf8f5;
+}
+
+.gione-contact-full-image-col {
+  position: relative;
+  height: 100%;
+  min-height: 600px;
+  background: #0f131a;
+  overflow: hidden;
+}
+
+.gione-contact-full-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.92);
+}
+
+.gione-contact-image-badge {
+  position: absolute;
+  bottom: 36px;
+  left: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10, 15, 24, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.gione-contact-form-area {
+  padding: clamp(100px, 12vw, 150px) clamp(28px, 5.5vw, 84px) clamp(60px, 8vw, 100px);
+  display: flex;
+  flex-direction: column;
+  max-width: 860px;
+}
+
+.gione-contact-header-block {
+  margin-bottom: 40px;
+}
+
+.gione-contact-overline {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: var(--cobalt-accent);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.gione-info-title {
+  font-family: var(--font-display-condensed);
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  line-height: 1.02;
+  text-transform: uppercase;
+  color: #1a1a1c;
+  margin: 0 0 16px;
+}
+
+.gione-info-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 1.25vw, 14.5px);
+  font-weight: 300;
+  line-height: 1.8;
+  color: #55555c;
+  margin: 0 0 24px;
+  max-width: 620px;
+}
+
+.gione-direct-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 12px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.gione-direct-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1a1a1c;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.gione-direct-link:hover {
+  color: var(--cobalt-accent);
+}
+
+.gione-direct-divider {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 11px;
+}
+
+/* Structured Form Sections */
+.gione-form {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.gione-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.gione-form-section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.gione-section-step {
+  font-family: var(--font-display-condensed);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cobalt-accent);
+}
+
+.gione-section-title {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #1a1a1c;
+  margin: 0;
+}
+
+.gione-form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.gione-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gione-form-label {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #333338;
+}
+
+.req-star {
+  color: #d84b3e;
+}
+
+.gione-form-input,
+.gione-form-textarea {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+  padding: 13px 16px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #1a1a1c;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gione-form-input:focus,
+.gione-form-textarea:focus {
+  border-color: #1a1a1c;
+  box-shadow: 0 0 0 1px #1a1a1c;
+}
+
+.gione-form-input::placeholder,
+.gione-form-textarea::placeholder {
+  color: #9999a2;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.gione-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+/* Filter / Option Pills */
+.gione-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gione-pill-btn {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #4a4a52;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gione-pill-btn:hover {
+  border-color: #1a1a1c;
+  color: #1a1a1c;
+}
+
+.gione-pill-btn.is-active {
+  background: #1a1a1c;
+  color: #ffffff;
+  border-color: #1a1a1c;
+}
+
+/* Submit Action Row */
+.gione-form-submit-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+}
+
+.gione-submit-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1a1a1c;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 15px 36px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gione-submit-button:hover {
+  background: #2a2a30;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gione-submit-note {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: #777782;
+  font-style: italic;
+}
+
+/* Success State */
+.gione-success-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 40px clamp(24px, 4vw, 44px);
+  border-radius: 6px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.04);
+}
+
+.gione-success-icon-wrap {
+  margin-bottom: 16px;
+}
+
+.gione-success-title {
+  font-family: var(--font-display-condensed);
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1a1a1c;
+  margin: 0 0 12px;
+}
+
+.gione-success-desc {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #4a4a52;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .gione-contact-full-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .gione-contact-full-image-col {
+    min-height: 380px;
+    height: 380px;
+  }
+  .gione-form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
