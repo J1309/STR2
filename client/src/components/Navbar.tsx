@@ -27,6 +27,7 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
   }, [location]);
 
   const navLinks = [
+    { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/portfolio", label: "Portfolio" },
     { href: "/journal", label: "Journal" },
