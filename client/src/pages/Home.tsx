@@ -117,7 +117,7 @@ export default function Home() {
         </section>
 
         {/* ===================================================================
-            3. FEATURED VIDEO SHOWCASES (FRAMED MASTER BOXES + PREMIUM BLUE STORY BOX)
+            3. FEATURED VIDEO SHOWCASES (DISTINCT 16:9 PLAYER + LIGHT THEMED STORY CARD)
             =================================================================== */}
         <section className="minimal-section minimal-showcase-section" style={{ paddingTop: 0 }}>
           <div className="minimal-section-header">
@@ -127,9 +127,9 @@ export default function Home() {
 
           <div className="minimal-showcase-wrap">
             {/* Featured Film 1: Marrakech */}
-            <div className="featured-video-master-card">
+            <div className="featured-showcase-row">
               <div
-                className="featured-video-media-col"
+                className="featured-video-frame"
                 onClick={() => setPlayingVideos(prev => ({ ...prev, marrakech: true }))}
                 role="button"
                 tabIndex={0}
@@ -153,7 +153,7 @@ export default function Home() {
                     />
                     <div className="minimal-play-btn">
                       <div className="minimal-play-icon">
-                        <Play size={24} fill="currentColor" />
+                        <Play size={22} fill="currentColor" />
                       </div>
                       <span className="play-pulse-ring" />
                     </div>
@@ -164,39 +164,39 @@ export default function Home() {
                 )}
               </div>
 
-              <div className="featured-video-story-blue-box">
-                <div className="blue-box-header">
-                  <span className="blue-box-num">01 / DESTINATION CELEBRATION</span>
-                  <span className="blue-box-badge">MARRAKECH • MOROCCO</span>
+              <div className="featured-story-light-card">
+                <div className="story-card-top">
+                  <span className="story-card-num">01 / DESTINATION CELEBRATION</span>
+                  <span className="story-card-pill">MARRAKECH • MOROCCO</span>
                 </div>
 
-                <h3 className="blue-box-title">Epic Wedding in Marrakech</h3>
+                <h3 className="story-card-title">Epic Wedding in Marrakech</h3>
                 
-                <p className="blue-box-quote">
+                <p className="story-card-quote">
                   “Lantern-lit riad courtyards, golden desert twilight, and an untamed romance echoing through the ancient palms.”
                 </p>
 
-                <p className="blue-box-narrative">
+                <p className="story-card-narrative">
                   An unforgettable multi-day celebration documented across the historic gardens of La Mamounia and the quiet dunes of Agafay. Shot entirely on bespoke anamorphic glass and natural 35mm film emulsions.
                 </p>
 
-                <div className="blue-box-telemetry">
-                  <div className="telemetry-item">
-                    <span className="tel-label">FORMAT</span>
-                    <span className="tel-val">4K CINEMA + 35MM LEICA</span>
+                <div className="story-card-telemetry">
+                  <div className="story-telemetry-item">
+                    <span className="story-tel-label">FORMAT</span>
+                    <span className="story-tel-val">4K CINEMA + 35MM LEICA</span>
                   </div>
-                  <div className="telemetry-item">
-                    <span className="tel-label">SOUNDTRACK</span>
-                    <span className="tel-val">BESPOKE ACOUSTIC SCORE</span>
+                  <div className="story-telemetry-item">
+                    <span className="story-tel-label">SOUNDTRACK</span>
+                    <span className="story-tel-val">BESPOKE ACOUSTIC SCORE</span>
                   </div>
-                  <div className="telemetry-item">
-                    <span className="tel-label">SEASONS</span>
-                    <span className="tel-val">AUTUMN SOLSTICE</span>
+                  <div className="story-telemetry-item">
+                    <span className="story-tel-label">SEASONS</span>
+                    <span className="story-tel-val">AUTUMN SOLSTICE</span>
                   </div>
                 </div>
 
-                <div className="blue-box-footer">
-                  <Link href="/portfolio" className="blue-box-cta">
+                <div className="story-card-bottom">
+                  <Link href="/portfolio" className="story-card-cta">
                     <span>Explore Full Gallery &amp; Film</span>
                     <ArrowUpRight size={14} />
                   </Link>
@@ -205,9 +205,9 @@ export default function Home() {
             </div>
 
             {/* Featured Film 2: French Riviera */}
-            <div className="featured-video-master-card is-reversed">
+            <div className="featured-showcase-row is-reversed">
               <div
-                className="featured-video-media-col"
+                className="featured-video-frame"
                 onClick={() => setPlayingVideos(prev => ({ ...prev, riviera: true }))}
                 role="button"
                 tabIndex={0}
@@ -231,7 +231,7 @@ export default function Home() {
                     />
                     <div className="minimal-play-btn">
                       <div className="minimal-play-icon">
-                        <Play size={24} fill="currentColor" />
+                        <Play size={22} fill="currentColor" />
                       </div>
                       <span className="play-pulse-ring" />
                     </div>
@@ -242,39 +242,39 @@ export default function Home() {
                 )}
               </div>
 
-              <div className="featured-video-story-blue-box">
-                <div className="blue-box-header">
-                  <span className="blue-box-num">02 / MEDITERRANEAN ESTATE</span>
-                  <span className="blue-box-badge">CÔTE D'AZUR • FRANCE</span>
+              <div className="featured-story-light-card">
+                <div className="story-card-top">
+                  <span className="story-card-num">02 / MEDITERRANEAN ESTATE</span>
+                  <span className="story-card-pill">CÔTE D'AZUR • FRANCE</span>
                 </div>
 
-                <h3 className="blue-box-title">Heartfelt Riviera Celebration</h3>
+                <h3 className="story-card-title">Heartfelt Riviera Celebration</h3>
                 
-                <p className="blue-box-quote">
+                <p className="story-card-quote">
                   “Azure horizons, classical stone balustrades, and quiet candlelight drifting over the Mediterranean sea.”
                 </p>
 
-                <p className="blue-box-narrative">
+                <p className="story-card-narrative">
                   Overlooking Saint-Jean-Cap-Ferrat, this intimate cliffside villa celebration was captured with a documentary sensitivity that prioritized unrehearsed laughter, heartfelt vows, and dusk champagne toasts.
                 </p>
 
-                <div className="blue-box-telemetry">
-                  <div className="telemetry-item">
-                    <span className="tel-label">FORMAT</span>
-                    <span className="tel-val">4K ULTRA HD + KODAK 500T</span>
+                <div className="story-card-telemetry">
+                  <div className="story-telemetry-item">
+                    <span className="story-tel-label">FORMAT</span>
+                    <span className="story-tel-val">4K ULTRA HD + KODAK 500T</span>
                   </div>
-                  <div className="telemetry-item">
-                    <span className="tel-label">SOUNDTRACK</span>
-                    <span className="tel-val">LIVE CELLO &amp; PIANO SUITE</span>
+                  <div className="story-telemetry-item">
+                    <span className="story-tel-label">SOUNDTRACK</span>
+                    <span className="story-tel-val">LIVE CELLO &amp; PIANO SUITE</span>
                   </div>
-                  <div className="telemetry-item">
-                    <span className="tel-label">SEASONS</span>
-                    <span className="tel-val">MIDSUMMER TWILIGHT</span>
+                  <div className="story-telemetry-item">
+                    <span className="story-tel-label">SEASONS</span>
+                    <span className="story-tel-val">MIDSUMMER TWILIGHT</span>
                   </div>
                 </div>
 
-                <div className="blue-box-footer">
-                  <Link href="/portfolio" className="blue-box-cta">
+                <div className="story-card-bottom">
+                  <Link href="/portfolio" className="story-card-cta">
                     <span>Explore Full Gallery &amp; Film</span>
                     <ArrowUpRight size={14} />
                   </Link>
