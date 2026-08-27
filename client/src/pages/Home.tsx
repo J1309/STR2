@@ -117,7 +117,7 @@ export default function Home() {
         </section>
 
         {/* ===================================================================
-            3. FEATURED VIDEO SHOWCASES (DISTINCT 16:9 PLAYER + LIGHT THEMED STORY CARD)
+            3. FEATURED VIDEO SHOWCASES (CLEAN CINEMATIC GRID + LIGHT STORY BOX)
             =================================================================== */}
         <section className="minimal-section minimal-showcase-section" style={{ paddingTop: 0 }}>
           <div className="minimal-section-header">
@@ -153,54 +153,34 @@ export default function Home() {
                     />
                     <div className="minimal-play-btn">
                       <div className="minimal-play-icon">
-                        <Play size={22} fill="currentColor" />
+                        <Play size={24} fill="currentColor" />
                       </div>
                       <span className="play-pulse-ring" />
                     </div>
                     <div className="featured-media-badge">
-                      <span>PLAY 4K FILM // 08:45</span>
+                      <span>4K CINEMA // 08:45</span>
                     </div>
                   </>
                 )}
               </div>
 
               <div className="featured-story-light-card">
-                <div className="story-card-top">
-                  <span className="story-card-num">01 / DESTINATION CELEBRATION</span>
-                  <span className="story-card-pill">MARRAKECH • MOROCCO</span>
-                </div>
-
-                <h3 className="story-card-title">Epic Wedding in Marrakech</h3>
+                <span className="story-card-overline">FEATURED FILM 01 // MARRAKECH</span>
+                
+                <h3 className="story-card-title">Epic Celebration in the Red City</h3>
                 
                 <p className="story-card-quote">
-                  “Lantern-lit riad courtyards, golden desert twilight, and an untamed romance echoing through the ancient palms.”
+                  “Golden lantern light, ancient desert dunes, and a love story captured on living 35mm motion picture film.”
                 </p>
 
                 <p className="story-card-narrative">
-                  An unforgettable multi-day celebration documented across the historic gardens of La Mamounia and the quiet dunes of Agafay. Shot entirely on bespoke anamorphic glass and natural 35mm film emulsions.
+                  A multi-day destination celebration documented across the private gardens of La Mamounia and the quiet expanse of the Agafay Desert, framed with bespoke anamorphic optics.
                 </p>
 
-                <div className="story-card-telemetry">
-                  <div className="story-telemetry-item">
-                    <span className="story-tel-label">FORMAT</span>
-                    <span className="story-tel-val">4K CINEMA + 35MM LEICA</span>
-                  </div>
-                  <div className="story-telemetry-item">
-                    <span className="story-tel-label">SOUNDTRACK</span>
-                    <span className="story-tel-val">BESPOKE ACOUSTIC SCORE</span>
-                  </div>
-                  <div className="story-telemetry-item">
-                    <span className="story-tel-label">SEASONS</span>
-                    <span className="story-tel-val">AUTUMN SOLSTICE</span>
-                  </div>
-                </div>
-
-                <div className="story-card-bottom">
-                  <Link href="/portfolio" className="story-card-cta">
-                    <span>Explore Full Gallery &amp; Film</span>
-                    <ArrowUpRight size={14} />
-                  </Link>
-                </div>
+                <Link href="/portfolio" className="story-card-link-cta">
+                  <span>Watch Full Film &amp; Stills</span>
+                  <ArrowUpRight size={15} />
+                </Link>
               </div>
             </div>
 
@@ -231,54 +211,34 @@ export default function Home() {
                     />
                     <div className="minimal-play-btn">
                       <div className="minimal-play-icon">
-                        <Play size={22} fill="currentColor" />
+                        <Play size={24} fill="currentColor" />
                       </div>
                       <span className="play-pulse-ring" />
                     </div>
                     <div className="featured-media-badge">
-                      <span>PLAY 4K FILM // 10:12</span>
+                      <span>4K CINEMA // 10:12</span>
                     </div>
                   </>
                 )}
               </div>
 
               <div className="featured-story-light-card">
-                <div className="story-card-top">
-                  <span className="story-card-num">02 / MEDITERRANEAN ESTATE</span>
-                  <span className="story-card-pill">CÔTE D'AZUR • FRANCE</span>
-                </div>
-
-                <h3 className="story-card-title">Heartfelt Riviera Celebration</h3>
+                <span className="story-card-overline">FEATURED FILM 02 // CÔTE D'AZUR</span>
+                
+                <h3 className="story-card-title">Elegance Overlooking the Mediterranean</h3>
                 
                 <p className="story-card-quote">
-                  “Azure horizons, classical stone balustrades, and quiet candlelight drifting over the Mediterranean sea.”
+                  “Azure coastal horizons, classical stone balustrades, and heartfelt vows echoing quietly above the sea.”
                 </p>
 
                 <p className="story-card-narrative">
-                  Overlooking Saint-Jean-Cap-Ferrat, this intimate cliffside villa celebration was captured with a documentary sensitivity that prioritized unrehearsed laughter, heartfelt vows, and dusk champagne toasts.
+                  An intimate cliffside villa celebration in Saint-Jean-Cap-Ferrat, capturing genuine emotion, unrehearsed laughter, and sunset champagne toasts along the French Riviera.
                 </p>
 
-                <div className="story-card-telemetry">
-                  <div className="story-telemetry-item">
-                    <span className="story-tel-label">FORMAT</span>
-                    <span className="story-tel-val">4K ULTRA HD + KODAK 500T</span>
-                  </div>
-                  <div className="story-telemetry-item">
-                    <span className="story-tel-label">SOUNDTRACK</span>
-                    <span className="story-tel-val">LIVE CELLO &amp; PIANO SUITE</span>
-                  </div>
-                  <div className="story-telemetry-item">
-                    <span className="story-tel-label">SEASONS</span>
-                    <span className="story-tel-val">MIDSUMMER TWILIGHT</span>
-                  </div>
-                </div>
-
-                <div className="story-card-bottom">
-                  <Link href="/portfolio" className="story-card-cta">
-                    <span>Explore Full Gallery &amp; Film</span>
-                    <ArrowUpRight size={14} />
-                  </Link>
-                </div>
+                <Link href="/portfolio" className="story-card-link-cta">
+                  <span>Watch Full Film &amp; Stills</span>
+                  <ArrowUpRight size={15} />
+                </Link>
               </div>
             </div>
           </div>
