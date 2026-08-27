@@ -117,7 +117,7 @@ export default function Home() {
         </section>
 
         {/* ===================================================================
-            3. FEATURED VIDEO SHOWCASES (CLEAN CINEMATIC GRID + LIGHT STORY BOX)
+            3. FEATURED VIDEO SHOWCASES (EXACT GIONE DA SILVA EDITORIAL DUO)
             =================================================================== */}
         <section className="minimal-section minimal-showcase-section" style={{ paddingTop: 0 }}>
           <div className="minimal-section-header">
@@ -125,11 +125,11 @@ export default function Home() {
             <h2 className="minimal-section-title">FEATURED CINEMA FILMS</h2>
           </div>
 
-          <div className="minimal-showcase-wrap">
+          <div className="gione-showcase-wrap">
             {/* Featured Film 1: Marrakech */}
-            <div className="featured-showcase-row">
+            <div className="gione-featured-duo">
               <div
-                className="featured-video-frame"
+                className="gione-video-col"
                 onClick={() => setPlayingVideos(prev => ({ ...prev, marrakech: true }))}
                 role="button"
                 tabIndex={0}
@@ -141,53 +141,47 @@ export default function Home() {
                     autoPlay
                     controls
                     playsInline
-                    className="featured-video-element"
+                    className="gione-video-element"
                   />
                 ) : (
                   <>
                     <img
                       src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop"
-                      alt="Epic Wedding in Marrakech"
-                      className="featured-video-poster"
+                      alt="Epic Wedding in Marrakech, Morocco"
+                      className="gione-video-img"
                       loading="lazy"
                     />
-                    <div className="minimal-play-btn">
-                      <div className="minimal-play-icon">
-                        <Play size={24} fill="currentColor" />
+                    <div className="gione-play-circle-overlay">
+                      <div className="gione-play-circle">
+                        <Play size={18} fill="currentColor" />
                       </div>
-                      <span className="play-pulse-ring" />
-                    </div>
-                    <div className="featured-media-badge">
-                      <span>4K CINEMA // 08:45</span>
                     </div>
                   </>
                 )}
               </div>
 
-              <div className="featured-story-light-card">
-                <span className="story-card-overline">FEATURED FILM 01 // MARRAKECH</span>
-                
-                <h3 className="story-card-title">Epic Celebration in the Red City</h3>
-                
-                <p className="story-card-quote">
-                  “Golden lantern light, ancient desert dunes, and a love story captured on living 35mm motion picture film.”
-                </p>
-
-                <p className="story-card-narrative">
-                  A multi-day destination celebration documented across the private gardens of La Mamounia and the quiet expanse of the Agafay Desert, framed with bespoke anamorphic optics.
-                </p>
-
-                <Link href="/portfolio" className="story-card-link-cta">
-                  <span>Watch Full Film &amp; Stills</span>
-                  <ArrowUpRight size={15} />
-                </Link>
+              <div className="gione-story-col">
+                <div className="gione-story-inner">
+                  <p className="gione-story-overline">FEATURED VIDEO:</p>
+                  <h3 className="gione-story-heading">
+                    EPIC WEDDING IN<br />
+                    MARRAKECH,<br />
+                    MOROCCO
+                  </h3>
+                  <p className="gione-story-desc">
+                    An incredible adventure wedding, in the enchanting city of Marrakech
+                  </p>
+                  <Link href="/contact" className="gione-story-btn">
+                    <span>CONTACT US</span>
+                  </Link>
+                </div>
               </div>
             </div>
 
             {/* Featured Film 2: French Riviera */}
-            <div className="featured-showcase-row is-reversed">
+            <div className="gione-featured-duo">
               <div
-                className="featured-video-frame"
+                className="gione-video-col"
                 onClick={() => setPlayingVideos(prev => ({ ...prev, riviera: true }))}
                 role="button"
                 tabIndex={0}
@@ -199,46 +193,40 @@ export default function Home() {
                     autoPlay
                     controls
                     playsInline
-                    className="featured-video-element"
+                    className="gione-video-element"
                   />
                 ) : (
                   <>
                     <img
                       src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop"
-                      alt="Elegant French Riviera Wedding"
-                      className="featured-video-poster"
+                      alt="Elegant & Heartfelt French Riviera Wedding"
+                      className="gione-video-img"
                       loading="lazy"
                     />
-                    <div className="minimal-play-btn">
-                      <div className="minimal-play-icon">
-                        <Play size={24} fill="currentColor" />
+                    <div className="gione-play-circle-overlay">
+                      <div className="gione-play-circle">
+                        <Play size={18} fill="currentColor" />
                       </div>
-                      <span className="play-pulse-ring" />
-                    </div>
-                    <div className="featured-media-badge">
-                      <span>4K CINEMA // 10:12</span>
                     </div>
                   </>
                 )}
               </div>
 
-              <div className="featured-story-light-card">
-                <span className="story-card-overline">FEATURED FILM 02 // CÔTE D'AZUR</span>
-                
-                <h3 className="story-card-title">Elegance Overlooking the Mediterranean</h3>
-                
-                <p className="story-card-quote">
-                  “Azure coastal horizons, classical stone balustrades, and heartfelt vows echoing quietly above the sea.”
-                </p>
-
-                <p className="story-card-narrative">
-                  An intimate cliffside villa celebration in Saint-Jean-Cap-Ferrat, capturing genuine emotion, unrehearsed laughter, and sunset champagne toasts along the French Riviera.
-                </p>
-
-                <Link href="/portfolio" className="story-card-link-cta">
-                  <span>Watch Full Film &amp; Stills</span>
-                  <ArrowUpRight size={15} />
-                </Link>
+              <div className="gione-story-col">
+                <div className="gione-story-inner">
+                  <p className="gione-story-overline">FEATURED VIDEO:</p>
+                  <h3 className="gione-story-heading">
+                    ELEGANT &amp; HEARTFELT<br />
+                    FRENCH RIVIERA<br />
+                    WEDDING
+                  </h3>
+                  <p className="gione-story-desc">
+                    A stunningly elegant celebration overlooking the Mediterranean at the historic Villa Ephrussi de Rothschild, France
+                  </p>
+                  <Link href="/contact" className="gione-story-btn">
+                    <span>CONTACT US</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
