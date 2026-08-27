@@ -1,10 +1,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { useState } from "react";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
-import StarlinePreloader from "./components/StarlinePreloader";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -32,14 +30,11 @@ function Router() {
 }
 
 function App() {
-  const [preloaderDone, setPreloaderDone] = useState(false);
-
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
-          <StarlinePreloader onComplete={() => setPreloaderDone(true)} />
           <Router />
         </TooltipProvider>
       </ThemeProvider>
