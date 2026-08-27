@@ -41,8 +41,11 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
       >
         <div className="starline-header-inner">
           <Link href="/" className="starline-brand-box">
-            <span className="starline-brand-title">Starline</span>
-            <span className="starline-brand-sub">Studio / 2026</span>
+            <img src="/Str_logo.png" alt="Starline Studio Logo" className="starline-brand-logo-img" />
+            <div className="starline-brand-text">
+              <span className="starline-brand-title">Starline</span>
+              <span className="starline-brand-sub">Studio / Atelier</span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}

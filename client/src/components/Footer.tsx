@@ -161,7 +161,10 @@ export default function Footer({ showClosingCta = false }: FooterProps) {
         <div className="footer-architectural-grid">
           {/* Col 1: The Atelier */}
           <div className="footer-col footer-col-brand">
-            <span className="footer-brand-title">STARLINE</span>
+            <div className="footer-brand-header">
+              <img src="/Str_logo.png" alt="Starline Studio Logo" className="footer-brand-logo-img" />
+              <span className="footer-brand-title">STARLINE</span>
+            </div>
             <p className="footer-brand-bio">
               Cinematic destination wedding films & photography. Crafting living heirlooms of love, light, and untamed elegance worldwide.
             </p>
