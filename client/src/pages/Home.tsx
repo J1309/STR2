@@ -47,11 +47,7 @@ export default function Home() {
               poster="/bg_hero_page.png"
             >
               <source
-                src="/vid/hero-video.mp4"
-                type="video/mp4"
-              />
-              <source
-                src="/vid/From%20Klickpin.com-%20Dreamy%20fall%20outfit%20ideas%20for%20your%20next%20inspiration%20board%20designed%20for%20people%20who%20want%20results%20that%20look%20intentional-pin-id-7315.mp4"
+                src="/vid/new_section_img.mp4"
                 type="video/mp4"
               />
               <img
