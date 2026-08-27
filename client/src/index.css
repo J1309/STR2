@@ -656,13 +656,21 @@ a {
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* Right Story Column (Warm Taupe / Stone Box) */
+/* Right Story Column (Deep Midnight Sapphire & Obsidian) */
 .gione-story-col {
-  background-color: #b0a597;
+  background: linear-gradient(155deg, #0e1d32 0%, #07101e 100%);
+  border: 1px solid rgba(80, 135, 205, 0.18);
   padding: clamp(36px, 4vw, 54px) clamp(28px, 3.5vw, 44px);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 0 16px 40px rgba(4, 9, 16, 0.25);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gione-featured-duo:hover .gione-story-col {
+  border-color: rgba(80, 135, 205, 0.35);
+  box-shadow: 0 20px 50px rgba(4, 9, 16, 0.4);
 }
 
 .gione-story-inner {
@@ -674,9 +682,9 @@ a {
 .gione-story-overline {
   font-family: var(--font-sans);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.24em;
-  color: #222222;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  color: #7ba6dc;
   text-transform: uppercase;
   margin: 0 0 16px;
 }
@@ -696,19 +704,19 @@ a {
   font-family: var(--font-sans);
   font-size: 13.5px;
   font-weight: 300;
-  line-height: 1.6;
-  color: #222222;
+  line-height: 1.65;
+  color: #cbd8e8;
   margin: 0 0 32px;
   max-width: 320px;
 }
 
 .gione-story-btn {
   display: inline-block;
-  background: #333333;
-  color: #ffffff;
+  background: #ffffff;
+  color: #07101e;
   font-family: var(--font-sans);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   padding: 14px 34px;
@@ -718,10 +726,10 @@ a {
 }
 
 .gione-story-btn:hover {
-  background: #111113;
+  background: #7ba6dc;
   color: #ffffff;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(123, 166, 220, 0.4);
 }
 
 @media (max-width: 900px) {
