@@ -84,7 +84,7 @@ export default function About() {
         </section>
 
         {/* ===================================================================
-            2. WHO WE ARE SECTION (SAJAN & STARLINE ATELIER 2-COLUMN GRID)
+            2. WHO WE ARE SECTION (SAJAN & THE CRAFT - SOLE OWNER)
             =================================================================== */}
         <section className="gds-who-section">
           <div className="gds-who-container">
@@ -93,9 +93,9 @@ export default function About() {
               <span>WHO WE ARE</span>
             </div>
 
-            {/* Main 2-Column Profiles Grid */}
+            {/* Main 2-Column Grid Matching Exact Reference */}
             <div className="gds-who-columns-grid">
-              {/* Column 1: Sajan */}
+              {/* Column 1: Sajan (Sole Founder & Cinematographer) */}
               <div className="gds-who-col">
                 <div className="gds-who-profile-header">
                   <h2 className="gds-who-name">SAJAN</h2>
@@ -107,54 +107,54 @@ export default function About() {
                 <div className="gds-who-photo-box">
                   <img
                     src="/wd1.jpg"
-                    alt="Sajan - Founder & Principal Cinematographer"
+                    alt="Sajan - Founder & Lead Cinematographer"
                     className="gds-who-photo"
                   />
                 </div>
 
                 <div className="gds-who-bio">
                   <p>
-                    We love getting to know new people. This comes from the knowledge that we all have a different journey in life and there is something exciting and deeply inspiring about that.
+                    I love getting to know new people. This comes from the knowledge that we all have a different journey in life and there is something exciting and deeply inspiring about that.
                   </p>
                   <p>
-                    Operating out of Dallas, Texas since 2023, we travel wherever an extraordinary celebration unfolds—from Dallas private estates and Newport oceanfront cliffs to Napa Valley vineyards and Big Sur headlands.
+                    I am a filmmaker and artist with a lifelong passion for photography, cinema, and music. Operating out of Dallas, Texas since 2023, I travel wherever an extraordinary celebration unfolds—from Dallas private estates and Newport oceanfront mansions to Napa Valley vineyards and Big Sur coastal cliffs.
                   </p>
                   <p>
-                    We appreciate great natural light, vintage cinema glass, and 35mm film grain. We have a wonderful time discovering new music, capturing genuine unhurried moments, and creating tangible family heirlooms that outlast the season.
+                    I appreciate great natural light, vintage cinema glass, and the timeless grain of 35mm analog film. I cherish capturing genuine, unhurried moments and creating tangible family heirlooms that outlast the season.
                   </p>
                 </div>
               </div>
 
-              {/* Column 2: The Studio / Creative Atelier */}
+              {/* Column 2: The Craft & Approach */}
               <div className="gds-who-col">
                 <div className="gds-who-profile-header">
-                  <h2 className="gds-who-name">STARLINE ATELIER</h2>
+                  <h2 className="gds-who-name">THE APPROACH</h2>
                   <p className="gds-who-subtags">
-                    FAMILY, CARE, LOVE, TRAVEL, ART
+                    ATMOSPHERE, EMOTION, 35MM FILM, PERMANENCE
                   </p>
                 </div>
 
                 <div className="gds-who-photo-box">
                   <img
                     src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
-                    alt="Starline Atelier Destination Wedding Team"
+                    alt="Starline Atelier Cinematic Wedding Craft"
                     className="gds-who-photo"
                   />
                 </div>
 
                 <div className="gds-who-bio">
                   <p>
-                    We love weddings because we believe there is something particularly great about them – they seem to serve as a reminder of the very best about humanity, embodying love, joy, beauty and companionship.
+                    I love weddings because there is something particularly profound about them – they seem to serve as a reminder of the very best about humanity, embodying love, joy, beauty and companionship.
                   </p>
                   <p>
-                    We are dedicated artists with an interest in many art forms, who developed a deep lifelong devotion to photography and filmmaking. We love learning, exploring, and continuously refining our craft.
+                    Most couples worry about feeling staged or artificial in front of cameras. My approach is built entirely on creating a calm, effortless atmosphere rather than commanding rigid poses.
                   </p>
                   <p>
-                    Our approach is built on quiet calm and unhurried observation. Rather than commanding rigid poses, we allow your celebration to breathe naturally, capturing the quiet glances and honest joy shared with those you love most.
+                    By allowing your day to breathe naturally, I capture the quiet glances, gentle touch, and spontaneous laughter shared among those you love most—resulting in living cinema built to last across generations.
                   </p>
                 </div>
 
-                {/* Contact Us Button at bottom of right column */}
+                {/* Contact Us Button on bottom right */}
                 <div className="gds-who-btn-wrap">
                   <Link href="/contact" className="gds-contact-btn">
                     <span>CONTACT US</span>
