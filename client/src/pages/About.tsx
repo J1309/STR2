@@ -1,7 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 import { Link } from "wouter";
 
@@ -12,15 +11,8 @@ export default function About() {
     offset: ["start start", "end start"]
   });
 
-  const quoteRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: quoteScroll } = useScroll({
-    target: quoteRef,
-    offset: ["start end", "end start"]
-  });
-
   // Smooth scroll animations
-  const heroBgY = useTransform(heroScroll, [0, 1], ["0%", "20%"]);
-  const quoteBgY = useTransform(quoteScroll, [0, 1], ["-12%", "12%"]);
+  const heroBgY = useTransform(heroScroll, [0, 1], ["0%", "18%"]);
 
   const publications = [
     { name: "HARPER'S BAZAAR", label: "BAZAAR" },
@@ -44,7 +36,7 @@ export default function About() {
 
       <main className="starline-page-main">
         {/* ===================================================================
-            1. EXACT GIONE DA SILVA HERO: FULL-WIDTH BACKGROUND & SPLIT OVERLAY
+            1. HERO: MINIMAL EDITORIAL HEADLINE & FRESH CINEMATIC IMAGE
             =================================================================== */}
         <section className="gds-hero-section" ref={heroRef}>
           {/* Parallax Background Image */}
@@ -53,28 +45,27 @@ export default function About() {
               className="gds-hero-bg-img"
               style={{
                 y: heroBgY,
-                backgroundImage: `url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=2400&auto=format&fit=crop')`
+                backgroundImage: `url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2400&auto=format&fit=crop')`
               }}
             />
             <div className="gds-hero-gradient-overlay" />
           </div>
 
-          {/* Hero Content Grid: Centered Main Heading + Right Sidebar Text */}
+          {/* Hero Content Grid: Centered Short Headline + Right Sidebar Text */}
           <div className="gds-hero-content-container">
-            {/* Centered Main Title (Exact Gione da Silva Headline) */}
+            {/* Centered Main Title (Minimal, impactful) */}
             <div className="gds-hero-center-box">
               <span className="gds-hero-italic-kicker">inspired by people and love...</span>
               <h1 className="gds-hero-main-title">
-                creative wedding videography and<br />
-                photography led by engaging<br />
-                storytelling
+                creative wedding cinematography &amp;<br />
+                35mm storytelling
               </h1>
             </div>
 
-            {/* Right Side Editorial Narrative */}
+            {/* Right Side Minimal Text */}
             <div className="gds-hero-right-box">
               <p className="gds-hero-right-desc">
-                With a passion for storytelling and a love for bold, iconic visuals, we cater to couples who are drawn to the extraordinary. Whether your wedding takes place on an oceanfront private estate or an exclusive desert getaway, we craft films and photos as polished and captivating as the lives you lead.
+                Crafting living heirlooms and honest visual poetry for extraordinary celebrations worldwide.
               </p>
               <Link href="/portfolio" className="gds-hero-right-link">
                 <span>visit portfolio</span>
@@ -84,16 +75,10 @@ export default function About() {
         </section>
 
         {/* ===================================================================
-            2. MEET SAJAN (SOLE FOUNDER & PRINCIPAL CINEMATOGRAPHER)
+            2. OWNER SECTION: SAJAN (CLEAN CENTERED 2-COLUMN LAYOUT)
             =================================================================== */}
         <section className="gds-owner-section">
-          <div className="gds-owner-container">
-            {/* Left Sidebar Tag */}
-            <div className="gds-owner-sidebar-tag">
-              <span>MEET SAJAN</span>
-            </div>
-
-            {/* Main Single-Owner 2-Column Split */}
+          <div className="gds-owner-clean-container">
             <div className="gds-owner-grid">
               {/* Left: Sajan Portrait */}
               <div className="gds-owner-photo-col">
@@ -161,7 +146,7 @@ export default function About() {
         </section>
 
         {/* ===================================================================
-            3. FEATURED ON PUBLICATION LOGOS (EXACT 2-ROW EDITORIAL GRID)
+            3. FEATURED ON PUBLICATION LOGOS (2-ROW EDITORIAL GRID)
             =================================================================== */}
         <section className="gds-featured-on-section">
           <div className="gds-featured-on-inner">
@@ -178,17 +163,19 @@ export default function About() {
         </section>
 
         {/* ===================================================================
-            4. FULL-WIDTH TEXTURED ARCHITECTURAL BANNER WITH TESTIMONIAL & TITLE
+            4. VIDEO BANNER: hero-video.mp4 WITH TESTIMONIAL & TITLE
             =================================================================== */}
-        <section className="gds-quote-parallax-section" ref={quoteRef}>
+        <section className="gds-quote-parallax-section">
           <div className="gds-quote-bg-container">
-            <motion.div
-              className="gds-quote-bg-img"
-              style={{
-                y: quoteBgY,
-                backgroundImage: `url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2400&auto=format&fit=crop')`
-              }}
-            />
+            <video
+              className="gds-quote-bg-video"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source src="/vid/hero-video.mp4" type="video/mp4" />
+            </video>
             <div className="gds-quote-dark-overlay" />
           </div>
 
@@ -203,7 +190,7 @@ export default function About() {
               </cite>
             </div>
 
-            {/* Bottom Left Bold Statement (Exact Gione da Silva condensed title) */}
+            {/* Bottom Left Bold Statement */}
             <div className="gds-quote-bottom-title-wrap">
               <h2 className="gds-quote-bottom-title">
                 ETERNALISING REAL LOVING MEMORIES<br />
