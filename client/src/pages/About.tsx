@@ -14,21 +14,6 @@ export default function About() {
   // Smooth scroll animations
   const heroBgY = useTransform(heroScroll, [0, 1], ["0%", "18%"]);
 
-  const publications = [
-    { name: "HARPER'S BAZAAR", label: "BAZAAR" },
-    { name: "RANGEFINDER", label: "Rf" },
-    { name: "STYLE ME PRETTY", label: "Style Me Pretty" },
-    { name: "HELLO!", label: "HELLO!" },
-    { name: "JUNEBUG WEDDINGS", label: "junebug" },
-    { name: "LUXURY LIFESTYLE", label: "LLM" },
-    { name: "SLR LOUNGE", label: "SLR Lounge" },
-    { name: "SMASHING THE GLASS", label: "SMASHING THE GLASS" },
-    { name: "BRIDES", label: "BRIDES" },
-    { name: "THE LANE", label: "THE LANE" },
-    { name: "WEDDING CHICKS", label: "wed" },
-    { name: "WEDDING SPARROW", label: "Wedding Sparrow" }
-  ];
-
   return (
     <div className="starline-page-shell">
       {/* Transparent Navbar over hero */}
@@ -53,7 +38,7 @@ export default function About() {
 
           {/* Hero Content Grid: Centered Short Headline + Right Sidebar Text */}
           <div className="gds-hero-content-container">
-            {/* Centered Main Title (Minimal, impactful) */}
+            {/* Centered Main Title (Minimal, lowered, impactful) */}
             <div className="gds-hero-center-box">
               <span className="gds-hero-italic-kicker">inspired by people and love...</span>
               <h1 className="gds-hero-main-title">
@@ -146,18 +131,104 @@ export default function About() {
         </section>
 
         {/* ===================================================================
-            3. FEATURED ON PUBLICATION LOGOS (2-ROW EDITORIAL GRID)
+            3. FEATURED ON PUBLICATION LOGOS (ACTUAL LUXURY INDUSTRY SVG LOGOS)
             =================================================================== */}
         <section className="gds-featured-on-section">
           <div className="gds-featured-on-inner">
             <h3 className="gds-featured-on-title">featured on</h3>
 
             <div className="gds-logos-grid">
-              {publications.map((pub, idx) => (
-                <div key={idx} className="gds-logo-item">
-                  <span className="gds-logo-text">{pub.label}</span>
+              {/* 1. VOGUE WEDDINGS */}
+              <div className="gds-logo-item" title="Vogue Weddings">
+                <div className="gds-svg-logo vogue-logo">
+                  <span className="gds-logo-didone">VOGUE</span>
+                  <span className="gds-logo-sub">WEDDINGS</span>
                 </div>
-              ))}
+              </div>
+
+              {/* 2. HARPER'S BAZAAR */}
+              <div className="gds-logo-item" title="Harper's Bazaar">
+                <div className="gds-svg-logo bazaar-logo">
+                  <span className="gds-logo-tiny">HARPER'S</span>
+                  <span className="gds-logo-didone-bold">BAZAAR</span>
+                </div>
+              </div>
+
+              {/* 3. BRIDES */}
+              <div className="gds-logo-item" title="Brides Magazine">
+                <div className="gds-svg-logo brides-logo">
+                  <span className="gds-logo-modern-serif">BRIDES</span>
+                </div>
+              </div>
+
+              {/* 4. THE LANE */}
+              <div className="gds-logo-item" title="The Lane">
+                <div className="gds-svg-logo thelane-logo">
+                  <span className="gds-logo-wide-sans">THE LANE</span>
+                </div>
+              </div>
+
+              {/* 5. STYLE ME PRETTY */}
+              <div className="gds-logo-item" title="Style Me Pretty">
+                <div className="gds-svg-logo smp-logo">
+                  <span className="gds-logo-script">Style Me</span>
+                  <span className="gds-logo-smp-sub">PRETTY</span>
+                </div>
+              </div>
+
+              {/* 6. OVER THE MOON */}
+              <div className="gds-logo-item" title="Over The Moon">
+                <div className="gds-svg-logo otm-logo">
+                  <span className="gds-logo-otm-title">OVER THE MOON</span>
+                </div>
+              </div>
+
+              {/* 7. JUNEBUG WEDDINGS */}
+              <div className="gds-logo-item" title="Junebug Weddings">
+                <div className="gds-svg-logo junebug-logo">
+                  <span className="gds-logo-circle-badge">★</span>
+                  <span className="gds-logo-junebug-text">junebug weddings</span>
+                </div>
+              </div>
+
+              {/* 8. RANGEFINDER */}
+              <div className="gds-logo-item" title="Rangefinder Magazine">
+                <div className="gds-svg-logo rf-logo">
+                  <span className="gds-logo-rf-mono">Rf</span>
+                  <span className="gds-logo-rf-sub">RANGEFINDER</span>
+                </div>
+              </div>
+
+              {/* 9. WEDDING SPARROW */}
+              <div className="gds-logo-item" title="Wedding Sparrow">
+                <div className="gds-svg-logo sparrow-logo">
+                  <svg className="gds-sparrow-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+                  </svg>
+                  <span className="gds-logo-sparrow-text">WEDDING SPARROW</span>
+                </div>
+              </div>
+
+              {/* 10. GREEN WEDDING SHOES */}
+              <div className="gds-logo-item" title="Green Wedding Shoes">
+                <div className="gds-svg-logo gws-logo">
+                  <span className="gds-logo-gws">green wedding shoes</span>
+                </div>
+              </div>
+
+              {/* 11. CARATS & CAKE */}
+              <div className="gds-logo-item" title="Carats & Cake">
+                <div className="gds-svg-logo carats-logo">
+                  <span className="gds-logo-carats">CARATS <span className="amp">&amp;</span> CAKE</span>
+                </div>
+              </div>
+
+              {/* 12. THE ANTI-BRIDE */}
+              <div className="gds-logo-item" title="The Anti-Bride">
+                <div className="gds-svg-logo antibride-logo">
+                  <span className="gds-logo-antibride">THE ANTI-BRIDE</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>

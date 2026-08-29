@@ -5820,10 +5820,10 @@ a {
   background: #000000;
 }
 
-/* 3. FEATURED ON SECTION */
+/* 3. FEATURED ON SECTION (ACTUAL INDUSTRY PUBLICATION LOGOS) */
 .gds-featured-on-section {
   background: #ffffff;
-  padding: 40px clamp(24px, 4vw, 60px) 70px;
+  padding: 50px clamp(24px, 4vw, 60px) 80px;
   border-top: 1px solid #eeeeee;
 }
 
@@ -5839,13 +5839,13 @@ a {
   font-weight: 400;
   color: #222222;
   text-align: center;
-  margin: 0 0 40px;
+  margin: 0 0 44px;
 }
 
 .gds-logos-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 28px 24px;
+  gap: 36px 24px;
   align-items: center;
   justify-items: center;
 }
@@ -5854,16 +5854,218 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  cursor: default;
 }
 
-.gds-logo-text {
-  font-family: var(--font-display-condensed);
-  font-size: 15px;
+.gds-logo-item:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.gds-svg-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* 1. VOGUE */
+.vogue-logo .gds-logo-didone {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #111111;
+  line-height: 1;
+}
+
+.vogue-logo .gds-logo-sub {
+  font-family: var(--font-sans);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #555555;
+  margin-top: 2px;
+}
+
+/* 2. BAZAAR */
+.bazaar-logo .gds-logo-tiny {
+  font-family: var(--font-sans);
+  font-size: 6.5px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: #333333;
+  margin-bottom: 1px;
+}
+
+.bazaar-logo .gds-logo-didone-bold {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #111111;
+  line-height: 1;
+}
+
+/* 3. BRIDES */
+.brides-logo .gds-logo-modern-serif {
+  font-family: var(--font-display-serif);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #111111;
+  line-height: 1;
+}
+
+/* 4. THE LANE */
+.thelane-logo .gds-logo-wide-sans {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.36em;
+  color: #111111;
+  line-height: 1;
+}
+
+/* 5. STYLE ME PRETTY */
+.smp-logo .gds-logo-script {
+  font-family: var(--font-editorial-serif);
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 600;
+  color: #111111;
+  line-height: 1;
+}
+
+.smp-logo .gds-logo-smp-sub {
+  font-family: var(--font-sans);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  color: #666666;
+  margin-top: 2px;
+}
+
+/* 6. OVER THE MOON */
+.otm-logo .gds-logo-otm-title {
+  font-family: var(--font-display-serif);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #111111;
+  line-height: 1;
+}
+
+/* 7. JUNEBUG */
+.junebug-logo {
+  flex-direction: row;
+  gap: 6px;
+}
+
+.junebug-logo .gds-logo-circle-badge {
+  font-size: 11px;
+  color: #111111;
+}
+
+.junebug-logo .gds-logo-junebug-text {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #111111;
+}
+
+/* 8. RANGEFINDER */
+.rf-logo {
+  flex-direction: row;
+  gap: 6px;
+}
+
+.rf-logo .gds-logo-rf-mono {
+  font-family: var(--font-editorial-serif);
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 700;
+  color: #111111;
+  border-right: 1.5px solid #111111;
+  padding-right: 6px;
+  line-height: 1;
+}
+
+.rf-logo .gds-logo-rf-sub {
+  font-family: var(--font-sans);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #444444;
+}
+
+/* 9. WEDDING SPARROW */
+.sparrow-logo {
+  flex-direction: row;
+  gap: 5px;
+}
+
+.sparrow-logo .gds-sparrow-icon {
+  color: #111111;
+}
+
+.sparrow-logo .gds-logo-sparrow-text {
+  font-family: var(--font-sans);
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #222222;
-  opacity: 0.85;
+  color: #111111;
+}
+
+/* 10. GREEN WEDDING SHOES */
+.gws-logo .gds-logo-gws {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #111111;
+  text-transform: lowercase;
+}
+
+/* 11. CARATS & CAKE */
+.carats-logo .gds-logo-carats {
+  font-family: var(--font-display-condensed);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #111111;
+}
+
+.carats-logo .amp {
+  font-family: var(--font-editorial-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* 12. THE ANTI-BRIDE */
+.antibride-logo .gds-logo-antibride {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: #111111;
+}
+
+@media (max-width: 1024px) {
+  .gds-logos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .gds-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+  }
 }
 
 /* 4. QUOTE VIDEO PARALLAX SECTION */
