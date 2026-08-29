@@ -30,7 +30,22 @@ export type InvestmentTier = {
 export type FAQItem = {
   question: string;
   answer: string;
-  category: "Booking" | "Travel & Weather" | "Delivery & Prints";
+  category?: string;
+};
+
+export type FaqItem = FAQItem;
+
+export type PressItem = {
+  publication: string;
+  quote: string;
+  year: string;
+};
+
+export type ProcessStep = {
+  number: string;
+  phase: string;
+  title: string;
+  description: string;
 };
 
 export type TestimonialItem = {

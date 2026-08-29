@@ -463,8 +463,8 @@ export default function Home() {
                       <input
                         type="tel"
                         placeholder="+1 (555) 000-0000"
-                        value={modalForm.phone}
-                        onChange={(e) => setModalForm({ ...modalForm, phone: e.target.value })}
+                        value={modalForm.phoneNumber}
+                        onChange={(e) => setModalForm({ ...modalForm, phoneNumber: e.target.value })}
                         className="appointment-modal-input"
                         required
                       />
@@ -475,8 +475,8 @@ export default function Home() {
                       <input
                         type="email"
                         placeholder="victoria@sterling.com"
-                        value={modalForm.email}
-                        onChange={(e) => setModalForm({ ...modalForm, email: e.target.value })}
+                        value={modalForm.emailAddress}
+                        onChange={(e) => setModalForm({ ...modalForm, emailAddress: e.target.value })}
                         className="appointment-modal-input"
                         required
                       />
