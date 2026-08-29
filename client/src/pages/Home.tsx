@@ -32,9 +32,15 @@ export default function Home() {
   const [slideIdx1, setSlideIdx1] = useState(0);
   const [slideIdx2, setSlideIdx2] = useState(0);
 
-  // Typewriter text state for "Welcome to Starline"
-  const welcomeText = "Welcome to Starline";
+  // Dynamic Typewriter Writing Phrases Loop
+  const welcomePhrases = [
+    "Welcome to Starline",
+    "Welcome to Starline Atelier",
+    "Welcome to Starline Cinema"
+  ];
+  const [phraseIdx, setPhraseIdx] = useState(0);
   const [typedWelcome, setTypedWelcome] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
   const [isTypingDone, setIsTypingDone] = useState(false);
 
   // Appointment Modal State
@@ -49,21 +55,38 @@ export default function Home() {
   const [isSubmittingAppointment, setIsSubmittingAppointment] = useState(false);
   const [appointmentSuccess, setAppointmentSuccess] = useState(false);
 
-  // Auto-typing animation effect
+  // Continuous Fluid Writing & Deleting Animation Loop
   useEffect(() => {
-    let currentIdx = 0;
-    const interval = setInterval(() => {
-      if (currentIdx <= welcomeText.length) {
-        setTypedWelcome(welcomeText.slice(0, currentIdx));
-        currentIdx++;
-      } else {
-        setIsTypingDone(true);
-        clearInterval(interval);
-      }
-    }, 90);
+    const currentFullText = welcomePhrases[phraseIdx];
+    let typingSpeed = isDeleting ? 45 : 90;
 
-    return () => clearInterval(interval);
-  }, []);
+    if (!isDeleting && typedWelcome === currentFullText) {
+      // Completed writing phrase -> pause before deleting
+      setIsTypingDone(true);
+      const pauseTimeout = setTimeout(() => {
+        setIsDeleting(true);
+        setIsTypingDone(false);
+      }, 3000);
+      return () => clearTimeout(pauseTimeout);
+    }
+
+    if (isDeleting && typedWelcome === "") {
+      // Completed deleting -> move to next phrase & start typing
+      setIsDeleting(false);
+      setPhraseIdx((prev) => (prev + 1) % welcomePhrases.length);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setTypedWelcome((prev) =>
+        isDeleting
+          ? currentFullText.substring(0, prev.length - 1)
+          : currentFullText.substring(0, prev.length + 1)
+      );
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [typedWelcome, isDeleting, phraseIdx]);
 
   // Continuous auto slideshow timer
   useEffect(() => {
