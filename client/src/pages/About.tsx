@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { ArrowUpRight, Camera, Film, Heart, MapPin, Sparkles } from "lucide-react";
+import { ArrowUpRight, Film, Heart, MapPin, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 
 export default function About() {
@@ -10,7 +10,7 @@ export default function About() {
 
       <main className="starline-page-main" style={{ paddingTop: "96px" }}>
         {/* ===================================================================
-            1. ATELIER HERO: DALLAS HERITAGE & VISUAL TRIO
+            1. ATELIER HERO: DALLAS HERITAGE & EDITORIAL PANORAMIC STILL
             =================================================================== */}
         <section className="about-hero-section">
           <div className="about-hero-header">
@@ -19,52 +19,37 @@ export default function About() {
               CRAFTING TIMELESS HEIRLOOMS<br />SINCE 2023
             </h1>
             <p className="about-hero-lead">
-              Founded in Dallas, Texas in 2023, Starline crafts living heirlooms of cinema and 35mm fine-art photography for couples celebrating across Texas, California, Rhode Island, and iconic worldwide destinations.
+              Founded in Dallas, Texas in 2023, Starline Atelier crafts living heirlooms of cinema and 35mm fine-art photography for couples celebrating across Texas, California, Rhode Island, and iconic destinations nationwide.
             </p>
           </div>
 
-          {/* Visual 3-Image Editorial Panorama Trio */}
-          <div className="about-visual-trio-grid">
-            <div className="about-trio-item item-left">
+          {/* Single Curated Museum-Grade Editorial Panoramic Still */}
+          <div className="about-hero-single-frame-wrap">
+            <div className="about-hero-single-frame">
               <img
-                src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1000&auto=format&fit=crop"
-                alt="Newport Oceanfront Wedding Still"
-                className="about-trio-img"
+                src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=2000&auto=format&fit=crop"
+                alt="Starline Atelier Destination Wedding Cinema"
+                className="about-hero-single-img"
               />
-              <span className="about-trio-tag">NEWPORT // COASTAL STILL</span>
-            </div>
-
-            <div className="about-trio-item item-center">
-              <img
-                src="/wd1.jpg"
-                alt="Starline Dallas Atelier Bridal Editorial"
-                className="about-trio-img"
-              />
-              <span className="about-trio-tag">DALLAS // ATELIER COMMISSIONS</span>
-            </div>
-
-            <div className="about-trio-item item-right">
-              <img
-                src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1000&auto=format&fit=crop"
-                alt="Napa Valley Vineyard Golden Hour"
-                className="about-trio-img"
-              />
-              <span className="about-trio-tag">NAPA VALLEY // 35MM EMULSION</span>
+              <div className="about-hero-single-badge">
+                <Sparkles size={13} />
+                <span>STARLINE ATELIER // DALLAS &amp; WORLDWIDE</span>
+              </div>
             </div>
           </div>
         </section>
 
         {/* ===================================================================
-            2. FOUNDER & PRINCIPAL SPOTLIGHT: SAJAN
+            2. FOUNDER & PRINCIPAL CINEMATOGRAPHER: SAJAN
             =================================================================== */}
         <section className="about-founder-section">
           <div className="about-founder-container">
             <div className="about-founder-grid">
-              {/* Founder Image Column */}
+              {/* Founder Image (Image 2) */}
               <div className="about-founder-photo-col">
                 <div className="about-founder-frame">
                   <img
-                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
+                    src="/wd1.jpg"
                     alt="Sajan - Founder & Lead Cinematographer"
                     className="about-founder-img"
                   />
@@ -75,9 +60,9 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Founder Details & Philosophy Column */}
+              {/* Founder Details & Philosophy */}
               <div className="about-founder-info-col">
-                <span className="minimal-overline">FOUNDER &amp; LEAD CINEMATOGRAPHER</span>
+                <span className="minimal-overline">FOUNDER &amp; PRINCIPAL CINEMATOGRAPHER</span>
                 <h2 className="about-founder-heading">MEET SAJAN</h2>
 
                 <blockquote className="about-founder-quote">
@@ -113,7 +98,7 @@ export default function About() {
                   </div>
                 </div>
 
-                <div style={{ marginTop: "28px" }}>
+                <div style={{ marginTop: "32px" }}>
                   <Link href="/contact" className="minimal-btn-solid">
                     <span>INQUIRE WITH SAJAN</span>
                     <ArrowUpRight size={15} />
@@ -125,59 +110,7 @@ export default function About() {
         </section>
 
         {/* ===================================================================
-            3. VISUAL GALLERY MOSAIC (IMAGE-RICH ATELIER MOMENTS)
-            =================================================================== */}
-        <section className="about-gallery-mosaic-section">
-          <div className="about-mosaic-header">
-            <span className="minimal-overline">THE ATELIER ARCHIVE</span>
-            <h2 className="about-mosaic-title">GLIMPSES FROM THE FIELD</h2>
-          </div>
-
-          <div className="about-mosaic-grid">
-            <div className="about-mosaic-item">
-              <img
-                src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=900&auto=format&fit=crop"
-                alt="Big Sur Pacific Coastline"
-                className="about-mosaic-img"
-                loading="lazy"
-              />
-              <span className="about-mosaic-caption">Big Sur Headlands</span>
-            </div>
-
-            <div className="about-mosaic-item">
-              <img
-                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=900&auto=format&fit=crop"
-                alt="Santa Fe Adobe Architecture"
-                className="about-mosaic-img"
-                loading="lazy"
-              />
-              <span className="about-mosaic-caption">High Desert Warmth</span>
-            </div>
-
-            <div className="about-mosaic-item">
-              <img
-                src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=900&auto=format&fit=crop"
-                alt="Sedona Red Rocks Twilight"
-                className="about-mosaic-img"
-                loading="lazy"
-              />
-              <span className="about-mosaic-caption">Sedona Twilight Vows</span>
-            </div>
-
-            <div className="about-mosaic-item">
-              <img
-                src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=900&auto=format&fit=crop"
-                alt="Lowcountry Evening Gathering"
-                className="about-mosaic-img"
-                loading="lazy"
-              />
-              <span className="about-mosaic-caption">Historic Lowcountry</span>
-            </div>
-          </div>
-        </section>
-
-        {/* ===================================================================
-            4. CLOSING CONSULTATION BANNER
+            3. CLOSING CONSULTATION BANNER
             =================================================================== */}
         <section className="about-cta-section">
           <div className="about-cta-inner">
