@@ -5102,71 +5102,73 @@ a {
 }
 
 /* ==========================================================================
-   8. REDESIGNED VISUAL-FIRST ABOUT PAGE (SAJAN SPOTLIGHT & ATELIER MOSAIC)
+   8. GIONE DA SILVA INSPIRED ABOUT PAGE & PARALLAX SCROLL MOTION
    ========================================================================== */
-.about-hero-section {
+.gione-about-hero-section {
   background: #ffffff;
-  padding: clamp(40px, 6vw, 70px) clamp(20px, 4vw, 60px) 40px;
+  padding: clamp(30px, 4vw, 50px) clamp(20px, 4vw, 60px) 40px;
 }
 
-.about-hero-header {
-  max-width: 1000px;
-  margin: 0 auto clamp(32px, 5vw, 48px);
-  text-align: center;
-}
-
-.about-hero-title {
-  font-family: var(--font-display-condensed);
-  font-size: clamp(2.8rem, 5.8vw, 5.2rem);
-  font-weight: 300;
-  line-height: 0.98;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #11141c;
-  margin: 14px 0 18px;
-}
-
-.about-hero-lead {
-  font-family: var(--font-sans);
-  font-size: 15.5px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: #4a5160;
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.about-hero-single-frame-wrap {
+.gione-about-hero-inner {
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.about-hero-single-frame {
+.gione-about-lead-box {
+  max-width: 1100px;
+  margin: 0 auto clamp(36px, 5vw, 60px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.gione-about-editorial-headline {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: #11141c;
+  margin: 8px 0 0;
+  letter-spacing: 0.01em;
+}
+
+.gione-about-italic-kicker {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+  color: #646c7c;
+  margin-top: 4px;
+}
+
+.gione-about-hero-image-wrap {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gione-about-hero-frame {
   position: relative;
   width: 100%;
   aspect-ratio: 16/7.5;
-  min-height: 320px;
+  min-height: 340px;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
   background: #0f131a;
 }
 
-.about-hero-single-img {
+.gione-about-hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center 38%;
   display: block;
-  filter: contrast(1.04) brightness(0.96);
-  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  filter: contrast(1.05) brightness(0.95);
 }
 
-.about-hero-single-frame:hover .about-hero-single-img {
-  transform: scale(1.02);
-}
-
-.about-hero-single-badge {
+.gione-about-hero-badge {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -5187,27 +5189,53 @@ a {
   text-transform: uppercase;
 }
 
-/* Sajan Founder Section */
-.about-founder-section {
+/* WHO WE ARE Section (Sajan) */
+.gione-who-we-are-section {
   background: #f8fafc;
   border-top: 1px solid #e2e8f0;
   border-bottom: 1px solid #e2e8f0;
   padding: clamp(60px, 8vw, 110px) clamp(24px, 5vw, 60px);
 }
 
-.about-founder-container {
+.gione-who-we-are-container {
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.about-founder-grid {
+.gione-who-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto clamp(36px, 5vw, 64px);
+}
+
+.gione-who-title {
+  font-family: var(--font-display-condensed);
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #11141c;
+  margin: 10px 0 6px;
+}
+
+.gione-who-pillars {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #646c7c;
+  margin: 0;
+}
+
+.gione-who-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 0.95fr 1.05fr;
   gap: clamp(36px, 6vw, 80px);
   align-items: center;
 }
 
-.about-founder-frame {
+.gione-who-photo-frame {
   position: relative;
   border-radius: 4px;
   overflow: hidden;
@@ -5215,7 +5243,7 @@ a {
   background: #0d1117;
 }
 
-.about-founder-img {
+.gione-who-photo-img {
   width: 100%;
   aspect-ratio: 4/5.2;
   object-fit: cover;
@@ -5224,69 +5252,54 @@ a {
   transition: transform 0.8s ease;
 }
 
-.about-founder-frame:hover .about-founder-img {
+.gione-who-photo-frame:hover .gione-who-photo-img {
   transform: scale(1.02);
 }
 
-.about-founder-badge {
+.gione-who-photo-caption {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(12, 16, 24, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
   font-family: var(--font-sans);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(10, 14, 22, 0.85);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.about-founder-heading {
+.gione-who-heading {
   font-family: var(--font-display-condensed);
-  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
   font-weight: 300;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
   text-transform: uppercase;
   color: #11141c;
-  margin: 12px 0 20px;
-}
-
-.about-founder-quote {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(16px, 1.8vw, 19px);
-  font-style: italic;
-  line-height: 1.65;
-  color: #242a36;
   margin: 0 0 20px;
-  padding-left: 20px;
-  border-left: 3px solid var(--cobalt-accent);
 }
 
-.about-founder-body {
+.gione-who-paragraph {
   font-family: var(--font-sans);
   font-size: 14.5px;
   font-weight: 300;
   line-height: 1.85;
-  color: #555d6e;
-  margin: 0 0 28px;
+  color: #4a5160;
+  margin: 0 0 18px;
 }
 
-.about-badges-grid {
+.gione-badges-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 16px;
-  margin-bottom: 8px;
+  margin: 28px 0 10px;
 }
 
-.about-badge-card {
+.gione-badge-card {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -5296,17 +5309,17 @@ a {
   border-radius: 4px;
 }
 
-.about-badge-card svg {
+.gione-badge-card svg {
   color: var(--cobalt-accent);
   flex-shrink: 0;
 }
 
-.about-badge-card div {
+.gione-badge-card div {
   display: flex;
   flex-direction: column;
 }
 
-.about-badge-card strong {
+.gione-badge-card strong {
   font-family: var(--font-display-condensed);
   font-size: 15px;
   font-weight: 500;
@@ -5315,26 +5328,26 @@ a {
   color: #11141c;
 }
 
-.about-badge-card span {
+.gione-badge-card span {
   font-family: var(--font-sans);
   font-size: 11px;
   color: #646c7c;
 }
 
-/* About CTA */
-.about-cta-section {
+/* Closing CTA */
+.gione-about-closing-cta {
   background: #ffffff;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   padding: clamp(60px, 8vw, 100px) clamp(24px, 5vw, 60px);
   text-align: center;
 }
 
-.about-cta-inner {
+.gione-about-closing-inner {
   max-width: 700px;
   margin: 0 auto;
 }
 
-.about-cta-title {
+.gione-closing-heading {
   font-family: var(--font-display-condensed);
   font-size: clamp(2.4rem, 4.5vw, 4.2rem);
   font-weight: 300;
@@ -5344,7 +5357,7 @@ a {
   margin: 14px 0 16px;
 }
 
-.about-cta-desc {
+.gione-closing-desc {
   font-family: var(--font-sans);
   font-size: 15px;
   font-weight: 300;
@@ -5353,7 +5366,7 @@ a {
 }
 
 @media (max-width: 992px) {
-  .about-founder-grid {
+  .gione-who-grid {
     grid-template-columns: 1fr;
   }
 }
