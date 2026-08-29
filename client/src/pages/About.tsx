@@ -84,78 +84,73 @@ export default function About() {
         </section>
 
         {/* ===================================================================
-            2. WHO WE ARE SECTION (SAJAN & THE CRAFT - SOLE OWNER)
+            2. MEET SAJAN (SOLE FOUNDER & PRINCIPAL CINEMATOGRAPHER)
             =================================================================== */}
-        <section className="gds-who-section">
-          <div className="gds-who-container">
-            {/* Left Overline */}
-            <div className="gds-who-sidebar-tag">
-              <span>WHO WE ARE</span>
+        <section className="gds-owner-section">
+          <div className="gds-owner-container">
+            {/* Left Sidebar Tag */}
+            <div className="gds-owner-sidebar-tag">
+              <span>MEET SAJAN</span>
             </div>
 
-            {/* Main 2-Column Grid Matching Exact Reference */}
-            <div className="gds-who-columns-grid">
-              {/* Column 1: Sajan (Sole Founder & Cinematographer) */}
-              <div className="gds-who-col">
-                <div className="gds-who-profile-header">
-                  <h2 className="gds-who-name">SAJAN</h2>
-                  <p className="gds-who-subtags">
+            {/* Main Single-Owner 2-Column Split */}
+            <div className="gds-owner-grid">
+              {/* Left: Sajan Portrait */}
+              <div className="gds-owner-photo-col">
+                <div className="gds-owner-photo-box">
+                  <img
+                    src="/wd1.jpg"
+                    alt="Sajan - Founder & Lead Cinematographer"
+                    className="gds-owner-photo"
+                  />
+                  <span className="gds-owner-caption">
+                    SAJAN // FOUNDER &amp; LEAD DIRECTOR
+                  </span>
+                </div>
+              </div>
+
+              {/* Right: Sajan Story, Philosophy & Badges */}
+              <div className="gds-owner-info-col">
+                <div className="gds-owner-header">
+                  <h2 className="gds-owner-name">SAJAN</h2>
+                  <p className="gds-owner-subtags">
                     ADVENTURE, CONNECTION, ART, PEOPLE, EXPERIENCES
                   </p>
                 </div>
 
-                <div className="gds-who-photo-box">
-                  <img
-                    src="/wd1.jpg"
-                    alt="Sajan - Founder & Lead Cinematographer"
-                    className="gds-who-photo"
-                  />
-                </div>
-
-                <div className="gds-who-bio">
+                <div className="gds-owner-bio">
                   <p>
                     I love getting to know new people. This comes from the knowledge that we all have a different journey in life and there is something exciting and deeply inspiring about that.
                   </p>
                   <p>
-                    I am a filmmaker and artist with a lifelong passion for photography, cinema, and music. Operating out of Dallas, Texas since 2023, I travel wherever an extraordinary celebration unfolds—from Dallas private estates and Newport oceanfront mansions to Napa Valley vineyards and Big Sur coastal cliffs.
+                    Operating out of Dallas, Texas since 2023, I travel wherever an extraordinary celebration unfolds—from Dallas private estates and Newport oceanfront mansions to Napa Valley vineyards and Big Sur coastal cliffs.
                   </p>
                   <p>
-                    I appreciate great natural light, vintage cinema glass, and the timeless grain of 35mm analog film. I cherish capturing genuine, unhurried moments and creating tangible family heirlooms that outlast the season.
+                    I love weddings because they serve as a timeless reminder of the very best about humanity—embodying love, joy, beauty, and quiet companionship. My approach is built entirely on creating a calm, effortless atmosphere rather than commanding rigid poses.
                   </p>
-                </div>
-              </div>
-
-              {/* Column 2: The Craft & Approach */}
-              <div className="gds-who-col">
-                <div className="gds-who-profile-header">
-                  <h2 className="gds-who-name">THE APPROACH</h2>
-                  <p className="gds-who-subtags">
-                    ATMOSPHERE, EMOTION, 35MM FILM, PERMANENCE
+                  <p>
+                    Specializing in 35mm analog film and 4K cinema, I allow your celebration to breathe naturally, capturing the quiet glances, gentle touch, and spontaneous laughter that give your memories permanent emotional gravity.
                   </p>
                 </div>
 
-                <div className="gds-who-photo-box">
-                  <img
-                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
-                    alt="Starline Atelier Cinematic Wedding Craft"
-                    className="gds-who-photo"
-                  />
+                {/* Studio Badges */}
+                <div className="gds-owner-badges">
+                  <div className="gds-owner-badge-item">
+                    <strong>Dallas, Texas</strong>
+                    <span>Operating Since 2023</span>
+                  </div>
+                  <div className="gds-owner-badge-item">
+                    <strong>Mediums</strong>
+                    <span>35mm Film + 4K Cinema</span>
+                  </div>
+                  <div className="gds-owner-badge-item">
+                    <strong>Commissions</strong>
+                    <span>18 Celebrations / Year</span>
+                  </div>
                 </div>
 
-                <div className="gds-who-bio">
-                  <p>
-                    I love weddings because there is something particularly profound about them – they seem to serve as a reminder of the very best about humanity, embodying love, joy, beauty and companionship.
-                  </p>
-                  <p>
-                    Most couples worry about feeling staged or artificial in front of cameras. My approach is built entirely on creating a calm, effortless atmosphere rather than commanding rigid poses.
-                  </p>
-                  <p>
-                    By allowing your day to breathe naturally, I capture the quiet glances, gentle touch, and spontaneous laughter shared among those you love most—resulting in living cinema built to last across generations.
-                  </p>
-                </div>
-
-                {/* Contact Us Button on bottom right */}
-                <div className="gds-who-btn-wrap">
+                {/* Contact Us Button */}
+                <div className="gds-owner-btn-wrap">
                   <Link href="/contact" className="gds-contact-btn">
                     <span>CONTACT US</span>
                   </Link>

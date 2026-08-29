@@ -5223,13 +5223,13 @@ a {
   opacity: 0.8;
 }
 
-/* 2. WHO WE ARE SECTION */
-.gds-who-section {
+/* 2. MEET SAJAN (SOLE OWNER & FOUNDER) */
+.gds-owner-section {
   background: #ffffff;
   padding: clamp(60px, 8vw, 110px) clamp(24px, 4vw, 60px);
 }
 
-.gds-who-container {
+.gds-owner-container {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
@@ -5237,7 +5237,7 @@ a {
   gap: clamp(30px, 4vw, 60px);
 }
 
-.gds-who-sidebar-tag {
+.gds-owner-sidebar-tag {
   font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 600;
@@ -5247,41 +5247,24 @@ a {
   padding-top: 6px;
 }
 
-.gds-who-columns-grid {
+.gds-owner-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: clamp(36px, 5vw, 70px);
+  align-items: flex-start;
 }
 
-.gds-who-name {
-  font-family: var(--font-display-serif);
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #111111;
-  margin: 0 0 6px;
-}
-
-.gds-who-subtags {
-  font-family: var(--font-sans);
-  font-size: 8.5px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #666666;
-  margin: 0 0 20px;
-}
-
-.gds-who-photo-box {
+.gds-owner-photo-box {
+  position: relative;
   width: 100%;
-  aspect-ratio: 4/4.6;
+  aspect-ratio: 4/5.2;
   overflow: hidden;
-  margin-bottom: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
   background: #000000;
+  border-radius: 2px;
 }
 
-.gds-who-photo {
+.gds-owner-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -5290,21 +5273,93 @@ a {
   transition: transform 0.6s ease;
 }
 
-.gds-who-photo-box:hover .gds-who-photo {
+.gds-owner-photo-box:hover .gds-owner-photo {
   transform: scale(1.02);
 }
 
-.gds-who-bio p {
+.gds-owner-caption {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(10, 14, 22, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.gds-owner-header {
+  margin-bottom: 20px;
+}
+
+.gds-owner-name {
+  font-family: var(--font-display-serif);
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #111111;
+  margin: 0 0 6px;
+}
+
+.gds-owner-subtags {
+  font-family: var(--font-sans);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #666666;
+  margin: 0;
+}
+
+.gds-owner-bio p {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
   font-weight: 300;
   line-height: 1.85;
   color: #4a4a4a;
   margin: 0 0 16px;
 }
 
-.gds-who-btn-wrap {
-  margin-top: 24px;
+.gds-owner-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+  padding: 16px 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.gds-owner-badge-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gds-owner-badge-item strong {
+  font-family: var(--font-display-condensed);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.gds-owner-badge-item span {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  color: #777777;
+}
+
+.gds-owner-btn-wrap {
+  margin-top: 20px;
 }
 
 .gds-contact-btn {
