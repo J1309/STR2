@@ -32,9 +32,8 @@ export default function Home() {
   const [slideIdx1, setSlideIdx1] = useState(0);
   const [slideIdx2, setSlideIdx2] = useState(0);
 
-  // Dynamic Typewriter Writing only for "Starline"
-  const starlinePhrases = ["Starline", "Starline Atelier", "Starline Cinema"];
-  const [phraseIdx, setPhraseIdx] = useState(0);
+  // Dynamic Typewriter Writing strictly for "Starline"
+  const starlineText = "Starline";
   const [typedStarline, setTypedStarline] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [isTypingDone, setIsTypingDone] = useState(false);
@@ -51,36 +50,34 @@ export default function Home() {
   const [isSubmittingAppointment, setIsSubmittingAppointment] = useState(false);
   const [appointmentSuccess, setAppointmentSuccess] = useState(false);
 
-  // Continuous Fluid Writing & Deleting Animation Loop for "Starline"
+  // Continuous Fluid Writing & Deleting Animation Loop for "Starline" only
   useEffect(() => {
-    const currentFullText = starlinePhrases[phraseIdx];
-    let typingSpeed = isDeleting ? 50 : 100;
+    let typingSpeed = isDeleting ? 60 : 120;
 
-    if (!isDeleting && typedStarline === currentFullText) {
+    if (!isDeleting && typedStarline === starlineText) {
       setIsTypingDone(true);
       const pauseTimeout = setTimeout(() => {
         setIsDeleting(true);
         setIsTypingDone(false);
-      }, 3000);
+      }, 3500);
       return () => clearTimeout(pauseTimeout);
     }
 
     if (isDeleting && typedStarline === "") {
       setIsDeleting(false);
-      setPhraseIdx((prev) => (prev + 1) % starlinePhrases.length);
       return;
     }
 
     const timer = setTimeout(() => {
       setTypedStarline((prev) =>
         isDeleting
-          ? currentFullText.substring(0, prev.length - 1)
-          : currentFullText.substring(0, prev.length + 1)
+          ? starlineText.substring(0, prev.length - 1)
+          : starlineText.substring(0, prev.length + 1)
       );
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [typedStarline, isDeleting, phraseIdx]);
+  }, [typedStarline, isDeleting]);
 
   // Continuous auto slideshow timer
   useEffect(() => {
@@ -157,7 +154,7 @@ export default function Home() {
 
         {/* ===================================================================
             2. IMMERSIVE AUTOMATIC WRITING ANIMATION: "WELCOME TO STARLINE"
-               (Static "Welcome to" with typewriter on "Starline")
+               (Static "Welcome to" with typewriter on "Starline" only)
             =================================================================== */}
         <section className="starline-welcome-writing-banner">
           <div className="starline-welcome-writing-inner">
@@ -242,8 +239,8 @@ export default function Home() {
 
         {/* ===================================================================
             4. FEATURED COMMISSIONS: CONTINUOUS AUTOMATIC IMAGE SLIDESHOWS
-               - Tab 1 (Newport): Left to Right flow & slide motion
-               - Tab 2 (Napa Valley): Right to Left flow & slide motion
+               - Tab 1 (Newport): Left to Right layout (Slideshow on Left, Story on Right)
+               - Tab 2 (Napa Valley): Right to Left layout (Story on Left, Slideshow on Right)
             =================================================================== */}
         <section className="gione-featured-section">
           <div className="gione-featured-header">
@@ -252,9 +249,9 @@ export default function Home() {
           </div>
 
           <div className="gione-showcase-wrap">
-            {/* Showcase 1: Newport (Slideshow on Left -> flow Left-to-Right) */}
-            <div className="gione-featured-duo flow-left-to-right">
-              {/* Left Column: Left-to-Right Image Slideshow */}
+            {/* Showcase 1: Newport (Left to Right: Slideshow on Left, Story on Right) */}
+            <div className="gione-featured-duo">
+              {/* Left Column: Continuous Auto Image Slideshow */}
               <div className="gione-slideshow-col" aria-label="Newport Wedding Slideshow">
                 <div className="gione-slideshow-container">
                   <AnimatePresence mode="wait">
@@ -263,10 +260,10 @@ export default function Home() {
                       src={newportSlideshow[slideIdx1]}
                       alt={`Newport Rhode Island Wedding Still ${slideIdx1 + 1}`}
                       className="gione-slideshow-image"
-                      initial={{ opacity: 0, x: -50 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: 50 }}
-                      transition={{ duration: 0.85, ease: [0.23, 1, 0.32, 1] }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.8, ease: "easeInOut" }}
                     />
                   </AnimatePresence>
                   <div className="gione-slideshow-dots">
@@ -278,7 +275,7 @@ export default function Home() {
                       />
                     ))}
                   </div>
-                  <span className="gione-slideshow-tag">NEWPORT // LIVE CINEMA (L → R)</span>
+                  <span className="gione-slideshow-tag">NEWPORT // LIVE CINEMA</span>
                 </div>
               </div>
 
@@ -301,9 +298,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Showcase 2: Napa Valley (Slideshow on Right -> flow Right-to-Left) */}
-            <div className="gione-featured-duo is-reversed flow-right-to-left">
-              {/* Slideshow on Right with Right-to-Left transition */}
+            {/* Showcase 2: Napa Valley (Right to Left: Story on Left, Slideshow on Right) */}
+            <div className="gione-featured-duo is-reversed">
+              {/* Slideshow on Right */}
               <div className="gione-slideshow-col" aria-label="Napa Valley Wedding Slideshow">
                 <div className="gione-slideshow-container">
                   <AnimatePresence mode="wait">
@@ -312,10 +309,10 @@ export default function Home() {
                       src={napaSlideshow[slideIdx2]}
                       alt={`Napa Valley Vineyard Wedding Still ${slideIdx2 + 1}`}
                       className="gione-slideshow-image"
-                      initial={{ opacity: 0, x: 50 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -50 }}
-                      transition={{ duration: 0.85, ease: [0.23, 1, 0.32, 1] }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.8, ease: "easeInOut" }}
                     />
                   </AnimatePresence>
                   <div className="gione-slideshow-dots">
@@ -327,7 +324,7 @@ export default function Home() {
                       />
                     ))}
                   </div>
-                  <span className="gione-slideshow-tag">NAPA VALLEY // 35MM EMULSION (R → L)</span>
+                  <span className="gione-slideshow-tag">NAPA VALLEY // 35MM EMULSION</span>
                 </div>
               </div>
 
