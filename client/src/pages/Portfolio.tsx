@@ -307,15 +307,15 @@ export default function Portfolio() {
 
               <h2 className="mucha-location-heading">
                 STARLINE ATELIER<br />
-                PHILADELPHIA:
+                DALLAS &amp; BEYOND:
               </h2>
 
               <div className="mucha-location-address">
-                <p>LOCUST STREET ATELIER</p>
-                <p>PHILADELPHIA, PA 19103</p>
+                <p>DALLAS DESIGN DISTRICT ATELIER</p>
+                <p>DALLAS, TEXAS // EST. 2023</p>
                 <p className="mucha-location-hours">
-                  COMMISSIONS BY PRIVATE APPOINTMENT<br />
-                  WORLDWIDE TRAVEL &amp; ROUTING
+                  COMMISSIONS BY PRIVATE INVITATION<br />
+                  WORLDWIDE DESTINATION ROUTING
                 </p>
               </div>
 

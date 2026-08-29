@@ -382,7 +382,7 @@ export default function Home() {
                 className="minimal-btn-solid appointment-book-trigger"
                 onClick={() => setIsModalOpen(true)}
               >
-                <span>BOOK APPOINTMENT</span>
+                <span>RESERVE A CONSULTATION</span>
                 <ArrowUpRight size={15} />
               </button>
             </div>
@@ -391,7 +391,7 @@ export default function Home() {
       </main>
 
       {/* ===================================================================
-          APPOINTMENT BOOKING MODAL POPUP
+          CONSULTATION REQUEST MODAL POPUP
           =================================================================== */}
       <AnimatePresence>
         {isModalOpen && (
@@ -413,16 +413,16 @@ export default function Home() {
               <button
                 className="appointment-modal-close"
                 onClick={closeAppointmentModal}
-                aria-label="Close booking modal"
+                aria-label="Close consultation modal"
               >
                 <X size={20} />
               </button>
 
               <div className="appointment-modal-header">
                 <span className="minimal-overline">STARLINE ATELIER</span>
-                <h3 className="appointment-modal-title">Book a Private Consultation</h3>
+                <h3 className="appointment-modal-title">Schedule a Private Consultation</h3>
                 <p className="appointment-modal-desc">
-                  Please provide your celebration details below and our team will confirm your consultation time within 24 hours.
+                  Please provide your celebration details below and Sajan will confirm your consultation time within 24 hours.
                 </p>
               </div>
 
@@ -433,14 +433,14 @@ export default function Home() {
                   </div>
                   <h4>Consultation Request Received</h4>
                   <p>
-                    Thank you, {modalForm.fullName || "friend"}. We look forward to discussing your celebration in {modalForm.destination || "your destination"}. We will contact you at {modalForm.emailAddress} promptly.
+                    Thank you. We have received your inquiry and will reach out to confirm your private video consultation time shortly.
                   </p>
                   <button
                     className="minimal-btn-solid"
                     style={{ marginTop: "20px" }}
                     onClick={closeAppointmentModal}
                   >
-                    <span>DONE</span>
+                    <span>CLOSE WINDOW</span>
                   </button>
                 </div>
               ) : (
@@ -449,7 +449,7 @@ export default function Home() {
                     <label className="appointment-field-label">FULL NAME *</label>
                     <input
                       type="text"
-                      placeholder="e.g. Eleanor Vance"
+                      placeholder="e.g. Victoria Sterling"
                       value={modalForm.fullName}
                       onChange={(e) => setModalForm({ ...modalForm, fullName: e.target.value })}
                       className="appointment-modal-input"
@@ -462,9 +462,9 @@ export default function Home() {
                       <label className="appointment-field-label">PHONE NUMBER *</label>
                       <input
                         type="tel"
-                        placeholder="+1 (214) 555-0192"
-                        value={modalForm.phoneNumber}
-                        onChange={(e) => setModalForm({ ...modalForm, phoneNumber: e.target.value })}
+                        placeholder="+1 (555) 000-0000"
+                        value={modalForm.phone}
+                        onChange={(e) => setModalForm({ ...modalForm, phone: e.target.value })}
                         className="appointment-modal-input"
                         required
                       />
@@ -474,9 +474,9 @@ export default function Home() {
                       <label className="appointment-field-label">EMAIL ADDRESS *</label>
                       <input
                         type="email"
-                        placeholder="eleanor@example.com"
-                        value={modalForm.emailAddress}
-                        onChange={(e) => setModalForm({ ...modalForm, emailAddress: e.target.value })}
+                        placeholder="victoria@sterling.com"
+                        value={modalForm.email}
+                        onChange={(e) => setModalForm({ ...modalForm, email: e.target.value })}
                         className="appointment-modal-input"
                         required
                       />
@@ -485,7 +485,7 @@ export default function Home() {
 
                   <div className="appointment-field-grid-2">
                     <div className="appointment-field-group">
-                      <label className="appointment-field-label">DESTINATION / CITY *</label>
+                      <label className="appointment-field-label">WEDDING DESTINATION *</label>
                       <input
                         type="text"
                         placeholder="e.g. Dallas, TX or Newport, RI"
@@ -515,7 +515,7 @@ export default function Home() {
                       disabled={isSubmittingAppointment}
                       className="appointment-submit-button"
                     >
-                      <span>{isSubmittingAppointment ? "SCHEDULING..." : "CONFIRM APPOINTMENT"}</span>
+                      <span>{isSubmittingAppointment ? "SCHEDULING..." : "CONFIRM CONSULTATION REQUEST"}</span>
                       <ArrowUpRight size={15} />
                     </button>
                   </div>
