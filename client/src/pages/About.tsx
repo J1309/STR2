@@ -1,184 +1,265 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, Film, Heart, MapPin, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 import { Link } from "wouter";
 
 export default function About() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: heroScroll } = useScroll({
+    target: heroRef,
     offset: ["start start", "end start"]
   });
 
-  // Smooth scroll animations for hero
-  const heroImageScale = useTransform(scrollYProgress, [0, 0.4], [1, 1.07]);
-  const heroImageY = useTransform(scrollYProgress, [0, 0.4], [0, 30]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0.85]);
+  const quoteRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: quoteScroll } = useScroll({
+    target: quoteRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Smooth scroll animations
+  const heroBgY = useTransform(heroScroll, [0, 1], ["0%", "20%"]);
+  const quoteBgY = useTransform(quoteScroll, [0, 1], ["-12%", "12%"]);
+
+  const publications = [
+    { name: "HARPER'S BAZAAR", label: "BAZAAR" },
+    { name: "RANGEFINDER", label: "Rf" },
+    { name: "STYLE ME PRETTY", label: "Style Me Pretty" },
+    { name: "HELLO!", label: "HELLO!" },
+    { name: "JUNEBUG WEDDINGS", label: "junebug" },
+    { name: "LUXURY LIFESTYLE", label: "LLM" },
+    { name: "SLR LOUNGE", label: "SLR Lounge" },
+    { name: "SMASHING THE GLASS", label: "SMASHING THE GLASS" },
+    { name: "BRIDES", label: "BRIDES" },
+    { name: "THE LANE", label: "THE LANE" },
+    { name: "WEDDING CHICKS", label: "wed" },
+    { name: "WEDDING SPARROW", label: "Wedding Sparrow" }
+  ];
 
   return (
-    <div className="starline-page-shell" ref={containerRef}>
-      <Navbar variant="light" />
+    <div className="starline-page-shell">
+      {/* Transparent Navbar over hero */}
+      <Navbar variant="transparent" />
 
-      <main className="starline-page-main" style={{ paddingTop: "100px" }}>
+      <main className="starline-page-main">
         {/* ===================================================================
-            1. GIONE DA SILVA INSPIRED EDITORIAL HERO WITH PARALLAX MOTION
+            1. EXACT GIONE DA SILVA HERO: FULL-WIDTH BACKGROUND & SPLIT OVERLAY
             =================================================================== */}
-        <section className="gione-about-hero-section">
-          <div className="gione-about-hero-inner">
-            {/* Editorial Lead Statement (Styled exactly like Gione da Silva) */}
+        <section className="gds-hero-section" ref={heroRef}>
+          {/* Parallax Background Image */}
+          <div className="gds-hero-bg-container">
             <motion.div
-              className="gione-about-lead-box"
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-            >
-              <span className="minimal-overline">STARLINE ATELIER // DALLAS, TEXAS</span>
-              <h1 className="gione-about-editorial-headline">
-                With a passion for storytelling and a love for bold, iconic visuals, we cater to couples who are drawn to the extraordinary. Whether your celebration takes place on an oceanfront private estate or an intimate desert gathering, we craft films and 35mm photographs as polished, enduring, and captivating as the lives you lead.
-              </h1>
-              <span className="gione-about-italic-kicker">
-                inspired by people, atmosphere, and honest love...
-              </span>
-            </motion.div>
+              className="gds-hero-bg-img"
+              style={{
+                y: heroBgY,
+                backgroundImage: `url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=2400&auto=format&fit=crop')`
+              }}
+            />
+            <div className="gds-hero-gradient-overlay" />
+          </div>
 
-            {/* Parallax Hero Image Frame with Scroll Motion */}
-            <motion.div
-              className="gione-about-hero-image-wrap"
-              style={{ opacity: heroOpacity }}
-            >
-              <div className="gione-about-hero-frame">
-                <motion.img
-                  src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=2000&auto=format&fit=crop"
-                  alt="Starline Atelier Luxury Destination Wedding Cinema"
-                  className="gione-about-hero-img"
-                  style={{ scale: heroImageScale, y: heroImageY }}
-                />
-                <div className="gione-about-hero-badge">
-                  <Sparkles size={13} />
-                  <span>STARLINE ATELIER // EST. 2023 DALLAS</span>
-                </div>
-              </div>
-            </motion.div>
+          {/* Hero Content Grid: Centered Main Heading + Right Sidebar Text */}
+          <div className="gds-hero-content-container">
+            {/* Centered Main Title (Exact Gione da Silva Headline) */}
+            <div className="gds-hero-center-box">
+              <span className="gds-hero-italic-kicker">inspired by people and love...</span>
+              <h1 className="gds-hero-main-title">
+                creative wedding videography and<br />
+                photography led by engaging<br />
+                storytelling
+              </h1>
+            </div>
+
+            {/* Right Side Editorial Narrative */}
+            <div className="gds-hero-right-box">
+              <p className="gds-hero-right-desc">
+                With a passion for storytelling and a love for bold, iconic visuals, we cater to couples who are drawn to the extraordinary. Whether your wedding takes place on an oceanfront private estate or an exclusive desert getaway, we craft films and photos as polished and captivating as the lives you lead.
+              </p>
+              <Link href="/portfolio" className="gds-hero-right-link">
+                <span>visit portfolio</span>
+              </Link>
+            </div>
           </div>
         </section>
 
         {/* ===================================================================
-            2. WHO WE ARE & FOUNDER SPOTLIGHT: SAJAN
+            2. WHO WE ARE SECTION (SAJAN & STARLINE ATELIER 2-COLUMN GRID)
             =================================================================== */}
-        <section className="gione-who-we-are-section">
-          <div className="gione-who-we-are-container">
-            {/* Header */}
-            <div className="gione-who-header">
-              <span className="minimal-overline">WHO WE ARE</span>
-              <h2 className="gione-who-title">SAJAN</h2>
-              <p className="gione-who-pillars">
-                ADVENTURE // CONNECTION // 35MM ANALOG // CINEMA // EXPERIENCES
-              </p>
+        <section className="gds-who-section">
+          <div className="gds-who-container">
+            {/* Left Overline */}
+            <div className="gds-who-sidebar-tag">
+              <span>WHO WE ARE</span>
             </div>
 
-            {/* 2-Column Founder Grid with Scroll Motion */}
-            <div className="gione-who-grid">
-              {/* Left Column: Sajan's Framed Portrait */}
-              <motion.div
-                className="gione-who-photo-col"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
-              >
-                <div className="gione-who-photo-frame">
+            {/* Main 2-Column Profiles Grid */}
+            <div className="gds-who-columns-grid">
+              {/* Column 1: Sajan */}
+              <div className="gds-who-col">
+                <div className="gds-who-profile-header">
+                  <h2 className="gds-who-name">SAJAN</h2>
+                  <p className="gds-who-subtags">
+                    ADVENTURE, CONNECTION, ART, PEOPLE, EXPERIENCES
+                  </p>
+                </div>
+
+                <div className="gds-who-photo-box">
                   <img
                     src="/wd1.jpg"
-                    alt="Sajan - Founder & Lead Cinematographer"
-                    className="gione-who-photo-img"
+                    alt="Sajan - Founder & Principal Cinematographer"
+                    className="gds-who-photo"
                   />
-                  <span className="gione-who-photo-caption">
-                    SAJAN // FOUNDER &amp; PRINCIPAL CINEMATOGRAPHER
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* Right Column: Founder Narrative & Company Details */}
-              <motion.div
-                className="gione-who-text-col"
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
-              >
-                <h3 className="gione-who-heading">
-                  Dedicated to preserving the honest human connection behind every celebration
-                </h3>
-
-                <p className="gione-who-paragraph">
-                  Operating out of Dallas, Texas since 2023, we travel wherever an extraordinary celebration unfolds—from Dallas private estates and Newport oceanfront cliffs to Napa Valley vineyards and Big Sur headlands.
-                </p>
-
-                <p className="gione-who-paragraph">
-                  We love weddings because we believe there is something particularly profound about them: they serve as a timeless reminder of the very best in humanity—embodying love, joy, beauty, and quiet companionship.
-                </p>
-
-                <p className="gione-who-paragraph">
-                  With a deep reverence for physical permanence, we film using medium format cinema lenses, vintage anamorphic glass, and 35mm analog emulsion. We value unhurried elegance over rigid staging, capturing the real laughter, tender glances, and spontaneous joy that give your memories permanent emotional gravity.
-                </p>
-
-                {/* Capability Badges */}
-                <div className="gione-badges-row">
-                  <div className="gione-badge-card">
-                    <MapPin size={16} />
-                    <div>
-                      <strong>Dallas, Texas</strong>
-                      <span>Operating Since 2023</span>
-                    </div>
-                  </div>
-
-                  <div className="gione-badge-card">
-                    <Film size={16} />
-                    <div>
-                      <strong>Mediums</strong>
-                      <span>35mm Film + 4K Cinema</span>
-                    </div>
-                  </div>
-
-                  <div className="gione-badge-card">
-                    <Heart size={16} />
-                    <div>
-                      <strong>Commissions</strong>
-                      <span>18 Celebrations / Year</span>
-                    </div>
-                  </div>
                 </div>
 
-                {/* Contact CTA */}
-                <div style={{ marginTop: "32px" }}>
-                  <Link href="/contact" className="minimal-btn-solid">
-                    <span>GET IN TOUCH WITH SAJAN</span>
-                    <ArrowUpRight size={15} />
+                <div className="gds-who-bio">
+                  <p>
+                    We love getting to know new people. This comes from the knowledge that we all have a different journey in life and there is something exciting and deeply inspiring about that.
+                  </p>
+                  <p>
+                    Operating out of Dallas, Texas since 2023, we travel wherever an extraordinary celebration unfolds—from Dallas private estates and Newport oceanfront cliffs to Napa Valley vineyards and Big Sur headlands.
+                  </p>
+                  <p>
+                    We appreciate great natural light, vintage cinema glass, and 35mm film grain. We have a wonderful time discovering new music, capturing genuine unhurried moments, and creating tangible family heirlooms that outlast the season.
+                  </p>
+                </div>
+              </div>
+
+              {/* Column 2: The Studio / Creative Atelier */}
+              <div className="gds-who-col">
+                <div className="gds-who-profile-header">
+                  <h2 className="gds-who-name">STARLINE ATELIER</h2>
+                  <p className="gds-who-subtags">
+                    FAMILY, CARE, LOVE, TRAVEL, ART
+                  </p>
+                </div>
+
+                <div className="gds-who-photo-box">
+                  <img
+                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
+                    alt="Starline Atelier Destination Wedding Team"
+                    className="gds-who-photo"
+                  />
+                </div>
+
+                <div className="gds-who-bio">
+                  <p>
+                    We love weddings because we believe there is something particularly great about them – they seem to serve as a reminder of the very best about humanity, embodying love, joy, beauty and companionship.
+                  </p>
+                  <p>
+                    We are dedicated artists with an interest in many art forms, who developed a deep lifelong devotion to photography and filmmaking. We love learning, exploring, and continuously refining our craft.
+                  </p>
+                  <p>
+                    Our approach is built on quiet calm and unhurried observation. Rather than commanding rigid poses, we allow your celebration to breathe naturally, capturing the quiet glances and honest joy shared with those you love most.
+                  </p>
+                </div>
+
+                {/* Contact Us Button at bottom of right column */}
+                <div className="gds-who-btn-wrap">
+                  <Link href="/contact" className="gds-contact-btn">
+                    <span>CONTACT US</span>
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* ===================================================================
-            3. CLOSING CONSULTATION CALLOUT
+            3. FEATURED ON PUBLICATION LOGOS (EXACT 2-ROW EDITORIAL GRID)
             =================================================================== */}
-        <section className="gione-about-closing-cta">
-          <div className="gione-about-closing-inner">
-            <span className="minimal-overline">BESPOKE COMMISSIONS</span>
-            <h2 className="gione-closing-heading">
-              Ready to Document Your Wedding With Timeless Cinema?
-            </h2>
-            <p className="gione-closing-desc">
-              Schedule an unhurried consultation to discuss your celebration itinerary and bespoke proposal.
-            </p>
-            <div style={{ marginTop: "24px" }}>
-              <Link href="/contact" className="minimal-btn-solid">
-                <span>INQUIRE WITH STUDIO</span>
-                <ArrowUpRight size={15} />
+        <section className="gds-featured-on-section">
+          <div className="gds-featured-on-inner">
+            <h3 className="gds-featured-on-title">featured on</h3>
+
+            <div className="gds-logos-grid">
+              {publications.map((pub, idx) => (
+                <div key={idx} className="gds-logo-item">
+                  <span className="gds-logo-text">{pub.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            4. FULL-WIDTH TEXTURED ARCHITECTURAL BANNER WITH TESTIMONIAL & TITLE
+            =================================================================== */}
+        <section className="gds-quote-parallax-section" ref={quoteRef}>
+          <div className="gds-quote-bg-container">
+            <motion.div
+              className="gds-quote-bg-img"
+              style={{
+                y: quoteBgY,
+                backgroundImage: `url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2400&auto=format&fit=crop')`
+              }}
+            />
+            <div className="gds-quote-dark-overlay" />
+          </div>
+
+          <div className="gds-quote-content-container">
+            {/* Top Right Testimonial Quote Box */}
+            <div className="gds-testimonial-box">
+              <blockquote className="gds-testimonial-text">
+                “We were lucky enough to have Sajan and the Starline team capture our wedding... the film is a masterclass in honest emotion and breathtaking cinematic beauty. Everything was seamless, calm, and discreet. Watching our film brings tears of joy every single time.”
+              </blockquote>
+              <cite className="gds-testimonial-author">
+                — Victoria &amp; Harrison
+              </cite>
+            </div>
+
+            {/* Bottom Left Bold Statement (Exact Gione da Silva condensed title) */}
+            <div className="gds-quote-bottom-title-wrap">
+              <h2 className="gds-quote-bottom-title">
+                ETERNALISING REAL LOVING MEMORIES<br />
+                OF THAT UNIQUE DAY IN YOUR LIFE...
+              </h2>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            5. VISIT OUR PORTFOLIO (3-COLUMN LUXURY CARDS)
+            =================================================================== */}
+        <section className="gds-portfolio-links-section">
+          <div className="gds-portfolio-links-container">
+            <h2 className="gds-portfolio-section-title">VISIT OUR PORTFOLIO</h2>
+
+            <div className="gds-portfolio-3col-grid">
+              {/* Card 1: Wedding Photography */}
+              <Link href="/portfolio/photography" className="gds-portfolio-card">
+                <div className="gds-portfolio-card-frame">
+                  <img
+                    src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1200&auto=format&fit=crop"
+                    alt="Starline Wedding Photography"
+                    className="gds-portfolio-card-img"
+                  />
+                </div>
+                <h3 className="gds-portfolio-card-title">WEDDING PHOTOGRAPHY</h3>
+              </Link>
+
+              {/* Card 2: Wedding Cinematography */}
+              <Link href="/portfolio/videography" className="gds-portfolio-card">
+                <div className="gds-portfolio-card-frame">
+                  <img
+                    src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1200&auto=format&fit=crop"
+                    alt="Starline Wedding Cinematography"
+                    className="gds-portfolio-card-img"
+                  />
+                </div>
+                <h3 className="gds-portfolio-card-title">WEDDING CINEMATOGRAPHY</h3>
+              </Link>
+
+              {/* Card 3: Destination & Lifestyle */}
+              <Link href="/portfolio" className="gds-portfolio-card">
+                <div className="gds-portfolio-card-frame">
+                  <img
+                    src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1200&auto=format&fit=crop"
+                    alt="Starline Travel & Lifestyle"
+                    className="gds-portfolio-card-img"
+                  />
+                </div>
+                <h3 className="gds-portfolio-card-title">TRAVEL &amp; LIFESTYLE</h3>
               </Link>
             </div>
           </div>

@@ -5102,272 +5102,477 @@ a {
 }
 
 /* ==========================================================================
-   8. GIONE DA SILVA INSPIRED ABOUT PAGE & PARALLAX SCROLL MOTION
+   8. EXACT GIONE DA SILVA ABOUT PAGE STYLES & PARALLAX SCROLL MOTION
    ========================================================================== */
-.gione-about-hero-section {
-  background: #ffffff;
-  padding: clamp(30px, 4vw, 50px) clamp(20px, 4vw, 60px) 40px;
-}
-
-.gione-about-hero-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.gione-about-lead-box {
-  max-width: 1100px;
-  margin: 0 auto clamp(36px, 5vw, 60px);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.gione-about-editorial-headline {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(1.4rem, 2.4vw, 2.2rem);
-  font-weight: 400;
-  line-height: 1.55;
-  color: #11141c;
-  margin: 8px 0 0;
-  letter-spacing: 0.01em;
-}
-
-.gione-about-italic-kicker {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 15px;
-  font-style: italic;
-  color: #646c7c;
-  margin-top: 4px;
-}
-
-.gione-about-hero-image-wrap {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.gione-about-hero-frame {
+/* 1. HERO SECTION */
+.gds-hero-section {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/7.5;
-  min-height: 340px;
-  border-radius: 4px;
+  min-height: 90vh;
+  height: 94vh;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-  background: #0f131a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.gione-about-hero-img {
+.gds-hero-bg-container {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 38%;
-  display: block;
-  filter: contrast(1.05) brightness(0.95);
+  overflow: hidden;
+  z-index: 1;
 }
 
-.gione-about-hero-badge {
+.gds-hero-bg-img {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  display: inline-flex;
+  inset: -15% 0;
+  width: 100%;
+  height: 130%;
+  background-size: cover;
+  background-position: center 30%;
+  filter: contrast(1.06) brightness(0.9);
+}
+
+.gds-hero-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 2;
+}
+
+.gds-hero-content-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 60px);
+  display: flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(10, 14, 22, 0.8);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  justify-content: center;
+  height: 100%;
+}
+
+.gds-hero-center-box {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.gds-hero-italic-kicker {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(20px, 2.6vw, 32px);
+  font-style: italic;
+  font-weight: 400;
   color: #ffffff;
+  display: block;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+
+.gds-hero-main-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.8rem, 3.6vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  margin: 0;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+}
+
+.gds-hero-right-box {
+  position: absolute;
+  right: clamp(24px, 4vw, 60px);
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 320px;
+  text-align: right;
+  z-index: 4;
+}
+
+.gds-hero-right-desc {
   font-family: var(--font-sans);
-  font-size: 9px;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  margin: 0 0 12px;
+}
+
+.gds-hero-right-link {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.gds-hero-right-link:hover {
+  opacity: 0.8;
+}
+
+/* 2. WHO WE ARE SECTION */
+.gds-who-section {
+  background: #ffffff;
+  padding: clamp(60px, 8vw, 110px) clamp(24px, 4vw, 60px);
+}
+
+.gds-who-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: clamp(30px, 4vw, 60px);
+}
+
+.gds-who-sidebar-tag {
+  font-family: var(--font-sans);
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  color: #111111;
+  padding-top: 6px;
 }
 
-/* WHO WE ARE Section (Sajan) */
-.gione-who-we-are-section {
-  background: #f8fafc;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
-  padding: clamp(60px, 8vw, 110px) clamp(24px, 5vw, 60px);
+.gds-who-columns-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(36px, 5vw, 70px);
 }
 
-.gione-who-we-are-container {
+.gds-who-name {
+  font-family: var(--font-display-condensed);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #111111;
+  margin: 0 0 6px;
+}
+
+.gds-who-subtags {
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #666666;
+  margin: 0 0 20px;
+}
+
+.gds-who-photo-box {
+  width: 100%;
+  aspect-ratio: 4/4.6;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: #000000;
+}
+
+.gds-who-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.05) brightness(0.96);
+  transition: transform 0.6s ease;
+}
+
+.gds-who-photo-box:hover .gds-who-photo {
+  transform: scale(1.02);
+}
+
+.gds-who-bio p {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #444444;
+  margin: 0 0 16px;
+}
+
+.gds-who-btn-wrap {
+  margin-top: 24px;
+}
+
+.gds-contact-btn {
+  display: inline-block;
+  background: #333333;
+  color: #ffffff;
+  padding: 13px 30px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.gds-contact-btn:hover {
+  background: #000000;
+}
+
+/* 3. FEATURED ON SECTION */
+.gds-featured-on-section {
+  background: #ffffff;
+  padding: 40px clamp(24px, 4vw, 60px) 70px;
+  border-top: 1px solid #eeeeee;
+}
+
+.gds-featured-on-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gds-featured-on-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 400;
+  color: #222222;
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.gds-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 28px 24px;
+  align-items: center;
+  justify-items: center;
+}
+
+.gds-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gds-logo-text {
+  font-family: var(--font-display-condensed);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #222222;
+  opacity: 0.85;
+}
+
+/* 4. QUOTE PARALLAX SECTION */
+.gds-quote-parallax-section {
+  position: relative;
+  width: 100%;
+  height: clamp(520px, 65vh, 700px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(40px, 5vw, 70px) clamp(24px, 5vw, 80px);
+}
+
+.gds-quote-bg-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.gds-quote-bg-img {
+  position: absolute;
+  inset: -20% 0;
+  width: 100%;
+  height: 140%;
+  background-size: cover;
+  background-position: center;
+  filter: contrast(1.08) brightness(0.85);
+}
+
+.gds-quote-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 2;
+}
+
+.gds-quote-content-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.gds-testimonial-box {
+  align-self: flex-end;
+  max-width: 440px;
+  background: rgba(10, 14, 20, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 24px 28px;
+  border-radius: 2px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gds-testimonial-text {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 300;
+  line-height: 1.75;
+  font-style: italic;
+  margin: 0 0 10px;
+}
+
+.gds-testimonial-author {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  display: block;
+  text-align: right;
+  color: #e0e0e0;
+}
+
+.gds-quote-bottom-title-wrap {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.gds-quote-bottom-title {
+  font-family: var(--font-display-condensed);
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.85);
+  margin: 0;
+}
+
+/* 5. VISIT OUR PORTFOLIO SECTION */
+.gds-portfolio-links-section {
+  background: #ffffff;
+  padding: clamp(70px, 9vw, 120px) clamp(24px, 4vw, 60px);
+}
+
+.gds-portfolio-links-container {
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.gione-who-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto clamp(36px, 5vw, 64px);
-}
-
-.gione-who-title {
-  font-family: var(--font-display-condensed);
-  font-size: clamp(3rem, 6vw, 5.2rem);
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #11141c;
-  margin: 10px 0 6px;
-}
-
-.gione-who-pillars {
+.gds-portfolio-section-title {
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #646c7c;
-  margin: 0;
+  color: #111111;
+  margin: 0 0 36px;
 }
 
-.gione-who-grid {
+.gds-portfolio-3col-grid {
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: clamp(36px, 6vw, 80px);
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 36px);
 }
 
-.gione-who-photo-frame {
-  position: relative;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.14);
-  background: #0d1117;
+.gds-portfolio-card {
+  text-decoration: none;
+  display: block;
 }
 
-.gione-who-photo-img {
+.gds-portfolio-card-frame {
   width: 100%;
-  aspect-ratio: 4/5.2;
+  aspect-ratio: 16/10.5;
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: #000000;
+}
+
+.gds-portfolio-card-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  filter: contrast(1.05) brightness(0.95);
-  transition: transform 0.8s ease;
+  transition: transform 0.6s ease;
 }
 
-.gione-who-photo-frame:hover .gione-who-photo-img {
-  transform: scale(1.02);
+.gds-portfolio-card:hover .gds-portfolio-card-img {
+  transform: scale(1.04);
 }
 
-.gione-who-photo-caption {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  font-family: var(--font-sans);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #ffffff;
-  background: rgba(10, 14, 22, 0.85);
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.gione-who-heading {
-  font-family: var(--font-display-condensed);
-  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  line-height: 1.15;
-  text-transform: uppercase;
-  color: #11141c;
-  margin: 0 0 20px;
-}
-
-.gione-who-paragraph {
-  font-family: var(--font-sans);
-  font-size: 14.5px;
-  font-weight: 300;
-  line-height: 1.85;
-  color: #4a5160;
-  margin: 0 0 18px;
-}
-
-.gione-badges-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  margin: 28px 0 10px;
-}
-
-.gione-badge-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  padding: 14px 16px;
-  border-radius: 4px;
-}
-
-.gione-badge-card svg {
-  color: var(--cobalt-accent);
-  flex-shrink: 0;
-}
-
-.gione-badge-card div {
-  display: flex;
-  flex-direction: column;
-}
-
-.gione-badge-card strong {
-  font-family: var(--font-display-condensed);
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #11141c;
-}
-
-.gione-badge-card span {
+.gds-portfolio-card-title {
   font-family: var(--font-sans);
   font-size: 11px;
-  color: #646c7c;
-}
-
-/* Closing CTA */
-.gione-about-closing-cta {
-  background: #ffffff;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  padding: clamp(60px, 8vw, 100px) clamp(24px, 5vw, 60px);
-  text-align: center;
-}
-
-.gione-about-closing-inner {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.gione-closing-heading {
-  font-family: var(--font-display-condensed);
-  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
-  font-weight: 300;
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #11141c;
-  margin: 14px 0 16px;
-}
-
-.gione-closing-desc {
-  font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 300;
-  color: #555d6e;
+  color: #222222;
   margin: 0;
+  transition: color 0.2s ease;
 }
 
-@media (max-width: 992px) {
-  .gione-who-grid {
+.gds-portfolio-card:hover .gds-portfolio-card-title {
+  color: #000000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .gds-hero-right-box {
+    position: static;
+    transform: none;
+    max-width: 600px;
+    text-align: center;
+    margin: 28px auto 0;
+  }
+  .gds-hero-content-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .gds-who-container {
     grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .gds-logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gds-who-columns-grid {
+    grid-template-columns: 1fr;
+  }
+  .gds-portfolio-3col-grid {
+    grid-template-columns: 1fr;
+  }
+  .gds-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
