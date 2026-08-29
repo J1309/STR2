@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 
@@ -11,6 +11,7 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdownHover, setDropdownHover] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,13 +24,23 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
   // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
+    setDropdownHover(false);
     window.scrollTo(0, 0);
   }, [location]);
 
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/portfolio", label: "Portfolio" },
+    {
+      href: "/portfolio",
+      label: "Portfolio",
+      hasDropdown: true,
+      subItems: [
+        { href: "/portfolio/videography", label: "Videography" },
+        { href: "/portfolio/photography", label: "Photography" },
+        { href: "/portfolio", label: "Full Archive" }
+      ]
+    },
     { href: "/journal", label: "Journal" },
     { href: "/contact", label: "Contact" }
   ];
@@ -55,12 +66,59 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
           {/* Desktop Nav */}
           <nav className="starline-desktop-nav" aria-label="Main Navigation">
             {navLinks.map((link, idx) => {
-              const isActive = location === link.href;
+              const isCurrent =
+                location === link.href ||
+                (link.subItems && link.subItems.some((s) => location === s.href));
+
+              if (link.hasDropdown) {
+                return (
+                  <div
+                    key={`${link.href}-${idx}`}
+                    className="nav-dropdown-wrapper"
+                    onMouseEnter={() => setDropdownHover(true)}
+                    onMouseLeave={() => setDropdownHover(false)}
+                  >
+                    <Link
+                      href={link.href}
+                      className={`starline-nav-link dropdown-trigger ${isCurrent ? "is-active" : ""}`}
+                    >
+                      <span>{link.label}</span>
+                      <ChevronDown
+                        size={12}
+                        className={`dropdown-arrow ${dropdownHover ? "is-open" : ""}`}
+                      />
+                    </Link>
+
+                    <AnimatePresence>
+                      {dropdownHover && (
+                        <motion.div
+                          className="nav-dropdown-menu"
+                          initial={{ opacity: 0, y: 8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 6 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {link.subItems?.map((sub) => (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              className={`nav-dropdown-item ${location === sub.href ? "is-active" : ""}`}
+                            >
+                              <span>{sub.label}</span>
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={`${link.href}-${idx}`}
                   href={link.href}
-                  className={`starline-nav-link ${isActive ? "is-active" : ""}`}
+                  className={`starline-nav-link ${isCurrent ? "is-active" : ""}`}
                 >
                   {link.label}
                 </Link>
@@ -94,23 +152,41 @@ export default function Navbar({ variant = "dark" }: NavbarProps) {
             <div className="starline-mobile-drawer-inner">
               <nav className="starline-mobile-nav-list">
                 {navLinks.map((link, idx) => {
-                  const isActive = location === link.href;
+                  const isActive =
+                    location === link.href ||
+                    (link.subItems && link.subItems.some((s) => location === s.href));
+
                   return (
-                    <Link
-                      key={`${link.href}-mob-${idx}`}
-                      href={link.href}
-                      className={`starline-mobile-nav-item ${isActive ? "is-active" : ""}`}
-                    >
-                      <span>{link.label}</span>
-                      <ArrowUpRight size={15} />
-                    </Link>
+                    <div key={`${link.href}-mob-${idx}`} className="starline-mob-group">
+                      <Link
+                        href={link.href}
+                        className={`starline-mobile-nav-item ${isActive ? "is-active" : ""}`}
+                      >
+                        <span>{link.label}</span>
+                        <ArrowUpRight size={15} />
+                      </Link>
+
+                      {link.subItems && (
+                        <div className="starline-mob-sublist">
+                          {link.subItems.map((sub) => (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              className={`starline-mob-subitem ${location === sub.href ? "is-active" : ""}`}
+                            >
+                              <span>— {sub.label}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   );
                 })}
               </nav>
 
               <div className="starline-mobile-footer-info">
                 <p>STARLINE ATELIER</p>
-                <p>PHILADELPHIA • NEWPORT • NAPA VALLEY • BIG SUR</p>
+                <p>DALLAS • NEWPORT • NAPA VALLEY • BIG SUR</p>
               </div>
             </div>
           </motion.div>

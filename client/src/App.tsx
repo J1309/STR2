@@ -9,13 +9,19 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Investment from "./pages/Investment";
 import Journal from "./pages/Journal";
+import PhotographyPortfolio from "./pages/PhotographyPortfolio";
 import Portfolio from "./pages/Portfolio";
+import VideographyPortfolio from "./pages/VideographyPortfolio";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/portfolio"} component={Portfolio} />
+      <Route path={"/portfolio/photography"} component={PhotographyPortfolio} />
+      <Route path={"/wedding-photography-portfolio"} component={PhotographyPortfolio} />
+      <Route path={"/portfolio/videography"} component={VideographyPortfolio} />
+      <Route path={"/wedding-videography-portfolio"} component={VideographyPortfolio} />
       <Route path={"/about"} component={About} />
       <Route path={"/journal"} component={Journal} />
       <Route path={"/contact"} component={Contact} />

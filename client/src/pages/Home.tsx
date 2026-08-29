@@ -2,31 +2,107 @@
  * STARLINE / ULTRA-MINIMALIST LUXURY EDITORIAL & CINEMATOGRAPHY
  * Inspired by Gione da Silva (gionedasilva.com)
  * Pure White Canvas, Deep Black Typography, Minimal Lines, Large Cinematic 16:9 Visuals,
- * Asymmetric Editorial Photography Spreads, and Zero Congestion.
+ * Automatic Slideshows, Dallas Atelier Heritage, and Consultation Appointment Booking.
  */
-import DriftWall, { type DriftWallItem } from "@/components/DriftWall";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { studioStories, type StoryItem } from "@/data/studioData";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Play, X } from "lucide-react";
-import { useState } from "react";
+import { ArrowUpRight, Calendar, Check, Clock, MapPin, Sparkles, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "wouter";
 
-export default function Home() {
-  const [selectedStory, setSelectedStory] = useState<StoryItem | null>(null);
-  const [playingVideos, setPlayingVideos] = useState<Record<string, boolean>>({});
+// Slideshow images for Featured Film 1 (Newport)
+const newportSlideshow = [
+  "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop"
+];
 
-  const driftItems: DriftWallItem[] = [
-    { image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop", title: "Sierra Dusk", subtitle: "Glacial Basin" },
-    { image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=800&auto=format&fit=crop", title: "Napa Valley Courtyard", subtitle: "Golden Vineyard Light" },
-    { image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800&auto=format&fit=crop", title: "Joshua Tree Bloom", subtitle: "Mojave Twilight" },
-    { image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop", title: "Santa Fe Adobe", subtitle: "Plaster & Shade" },
-    { image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop", title: "Studio Objects", subtitle: "Linen & Silver" },
-    { image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=800&auto=format&fit=crop", title: "Utah Horizon", subtitle: "Salt & Dusk" },
-    { image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop", title: "Big Sur Coast", subtitle: "Pacific Horizon Mist" },
-    { image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=800&auto=format&fit=crop", title: "High Sierra", subtitle: "35mm Analog Print" }
-  ];
+// Slideshow images for Featured Film 2 (Napa Valley)
+const napaSlideshow = [
+  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop"
+];
+
+export default function Home() {
+  // Slideshow active index states
+  const [slideIdx1, setSlideIdx1] = useState(0);
+  const [slideIdx2, setSlideIdx2] = useState(0);
+
+  // Typewriter text state for "Welcome to Starline"
+  const welcomeText = "Welcome to Starline";
+  const [typedWelcome, setTypedWelcome] = useState("");
+  const [isTypingDone, setIsTypingDone] = useState(false);
+
+  // Appointment Modal State
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalForm, setModalForm] = useState({
+    fullName: "",
+    phoneNumber: "",
+    emailAddress: "",
+    destination: "",
+    weddingDate: ""
+  });
+  const [isSubmittingAppointment, setIsSubmittingAppointment] = useState(false);
+  const [appointmentSuccess, setAppointmentSuccess] = useState(false);
+
+  // Auto-typing animation effect
+  useEffect(() => {
+    let currentIdx = 0;
+    const interval = setInterval(() => {
+      if (currentIdx <= welcomeText.length) {
+        setTypedWelcome(welcomeText.slice(0, currentIdx));
+        currentIdx++;
+      } else {
+        setIsTypingDone(true);
+        clearInterval(interval);
+      }
+    }, 90);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Continuous auto slideshow timer
+  useEffect(() => {
+    const timer1 = setInterval(() => {
+      setSlideIdx1((prev) => (prev + 1) % newportSlideshow.length);
+    }, 3200);
+
+    const timer2 = setInterval(() => {
+      setSlideIdx2((prev) => (prev + 1) % napaSlideshow.length);
+    }, 3500);
+
+    return () => {
+      clearInterval(timer1);
+      clearInterval(timer2);
+    };
+  }, []);
+
+  // Handle appointment form submission
+  const handleAppointmentSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmittingAppointment(true);
+
+    setTimeout(() => {
+      setIsSubmittingAppointment(false);
+      setAppointmentSuccess(true);
+    }, 600);
+  };
+
+  const closeAppointmentModal = () => {
+    setIsModalOpen(false);
+    setAppointmentSuccess(false);
+    setModalForm({
+      fullName: "",
+      phoneNumber: "",
+      emailAddress: "",
+      destination: "",
+      weddingDate: ""
+    });
+  };
 
   return (
     <div className="starline-page-shell">
@@ -57,27 +133,95 @@ export default function Home() {
               TELLING STORIES THAT OUTLAST THE SEASON
             </h1>
             <p className="minimal-hero-kicker">
-              PHILADELPHIA &amp; WORLDWIDE DESTINATIONS
+              DALLAS, TEXAS &amp; DESTINATIONS WORLDWIDE
             </p>
           </div>
         </section>
 
         {/* ===================================================================
-            2. PHILOSOPHY / REFINED EDITORIAL STATEMENT
+            2. IMMERSIVE AUTOMATIC WRITING ANIMATION: "WELCOME TO STARLINE"
             =================================================================== */}
-        <section className="minimal-section">
-          <div className="minimal-statement">
-            <h2 className="minimal-statement-heading">
-              Living wedding cinema &amp; fine-art 35mm photography
-            </h2>
-            <p className="minimal-statement-body">
-              We approach each celebration with an unhurried perspective. No intrusive setups, no artificial theatrics—just honest human connection, natural light, and the quiet beauty of authentic moments captured with timeless grace.
+        <section className="starline-welcome-writing-banner">
+          <div className="starline-welcome-writing-inner">
+            <span className="welcome-kicker">CINEMATIC ATELIER</span>
+            <div className="welcome-typewriter-wrap">
+              <h2 className="welcome-typewriter-text">
+                {typedWelcome}
+                <span className={`typewriter-cursor ${isTypingDone ? "is-blinking" : ""}`}>|</span>
+              </h2>
+            </div>
+            <p className="welcome-sub-note">
+              HANDCRAFTED DESTINATION WEDDING CINEMA &amp; 35MM FINE ART PHOTOGRAPHY
             </p>
           </div>
         </section>
 
         {/* ===================================================================
-            3. FEATURED CINEMA COMMISSIONS (GIONE DA SILVA 2-COLUMN DUO)
+            3. COMPANY DETAILS & KNOW MORE ABOUT US (DALLAS ATELIER + WD1.JPG)
+            =================================================================== */}
+        <section className="minimal-section dallas-about-section">
+          <div className="dallas-about-grid">
+            {/* Left Side: Company Details & Know More Button */}
+            <div className="dallas-about-left">
+              <span className="minimal-statement-tag">DALLAS ATELIER // EST. 2023</span>
+              <h2 className="dallas-about-heading">
+                Operating Since 2023 In Dallas &amp; Capturing Stories Nationwide
+              </h2>
+
+              <p className="dallas-about-lead">
+                Founded in Dallas, Texas in 2023, Starline Atelier crafts living heirlooms of cinema and fine-art 35mm analog photography for couples seeking unhurried grace, honest human connection, and enduring memory.
+              </p>
+
+              <p className="dallas-about-body">
+                We believe the most poignant moments occur in between the staged poses: a quiet breath before the ceremony, the golden light grazing an evening table, and spontaneous laughter shared among closest loved ones. We travel wherever an extraordinary celebration unfolds—from Dallas private estates and Newport oceanfront mansions to Napa Valley vineyards and Big Sur coastal cliffs.
+              </p>
+
+              {/* Studio Badges */}
+              <div className="dallas-about-badges-row">
+                <div className="dallas-badge-item">
+                  <span className="badge-title">HOME BASE</span>
+                  <span className="badge-val">Dallas, Texas</span>
+                </div>
+                <div className="dallas-badge-item">
+                  <span className="badge-title">EXPERIENCE</span>
+                  <span className="badge-val">Operating Since 2023</span>
+                </div>
+                <div className="dallas-badge-item">
+                  <span className="badge-title">MEDIUMS</span>
+                  <span className="badge-val">35mm Film + 4K Cinema</span>
+                </div>
+              </div>
+
+              {/* Know More About Us Button */}
+              <div className="dallas-about-cta-wrap">
+                <Link href="/about" className="minimal-btn-solid">
+                  <span>KNOW MORE ABOUT US</span>
+                  <ArrowUpRight size={15} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Side: High-End Framed Portrait Image (wd1.jpg) */}
+            <div className="dallas-about-right">
+              <div className="dallas-portrait-frame">
+                <img
+                  src="/wd1.jpg"
+                  alt="Starline Atelier Editorial Wedding Photography Dallas"
+                  className="dallas-portrait-img"
+                  loading="lazy"
+                />
+                <div className="dallas-portrait-badge">
+                  <Sparkles size={13} />
+                  <span>STARLINE ATELIER // DALLAS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            4. FEATURED COMMISSIONS: CONTINUOUS AUTOMATIC IMAGE SLIDESHOWS
+               WITH PREMIUM LIGHT BLUE WRITTEN CONTENT BOXES
             =================================================================== */}
         <section className="gione-featured-section">
           <div className="gione-featured-header">
@@ -86,43 +230,39 @@ export default function Home() {
           </div>
 
           <div className="gione-showcase-wrap">
-            {/* Featured Film 1: Newport */}
+            {/* Showcase 1: Newport (Slideshow on Left, Light Blue Story on Right) */}
             <div className="gione-featured-duo">
-              <div
-                className="gione-video-col"
-                onClick={() => setPlayingVideos(prev => ({ ...prev, newport: true }))}
-                role="button"
-                tabIndex={0}
-                aria-label="Play Newport Film"
-              >
-                {playingVideos["newport"] ? (
-                  <video
-                    src="https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-on-a-beach-at-sunset-42863-large.mp4"
-                    autoPlay
-                    controls
-                    playsInline
-                    className="gione-video-element"
-                  />
-                ) : (
-                  <>
-                    <img
-                      src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop"
-                      alt="Historic Oceanfront Wedding in Newport, Rhode Island"
-                      className="gione-video-img"
-                      loading="lazy"
+              {/* Left Column: Continuous Auto-Changing Slideshow */}
+              <div className="gione-slideshow-col" aria-label="Newport Wedding Slideshow">
+                <div className="gione-slideshow-container">
+                  {newportSlideshow.map((imgSrc, idx) => (
+                    <motion.img
+                      key={`newport-slide-${idx}`}
+                      src={imgSrc}
+                      alt={`Newport Rhode Island Wedding Still ${idx + 1}`}
+                      className="gione-slideshow-image"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: slideIdx1 === idx ? 1 : 0 }}
+                      transition={{ duration: 1.2, ease: "easeInOut" }}
                     />
-                    <div className="gione-play-circle-overlay">
-                      <div className="gione-play-circle">
-                        <Play size={18} fill="currentColor" />
-                      </div>
-                    </div>
-                  </>
-                )}
+                  ))}
+                  <div className="gione-slideshow-dots">
+                    {newportSlideshow.map((_, idx) => (
+                      <span
+                        key={`dot1-${idx}`}
+                        className={`gione-slide-dot ${slideIdx1 === idx ? "is-active" : ""}`}
+                        onClick={() => setSlideIdx1(idx)}
+                      />
+                    ))}
+                  </div>
+                  <span className="gione-slideshow-tag">NEWPORT // LIVE CINEMA</span>
+                </div>
               </div>
 
-              <div className="gione-story-col">
+              {/* Right Column: Premium Light Blue Written Story Box */}
+              <div className="gione-story-col theme-light-blue">
                 <div className="gione-story-inner">
-                  <p className="gione-story-overline">FEATURED VIDEO:</p>
+                  <p className="gione-story-overline">FEATURED FILM:</p>
                   <h3 className="gione-story-heading">
                     OCEANFRONT ESTATE<br />
                     NEWPORT,<br />
@@ -131,50 +271,46 @@ export default function Home() {
                   <p className="gione-story-desc">
                     An iconic coastal celebration across historic oceanfront mansions and twilight Atlantic ocean breezes
                   </p>
-                  <Link href="/contact" className="gione-story-btn">
-                    <span>CONTACT US</span>
+                  <Link href="/portfolio/videography" className="gione-story-btn">
+                    <span>EXPLORE FILM</span>
                   </Link>
                 </div>
               </div>
             </div>
 
-            {/* Featured Film 2: Napa Valley (Reversed: Story on Left, Video on Right) */}
+            {/* Showcase 2: Napa Valley (Light Blue Story on Left, Slideshow on Right) */}
             <div className="gione-featured-duo is-reversed">
-              <div
-                className="gione-video-col"
-                onClick={() => setPlayingVideos(prev => ({ ...prev, napa: true }))}
-                role="button"
-                tabIndex={0}
-                aria-label="Play Napa Valley Film"
-              >
-                {playingVideos["napa"] ? (
-                  <video
-                    src="https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-walking-in-a-forest-42861-large.mp4"
-                    autoPlay
-                    controls
-                    playsInline
-                    className="gione-video-element"
-                  />
-                ) : (
-                  <>
-                    <img
-                      src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop"
-                      alt="Elegant & Heartfelt Napa Valley Vineyard Wedding"
-                      className="gione-video-img"
-                      loading="lazy"
+              {/* Slideshow on Right / Reversed */}
+              <div className="gione-slideshow-col" aria-label="Napa Valley Wedding Slideshow">
+                <div className="gione-slideshow-container">
+                  {napaSlideshow.map((imgSrc, idx) => (
+                    <motion.img
+                      key={`napa-slide-${idx}`}
+                      src={imgSrc}
+                      alt={`Napa Valley Vineyard Wedding Still ${idx + 1}`}
+                      className="gione-slideshow-image"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: slideIdx2 === idx ? 1 : 0 }}
+                      transition={{ duration: 1.2, ease: "easeInOut" }}
                     />
-                    <div className="gione-play-circle-overlay">
-                      <div className="gione-play-circle">
-                        <Play size={18} fill="currentColor" />
-                      </div>
-                    </div>
-                  </>
-                )}
+                  ))}
+                  <div className="gione-slideshow-dots">
+                    {napaSlideshow.map((_, idx) => (
+                      <span
+                        key={`dot2-${idx}`}
+                        className={`gione-slide-dot ${slideIdx2 === idx ? "is-active" : ""}`}
+                        onClick={() => setSlideIdx2(idx)}
+                      />
+                    ))}
+                  </div>
+                  <span className="gione-slideshow-tag">NAPA VALLEY // 35MM EMULSION</span>
+                </div>
               </div>
 
-              <div className="gione-story-col">
+              {/* Light Blue Written Story Box on Left */}
+              <div className="gione-story-col theme-light-blue">
                 <div className="gione-story-inner">
-                  <p className="gione-story-overline">FEATURED VIDEO:</p>
+                  <p className="gione-story-overline">FEATURED FILM:</p>
                   <h3 className="gione-story-heading">
                     ELEGANT &amp; HEARTFELT<br />
                     NAPA VALLEY<br />
@@ -183,8 +319,8 @@ export default function Home() {
                   <p className="gione-story-desc">
                     A stunning harvest celebration overlooking rolling vineyard hills and private stone courtyards in Napa Valley
                   </p>
-                  <Link href="/contact" className="gione-story-btn">
-                    <span>CONTACT US</span>
+                  <Link href="/portfolio/videography" className="gione-story-btn">
+                    <span>EXPLORE FILM</span>
                   </Link>
                 </div>
               </div>
@@ -193,156 +329,183 @@ export default function Home() {
         </section>
 
         {/* ===================================================================
-            4. PHOTOGRAPHY SHOWCASE (HOW GIONE DA SILVA SHOWCASES IMAGES)
+            5. PRIVATE APPOINTMENT / CONSULTATION SECTION
             =================================================================== */}
-        <section className="minimal-section">
-          <div className="minimal-photo-spread">
-            <div className="minimal-photo-pair">
-              <img
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000&auto=format&fit=crop"
-                alt="Editorial Wedding Still 01"
-                loading="lazy"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1000&auto=format&fit=crop"
-                alt="Editorial Wedding Still 02"
-                loading="lazy"
-              />
-            </div>
+        <section className="starline-appointment-section">
+          <div className="starline-appointment-card">
+            <span className="minimal-overline">EXCLUSIVE COMMISSIONS</span>
+            <h2 className="starline-appointment-title">
+              Reserve a Private Consultation
+            </h2>
+            <p className="starline-appointment-subtitle">
+              Schedule an unhurried conversation with our studio directors to discuss your celebration itinerary, lighting schedules, and bespoke cinematography proposal.
+            </p>
 
-            <div className="minimal-photo-info">
-              <h2>Wedding Photography</h2>
-              <p>
-                As well as offering cinematic wedding videography across the United States and worldwide, our wedding photography is all about real and natural moments. Our aim is to capture the essence of your day in timeless images. Our photos are a combination of everything we are inspired by: documentary photography, street photography, portrait, fashion, nature, and light.
-              </p>
-              <Link href="/portfolio" className="minimal-text-link">
-                <span>Find Out More</span>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ===================================================================
-            6. "IN PASSING" SIDE-BY-SIDE PHOTOGRAPHIC STREAM (DRIFTWALL)
-            =================================================================== */}
-        <section className="minimal-drift-section">
-          <div className="minimal-drift-split-container">
-            {/* Left Side: Written Content */}
-            <div className="minimal-drift-sidebar">
-              <p className="minimal-overline">ANALOG ARCHIVES</p>
-              <h2 className="minimal-drift-title">
-                In Passing —<br />
-                Photographic Fragments
-              </h2>
-              <p className="minimal-drift-desc">
-                A continuous, quiet stream of 35mm analog frames and natural light studies.
-              </p>
-              <div style={{ marginTop: "24px" }}>
-                <Link href="/portfolio" className="minimal-text-link">
-                  <span>View Full Gallery</span>
-                </Link>
+            <div className="starline-appointment-meta-row">
+              <div className="appointment-meta-item">
+                <Clock size={16} />
+                <span>30-Minute Video Consultation</span>
+              </div>
+              <div className="appointment-meta-item">
+                <MapPin size={16} />
+                <span>Dallas Atelier or Worldwide Remote</span>
+              </div>
+              <div className="appointment-meta-item">
+                <Calendar size={16} />
+                <span>Limited to 18 Celebrations / Season</span>
               </div>
             </div>
 
-            {/* Right Side: DriftWall Image Component without image names */}
-            <div className="minimal-drift-wall-wrap">
-              <DriftWall
-                items={driftItems}
-                columns={3}
-                tileWidth={210}
-                tileHeight={270}
-                gap={16}
-                speed={10}
-                showCaptions={false}
-                pauseOnHover={true}
-                onSelect={(item) => {
-                  const found = studioStories.find((s) => s.title.toLowerCase().includes(item.title.toLowerCase().split(" ")[0]));
-                  if (found) setSelectedStory(found);
-                }}
-              />
+            <div className="starline-appointment-btn-wrap">
+              <button
+                className="minimal-btn-solid appointment-book-trigger"
+                onClick={() => setIsModalOpen(true)}
+              >
+                <span>BOOK APPOINTMENT</span>
+                <ArrowUpRight size={15} />
+              </button>
             </div>
-          </div>
-        </section>
-
-        {/* ===================================================================
-            7. MINIMALIST CLOSING CTA
-            =================================================================== */}
-        <section className="minimal-section" style={{ textAlign: "center", paddingTop: 0 }}>
-          <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-            <p className="minimal-overline">Available Worldwide</p>
-            <h2 style={{ fontFamily: "var(--font-display-condensed)", fontSize: "clamp(3rem, 6vw, 5.6rem)", letterSpacing: "0.06em", textTransform: "uppercase", margin: "0 0 20px" }}>
-              Let’s Give Your Story<br />A Lasting Frame
-            </h2>
-            <p style={{ fontSize: "14.5px", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-muted)", margin: "0 auto 36px" }}>
-              Currently accepting a limited number of bespoke destination commissions for the upcoming season.
-            </p>
-            <Link href="/contact" className="minimal-btn-outline" style={{ color: "var(--ink-primary)", borderColor: "var(--ink-primary)", background: "transparent" }}>
-              <span>Get in Touch</span>
-            </Link>
           </div>
         </section>
       </main>
 
-      <Footer />
-
-      {/* Story Deep-Dive Modal */}
+      {/* ===================================================================
+          APPOINTMENT BOOKING MODAL POPUP
+          =================================================================== */}
       <AnimatePresence>
-        {selectedStory && (
+        {isModalOpen && (
           <motion.div
-            className="story-modal-backdrop"
+            className="appointment-modal-backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setSelectedStory(null)}
+            onClick={closeAppointmentModal}
           >
             <motion.div
-              className="story-modal-container"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 30 }}
-              transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
+              className="appointment-modal-box"
+              initial={{ scale: 0.93, opacity: 0, y: 16 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.93, opacity: 0, y: 16 }}
+              transition={{ duration: 0.28, ease: [0.23, 1, 0.32, 1] }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="story-modal-header">
-                <div>
-                  <span className="story-modal-cat">{selectedStory.category}</span>
-                  <h2 className="story-modal-title">{selectedStory.title}</h2>
-                  <p style={{ fontSize: "12px", color: "var(--ink-subtle)", margin: "4px 0 0" }}>{selectedStory.location} — {selectedStory.year}</p>
-                </div>
-                <button
-                  className="story-modal-close-btn"
-                  onClick={() => setSelectedStory(null)}
-                  aria-label="Close story"
-                >
-                  <X size={18} />
-                </button>
+              <button
+                className="appointment-modal-close"
+                onClick={closeAppointmentModal}
+                aria-label="Close booking modal"
+              >
+                <X size={20} />
+              </button>
+
+              <div className="appointment-modal-header">
+                <span className="minimal-overline">STARLINE ATELIER</span>
+                <h3 className="appointment-modal-title">Book a Private Consultation</h3>
+                <p className="appointment-modal-desc">
+                  Please provide your celebration details below and our team will confirm your consultation time within 24 hours.
+                </p>
               </div>
 
-              <div className="story-modal-body">
-                <div className="story-modal-gallery">
-                  {selectedStory.galleryImages.map((img, idx) => (
-                    <img key={idx} src={img} alt={`${selectedStory.title} ${idx + 1}`} />
-                  ))}
-                </div>
-
-                <div className="story-modal-notes">
-                  <p style={{ margin: 0 }}>{selectedStory.fieldNotes}</p>
-                </div>
-
-                <div style={{ marginTop: "24px", display: "flex", justifyContent: "flex-end" }}>
-                  <Link
-                    href={`/contact?story=${selectedStory.id}`}
-                    className="minimal-text-link"
-                    onClick={() => setSelectedStory(null)}
+              {appointmentSuccess ? (
+                <div className="appointment-success-state">
+                  <div className="appointment-success-icon">
+                    <Check size={28} />
+                  </div>
+                  <h4>Consultation Request Received</h4>
+                  <p>
+                    Thank you, {modalForm.fullName || "friend"}. We look forward to discussing your celebration in {modalForm.destination || "your destination"}. We will contact you at {modalForm.emailAddress} promptly.
+                  </p>
+                  <button
+                    className="minimal-btn-solid"
+                    style={{ marginTop: "20px" }}
+                    onClick={closeAppointmentModal}
                   >
-                    <span>Inquire for Similar Commission</span>
-                  </Link>
+                    <span>DONE</span>
+                  </button>
                 </div>
-              </div>
+              ) : (
+                <form onSubmit={handleAppointmentSubmit} className="appointment-modal-form">
+                  <div className="appointment-field-group">
+                    <label className="appointment-field-label">FULL NAME *</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Eleanor Vance"
+                      value={modalForm.fullName}
+                      onChange={(e) => setModalForm({ ...modalForm, fullName: e.target.value })}
+                      className="appointment-modal-input"
+                      required
+                    />
+                  </div>
+
+                  <div className="appointment-field-grid-2">
+                    <div className="appointment-field-group">
+                      <label className="appointment-field-label">PHONE NUMBER *</label>
+                      <input
+                        type="tel"
+                        placeholder="+1 (214) 555-0192"
+                        value={modalForm.phoneNumber}
+                        onChange={(e) => setModalForm({ ...modalForm, phoneNumber: e.target.value })}
+                        className="appointment-modal-input"
+                        required
+                      />
+                    </div>
+
+                    <div className="appointment-field-group">
+                      <label className="appointment-field-label">EMAIL ADDRESS *</label>
+                      <input
+                        type="email"
+                        placeholder="eleanor@example.com"
+                        value={modalForm.emailAddress}
+                        onChange={(e) => setModalForm({ ...modalForm, emailAddress: e.target.value })}
+                        className="appointment-modal-input"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="appointment-field-grid-2">
+                    <div className="appointment-field-group">
+                      <label className="appointment-field-label">DESTINATION / CITY *</label>
+                      <input
+                        type="text"
+                        placeholder="e.g. Dallas, TX or Newport, RI"
+                        value={modalForm.destination}
+                        onChange={(e) => setModalForm({ ...modalForm, destination: e.target.value })}
+                        className="appointment-modal-input"
+                        required
+                      />
+                    </div>
+
+                    <div className="appointment-field-group">
+                      <label className="appointment-field-label">ESTIMATED WEDDING DATE *</label>
+                      <input
+                        type="text"
+                        placeholder="e.g. October 2026"
+                        value={modalForm.weddingDate}
+                        onChange={(e) => setModalForm({ ...modalForm, weddingDate: e.target.value })}
+                        className="appointment-modal-input"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="appointment-modal-submit-row">
+                    <button
+                      type="submit"
+                      disabled={isSubmittingAppointment}
+                      className="appointment-submit-button"
+                    >
+                      <span>{isSubmittingAppointment ? "SCHEDULING..." : "CONFIRM APPOINTMENT"}</span>
+                      <ArrowUpRight size={15} />
+                    </button>
+                  </div>
+                </form>
+              )}
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      <Footer showClosingCta={false} />
     </div>
   );
 }
