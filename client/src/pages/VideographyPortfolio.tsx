@@ -94,55 +94,33 @@ const videographyFilms: VideoFilmItem[] = [
 ];
 
 export default function VideographyPortfolio() {
-  const [activeTab, setActiveTab] = useState<string>("All");
   const [activeVideoModal, setActiveVideoModal] = useState<VideoFilmItem | null>(null);
-
-  const categories = [
-    "All",
-    "Estates & Coastal",
-    "California & West",
-    "Mountain & Desert",
-    "Intimate Vows"
-  ];
-
-  const filteredFilms =
-    activeTab === "All"
-      ? videographyFilms
-      : videographyFilms.filter((f) => f.category === activeTab);
 
   return (
     <div className="starline-page-shell">
       <Navbar variant="light" />
 
-      <main className="starline-page-main" style={{ paddingTop: "120px" }}>
-        {/* Editorial Header */}
-        <section className="gione-portfolio-hero-header">
-          <span className="minimal-overline">CINEMATIC ATELIER FILMS</span>
-          <h1 className="gione-portfolio-main-title">
-            WEDDING VIDEOGRAPHY<br />PORTFOLIO
-          </h1>
-          <p className="gione-portfolio-lead-desc">
-            Bespoke wedding films created with medium format cinema lenses, vintage anamorphic glass, and documentary sensitivity. Discover our living wedding cinema portfolio filmed across Dallas, Newport, Napa Valley, and worldwide.
-          </p>
-
-          {/* Filter Categories */}
-          <div className="gione-filter-tabs-row">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveTab(cat)}
-                className={`gione-filter-tab ${activeTab === cat ? "is-active" : ""}`}
-              >
-                {cat}
-              </button>
-            ))}
+      <main className="starline-page-main" style={{ paddingTop: "96px" }}>
+        {/* Panoramic Editorial Hero Banner (matching reference image) */}
+        <section className="gione-panoramic-hero-wrap">
+          <div className="gione-panoramic-hero-frame">
+            <img
+              src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=2000&auto=format&fit=crop"
+              alt="Wedding Videography Portfolio - Starline Atelier"
+              className="gione-panoramic-hero-img"
+            />
+            <div className="gione-panoramic-hero-overlay">
+              <h1 className="gione-panoramic-hero-title">
+                Wedding Videography Portfolio
+              </h1>
+            </div>
           </div>
         </section>
 
         {/* Video Film Grid */}
         <section className="gione-photo-grid-container">
           <div className="gione-video-grid-2col">
-            {filteredFilms.map((film) => (
+            {videographyFilms.map((film) => (
               <motion.div
                 key={film.id}
                 layout

@@ -100,55 +100,33 @@ const photographyGallery: PhotoItem[] = [
 ];
 
 export default function PhotographyPortfolio() {
-  const [activeTab, setActiveTab] = useState<string>("All");
   const [lightboxPhoto, setLightboxPhoto] = useState<PhotoItem | null>(null);
-
-  const categories = [
-    "All",
-    "Estates & Coastal",
-    "California & West",
-    "Mountain & Desert",
-    "Intimate Vows"
-  ];
-
-  const filteredPhotos =
-    activeTab === "All"
-      ? photographyGallery
-      : photographyGallery.filter((p) => p.category === activeTab);
 
   return (
     <div className="starline-page-shell">
       <Navbar variant="light" />
 
-      <main className="starline-page-main" style={{ paddingTop: "120px" }}>
-        {/* Editorial Header */}
-        <section className="gione-portfolio-hero-header">
-          <span className="minimal-overline">FINE ART PHOTOGRAPHY ARCHIVE</span>
-          <h1 className="gione-portfolio-main-title">
-            WEDDING PHOTOGRAPHY<br />PORTFOLIO
-          </h1>
-          <p className="gione-portfolio-lead-desc">
-            Documentary observation, natural light, and the enduring texture of 35mm analog film. Every collection is an honest, living heirloom captured across Dallas, Newport, Napa Valley, and destinations nationwide.
-          </p>
-
-          {/* Filter Categories */}
-          <div className="gione-filter-tabs-row">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveTab(cat)}
-                className={`gione-filter-tab ${activeTab === cat ? "is-active" : ""}`}
-              >
-                {cat}
-              </button>
-            ))}
+      <main className="starline-page-main" style={{ paddingTop: "96px" }}>
+        {/* Panoramic Editorial Hero Banner (matching reference image) */}
+        <section className="gione-panoramic-hero-wrap">
+          <div className="gione-panoramic-hero-frame">
+            <img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2000&auto=format&fit=crop"
+              alt="Wedding Photography Portfolio - Starline Atelier"
+              className="gione-panoramic-hero-img"
+            />
+            <div className="gione-panoramic-hero-overlay">
+              <h1 className="gione-panoramic-hero-title">
+                Wedding Photography Portfolio
+              </h1>
+            </div>
           </div>
         </section>
 
         {/* Photography Grid */}
         <section className="gione-photo-grid-container">
           <div className="gione-photo-masonry">
-            {filteredPhotos.map((photo) => (
+            {photographyGallery.map((photo) => (
               <motion.div
                 key={photo.id}
                 layout

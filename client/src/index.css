@@ -4069,8 +4069,54 @@ a {
 }
 
 /* ==========================================================================
-   5. DEDICATED PHOTOGRAPHY & VIDEOGRAPHY PORTFOLIO PAGES (GIONE DA SILVA STYLE)
+   5. DEDICATED PHOTOGRAPHY & VIDEOGRAPHY PORTFOLIO PAGES (PANORAMIC HERO)
    ========================================================================== */
+.gione-panoramic-hero-wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px clamp(20px, 4vw, 60px) 0;
+}
+
+.gione-panoramic-hero-frame {
+  position: relative;
+  width: 100%;
+  height: clamp(300px, 38vw, 460px);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.12);
+  background: #11141a;
+}
+
+.gione-panoramic-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 36%;
+  filter: grayscale(100%) contrast(1.15) brightness(0.85);
+  display: block;
+}
+
+.gione-panoramic-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.45) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.gione-panoramic-hero-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+}
+
 .gione-portfolio-hero-header {
   max-width: 1200px;
   margin: 0 auto;
@@ -4521,8 +4567,8 @@ a {
 
 .exact-footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 0.85fr 1.2fr;
-  gap: clamp(20px, 3vw, 44px);
+  grid-template-columns: 1.15fr 0.85fr 0.85fr 1.4fr 1.25fr;
+  gap: clamp(18px, 2.5vw, 36px);
   align-items: flex-start;
 }
 
@@ -4609,10 +4655,11 @@ a {
 .exact-footer-photo-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 3/4.2;
-  border-radius: 2px;
+  aspect-ratio: 3/3.8;
+  min-height: 270px;
+  border-radius: 3px;
   overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
   background: #e0e0dc;
 }
 
@@ -4621,6 +4668,11 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s ease;
+}
+
+.exact-footer-photo-frame:hover .exact-footer-photo-img {
+  transform: scale(1.03);
 }
 
 .exact-subscribe-title {

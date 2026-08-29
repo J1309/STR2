@@ -32,14 +32,10 @@ export default function Home() {
   const [slideIdx1, setSlideIdx1] = useState(0);
   const [slideIdx2, setSlideIdx2] = useState(0);
 
-  // Dynamic Typewriter Writing Phrases Loop
-  const welcomePhrases = [
-    "Welcome to Starline",
-    "Welcome to Starline Atelier",
-    "Welcome to Starline Cinema"
-  ];
+  // Dynamic Typewriter Writing only for "Starline"
+  const starlinePhrases = ["Starline", "Starline Atelier", "Starline Cinema"];
   const [phraseIdx, setPhraseIdx] = useState(0);
-  const [typedWelcome, setTypedWelcome] = useState("");
+  const [typedStarline, setTypedStarline] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [isTypingDone, setIsTypingDone] = useState(false);
 
@@ -55,13 +51,12 @@ export default function Home() {
   const [isSubmittingAppointment, setIsSubmittingAppointment] = useState(false);
   const [appointmentSuccess, setAppointmentSuccess] = useState(false);
 
-  // Continuous Fluid Writing & Deleting Animation Loop
+  // Continuous Fluid Writing & Deleting Animation Loop for "Starline"
   useEffect(() => {
-    const currentFullText = welcomePhrases[phraseIdx];
-    let typingSpeed = isDeleting ? 45 : 90;
+    const currentFullText = starlinePhrases[phraseIdx];
+    let typingSpeed = isDeleting ? 50 : 100;
 
-    if (!isDeleting && typedWelcome === currentFullText) {
-      // Completed writing phrase -> pause before deleting
+    if (!isDeleting && typedStarline === currentFullText) {
       setIsTypingDone(true);
       const pauseTimeout = setTimeout(() => {
         setIsDeleting(true);
@@ -70,15 +65,14 @@ export default function Home() {
       return () => clearTimeout(pauseTimeout);
     }
 
-    if (isDeleting && typedWelcome === "") {
-      // Completed deleting -> move to next phrase & start typing
+    if (isDeleting && typedStarline === "") {
       setIsDeleting(false);
-      setPhraseIdx((prev) => (prev + 1) % welcomePhrases.length);
+      setPhraseIdx((prev) => (prev + 1) % starlinePhrases.length);
       return;
     }
 
     const timer = setTimeout(() => {
-      setTypedWelcome((prev) =>
+      setTypedStarline((prev) =>
         isDeleting
           ? currentFullText.substring(0, prev.length - 1)
           : currentFullText.substring(0, prev.length + 1)
@@ -86,7 +80,7 @@ export default function Home() {
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [typedWelcome, isDeleting, phraseIdx]);
+  }, [typedStarline, isDeleting, phraseIdx]);
 
   // Continuous auto slideshow timer
   useEffect(() => {
@@ -163,14 +157,18 @@ export default function Home() {
 
         {/* ===================================================================
             2. IMMERSIVE AUTOMATIC WRITING ANIMATION: "WELCOME TO STARLINE"
+               (Static "Welcome to" with typewriter on "Starline")
             =================================================================== */}
         <section className="starline-welcome-writing-banner">
           <div className="starline-welcome-writing-inner">
             <span className="welcome-kicker">CINEMATIC ATELIER</span>
             <div className="welcome-typewriter-wrap">
               <h2 className="welcome-typewriter-text">
-                {typedWelcome}
-                <span className={`typewriter-cursor ${isTypingDone ? "is-blinking" : ""}`}>|</span>
+                <span className="welcome-static-prefix">WELCOME TO&nbsp;</span>
+                <span className="welcome-dynamic-word">
+                  {typedStarline}
+                  <span className="typewriter-cursor">|</span>
+                </span>
               </h2>
             </div>
             <p className="welcome-sub-note">
@@ -244,7 +242,8 @@ export default function Home() {
 
         {/* ===================================================================
             4. FEATURED COMMISSIONS: CONTINUOUS AUTOMATIC IMAGE SLIDESHOWS
-               WITH PREMIUM LIGHT BLUE WRITTEN CONTENT BOXES
+               - Tab 1 (Newport): Left to Right flow & slide motion
+               - Tab 2 (Napa Valley): Right to Left flow & slide motion
             =================================================================== */}
         <section className="gione-featured-section">
           <div className="gione-featured-header">
@@ -253,22 +252,23 @@ export default function Home() {
           </div>
 
           <div className="gione-showcase-wrap">
-            {/* Showcase 1: Newport (Slideshow on Left, Light Blue Story on Right) */}
-            <div className="gione-featured-duo">
-              {/* Left Column: Continuous Auto-Changing Slideshow */}
+            {/* Showcase 1: Newport (Slideshow on Left -> flow Left-to-Right) */}
+            <div className="gione-featured-duo flow-left-to-right">
+              {/* Left Column: Left-to-Right Image Slideshow */}
               <div className="gione-slideshow-col" aria-label="Newport Wedding Slideshow">
                 <div className="gione-slideshow-container">
-                  {newportSlideshow.map((imgSrc, idx) => (
+                  <AnimatePresence mode="wait">
                     <motion.img
-                      key={`newport-slide-${idx}`}
-                      src={imgSrc}
-                      alt={`Newport Rhode Island Wedding Still ${idx + 1}`}
+                      key={`newport-slide-${slideIdx1}`}
+                      src={newportSlideshow[slideIdx1]}
+                      alt={`Newport Rhode Island Wedding Still ${slideIdx1 + 1}`}
                       className="gione-slideshow-image"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: slideIdx1 === idx ? 1 : 0 }}
-                      transition={{ duration: 1.2, ease: "easeInOut" }}
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 50 }}
+                      transition={{ duration: 0.85, ease: [0.23, 1, 0.32, 1] }}
                     />
-                  ))}
+                  </AnimatePresence>
                   <div className="gione-slideshow-dots">
                     {newportSlideshow.map((_, idx) => (
                       <span
@@ -278,7 +278,7 @@ export default function Home() {
                       />
                     ))}
                   </div>
-                  <span className="gione-slideshow-tag">NEWPORT // LIVE CINEMA</span>
+                  <span className="gione-slideshow-tag">NEWPORT // LIVE CINEMA (L → R)</span>
                 </div>
               </div>
 
@@ -301,22 +301,23 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Showcase 2: Napa Valley (Light Blue Story on Left, Slideshow on Right) */}
-            <div className="gione-featured-duo is-reversed">
-              {/* Slideshow on Right / Reversed */}
+            {/* Showcase 2: Napa Valley (Slideshow on Right -> flow Right-to-Left) */}
+            <div className="gione-featured-duo is-reversed flow-right-to-left">
+              {/* Slideshow on Right with Right-to-Left transition */}
               <div className="gione-slideshow-col" aria-label="Napa Valley Wedding Slideshow">
                 <div className="gione-slideshow-container">
-                  {napaSlideshow.map((imgSrc, idx) => (
+                  <AnimatePresence mode="wait">
                     <motion.img
-                      key={`napa-slide-${idx}`}
-                      src={imgSrc}
-                      alt={`Napa Valley Vineyard Wedding Still ${idx + 1}`}
+                      key={`napa-slide-${slideIdx2}`}
+                      src={napaSlideshow[slideIdx2]}
+                      alt={`Napa Valley Vineyard Wedding Still ${slideIdx2 + 1}`}
                       className="gione-slideshow-image"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: slideIdx2 === idx ? 1 : 0 }}
-                      transition={{ duration: 1.2, ease: "easeInOut" }}
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -50 }}
+                      transition={{ duration: 0.85, ease: [0.23, 1, 0.32, 1] }}
                     />
-                  ))}
+                  </AnimatePresence>
                   <div className="gione-slideshow-dots">
                     {napaSlideshow.map((_, idx) => (
                       <span
@@ -326,7 +327,7 @@ export default function Home() {
                       />
                     ))}
                   </div>
-                  <span className="gione-slideshow-tag">NAPA VALLEY // 35MM EMULSION</span>
+                  <span className="gione-slideshow-tag">NAPA VALLEY // 35MM EMULSION (R → L)</span>
                 </div>
               </div>
 
