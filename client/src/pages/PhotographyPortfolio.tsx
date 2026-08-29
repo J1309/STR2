@@ -177,29 +177,7 @@ export default function PhotographyPortfolio() {
         </section>
 
         {/* ===================================================================
-            2. REFINED EDITORIAL CATEGORY FILTER BAR
-            =================================================================== */}
-        <section className="portfolio-filter-bar-section">
-          <div className="portfolio-filter-container">
-            <div className="portfolio-filter-tabs">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => {
-                    setActiveCategory(cat);
-                    setLightboxIndex(null);
-                  }}
-                  className={`portfolio-filter-tab ${activeCategory === cat ? "is-active" : ""}`}
-                >
-                  <span>{cat.toUpperCase()}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ===================================================================
-            3. CURATED EDITORIAL MASONRY GALLERY
+            2. CURATED EDITORIAL MASONRY GALLERY
             =================================================================== */}
         <section className="portfolio-gallery-section">
           <div className="portfolio-gallery-container">

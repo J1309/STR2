@@ -153,26 +153,7 @@ export default function VideographyPortfolio() {
         </section>
 
         {/* ===================================================================
-            2. REFINED CATEGORY FILTER TABS
-            =================================================================== */}
-        <section className="portfolio-filter-bar-section">
-          <div className="portfolio-filter-container">
-            <div className="portfolio-filter-tabs">
-              {videoCategories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`portfolio-filter-tab ${activeCategory === cat ? "is-active" : ""}`}
-                >
-                  <span>{cat.toUpperCase()}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ===================================================================
-            3. LUXURY CINEMA SHOWCASE CARDS (2-COLUMN WIDESCREEN)
+            2. LUXURY CINEMA SHOWCASE CARDS (2-COLUMN WIDESCREEN)
             =================================================================== */}
         <section className="portfolio-gallery-section">
           <div className="portfolio-gallery-container">
